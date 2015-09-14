@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'haml-rails'
 gem 'foundation-rails'
 gem 'soundcloud'
+gem 'carrierwave'
 
 
 

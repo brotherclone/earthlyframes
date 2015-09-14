@@ -11,9 +11,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150914174055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "albums", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+    t.date     "release"
+    t.string   "type"
+    t.text     "description"
+  end
+
+  create_table "images", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
+    t.string   "img"
+  end
+
+  add_index "images", ["imageable_id"], name: "index_images_on_imageable_id", using: :btree
+
+  create_table "posts", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+    t.text     "post"
+    t.datetime "published"
+  end
+
+  create_table "shows", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "songs", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "album_id"
+    t.string   "title"
+    t.integer  "sequence"
+    t.text     "notes"
+    t.text     "lyrics"
+  end
+
+  add_index "songs", ["album_id"], name: "index_songs_on_album_id", using: :btree
 
 end
