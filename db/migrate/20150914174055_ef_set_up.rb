@@ -19,6 +19,7 @@ class EfSetUp < ActiveRecord::Migration
     add_column :posts, :title, :string
     add_column :posts, :post, :text
     add_column :posts, :published, :datetime
+
   end
 end
 

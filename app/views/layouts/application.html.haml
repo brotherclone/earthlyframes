@@ -13,4 +13,6 @@
     :javascript
       try{Typekit.load({ async: true });}catch(e){}
   %body
+    = render :partial => 'components/header'
     = yield
+    = render :partial => 'components/footer'
