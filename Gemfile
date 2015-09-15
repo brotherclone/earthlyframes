@@ -13,8 +13,6 @@ gem 'foundation-rails'
 gem 'soundcloud'
 gem 'carrierwave'
 
-
-
 group :development, :test do
   gem 'rspec-rails'
   gem 'thor'
