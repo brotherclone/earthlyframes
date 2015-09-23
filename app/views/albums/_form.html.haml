@@ -5,6 +5,22 @@
       %ul
         - @album.errors.full_messages.each do |msg|
           %li= msg
-
-  .actions
-    = f.submit 'Save'
+  .row
+    .large-6.columns
+      = f.label :title
+      = f.text_field :title
+  .row
+    .large-6.columns
+      = f.label :release
+      = f.text_field :release
+  .row
+    .large-6.columns
+      = f.label :album_type
+      = f.text_field :album_type
+  .row
+    .large-6.columns
+      = f.label :description
+      = f.text_area :description, :class => 'tinymce', :rows => 20, :cols => 50
+  .row
+    .large-2.columns
+      = f.submit 'Save', :class=> 'button'
