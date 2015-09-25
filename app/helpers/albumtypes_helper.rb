@@ -1,0 +1,2 @@
+module AlbumtypesHelper
+end

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :albumtypes
+
+  resources :albumformats
+
   resources :images
 
   resources :shows

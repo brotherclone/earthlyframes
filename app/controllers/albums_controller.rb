@@ -53,12 +53,14 @@ class AlbumsController < ApplicationController
   private
   def set_album
     @album = Album.find(params[:id])
+    @albumtypes = Albumtype.all
+    @albumformats = Albumformat.all
   end
 
   private
 
     def album_params
-      params.require(:album).permit(:title, :release, :album_type, :album_format, :description)
+      params.require(:album).permit(:title, :release, :description, :albumformats_id, :albumtypes_id)
     end
 
 end

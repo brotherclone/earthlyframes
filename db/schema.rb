@@ -11,19 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150925133342) do
+ActiveRecord::Schema.define(version: 20150925202419) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "albumformats", force: true do |t|
+    t.string "name"
+  end
 
   create_table "albums", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "title"
     t.date     "release"
-    t.string   "album_type"
     t.text     "description"
-    t.string   "album_format"
+    t.integer  "albumtypes_id"
+    t.integer  "albumformats_id"
+  end
+
+  add_index "albums", ["albumformats_id"], name: "index_albums_on_albumformats_id", using: :btree
+  add_index "albums", ["albumtypes_id"], name: "index_albums_on_albumtypes_id", using: :btree
+
+  create_table "albumtypes", force: true do |t|
+    t.string "name"
   end
 
   create_table "images", force: true do |t|

@@ -1,15 +1,14 @@
-.admin.notice= notice
-
+.admin.notice = notice
 %h1
   =@album.title
 %hr
 %ul
   %li
-    = 'Release: '+  @album.release.to_s
+    = 'Release: '+  @album.title
   %li
-    = 'Type: '+ @album.album_type.to_s
+    = 'Type: '+ @album.title
   %li
-    = 'Formats: '+ @album.album_format.to_s
+    = 'Formats: '+ @album.title
 %p
   =@album.description
 %hr

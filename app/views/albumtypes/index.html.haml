@@ -1,0 +1,19 @@
+%h1 Listing albumtypes
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @albumtypes.each do |albumtype|
+      %tr
+        %td= link_to 'Show', albumtype
+        %td= link_to 'Edit', edit_albumtype_path(albumtype)
+        %td= link_to 'Destroy', albumtype, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Albumtype', new_albumtype_path
