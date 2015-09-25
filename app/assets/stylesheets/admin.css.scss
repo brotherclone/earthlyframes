@@ -1,0 +1,7 @@
+@import 'foundation_and_overrides';
+
+.admin{
+  .notice{
+    @include alert();
+  }
+}

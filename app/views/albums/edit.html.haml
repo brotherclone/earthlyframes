@@ -2,6 +2,8 @@
 
 = render 'form'
 
-= link_to 'Show', @album
-\|
-= link_to 'Back', albums_path
+%ul{:class=>'button-group'}
+  %li
+    = link_to 'Show', @album, :class=> 'button'
+  %li
+    = link_to 'Back', albums_path, :class => 'button'
