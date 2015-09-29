@@ -12,6 +12,7 @@ gem 'haml-rails'
 gem 'foundation-rails'
 gem 'soundcloud'
 gem 'carrierwave'
+gem 'tinymce-rails'
 
 group :development, :test do
   gem 'rspec-rails'

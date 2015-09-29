@@ -1,32 +1,27 @@
 = form_for @album do |f|
   - if @album.errors.any?
-    #error_explanation
+    .admin.notice
       %p= "#{pluralize(@album.errors.count, "error")} prohibited this album from being saved:"
       %ul
         - @album.errors.full_messages.each do |msg|
           %li= msg
   .row
-    .large-6.columns
-      = f.label :title
-      = f.text_field :title
+    = f.label :title
+    = f.text_field :title
   .row
-    .large-6.columns
-      = f.select(:albumtypes_id, options_from_collection_for_select(@albumtypes, :id, :name))
+    = f.label 'Type'
+    = f.select(:albumtypes_id, options_from_collection_for_select(Albumtype.all, :id, :name))
   .row
-    .large-6.columns
-      = f.select(:albumformats_id, options_from_collection_for_select(@albumformats, :id, :name))
+    = f.label 'Format'
+    = f.select(:albumformats_id, options_from_collection_for_select(Albumformat.all, :id, :name))
   .row
-    .large-6.columns
-      = f.label :release
-      = f.text_field :release
+    = f.label :release
+    = f.text_field :release
   .row
-    .large-6.columns
-      = f.label :album_type
+    = f.label :album_type
   .row
-    .large-6.columns
-      = f.label :description
-      = f.text_area :description, :class => 'tinymce', :rows => 20, :cols => 50
+    = f.label :description
+    = f.text_area :description, :class => 'tinymce', :rows => 20, :cols => 50
   .row
-    .large-2.columns
-      = f.submit 'Save', :class=> 'button'
-%hr
+    = f.submit 'Save', :class=> 'button'
+=tinymce

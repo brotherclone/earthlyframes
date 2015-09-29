@@ -1,5 +1,8 @@
-%h1 New albumformat
-
-= render 'form'
-
-= link_to 'Back', albumformats_path
+.row
+  .small-2.large-2.columns
+    = render :partial => 'components/admin/admin_nav'
+  .small-8.large-8.columns
+    %h1 New Album Format
+    = render 'form'
+.row
+  = link_to 'Back', albumformats_path, :class=>'button'

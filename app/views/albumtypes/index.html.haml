@@ -1,19 +1,23 @@
-%h1 Listing albumtypes
 
+= render :partial => 'components/admin/admin_nav'
+%h1 Album Types
 %table
   %thead
     %tr
       %th
-      %th
-      %th
+        Title
+      %th{:colspan=>'3'}
 
   %tbody
     - @albumtypes.each do |albumtype|
       %tr
-        %td= link_to 'Show', albumtype
-        %td= link_to 'Edit', edit_albumtype_path(albumtype)
-        %td= link_to 'Destroy', albumtype, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Albumtype', new_albumtype_path
+        %th
+          =albumtype.name
+        %td
+          = link_to 'Show', albumtype
+        %td
+          = link_to 'Edit',  edit_albumtype_path(albumtype)
+        %td
+          = link_to 'Destroy', albumtype, :method => :delete, :data => { :confirm => 'Are you sure?' }
+= link_to 'New Album Type', new_albumtype_path, :class=>'button'
+= render :partial => 'components/admin/admin_footer'

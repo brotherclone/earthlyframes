@@ -1,18 +1,7 @@
 .contain-to-grid.sticky
   %nav{:class=>'top-bar', :data=>{:topbar=>true}, :role=>'navigation'}
-    %ul
-      %li
+    %ul{:class=>'title-area'}
+      %li{:class=>'name'}
         %h1
           %a{:href=> home_url}
             The Earthly Frames
-    %section
-      %ul{:class=>'left'}
-        %li
-          %a{:href=> albums_url}
-            Albums
-        %li
-          %a{:href=> shows_url}
-            Shows
-        %li
-          %a{:href=> posts_url}
-            Posts

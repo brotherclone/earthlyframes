@@ -1,10 +1,18 @@
 = form_for @show do |f|
   - if @show.errors.any?
-    #error_explanation
+    .admin.notice
       %h2= "#{pluralize(@show.errors.count, "error")} prohibited this show from being saved:"
       %ul
         - @show.errors.full_messages.each do |msg|
           %li= msg
-
-  .actions
+  .row
+    = f.label :title
+    = f.text_field :title
+  .row
+    = f.label :description
+    = f.text_area :description
+  .row
+    = f.label :date
+    = f.text_field :date
+  .row
     = f.submit 'Save'

@@ -1,19 +1,24 @@
-%h1 Listing albumformats
-
-%table
-  %thead
-    %tr
-      %th
-      %th
-      %th
-
-  %tbody
-    - @albumformats.each do |albumformat|
-      %tr
-        %td= link_to 'Show', albumformat
-        %td= link_to 'Edit', edit_albumformat_path(albumformat)
-        %td= link_to 'Destroy', albumformat, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Albumformat', new_albumformat_path
+.row
+  .small-2.large-2.columns
+    = render :partial => 'components/admin/admin_nav'
+  .small-8.large-8.columns
+    %h1 Album Formats
+    %table
+      %thead
+        %tr
+          %th
+            Title
+          %th{:colspan=>'3'}
+      %tbody
+        - @albumformats.each do |albumformat|
+          %tr
+            %th
+              =albumformat.name
+            %td
+              = link_to 'Show', albumformat
+            %td
+              = link_to 'Edit', edit_albumformat_path(albumformat)
+            %td
+              = link_to 'Destroy', albumformat, :method => :delete, :data => { :confirm => 'Are you sure?' }
+.row
+  = link_to 'New Album Format', new_albumformat_path, :class=>'button'
