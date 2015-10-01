@@ -1,18 +1,19 @@
 ruby '2.1.2'
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 gem 'rails', '4.1.9'
 gem 'pg'
-gem 'sass-rails', '~> 5.0.0'
+gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
+gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'haml-rails'
-gem 'foundation-rails'
-gem 'soundcloud'
-gem 'carrierwave'
 gem 'tinymce-rails'
+gem 'foundation-rails'
+
 
 group :development, :test do
   gem 'rspec-rails'
@@ -23,7 +24,6 @@ group :development, :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'table_print'
-  gem 'erb2haml'
 end
 
 group :doc do

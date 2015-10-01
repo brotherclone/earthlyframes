@@ -1,13 +1,10 @@
 class AlbumsController < ApplicationController
-  
   before_action :set_album, only: [:show, :edit, :update, :destroy]
-
   def index
     @albums = Album.all
   end
 
   def show
-    
   end
 
   def new
@@ -51,13 +48,11 @@ class AlbumsController < ApplicationController
   end
 
   private
-
-  def set_album
-    @album = Album.find(params[:id])
-  end
-
-  def album_params
-      params.require(:album).permit(:title, :release, :description, :albumformats_id, :albumtypes_id)
+    def set_album
+      @album = Album.find(params[:id])
     end
 
+    def album_params
+      params.require(:album).permit(:title, :releasedate, :description)
+    end
 end

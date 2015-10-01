@@ -1,12 +1,7 @@
-.row
-  .small-2.large-2.columns
-    = render :partial => 'components/admin/admin_nav'
-  .small-8.large-8.columns
-    %h1 Editing album
-    = render 'form'
-.row
-  %ul{:class=>'button-group'}
-    %li
-      = link_to 'Show', @album, :class=> 'button'
-    %li
-      = link_to 'Back', albums_path, :class => 'button'
+%h1 Editing album
+
+= render 'form'
+
+= link_to 'Show', @album
+\|
+= link_to 'Back', albums_path

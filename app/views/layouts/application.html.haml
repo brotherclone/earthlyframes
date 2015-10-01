@@ -1,18 +1,13 @@
 !!!
-%html{:lang => 'en'}
+%html{:lang => "en"}
   %head
-    %meta{:content => 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type'}/
-    %meta{:charset => 'utf-8'}/
-    %meta{:content => 'width=device-width, initial-scale=1.0', :name => 'viewport'}/
-    %title= content_for?(:title) ? yield(:title) : 'foundation-rails'
-    = stylesheet_link_tag    'application'
-    = javascript_include_tag 'vendor/modernizr'
-    = javascript_include_tag 'application' 'data-turbolinks-track' => true
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %title= content_for?(:title) ? yield(:title) : "foundation-rails"
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "vendor/modernizr"
+    = javascript_include_tag "application" 'data-turbolinks-track' => true
     = csrf_meta_tags
-    %script{:src => 'https://use.typekit.net/amw6xzf.js'}
-    :javascript
-      try{Typekit.load({ async: true });}catch(e){}
   %body
-    = render :partial => 'components/header'
     = yield
-    = render :partial => 'components/footer'

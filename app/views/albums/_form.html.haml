@@ -1,27 +1,10 @@
 = form_for @album do |f|
   - if @album.errors.any?
-    .admin.notice
-      %p= "#{pluralize(@album.errors.count, "error")} prohibited this album from being saved:"
+    #error_explanation
+      %h2= "#{pluralize(@album.errors.count, "error")} prohibited this album from being saved:"
       %ul
         - @album.errors.full_messages.each do |msg|
           %li= msg
-  .row
-    = f.label :title
-    = f.text_field :title
-  .row
-    = f.label 'Type'
-    = f.select(:albumtypes_id, options_from_collection_for_select(Albumtype.all, :id, :name))
-  .row
-    = f.label 'Format'
-    = f.select(:albumformats_id, options_from_collection_for_select(Albumformat.all, :id, :name))
-  .row
-    = f.label :release
-    = f.text_field :release
-  .row
-    = f.label :album_type
-  .row
-    = f.label :description
-    = f.text_area :description, :class => 'tinymce', :rows => 20, :cols => 50
-  .row
-    = f.submit 'Save', :class=> 'button'
-=tinymce
+
+  .actions
+    = f.submit 'Save'

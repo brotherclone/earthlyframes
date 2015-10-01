@@ -1,24 +1,19 @@
-.row
-  .small-2.large-2.columns
-    = render :partial => 'components/admin/admin_nav'
-  .small-8.large-8.columns
-    %h1 Albums
-    %table
-      %thead
-        %tr
-          %th
-            Title
-          %th{:colspan=>'3'}
-      %tbody
-        - @albums.each do |album|
-          %tr
-            %th
-              =album.title
-            %td
-              = link_to 'Show', album
-            %td
-              = link_to 'Edit', edit_album_path(album)
-            %td
-              = link_to 'Destroy', album, :method => :delete, :data => { :confirm => 'Are you sure?' }
-.row
-  = link_to 'New Album', new_album_path, :class=>'button'
+%h1 Listing albums
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @albums.each do |album|
+      %tr
+        %td= link_to 'Show', album
+        %td= link_to 'Edit', edit_album_path(album)
+        %td= link_to 'Destroy', album, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Album', new_album_path

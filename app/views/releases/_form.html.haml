@@ -1,0 +1,10 @@
+= form_for @release do |f|
+  - if @release.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@release.errors.count, "error")} prohibited this release from being saved:"
+      %ul
+        - @release.errors.full_messages.each do |msg|
+          %li= msg
+
+  .actions
+    = f.submit 'Save'

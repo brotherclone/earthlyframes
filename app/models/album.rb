@@ -1,6 +1,5 @@
 class Album < ActiveRecord::Base
-  has_one :image, :as => :imageable, :dependent => :destroy
+  validates :releasedate, :title, presence: true
+  has_many :releases
   has_many :songs
-  has_one :albumformat
-  has_one :albumtype
 end

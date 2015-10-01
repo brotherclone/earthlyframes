@@ -11,69 +11,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150925202419) do
+ActiveRecord::Schema.define(version: 20151001131730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "albumformats", force: true do |t|
-    t.string "name"
-  end
-
   create_table "albums", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "title"
-    t.date     "release"
-    t.text     "description"
-    t.integer  "albumtypes_id"
-    t.integer  "albumformats_id"
-  end
-
-  add_index "albums", ["albumformats_id"], name: "index_albums_on_albumformats_id", using: :btree
-  add_index "albums", ["albumtypes_id"], name: "index_albums_on_albumtypes_id", using: :btree
-
-  create_table "albumtypes", force: true do |t|
-    t.string "name"
+    t.string "title"
+    t.date   "releasedate"
+    t.text   "description"
   end
 
   create_table "images", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "imageable_id"
-    t.string   "imageable_type"
-    t.string   "img"
+    t.string  "name"
+    t.integer "imageable_id"
+    t.string  "imageable_type"
   end
 
-  add_index "images", ["imageable_id"], name: "index_images_on_imageable_id", using: :btree
+  add_index "images", ["imageable_id", "imageable_type"], name: "index_images_on_imageable_id_and_imageable_type", using: :btree
 
   create_table "posts", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "title"
-    t.text     "post"
-    t.datetime "published"
+    t.string "title"
+    t.text   "body"
   end
 
+  create_table "releases", force: true do |t|
+    t.string  "title"
+    t.string  "format"
+    t.string  "price"
+    t.integer "albums_id"
+  end
+
+  add_index "releases", ["albums_id"], name: "index_releases_on_albums_id", using: :btree
+
   create_table "shows", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "title"
+    t.datetime "when"
     t.text     "description"
-    t.datetime "date"
     t.string   "location"
+    t.string   "link"
   end
 
   create_table "songs", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "album_id"
-    t.string   "title"
-    t.integer  "sequence"
-    t.text     "notes"
-    t.text     "lyrics"
+    t.string  "title"
+    t.string  "trt"
+    t.text    "notes"
+    t.text    "lyrics"
+    t.integer "albums_id"
   end
 
-  add_index "songs", ["album_id"], name: "index_songs_on_album_id", using: :btree
+  add_index "songs", ["albums_id"], name: "index_songs_on_albums_id", using: :btree
 
 end

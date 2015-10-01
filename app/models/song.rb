@@ -1,3 +1,3 @@
 class Song < ActiveRecord::Base
-  has_one :album
+  belongs_to :album
 end
