@@ -1,5 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Song, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'has a vaild Factory' do
+    expect(build(:song)).to be_valid
+  end
 end
