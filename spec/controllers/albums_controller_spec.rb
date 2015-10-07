@@ -8,7 +8,6 @@ RSpec.describe AlbumsController, type: :controller do
       get :index
       expect(assigns(:albums)).to eq([album])
     end
-
     it 'renders the :index view' do
       get :index
       expect(response).to render_template :index

@@ -8,8 +8,8 @@ FactoryGirl.define do
   factory :song do
     title {:songtitle}
     trt {Faker::Number.number(3)}
-    notes {Faker::Lorem.paragraphs(3)}
-    lyrics {Faker::Lorem.paragraph(4)}
+    notes {Faker::Lorem.paragraph}
+    lyrics {Faker::Lorem.paragraph}
     album {FactoryGirl.create(:album)}
   end
 
