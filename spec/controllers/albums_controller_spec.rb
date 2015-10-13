@@ -119,8 +119,7 @@ RSpec.describe AlbumsController, type: :controller do
       album = FactoryGirl.create(:album)
       did = album.to_param
       delete :destroy, {:id => did}
-      get :show, {:id => did}
-      expect(response).to redirect_to(albums_url)
+      expect(response).to redirect_to(albums_path)
     end
   end
 

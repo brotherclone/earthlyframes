@@ -7,7 +7,7 @@ FactoryGirl.define do
     title {:releasetitle}
     formatname {Faker::Lorem.word}
     price {Faker::Commerce.price}
-    album {FactoryGirl.create(:album)}
+    album
   end
 
 end

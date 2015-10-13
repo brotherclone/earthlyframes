@@ -118,8 +118,7 @@ RSpec.describe SongsController, type: :controller do
       song = FactoryGirl.create(:song)
       did = song.to_param
       delete :destroy, {:id => did}
-      get :show, {:id => did}
-      expect(response).to redirect_to(songs_url)
+      expect(response).to redirect_to(songs_path)
     end
   end
 

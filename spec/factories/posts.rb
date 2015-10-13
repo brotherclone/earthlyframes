@@ -5,7 +5,7 @@ FactoryGirl.define do
 
   factory :post do
     title {:posttitle}
-    body {Faker::Lorem.paragraphs(5)}
+    body {Faker::Lorem.paragraphs(5).to_s}
   end
 
 end

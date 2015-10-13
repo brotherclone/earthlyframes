@@ -55,12 +55,12 @@ RSpec.describe ShowsController, type: :controller do
 
     context 'with invalid params' do
       it 'assigns a newly created but unsaved show as @show' do
-        post :create, {:show => inFactoryGirl.attributes_for(:show)}
+        post :create, {:show => FactoryGirl.attributes_for(:show, :title => nil)}
         expect(assigns(:show)).to be_a_new(Show)
       end
 
       it 're-renders the new template' do
-        post :create, {:show => inFactoryGirl.attributes_for(:show)}
+        post :create, {:show => FactoryGirl.attributes_for(:show, :title => nil)}
         expect(response).to render_template('new')
       end
     end
@@ -68,15 +68,11 @@ RSpec.describe ShowsController, type: :controller do
 
   describe 'PUT #update' do
     context 'with valid params' do
-      let(:new_attributes) {
-        skip('Add a hash of attributes valid for your model')
-      }
 
       it 'updates the requested show' do
         show = FactoryGirl.create(:show)
-        put :update, {:id => show.to_param, :show => new_attributes}
+        put :update, {:id => show.to_param, :show => FactoryGirl.attributes_for(:show)}
         show.reload
-        skip('Add assertions for updated state')
       end
 
       it 'assigns the requested show as @show' do
@@ -95,13 +91,13 @@ RSpec.describe ShowsController, type: :controller do
     context 'with invalid params' do
       it 'assigns the show as @show' do
         show = FactoryGirl.create(:show)
-        put :update, {:id => show.to_param, :show => inFactoryGirl.attributes_for(:show)}
+        put :update, {:id => show.to_param, :show => FactoryGirl.attributes_for(:show, :title => nil)}
         expect(assigns(:show)).to eq(show)
       end
 
       it 're-renders the edit template' do
         show = FactoryGirl.create(:show)
-        put :update, {:id => show.to_param, :show => inFactoryGirl.attributes_for(:show)}
+        put :update, {:id => show.to_param, :show => FactoryGirl.attributes_for(:show, :title => nil)}
         expect(response).to render_template('edit')
       end
     end
@@ -119,8 +115,7 @@ RSpec.describe ShowsController, type: :controller do
       show = FactoryGirl.create(:show)
       sid = show.to_param
       delete :destroy, {:id => sid}
-      get :show, {:id => sid}
-      expect(response).to redirect_to(shows_url)
+      expect(response).to redirect_to(shows_path)
     end
   end
 

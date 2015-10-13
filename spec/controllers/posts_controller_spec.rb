@@ -115,8 +115,7 @@ RSpec.describe PostsController, type: :controller do
       post = FactoryGirl.create(:post)
       pid =post.to_param
       delete :destroy, {:id => pid}
-      get :show, {:id => pid}
-      expect(response).to redirect_to(posts_url)
+      expect(response).to redirect_to(posts_path)
     end
   end
 

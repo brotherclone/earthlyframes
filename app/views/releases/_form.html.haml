@@ -5,6 +5,11 @@
       %ul
         - @release.errors.full_messages.each do |msg|
           %li= msg
-
+  =f.label :title
+  =f.text_field :title
+  =f.label :formatname
+  =f.text_field :formatname
+  =f.label :price
+  =f.text_field :price
   .actions
     = f.submit 'Save'
