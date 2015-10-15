@@ -1,6 +1,17 @@
-%nav
+%nav{:class=>'top-bar', :role=> 'navigation', :data =>{:topbar=>true}}
   %ul{:class=>'title-area'}
     %li{:class=>'name'}
       %h1
         %a{:href=> home_path}
           Earthly Frames
+  %section{:class=> 'top-bar-section'}
+    %ul{:class => 'left'}
+      %li
+        %a{:href=>offer_posts_path}
+          Dispatches
+      %li
+        %a{:href=>offer_releases_path}
+          Releases
+      %li
+        %a{:href=>offer_shows_path}
+          Shows
