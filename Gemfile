@@ -13,6 +13,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'haml-rails'
 gem 'tinymce-rails'
 gem 'foundation-rails'
+gem 'carrierwave'
+gem 'activeadmin', github: 'activeadmin'
+gem 'devise'
 
 
 group :development, :test do
@@ -27,7 +30,8 @@ group :development, :test do
 end
 
 group :doc do
-  gem 'sdoc', '~> 0.4.0'
+  gem 'sdoc'
+  gem 'kss-rails'
 end
 
 group :development do
