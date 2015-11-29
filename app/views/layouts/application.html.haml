@@ -12,11 +12,4 @@
     = javascript_include_tag 'application' 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    - current_uri = request.env['PATH_INFO']
-    - if current_uri == '/soon'
-      - soon = true
-    - if !soon
-      = render :partial => 'components/nav'
     = yield
-    - if !soon
-      = render :partial => 'components/footer'
