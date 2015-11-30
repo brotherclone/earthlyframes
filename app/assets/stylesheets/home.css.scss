@@ -1,4 +1,8 @@
+.outer{
+  @include outer-container();
+}
 .side-image {
+  margin-top: 2rem;
   $base-line-height: 1.5em !default;
   $action-color: #477DCA !default;
   $dark-gray: #333 !default;
@@ -61,10 +65,9 @@
       margin-bottom: 3em;
     }
   }
-
-  //@include reset-display();
 }
 .cards {
+  margin: 2rem 0 2rem 0;
   @include display(flex);
   @include flex-wrap(wrap);
   @include justify-content(space-between);
