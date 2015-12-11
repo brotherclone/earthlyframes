@@ -1,5 +1,5 @@
 class Album < ActiveRecord::Base
-  validates :releasedate, :title, presence: true
-  has_many :releases
+  mount_uploader :cover, PhotosUploader
+  validates :title, presence: true
   has_many :songs
 end

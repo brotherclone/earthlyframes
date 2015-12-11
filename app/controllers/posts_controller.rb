@@ -6,10 +6,6 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  def offer
-    @posts = Post.all
-  end
-
   def show
   end
 
@@ -65,6 +61,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:body,:title)
+      params.require(:post).permit(:body,:title,:main_image,:inline_image)
     end
 end

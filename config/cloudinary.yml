@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: hobvqx95l
+  api_key: '188991778531147'
+  api_secret: r9xW-JaG8Gp62QNy5jnDA-0f598
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: hobvqx95l
+  api_key: '188991778531147'
+  api_secret: r9xW-JaG8Gp62QNy5jnDA-0f598
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hobvqx95l
+  api_key: '188991778531147'
+  api_secret: r9xW-JaG8Gp62QNy5jnDA-0f598
+  enhance_image_tag: true
+  static_image_support: false

@@ -5,10 +5,6 @@ class ShowsController < ApplicationController
     @shows = Show.all
   end
 
-  def offer
-    @shows = Show.all
-  end
-
   def show
   end
 
@@ -61,6 +57,6 @@ class ShowsController < ApplicationController
     end
 
     def show_params
-      params.require(:show).permit(:title,:showdate,:description,:location, :link)
+      params.require(:show).permit(:title,:showdate,:description,:location,:link,:flyer)
     end
 end
