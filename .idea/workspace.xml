@@ -2,160 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6330d3fd-63c4-493b-8cc8-f298121484ea" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/albums/edit.html.haml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/albums/index.html.haml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/albums/index.json.jbuilder" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/albums/new.html.haml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/albums/show.html.haml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/albums/show.json.jbuilder" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/admin/release.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/releases_controller.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/helpers/posts_helper.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/helpers/releases_helper.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/helpers/shows_helper.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/helpers/songs_helper.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/release.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/releases/edit.html.haml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/releases/index.html.haml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/releases/index.json.jbuilder" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/releases/new.html.haml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/releases/show.html.haml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/releases/show.json.jbuilder" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db/seeds.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/controllers/songs_controller_spec.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/factories/admin_users.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/factories/releases.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/features/blog_spec.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/features/main_nav_spec.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/features/splash_spec.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/helpers/posts_helper_spec.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/helpers/releases_helper_spec.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/helpers/shows_helper_spec.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/helpers/songs_helper_spec.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/integration/.keep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/mailers/.keep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/models/.keep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/models/admin_user_spec.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/models/release_spec.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/requests/albums_spec.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/requests/home_spec.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/requests/posts_spec.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/requests/releases_spec.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/requests/shows_spec.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/requests/songs_spec.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/requests/soon_spec.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/routing/songs_routing_spec.rb" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/components/_footer.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/components/_footer.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/components/_nav.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/components/_nav.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/home.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/home.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/releases/offer.html.haml" afterPath="$PROJECT_DIR$/app/views/albums/offer.html.haml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/_bourbon-deprecated-upcoming.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/_bourbon-deprecated-upcoming.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/_bourbon.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/_bourbon.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/addons/_border-color.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/addons/_border-color.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/addons/_border-radius.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/addons/_border-radius.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/addons/_border-style.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/addons/_border-style.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/addons/_border-width.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/addons/_border-width.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/addons/_buttons.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/addons/_buttons.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/addons/_clearfix.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/addons/_clearfix.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/addons/_ellipsis.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/addons/_ellipsis.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/addons/_font-stacks.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/addons/_font-stacks.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/addons/_hide-text.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/addons/_hide-text.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/addons/_margin.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/addons/_margin.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/addons/_padding.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/addons/_padding.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/addons/_position.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/addons/_position.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/addons/_prefixer.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/addons/_prefixer.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/addons/_retina-image.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/addons/_retina-image.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/addons/_size.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/addons/_size.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/addons/_text-inputs.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/addons/_text-inputs.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/addons/_timing-functions.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/addons/_timing-functions.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/addons/_triangle.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/addons/_triangle.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/addons/_word-wrap.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/addons/_word-wrap.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/css3/_animation.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/css3/_animation.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/css3/_appearance.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/css3/_appearance.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/css3/_backface-visibility.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/css3/_backface-visibility.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/css3/_background-image.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/css3/_background-image.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/css3/_background.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/css3/_background.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/css3/_border-image.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/css3/_border-image.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/css3/_calc.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/css3/_calc.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/css3/_columns.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/css3/_columns.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/css3/_filter.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/css3/_filter.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/css3/_flex-box.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/css3/_flex-box.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/css3/_font-face.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/css3/_font-face.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/css3/_font-feature-settings.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/css3/_font-feature-settings.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/css3/_hidpi-media-query.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/css3/_hidpi-media-query.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/css3/_hyphens.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/css3/_hyphens.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/css3/_image-rendering.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/css3/_image-rendering.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/css3/_keyframes.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/css3/_keyframes.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/css3/_linear-gradient.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/css3/_linear-gradient.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/css3/_perspective.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/css3/_perspective.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/css3/_placeholder.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/css3/_placeholder.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/css3/_radial-gradient.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/css3/_radial-gradient.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/css3/_selection.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/css3/_selection.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/css3/_text-decoration.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/css3/_text-decoration.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/css3/_transform.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/css3/_transform.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/css3/_transition.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/css3/_transition.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/css3/_user-select.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/css3/_user-select.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/functions/_assign-inputs.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/functions/_assign-inputs.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/functions/_contains-falsy.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/functions/_contains-falsy.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/functions/_contains.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/functions/_contains.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/functions/_is-length.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/functions/_is-length.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/functions/_is-light.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/functions/_is-light.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/functions/_is-number.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/functions/_is-number.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/functions/_is-size.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/functions/_is-size.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/functions/_modular-scale.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/functions/_modular-scale.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/functions/_px-to-em.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/functions/_px-to-em.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/functions/_px-to-rem.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/functions/_px-to-rem.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/functions/_shade.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/functions/_shade.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/functions/_strip-units.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/functions/_strip-units.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/functions/_tint.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/functions/_tint.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/functions/_transition-property-name.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/functions/_transition-property-name.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/functions/_unpack.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/functions/_unpack.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/helpers/_convert-units.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/helpers/_convert-units.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/helpers/_directional-values.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/helpers/_directional-values.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/helpers/_font-source-declaration.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/helpers/_font-source-declaration.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/helpers/_gradient-positions-parser.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/helpers/_gradient-positions-parser.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/helpers/_linear-angle-parser.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/helpers/_linear-angle-parser.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/helpers/_linear-gradient-parser.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/helpers/_linear-gradient-parser.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/helpers/_linear-positions-parser.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/helpers/_linear-positions-parser.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/helpers/_linear-side-corner-parser.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/helpers/_linear-side-corner-parser.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/helpers/_radial-arg-parser.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/helpers/_radial-arg-parser.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/helpers/_radial-gradient-parser.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/helpers/_radial-gradient-parser.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/helpers/_radial-positions-parser.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/helpers/_radial-positions-parser.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/helpers/_render-gradients.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/helpers/_render-gradients.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/helpers/_shape-size-stripper.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/helpers/_shape-size-stripper.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/helpers/_str-to-num.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/helpers/_str-to-num.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/settings/_asset-pipeline.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/settings/_asset-pipeline.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/settings/_prefixer.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/settings/_prefixer.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bourbon/settings/_px-to-em.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bourbon/settings/_px-to-em.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/spec/controllers/releases_controller_spec.rb" afterPath="$PROJECT_DIR$/spec/controllers/albums_controller_spec.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/spec/routing/releases_routing_spec.rb" afterPath="$PROJECT_DIR$/spec/routing/albums_routing_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/earthlyframes.iml" afterPath="$PROJECT_DIR$/.idea/earthlyframes.iml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/albums/offer.html.haml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/posts/offer.html.haml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/shows/offer.html.haml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/albums.rb" afterPath="$PROJECT_DIR$/app/admin/albums.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/post.rb" afterPath="$PROJECT_DIR$/app/admin/post.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/show.rb" afterPath="$PROJECT_DIR$/app/admin/show.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/song.rb" afterPath="$PROJECT_DIR$/app/admin/song.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/albums_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/albums_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/posts_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/posts_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/shows_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/shows_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/songs_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/songs_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/album.rb" afterPath="$PROJECT_DIR$/app/models/album.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/post.rb" afterPath="$PROJECT_DIR$/app/models/post.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/show.rb" afterPath="$PROJECT_DIR$/app/models/show.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/song.rb" afterPath="$PROJECT_DIR$/app/models/song.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/components/_nav.html.haml" afterPath="$PROJECT_DIR$/app/views/components/_nav.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/factories/albums.rb" afterPath="$PROJECT_DIR$/spec/factories/albums.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/factories/posts.rb" afterPath="$PROJECT_DIR$/spec/factories/posts.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/factories/shows.rb" afterPath="$PROJECT_DIR$/spec/factories/shows.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/factories/songs.rb" afterPath="$PROJECT_DIR$/spec/factories/songs.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/features/albums_spec.rb" afterPath="$PROJECT_DIR$/spec/features/albums_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/models/album_spec.rb" afterPath="$PROJECT_DIR$/spec/models/album_spec.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/albums/edit.html.haml" afterPath="$PROJECT_DIR$/app/views/albums/edit.html.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/albums/new.html.haml" afterPath="$PROJECT_DIR$/app/views/albums/new.html.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/posts/edit.html.haml" afterPath="$PROJECT_DIR$/app/views/posts/edit.html.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/posts/index.html.haml" afterPath="$PROJECT_DIR$/app/views/posts/index.html.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/posts/new.html.haml" afterPath="$PROJECT_DIR$/app/views/posts/new.html.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/posts/show.html.haml" afterPath="$PROJECT_DIR$/app/views/posts/show.html.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/shows/edit.html.haml" afterPath="$PROJECT_DIR$/app/views/shows/edit.html.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/shows/index.html.haml" afterPath="$PROJECT_DIR$/app/views/shows/index.html.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/shows/new.html.haml" afterPath="$PROJECT_DIR$/app/views/shows/new.html.haml" />
     </list>
     <ignored path="earthlyframes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -183,31 +42,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="albums.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/admin/albums.rb">
+      <file leaf-file-name="index.html.haml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/shows/index.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="82" selection-start-line="2" selection-start-column="82" selection-end-line="2" selection-end-column="82" />
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="albums_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/albums_controller.rb">
+      <file leaf-file-name="new.html.haml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/albums/new.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="album.rb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/models/album.rb">
+      <file leaf-file-name="edit.html.haml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/shows/edit.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.062111802">
-              <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.html.haml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/shows/new.html.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.html.haml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/posts/edit.html.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.html.haml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/posts/new.html.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.haml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/posts/index.html.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.25">
+              <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.haml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/posts/show.html.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.06507592">
+              <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.html.haml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/albums/edit.html.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.25">
+              <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -228,13 +147,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/views/releases/show.html.haml" />
-        <option value="$PROJECT_DIR$/app/views/shows/show.html.haml" />
-        <option value="$PROJECT_DIR$/app/views/releases/offer.html.haml" />
-        <option value="$PROJECT_DIR$/app/views/posts/offer.html.haml" />
-        <option value="$PROJECT_DIR$/app/views/posts/show.html.haml" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.scss" />
-        <option value="$PROJECT_DIR$/db/migrate/20151130161544_big_refactor.rb" />
         <option value="$PROJECT_DIR$/app/models/post.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20151130165558_refactor_minor.rb" />
         <option value="$PROJECT_DIR$/app/models/show.rb" />
@@ -262,8 +174,6 @@
         <option value="$PROJECT_DIR$/db/migrate/20151211151456_kill_releases.rb" />
         <option value="$PROJECT_DIR$/spec/features/albums_spec.rb" />
         <option value="$PROJECT_DIR$/spec/routing/albums_routing_spec.rb" />
-        <option value="$PROJECT_DIR$/app/views/albums/edit.html.haml" />
-        <option value="$PROJECT_DIR$/app/views/albums/new.html.haml" />
         <option value="$PROJECT_DIR$/app/views/albums/index.html.haml" />
         <option value="$PROJECT_DIR$/app/views/albums/index.json.jbuilder" />
         <option value="$PROJECT_DIR$/app/views/albums/show.html.haml" />
@@ -279,6 +189,15 @@
         <option value="$PROJECT_DIR$/app/admin/albums.rb" />
         <option value="$PROJECT_DIR$/spec/factories/albums.rb" />
         <option value="$PROJECT_DIR$/app/models/album.rb" />
+        <option value="$PROJECT_DIR$/app/views/shows/edit.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/shows/new.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/shows/index.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/albums/edit.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/albums/new.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/posts/edit.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/posts/new.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/posts/index.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/posts/show.html.haml" />
       </list>
     </option>
   </component>
@@ -295,10 +214,9 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="6" />
     <option name="y" value="23" />
-    <option name="width" value="1434" />
-    <option name="height" value="828" />
+    <option name="width" value="1440" />
+    <option name="height" value="829" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -326,7 +244,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="RailsProjectView" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -355,71 +273,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="spec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="earthlyframes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="earthlyframes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="factories" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="earthlyframes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="earthlyframes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="earthlyframes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="earthlyframes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="earthlyframes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="earthlyframes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -437,7 +295,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shows" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -455,13 +317,53 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="posts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="earthlyframes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="earthlyframes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="albums" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="earthlyframes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="earthlyframes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -685,17 +587,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="6" y="23" width="1434" height="828" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="829" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27155173" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27539343" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32939634" sideWeight="0.30747128" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.327654" sideWeight="0.31473532" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32372215" sideWeight="0.47711015" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32939634" sideWeight="0.6925287" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.327654" sideWeight="0.68526465" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -706,7 +609,6 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3994778" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.324147" sideWeight="0.47988507" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -728,62 +630,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/neat/grid/_private.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/neat/grid/_shift.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/neat/grid/_omega.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/neat/grid/_media.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/neat/grid/_row.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/neat/grid/_pad.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="26" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20151130161544_big_refactor.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06122449">
-          <caret line="2" column="36" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/show.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.030612245">
@@ -879,7 +725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1863354">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -887,7 +732,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1552795">
           <caret line="70" column="25" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -902,7 +746,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.062111802">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -924,15 +767,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1552795">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/albums/edit.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19607843">
-          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -940,7 +774,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8136646">
           <caret line="44" column="3" selection-start-line="44" selection-start-column="3" selection-end-line="44" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -948,7 +781,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.124223605">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -960,51 +792,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/albums/new.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13071896">
-          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/albums/offer.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/albums/show.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.625">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/albums/show.json.jbuilder">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.031055901">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/components/_footer.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/admin/post.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1028,7 +819,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.310559">
           <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1036,7 +826,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2795031">
           <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1052,7 +841,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24844721">
           <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1068,7 +856,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45751634">
           <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1076,7 +863,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1084,30 +870,141 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1552795">
           <caret line="5" column="31" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin/albums.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/album.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="82" selection-start-line="2" selection-start-column="82" selection-end-line="2" selection-end-column="82" />
+        <state vertical-scroll-proportion="0.06198347">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/albums_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.34917355">
           <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/album.rb">
+    <entry file="file://$PROJECT_DIR$/app/admin/albums.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.062111802">
-          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.06198347">
+          <caret line="2" column="82" selection-start-line="2" selection-start-column="82" selection-end-line="2" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/shows/show.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/shows/show.json.jbuilder">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/components/_footer.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/albums/show.json.jbuilder">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.030927835">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/albums/show.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.03253796">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/shows/index.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/albums/edit.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.25">
+          <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/albums/new.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/shows/edit.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/shows/new.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/posts/edit.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/posts/new.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/posts/index.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.25">
+          <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/posts/show.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06507592">
+          <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
           <folding />
         </state>
       </provider>
