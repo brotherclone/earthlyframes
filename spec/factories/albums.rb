@@ -5,8 +5,12 @@ FactoryGirl.define do
 
   factory :album do
     title {:albumtitle}
-    description {Faker::Lorem.sentence(10)}
-    releasedate {Faker::Date.between(600.days.ago, Date.today) }
+    description {Faker::Lorem.paragraph}
+    price {Faker::Commerce.price}
+    released {Faker::Date.backward(500)}
+    buylink {Faker::Internet.url}
+    format{Faker::Commerce.product_name}
+    cover {'http://www.placehold.it/300x300'}
   end
 
 

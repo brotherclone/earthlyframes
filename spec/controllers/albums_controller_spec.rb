@@ -1,16 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe AlbumsController, type: :controller do
-
   describe 'GET #index' do
-    it 'populates an array of albums' do
+    it 'assigns all albums as @albums' do
       album = FactoryGirl.create(:album)
       get :index
       expect(assigns(:albums)).to eq([album])
-    end
-    it 'renders the :index view' do
-      get :index
-      expect(response).to render_template :index
     end
   end
 
@@ -24,7 +19,7 @@ RSpec.describe AlbumsController, type: :controller do
 
   describe 'GET #new' do
     it 'assigns a new album as @album' do
-      get :new, {}
+      get :new
       expect(assigns(:album)).to be_a_new(Album)
     end
   end
@@ -38,7 +33,7 @@ RSpec.describe AlbumsController, type: :controller do
   end
 
   describe 'POST #create' do
-     context 'with valid params' do
+    context 'with valid params' do
       it 'creates a new Album' do
         expect {
           post :create, {:album => FactoryGirl.attributes_for(:album)}
@@ -59,20 +54,19 @@ RSpec.describe AlbumsController, type: :controller do
 
     context 'with invalid params' do
       it 'assigns a newly created but unsaved album as @album' do
-        post :create, {album: FactoryGirl.attributes_for(:album, releasedate: nil)}
+        post :create, {:album => FactoryGirl.attributes_for(:album, :title => nil)}
         expect(assigns(:album)).to be_a_new(Album)
       end
 
       it 're-renders the new template' do
-        post :create, {:album => FactoryGirl.attributes_for(:album)}
-        get :new
-        expect(response).to render_template :new
+        post :create, {:album => FactoryGirl.attributes_for(:album, :title => nil)}
+        expect(response).to render_template('new')
       end
     end
   end
 
   describe 'PUT #update' do
-    context' "with valid params"' do
+    context 'with valid params' do
       it 'updates the requested album' do
         album = FactoryGirl.create(:album)
         put :update, {:id => album.to_param, :album => FactoryGirl.attributes_for(:album)}
@@ -95,14 +89,14 @@ RSpec.describe AlbumsController, type: :controller do
     context 'with invalid params' do
       it 'assigns the album as @album' do
         album = FactoryGirl.create(:album)
-        put :update, {:id => album.to_param, :album => FactoryGirl.attributes_for(:album, releasedate: nil)}
+        put :update, {:id => album.to_param, :album => FactoryGirl.attributes_for(:album, :title => nil)}
         expect(assigns(:album)).to eq(album)
       end
 
       it 're-renders the edit template' do
         album = FactoryGirl.create(:album)
-        put :update, {:id => album.to_param, :album => FactoryGirl.attributes_for(:album, releasedate: nil)}
-        expect(response).to render_template :edit
+        put :update, {:id => album.to_param, :album => FactoryGirl.attributes_for(:album, :title => nil)}
+        expect(response).to render_template('edit')
       end
     end
   end
@@ -117,8 +111,8 @@ RSpec.describe AlbumsController, type: :controller do
 
     it 'redirects to the albums list' do
       album = FactoryGirl.create(:album)
-      did = album.to_param
-      delete :destroy, {:id => did}
+      aid = album.to_param
+      delete :destroy, {:id => aid}
       expect(response).to redirect_to(albums_path)
     end
   end

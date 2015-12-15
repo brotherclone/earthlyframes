@@ -1,6 +1,5 @@
 ruby '2.1.2'
 source 'https://rubygems.org'
-source 'https://rails-assets.org'
 
 gem 'rails', '4.1.9'
 gem 'pg'
@@ -16,7 +15,10 @@ gem 'foundation-rails'
 gem 'carrierwave'
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
-
+gem 'bourbon'
+gem 'neat'
+gem 'bitters'
+gem 'cloudinary'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -41,4 +43,3 @@ end
 group :production do
   gem 'rails_12factor'
 end
-

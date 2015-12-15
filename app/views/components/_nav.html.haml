@@ -1,17 +1,15 @@
-%nav{:class=>'top-bar', :role=> 'navigation', :data =>{:topbar=>true}}
-  %ul{:class=>'title-area'}
-    %li{:class=>'name'}
-      %h1
-        %a{:href=> home_path}
-          Earthly Frames
-  %section{:class=> 'top-bar-section'}
-    %ul{:class => 'left'}
-      %li
-        %a{:href=>offer_posts_path}
-          Dispatches
-      %li
-        %a{:href=>offer_releases_path}
-          Releases
-      %li
-        %a{:href=>offer_shows_path}
-          Shows
+%header.navigation{:role => 'banner'}
+  .navigation-wrapper
+    %a.logo{:href => root_url}
+      %img{:alt => 'Logo Image', :src => 'https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png'}
+    %a#js-mobile-menu.navigation-menu-button{:href => 'javascript:void(0)'} MENU
+    %nav{:role => 'navigation'}
+      %ul#js-navigation-menu.navigation-menu.show
+        %li.nav-link
+          %a{:href => about_url} About
+        %li.nav-link
+          %a{:href => albums_url} Releases
+        %li.nav-link
+          %a{:href => shows_url} Shows
+        %li.nav-link
+          %a{:href => posts_url} Posts
