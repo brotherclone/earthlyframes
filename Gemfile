@@ -19,6 +19,7 @@ gem 'bourbon'
 gem 'neat'
 gem 'bitters'
 gem 'cloudinary'
+gem 'inline_svg'
 
 group :development, :test do
   gem 'rspec-rails'

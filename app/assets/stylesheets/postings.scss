@@ -1,0 +1,14 @@
+.posts {
+  @include outer-container;
+  .heading {
+    @include span-columns(12);
+  }
+  .body {
+    .left-nav {
+      @include span-columns(4);
+    }
+    .right-well {
+      @include span-columns(8);
+    }
+  }
+}

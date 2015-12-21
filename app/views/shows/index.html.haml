@@ -1,3 +1,11 @@
 = render :partial => 'components/nav'
-.outer
+.shows
+  -@shows.each do |s|
+    .show
+      =s.title
+      =s.description
+      =s.showdate.to_s
+      =s.link
+      %img{:src=>s.flyer}
+
 = render :partial => 'components/footer'

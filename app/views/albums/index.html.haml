@@ -1,19 +1,10 @@
-%h1 Listing albums
-
-%table
-  %thead
-    %tr
-      %th
-      %th
-      %th
-
-  %tbody
-    - @albums.each do |album|
-      %tr
-        %td= link_to 'Show', album
-        %td= link_to 'Edit', edit_album_path(album)
-        %td= link_to 'Destroy', album, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Album', new_album_path
+= render :partial => 'components/nav'
+.albums
+  -@albums.each do |a|
+    .album
+      =a.title
+      =a.format
+      =a.released
+      %img{:src=>a.cover}
+      %a{:href=> albums_path+'/'+a.id.to_s}
+= render :partial => 'components/footer'

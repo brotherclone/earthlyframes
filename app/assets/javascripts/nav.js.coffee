@@ -1,11 +1,11 @@
-$(document).ready ->
-  menuToggle = $('#js-mobile-menu').unbind()
-  $('#js-navigation-menu').removeClass 'show'
+$().ready ->
+  menuToggle = $('#js-navigation-centered-mobile-menu').unbind()
+  $('#js-navigation-centered-menu').removeClass 'show'
   menuToggle.on 'click', (e) ->
     e.preventDefault()
-    $('#js-navigation-menu').slideToggle ->
-      if $('#js-navigation-menu').is(':hidden')
-        $('#js-navigation-menu').removeAttr 'style'
+    $('#js-navigation-centered-menu').slideToggle ->
+      if $('#js-navigation-centered-menu').is(':hidden')
+        $('#js-navigation-centered-menu').removeAttr 'style'
       return
     return
   return

@@ -1,3 +1,15 @@
 = render :partial => 'components/nav'
-.outer
+.posts
+  .heading
+  .body
+    .left-nav
+      = render :partial => 'components/postnav'
+    .right-well
+      -@posts.each do |p|
+        .post
+          .title
+            =p.title
+          .body
+            =p.body.html_safe
+          %img{:src => p.inline_image}
 = render :partial => 'components/footer'
