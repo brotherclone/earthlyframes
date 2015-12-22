@@ -6,10 +6,11 @@
       = render :partial => 'components/postnav'
     .right-well
       .post
-        .title
-          =@post.title
+        #js-parallax-window.parallax-window
+          .parallax-static-content
+            =@post.title
+          #js-parallax-background.parallax-background{:style =>'background: url('+ @post.main_image.to_s+') repeat;'}
         .body
           =@post.body.html_safe
         %img{:src => @post.inline_image}
-        %img{:src => @post.main_image}
 = render :partial => 'components/footer'

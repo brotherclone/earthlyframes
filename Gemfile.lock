@@ -92,6 +92,8 @@ GEM
     diff-lcs (1.2.5)
     domain_name (0.5.25)
       unf (>= 0.0.5, < 1.0.0)
+    erb2haml (0.1.5)
+      html2haml
     erubis (2.7.0)
     execjs (2.6.0)
     factory_girl (4.5.0)
@@ -283,9 +285,10 @@ DEPENDENCIES
   capybara
   carrierwave
   cloudinary
-  coffee-rails (~> 4.0.0)
+  coffee-rails
   database_cleaner
   devise
+  erb2haml
   factory_girl_rails
   faker
   foundation-rails

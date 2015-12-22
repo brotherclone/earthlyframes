@@ -5,7 +5,7 @@ gem 'rails', '4.1.9'
 gem 'pg'
 gem 'sass-rails', '~> 5.0.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
@@ -20,6 +20,7 @@ gem 'neat'
 gem 'bitters'
 gem 'cloudinary'
 gem 'inline_svg'
+gem 'kss-rails'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -30,11 +31,11 @@ group :development, :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'table_print'
+  gem 'erb2haml' #rake haml:replace_erbs / rake haml:convert_erbs
 end
 
 group :doc do
   gem 'sdoc'
-  gem 'kss-rails'
 end
 
 group :development do

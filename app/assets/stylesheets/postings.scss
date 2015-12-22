@@ -5,10 +5,10 @@
   }
   .body {
     .left-nav {
-      @include span-columns(4);
+      @include span-columns(2);
     }
     .right-well {
-      @include span-columns(8);
+      @include span-columns(10);
     }
   }
 }
