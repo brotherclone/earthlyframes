@@ -1,8 +1,9 @@
 %header.navigation-centered{:role => 'banner'}
   .navigation-centered-wrapper
     %a.mobile-logo{:href => root_url}
-      = inline_svg 'svg/logo.svg', class: 'ef-logo'
-    %a#js-navigation-centered-mobile-menu.navigation-centered-mobile-menu{:href => root_url} Menu
+      = inline_svg 'svg/logo.svg', class: 'ef'
+    %a#js-navigation-centered-mobile-menu.navigation-centered-mobile-menu{:href => root_url}
+      =icon('reorder')
     %nav{:role => 'navigation'}
       %ul#js-navigation-centered-menu.navigation-centered-menu.show
         %li.nav-link
@@ -11,7 +12,7 @@
           %a{:href => albums_url} Albums
         %li.nav-link.logo
           %a.logo{:href => root_url}
-            = inline_svg 'svg/logo.svg', class: 'ef-logo'
+            = inline_svg 'svg/logo.svg', class: 'ef'
         %li.nav-link
           %a{:href => shows_url} Shows
         %li.nav-link

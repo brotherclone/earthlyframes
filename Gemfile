@@ -21,6 +21,7 @@ gem 'bitters'
 gem 'cloudinary'
 gem 'inline_svg'
 gem 'kss-rails'
+gem 'font-awesome-sass', '~> 4.5.0'
 
 group :development, :test do
   gem 'rspec-rails'

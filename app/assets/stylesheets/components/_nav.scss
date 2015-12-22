@@ -2,39 +2,43 @@
   $large-screen: em(860) !default;
   $centered-navigation-height: 60px;
   $centered-navigation-logo-height: 2em;
-
+  @extend %header-texture;
   width: 100%;
-
-  // Mobile view
   .mobile-logo {
     display: inline;
     float: left;
-
     @include media($large-screen) {
       display: none;
     }
-
-    img {
-      max-height: $centered-navigation-logo-height;
+    .ef {
+      fill: $color-white;
+      height: 1.65rem;
+      margin-top: 0.5rem;
+      margin-left: 0.25rem;
     }
   }
-
   .navigation-centered-mobile-menu {
     float: right;
     padding-top: 0.5em;
-
+    i{
+      margin-right: 0.25rem;
+      color: $color-white;
+      font-size: 2rem;
+      &:hover{
+        color: $color-peach;
+      }
+    }
     @include media ($large-screen) {
       display: none;
     }
   }
-
-  // Nav menu
   .navigation-centered-wrapper {
     @include clearfix;
     @include outer-container;
     position: relative;
+    min-height: 3rem;
+    margin-bottom: 2rem;
   }
-
   ul.navigation-centered-menu {
     clear: both;
     display: none;
@@ -42,41 +46,40 @@
     overflow: visible;
     padding: 0;
     width: 100%;
-
+    margin-right: 0.25rem;
     &.show {
       display: block;
     }
-
     @include media ($large-screen) {
       display: block;
       text-align: center;
     }
   }
-
-  // Nav items
   ul li.nav-link {
     display: block;
     text-align: right;
     width: 100%;
-
     a {
       display: inline-block;
+      text-decoration: none;
+      color: $color-white;
+      font-size: 1.75rem;
+      text-transform: lowercase;
+      &:hover{
+        text-decoration: none;
+        color: $color-peach;
+      }
     }
-
     &:last-child a {
       padding-right: 0;
     }
-
     @include media($large-screen) {
       display: inline;
-
       a {
         padding-right: 1em;
       }
     }
   }
-
-  // Centered logo
   li.logo.nav-link {
     display: none;
     line-height: 0;
@@ -84,11 +87,20 @@
     @include media($large-screen) {
       display: inline;
     }
+    .logo {
+      margin-bottom: -$centered-navigation-logo-height / 3;
+      max-height: $centered-navigation-logo-height;
+      .ef{
+        fill: $color-white;
+        height: 2rem;
+        margin-top: 0.5rem;
+        margin-bottom: -0.45rem;
+        &:hover{
+          fill:$color-peach;
+        }
+      }
+    }
   }
 
-  .ef-logo {
-    margin-bottom: -$centered-navigation-logo-height / 3;
-    max-height: $centered-navigation-logo-height;
-    color: white;
-  }
+
 }
