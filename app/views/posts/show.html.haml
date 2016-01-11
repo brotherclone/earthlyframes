@@ -8,9 +8,11 @@
       .post
         #js-parallax-window.parallax-window
           .parallax-static-content
-            =@post.title
+            %h1{:class=>'overlaytitle'}
+              =@post.title
           #js-parallax-background.parallax-background{:style =>'background: url('+ @post.main_image.to_s+') repeat;'}
-        .body
+        .postbody
+          %img{:src => @post.inline_image, :class=>'initimg'}
           =@post.body.html_safe
-        %img{:src => @post.inline_image}
+
 = render :partial => 'components/footer'

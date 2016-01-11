@@ -10,13 +10,14 @@ $parallax-background-height: $parallax-window-height * 2;
 }
 
 .parallax-static-content {
-  color: #9A9A8A;
   padding: 8em 0;
   position: relative;
   z-index: 9;
 }
 
 .parallax-background {
+  @include filter(grayscale(50%));
+  @include filter(brightness(1.1));
   background-position: top;
   background-size: cover;
   background-color: beige;
