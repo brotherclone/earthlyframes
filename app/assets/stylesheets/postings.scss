@@ -40,6 +40,30 @@
           max-width: 400px;
         }
       }
+      .postpreview{
+        .img{
+          width: 100%;
+          margin-bottom: 1rem;
+          background-size: cover;
+          height: 200px;
+          background-repeat: no-repeat;
+        }
+        .title{
+          font-weight: 500;
+          color: $color-peach;
+          font-size: 2rem;
+        }
+        .snippet{
+          font-weight: 100;
+          &:after{
+            content: ' ...'
+          }
+        }
+        .rule{
+          margin: 1rem 0 2rem 0;
+          color: $color-grey;
+        }
+      }
     }
   }
   .overlaytitle{

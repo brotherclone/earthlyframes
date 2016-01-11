@@ -6,10 +6,12 @@
       = render :partial => 'components/postnav'
     .right-well
       -@posts.each do |p|
-        .post
+        .postpreview
+          .img{:style =>'background: url('+p.main_image.to_s+')'}
           .title
             =p.title
-          .body
+          .snippet
             =p.body.html_safe
-          %img{:src => p.inline_image}
+          .rule
+            %hr
 = render :partial => 'components/footer'
