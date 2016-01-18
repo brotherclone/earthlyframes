@@ -1,0 +1,71 @@
+// Shows
+//
+// ef.layouts.shows
+
+.shows{
+  @include outer-container;
+  .show:last-of-type{
+    hr{
+      display: none;
+    }
+    margin-bottom: 4rem;
+  }
+  .show{
+    @include outer-container;
+    hr{
+      margin: 2rem 0 2rem 0;
+    }
+    .flyer{
+      vertical-align: top;
+      img{
+        margin: 0 auto 0 auto;
+        vertical-align: top;
+      }
+    }
+    .info{
+      .description{
+        font-size: 1rem;
+        font-weight: 100;
+        color: $color-grey;
+        font-size: modular-scale(1);
+      }
+      a{
+        font-size: 1rem;
+        font-weight: 100;
+        color: $color-peach;
+      }
+    }
+  }
+  .show.upcoming{
+    .flyer{
+      @include span-columns(2);
+      img{
+        max-width: 400px;
+      }
+    }
+    .info{
+      @include shift(1);
+      @include span-columns(4);
+      h2{
+        font-size: 1.25rem;
+        color: $color-storm;
+      }
+    }
+  }
+  .show.past{
+    .flyer{
+      @include span-columns(2);
+      img{
+        max-width: 120px;
+      }
+    }
+    .info{
+      @include shift(2);
+      @include span-columns(6);
+      h3{
+        font-size: 1.15rem;
+        color: $color-grey;
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+// Shows
+//
+// ef.layouts.albums
+
+.albums{
+  @include outer-container;
+  .album{
+    .cover{
+
+    }
+    .info{
+
+    }
+  }
+}

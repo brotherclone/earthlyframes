@@ -1,11 +1,28 @@
 = render :partial => 'components/nav'
 .shows
-  -@shows.each do |s|
-    .show
-      =s.title
-      =s.description
-      =s.showdate.to_s
-      =s.link
-      %img{:src=>s.flyer}
-
+  %h1{:class=>'page-header'} Shows
+  -@showByDate.each do |s|
+    - today = Date.today
+    - if s.showdate >= today
+      .show.upcoming
+        .flyer
+          %img{:src=>s.flyer}
+        .info
+          %h2
+            =s.title+' | '+s.showdate.strftime('%F').to_s+' '+s.showdate.strftime('%H:%M').to_s
+          .description
+            =s.description.html_safe
+            %a{:href => s.link}
+              Location
+        %hr
+    - else
+      .show.past
+        .flyer
+          %img{:src=>s.flyer}
+        .info
+          %h3
+            =s.title
+          .description
+            =s.description.html_safe
+        %hr
 = render :partial => 'components/footer'

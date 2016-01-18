@@ -1,10 +1,15 @@
 = render :partial => 'components/nav'
+%h1{:class=>'page-header'} Albums
 .albums
-  -@albums.each do |a|
+  -@albumsByDate.each do |a|
     .album
-      =a.title
-      =a.format
-      =a.released
-      %img{:src=>a.cover}
-      %a{:href=> albums_path+'/'+a.id.to_s}
+      .cover
+        %a{:href=> albums_path+'/'+a.id.to_s}
+          %img{:src=>a.cover}
+      .info
+        %h1
+          %a{:href=> albums_path+'/'+a.id.to_s}
+            =a.title
+        %h2
+          =a.format
 = render :partial => 'components/footer'

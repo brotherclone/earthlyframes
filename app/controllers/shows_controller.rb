@@ -3,6 +3,7 @@ class ShowsController < ApplicationController
 
   def index
     @shows = Show.all
+    @showByDate = Show.all.order(released: :desc)
   end
 
   def show

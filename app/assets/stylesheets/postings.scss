@@ -1,11 +1,8 @@
-// Posting Body
+// Postings
 //
 // ef.layouts.postings
 .posts {
   @include outer-container;
-  .heading {
-    @include span-columns(12);
-  }
   .body {
     .left-nav {
       vertical-align: top;
