@@ -12,7 +12,7 @@
   $footer-disclaimer-color: transparentize($footer-color, 0.6);
 
   @include gradient(darken($color-storm, 10%), $color-storm);
-  padding: ($base-spacing * 2) $gutter;
+  padding: 3em 0 0 2.5rem;
   width: 100%;
 
   .footer-logo {

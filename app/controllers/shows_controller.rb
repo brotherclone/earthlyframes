@@ -3,7 +3,7 @@ class ShowsController < ApplicationController
 
   def index
     @shows = Show.all
-    @showByDate = Show.all.order(released: :desc)
+    @showByDate = Show.all.order(showdate: :desc)
   end
 
   def show

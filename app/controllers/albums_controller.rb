@@ -2,7 +2,7 @@ class AlbumsController < ApplicationController
   before_action :set_album, only: [:show, :edit, :update, :destroy]
   def index
     @albums = Album.all
-    @albumsByDate = Album.all.order(showdate: :desc)
+    @albumsByDate = Album.all.order(released: :desc)
   end
 
   def show
