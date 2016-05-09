@@ -33,8 +33,49 @@
       }
       font-weight: 100;
     }
-  }
-  .albumdetail{
+    &.detail{
+      .left{
+        @include span-columns(4);
+        .cover{
+          width: 100%;
+        }
+        .buy{
+          margin-top: 0.5rem;
+          .price{
+            font-weight: 400;
+            font-size: 1.25rem;
+            color: $color-peach;
+          }
+          .button{
+            font-size: 1rem;
+            float: right;
+          }
+        }
+      }
+      .right{
+        @include span-columns(8);
+        .title{
+          margin: 0 0 0 1rem;
+          font-weight: 400;
+          font-size: 3rem;
+          color: $color-taupe;
+        }
 
+        .info{
+          text-align: left;
+          text-transform: uppercase;
+          margin-left: 1rem;
+          font-size: 1.25rem;
+          color: $color-grey;
+          font-weight: 100;
+        }
+        .description{
+          margin: 0.5rem 0 2rem 1rem;
+          font-size: 1rem;
+          font-weight:100;
+          color: $color-storm;
+        }
+      }
+    }
   }
 }

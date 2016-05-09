@@ -1,6 +1,19 @@
 = render :partial => 'components/nav'
 .albums
-  .albumdetail
-
-
+  .album.detail
+    .left
+      %img{:src => @album.cover, :class=>'cover', :alt => @album.title}
+      .buy
+        %span{:class=>'price'}
+          =number_to_currency(@album.price, :unit => '$')
+        %a{:href=>@album.buylink, :class=>'button'}
+          %i
+          %span Buy
+    .right
+      .title
+        =@album.title
+      .info
+        =@album.format+' | '+@album.released.strftime('%b %y')
+      .description
+        =@album.description.html_safe
 = render :partial => 'components/footer'

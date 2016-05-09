@@ -1,30 +1,20 @@
 require 'rails_helper'
 
-RSpec.feature 'Navigation', :type => :feature, :js=>true do
+describe 'Navigation is available', :type => :feature do
 
-  describe 'It checks the main navigation links' do
-
-    scenario 'click the about nav item' do
-      navigation_check('about', about_path)
-    end
-
-    scenario 'click the albums nav item' do
-      navigation_check('albums', albums_path)
-    end
-
-    scenario 'click the posts nav item' do
-      navigation_check('posts', posts_path)
-    end
-
-    scenario 'click the shows nav item' do
-      navigation_check('shows', shows_path)
-    end
-
-    def navigation_check(link,path)
-      visit home_path
-      click_link(link)
-      expect(current_path).to eq(path)
-    end
-
+  it 'checks for top navigation', :js => true  do
+    visit root_path
+    expect(page).to have_link('About', @href=about_url)
+    expect(page).to have_link('Albums', @href=about_url)
+    expect(page).to have_link('Shows', @href=about_url)
+    expect(page).to have_link('Posts', @href=about_url)
   end
+
+  it 'checks for footer navigation', :js => true  do
+    visit root_path
+    expect(page).to have_link('Privacy', @href=privacy_url)
+    expect(page).to have_link('Terms and Conditions', @href=eula_url)
+  end
+
+
 end
