@@ -3,7 +3,7 @@ class ShowsController < ApplicationController
 
   def index
     @shows = Show.all
-    @showByDate = Show.all.order(showdate: :desc)
+    @showbydate = Show.all.order(showdate: :desc)
   end
 
   def show
@@ -58,6 +58,6 @@ class ShowsController < ApplicationController
     end
 
     def show_params
-      params.require(:show).permit(:title,:showdate,:description,:location,:link,:flyer)
+      params.require(:show).permit(:title,:showdate,:description,:location,:link,:flyer,:brief_description)
     end
 end

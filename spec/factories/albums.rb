@@ -5,6 +5,7 @@ FactoryGirl.define do
 
   factory :album do
     title {:albumtitle}
+    brief_description {Faker::Lorem.sentence}
     description {Faker::Lorem.paragraph}
     price {Faker::Commerce.price}
     released {Faker::Date.backward(500)}

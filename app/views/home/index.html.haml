@@ -1,4 +1,17 @@
 = render :partial => 'components/nav'
+
+-p = Post.first(3)
+-p.each do |post|
+  -@cardholder << CardItem.new(post.title, post.description, post.main_image, post_path(post.id))
+-s = Show.first(3)
+-s.each do |show|
+  -@cardholder << CardItem.new(show.title, show.brief_description, show.flyer, show_path(show.id))
+-a = Album.first(3)
+-a.each do |album|
+  -@cardholder << CardItem.new(album.title, album.brief_description, album.cover, album_path(album.id))
+-@cardholder = @cardholder.shuffle
+-@cardholder = @cardholder.take(3)
+
 .outer
   .side-image
     .images-wrapper
@@ -9,25 +22,15 @@
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam assumenda nihil suscipit obcaecati sit, cum quod corporis adipisci ipsam, fugiat, quae error. Eaque commodi, dicta quidem explicabo mollitia inventore quibusdam.
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam assumenda nihil suscipit obcaecati sit, cum quod corporis adipisci ipsam, fugiat, quae error. Eaque commodi, dicta quidem explicabo mollitia inventore quibusdam.
   .cards
-    .card
-      .card-image
-        %img{:alt => "", :src => "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png"}
-      .card-header
-        First Card
-      .card-copy
-        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.
-    .card
-      .card-image
-        %img{:alt => "", :src => "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-4.png"}
-      .card-header
-        Another Card
-      .card-copy
-        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.
-    .card
-      .card-image
-        %img{:alt => "", :src => "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-3.png"}
-      .card-header
-        The Last Card
-      .card-copy
-        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    -@cardholder.each do |card|
+      .card
+        %a{:href => card.link}
+          .card-image
+            %img{:alt => card.title, :src => card.img.to_s}
+        .card-header
+          %a{:href => card.link}
+            = card.title
+        .card-copy
+          = card.description.to_s.truncate(80)
+
 = render :partial => 'components/footer'

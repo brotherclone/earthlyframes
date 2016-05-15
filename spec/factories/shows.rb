@@ -9,6 +9,7 @@ FactoryGirl.define do
   factory :show do
     title {:showtitle}
     showdate {Faker::Date.between(2.years.ago, Date.today)}
+    brief_description {Faker::Lorem.sentence}
     description {Faker::Lorem.paragraph}
     location {addy}
     link {Faker::Internet.url}

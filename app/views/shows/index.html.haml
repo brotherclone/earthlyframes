@@ -1,7 +1,7 @@
 = render :partial => 'components/nav'
 .shows
   %h1{:class=>'page-header'} Shows
-  -@showByDate.each do |s|
+  -@showbydate.each do |s|
     - today = Date.today
     - if s.showdate >= today
       .show.upcoming

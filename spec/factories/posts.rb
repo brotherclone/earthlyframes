@@ -6,6 +6,7 @@ FactoryGirl.define do
   factory :post do
     title {:posttitle}
     body { Faker::Lorem.paragraph}
+    description {Faker::Lorem.sentence}
     main_image {'http://www.placehold.it/1250x500'}
     inline_image {'http://www.placehold.it/250x250'}
   end

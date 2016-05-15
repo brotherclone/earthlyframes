@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151211162816) do
+ActiveRecord::Schema.define(version: 20160515110006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,7 +56,8 @@ ActiveRecord::Schema.define(version: 20151211162816) do
     t.float  "price"
     t.date   "released"
     t.string "buylink"
-    t.text   "format"
+    t.string "format"
+    t.string "brief_description"
   end
 
   create_table "posts", force: true do |t|
@@ -64,6 +65,7 @@ ActiveRecord::Schema.define(version: 20151211162816) do
     t.text   "body"
     t.string "main_image"
     t.string "inline_image"
+    t.string "description"
   end
 
   create_table "shows", force: true do |t|
@@ -73,6 +75,7 @@ ActiveRecord::Schema.define(version: 20151211162816) do
     t.string   "location"
     t.string   "link"
     t.string   "flyer"
+    t.string   "brief_description"
   end
 
   create_table "songs", force: true do |t|
