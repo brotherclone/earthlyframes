@@ -1,8 +1,12 @@
 require 'rails_helper'
 
-RSpec.feature 'Albums', :type => :feature, :js=>true do
+describe 'Albums display correctly', :type => :feature do
 
-  describe 'It checks that albums have required content' do
-
+  it 'checks the albums index page', :js => true  do
+    visit albums_path
+    expect(page).to have_css('h1.page-header')
+    expect(page).to have_content('Albums')
+    expect(page).to have_css('div.albums')
   end
+
 end
