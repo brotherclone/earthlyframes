@@ -1,71 +1,70 @@
 .outer{
   @include outer-container();
 }
-.side-image {
-  margin-top: 2rem;
-  $base-line-height: 1.5em !default;
-  $action-color: #477DCA !default;
-  $dark-gray: #333 !default;
-  $large-screen: em(860) !default;
-  $base-font-color: $dark-gray !default;
-  $side-image-background-top: #B5EBEB;
-  $side-image-background-bottom: #5DAC5D;
-  $side-image-content-background: #F9F9F9;
-  $side-image-border: 1px solid darken(transparentize($side-image-background-bottom, 0.8), 30%);
-
-  background: $side-image-content-background;
-
-  @include media($large-screen) {
-    @include row(table);
+.image-gradient-dynamic {
+  $image-gradient-color-top: $color-peach;
+  $transparency-top: 0.95;
+  $image-gradient-color-bottom: $color-storm;
+  $transparency-bottom: 0.85;
+  $vertical-angle: 0deg;
+  $image-gradient-color-left: $color-bare;
+  $transparency-left: 0.90;
+  $image-gradient-color-right: $color-taupe;
+  $transparency-right: 0.85;
+  $horizontal-angle: 90deg;
+  line-height: 0;
+  position: relative;
+  width: 100%;
+  img {
+    height: auto;
+    left: 0;
+    position: relative;
+    top: 0;
+    width: 100%;
   }
-
-  .images-wrapper {
-    @include background(url('https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png'), linear-gradient($side-image-background-top, $side-image-background-bottom), no-repeat $side-image-background-top scroll);
-    background-color: $side-image-background-top;
-    background-size: cover;
-    border-bottom: $side-image-border;
-    display: block;
-    min-height: 12em;
-    padding: 3em;
-
-    @include media($large-screen) {
-      @include span-columns(4);
-      background-position: bottom;
-      background-size: cover;
-      border-right: $side-image-border;
+  .copy {
+    left: 50%;
+    margin: auto;
+    position: absolute;
+    text-align: center;
+    top: 56%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    @include media($medium-screen) {
+      font-size: 3.75em;
     }
-  }
-
-  .side-image-content {
-    @include span-columns(12);
-    padding: 1em 1em 4em 1em;
-
-    @include media($large-screen) {
-      @include span-columns(8);
-      padding: 4em 4em 8em 4em;
-    }
-
-    h1 {
-      margin-bottom: 0.9em;
-    }
-
-    h4 {
-      background: #BBB;
-      color: white;
-      display: inline-block;
-      font-size: 0.75em;
-      margin-bottom: 1.3em;
-      padding: 3px 8px;
-      text-transform: uppercase;
-    }
-
+    font-size: 2rem;
     p {
-      color: $base-font-color;
-      line-height: $base-line-height;
-      margin-bottom: 3em;
+      font-family: $heading-font-family;
+      color: $color-white;
+      line-height: 2.5rem;
+      padding: 2.5em 0;
+      position: relative;
+    }
+  }
+
+  .overlay {
+    @include position(absolute, 0);
+    background-color: transparentize($image-gradient-color-top, $transparency-top);
+    background-image: linear-gradient($vertical-angle,
+            transparentize($image-gradient-color-top, $transparency-top),
+            transparentize($image-gradient-color-bottom, $transparency-bottom)
+    );
+    display: block;
+
+    &::after {
+      @include position(absolute, 0);
+      background-color: transparentize($image-gradient-color-left, $transparency-right);
+      background-image: linear-gradient($horizontal-angle,
+              transparentize($image-gradient-color-left, $transparency-left),
+              transparentize($image-gradient-color-right, $transparency-right)
+      );
+      content: "";
+      display: block;
     }
   }
 }
+
 .cards {
   margin: 2rem 0 2rem 0;
   @include display(flex);
@@ -100,8 +99,6 @@
   cursor: pointer;
   margin: 0 $card-margin $base-spacing $card-margin;
   position: relative;
-
-
   .card-image {
     overflow: hidden;
     height: 150px;
@@ -115,7 +112,6 @@
       opacity: 1;
     }
   }
-
   .card-header {
     @include transition (all 0.2s ease-in-out);
     background-color: $card-header-background;
@@ -133,7 +129,6 @@
       }
     }
   }
-
   .card-copy {
     font-size: 0.9em;
     line-height: 1.5em;
@@ -142,7 +137,6 @@
       margin: 0 0 ($base-spacing / 2);
     }
   }
-
   &:focus,
   &:hover {
     cursor: pointer;
@@ -150,10 +144,8 @@
       opacity: $card-image-hover-opacity;
     }
   }
-
   &:active {
     background-color: $card-background;
-
     .card-header {
       background-color: $card-background;
     }

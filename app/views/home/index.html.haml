@@ -13,14 +13,11 @@
 -@cardholder = @cardholder.take(3)
 
 .outer
-  .side-image
-    .images-wrapper
-    .side-image-content
-      %h4 Topic Name
-      %h1 Message with a gradient image
-      %p
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam assumenda nihil suscipit obcaecati sit, cum quod corporis adipisci ipsam, fugiat, quae error. Eaque commodi, dicta quidem explicabo mollitia inventore quibusdam.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam assumenda nihil suscipit obcaecati sit, cum quod corporis adipisci ipsam, fugiat, quae error. Eaque commodi, dicta quidem explicabo mollitia inventore quibusdam.
+  .image-gradient-dynamic
+    %img{ :src=>asset_path('ef.jpg'), :alt=>'Earthly Frames'}
+    .overlay
+    .copy
+      %p The Earthly Frames
   .cards
     -@cardholder.each do |card|
       .card

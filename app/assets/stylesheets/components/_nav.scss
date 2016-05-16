@@ -23,7 +23,7 @@
   }
   .navigation-centered-mobile-menu {
     float: right;
-    padding-top: 0.5em;
+    padding: 0.5em 0 0.75rem 0;
     i{
       margin-right: 0.25rem;
       color: $color-white;
@@ -41,7 +41,9 @@
     @include outer-container;
     position: relative;
     min-height: 3rem;
-    margin-bottom: 2rem;
+    @include media ($large-screen) {
+      margin-bottom: 2rem;
+    }
   }
   ul.navigation-centered-menu {
     clear: both;
@@ -50,7 +52,7 @@
     overflow: visible;
     padding: 0;
     width: 100%;
-    margin-right: 0.25rem;
+    margin-left: -0.75rem;
     &.show {
       display: block;
     }
@@ -61,7 +63,7 @@
   }
   ul li.nav-link {
     display: block;
-    text-align: right;
+    text-align: center;
     width: 100%;
     a {
       display: inline-block;
@@ -88,7 +90,6 @@
   li.logo.nav-link {
     display: none;
     line-height: 0;
-
     @include media($large-screen) {
       display: inline;
     }
@@ -106,6 +107,4 @@
       }
     }
   }
-
-
 }
