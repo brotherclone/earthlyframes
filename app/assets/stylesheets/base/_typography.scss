@@ -1,6 +1,6 @@
 body {
   color: $base-font-color;
-  font-family: $base-font-family;
+  font-family: $base-font-family !important;
   font-feature-settings: "kern", "liga", "pnum";
   font-size: $base-font-size;
   line-height: $base-line-height;
@@ -12,7 +12,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $heading-font-family;
+  font-family: $heading-font-family !important;
   font-size: $base-font-size;
   line-height: $heading-line-height;
   margin: 0 0 $small-spacing;
@@ -48,5 +48,19 @@ picture {
   max-width: 100%;
 }
 
-//font-family: "ff-dax-compact-web-pro";
-// font-family: "futura-pt-condensed";
+ul,ol{
+  list-style-type: circle;
+  li{
+    margin: 0.75rem 0 1rem 0;
+    ul,ol{
+      list-style-type: upper-alpha;
+      li{
+        margin: 0.5rem 0 0.75rem 0;
+        ul,ol{
+          list-style: lower-alpha;
+          margin: 0.25rem 0 0.5rem 0;
+        }
+      }
+    }
+  }
+}

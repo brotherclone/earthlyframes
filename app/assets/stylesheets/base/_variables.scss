@@ -1,3 +1,4 @@
+@import 'core/pallette';
 // Typography
 $base-font-family: "futura-pt-condensed", sans-serif;
 $heading-font-family: "ff-dax-compact-web-pro", sans-serif;
@@ -22,15 +23,15 @@ $medium-gray: #999;
 $light-gray: #ddd;
 
 // Font Colors
-$base-font-color: $dark-gray;
-$action-color: $blue;
+$base-font-color: $color-storm;
+$action-color: $color-peach;
 
 // Border
 $base-border-color: $light-gray;
 $base-border: 1px solid $base-border-color;
 
 // Background Colors
-$base-background-color: #fff;
+$base-background-color: $color-white;
 $secondary-background-color: tint($base-border-color, 75%);
 
 // Forms
