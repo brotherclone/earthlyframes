@@ -11,6 +11,5 @@ Rails.application.routes.draw do
   get 'home', to:'home#index'
   get 'about', to:'about#index'
   get 'eula', to:'eula#index'
-  get 'privacy', to:'privacy#index'
   root 'home#index'
 end

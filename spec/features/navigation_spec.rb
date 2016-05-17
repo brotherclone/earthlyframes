@@ -12,7 +12,6 @@ describe 'Navigation is available', :type => :feature do
 
   it 'checks for footer navigation', :js => true  do
     visit root_path
-    expect(page).to have_link('Privacy', @href=privacy_url)
     expect(page).to have_link('Terms and Conditions', @href=eula_url)
   end
 

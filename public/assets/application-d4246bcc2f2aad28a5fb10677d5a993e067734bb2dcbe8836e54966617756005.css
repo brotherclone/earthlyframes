@@ -12,13 +12,13 @@ html {
 /* line 1, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/base/_buttons.scss */
 button, input[type="button"], input[type="reset"], input[type="submit"] {
   appearance: none;
-  background-color: #477dca;
+  background-color: #e17f62;
   border: 0;
   border-radius: 3px;
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: "futura-pt", sans-serif;
+  font-family: "futura-pt-condensed", sans-serif;
   font-size: 1em;
   -webkit-font-smoothing: antialiased;
   font-weight: 600;
@@ -32,7 +32,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 }
 /* line 21, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/base/_buttons.scss */
 button:hover, button:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus {
-  background-color: #3964a2;
+  background-color: #b4664e;
   color: #fff;
 }
 /* line 27, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/base/_buttons.scss */
@@ -42,7 +42,7 @@ button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, in
 }
 /* line 31, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/base/_buttons.scss */
 button:disabled:hover, input[type="button"]:disabled:hover, input[type="reset"]:disabled:hover, input[type="submit"]:disabled:hover {
-  background-color: #477dca;
+  background-color: #e17f62;
 }
 
 /* line 1, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/base/_forms.scss */
@@ -58,7 +58,7 @@ input,
 label,
 select {
   display: block;
-  font-family: "futura-pt", sans-serif;
+  font-family: "futura-pt-condensed", sans-serif;
   font-size: 1em;
 }
 
@@ -79,12 +79,12 @@ label abbr {
 /* line 29, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/base/_forms.scss */
 input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea,
 select[multiple=multiple] {
-  background-color: #fff;
+  background-color: #e1e1e1;
   border: 1px solid #ddd;
   border-radius: 3px;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
-  font-family: "futura-pt", sans-serif;
+  font-family: "futura-pt-condensed", sans-serif;
   font-size: 1em;
   margin-bottom: 0.75em;
   padding: 0.5em;
@@ -99,14 +99,14 @@ select[multiple=multiple]:hover {
 /* line 47, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/base/_forms.scss */
 input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, input:not([type]):focus, textarea:focus,
 select[multiple=multiple]:focus {
-  border-color: #477dca;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(55, 112, 192, 0.7);
+  border-color: #e17f62;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(221, 110, 77, 0.7);
   outline: none;
 }
 /* line 53, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/base/_forms.scss */
 input[type="color"]:disabled, input[type="date"]:disabled, input[type="datetime"]:disabled, input[type="datetime-local"]:disabled, input[type="email"]:disabled, input[type="month"]:disabled, input[type="number"]:disabled, input[type="password"]:disabled, input[type="search"]:disabled, input[type="tel"]:disabled, input[type="text"]:disabled, input[type="time"]:disabled, input[type="url"]:disabled, input[type="week"]:disabled, input:not([type]):disabled, textarea:disabled,
 select[multiple=multiple]:disabled {
-  background-color: #f2f2f2;
+  background-color: #d6d6d6;
   cursor: not-allowed;
 }
 /* line 57, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/base/_forms.scss */
@@ -203,8 +203,8 @@ th {
 
 /* line 1, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/base/_typography.scss */
 body {
-  color: #333;
-  font-family: "futura-pt", sans-serif;
+  color: #3e494b;
+  font-family: "futura-pt-condensed", sans-serif !important;
   font-feature-settings: "kern", "liga", "pnum";
   font-size: 1em;
   line-height: 1.5;
@@ -217,7 +217,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "futura-pt", sans-serif;
+  font-family: "ff-dax-compact-web-pro", sans-serif !important;
   font-size: 1em;
   line-height: 1.2;
   margin: 0 0 0.75em;
@@ -230,13 +230,13 @@ p {
 
 /* line 25, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/base/_typography.scss */
 a {
-  color: #477dca;
+  color: #e17f62;
   text-decoration: none;
   transition: color 150ms ease;
 }
 /* line 30, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/base/_typography.scss */
 a:active, a:focus, a:hover {
-  color: #355e98;
+  color: #a95f4a;
 }
 
 /* line 37, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/base/_typography.scss */
@@ -253,6 +253,28 @@ img,
 picture {
   margin: 0;
   max-width: 100%;
+}
+
+/* line 51, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/base/_typography.scss */
+ul, ol {
+  list-style-type: circle;
+}
+/* line 53, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/base/_typography.scss */
+ul li, ol li {
+  margin: 0.75rem 0 1rem 0;
+}
+/* line 55, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/base/_typography.scss */
+ul li ul, ul li ol, ol li ul, ol li ol {
+  list-style-type: upper-alpha;
+}
+/* line 57, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/base/_typography.scss */
+ul li ul li, ul li ol li, ol li ul li, ol li ol li {
+  margin: 0.5rem 0 0.75rem 0;
+}
+/* line 59, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/base/_typography.scss */
+ul li ul li ul, ul li ul li ol, ul li ol li ul, ul li ol li ol, ol li ul li ul, ol li ul li ol, ol li ol li ul, ol li ol li ol {
+  list-style: lower-alpha;
+  margin: 0.25rem 0 0.5rem 0;
 }
 
 /* Active Admin CSS */
@@ -6292,60 +6314,106 @@ body {
   content: "";
 }
 
-/* line 131, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/core/_textures.scss */
+/* line 138, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/core/_textures.scss */
 body {
-  background: url(url(/textures/refills/little_pluses.png)), -webkit-linear-gradient(-450deg, #edeeec, #d4d5d2), center no-repeat #edeeec scroll;
-  background: url(url(/textures/refills/little_pluses.png)), linear-gradient(180deg, #edeeec, #d4d5d2), center no-repeat #edeeec scroll;
+  background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/textures/diagonal-noise.png"), -webkit-linear-gradient(-450deg, white, white), center no-repeat white scroll;
+  background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/textures/diagonal-noise.png"), linear-gradient(180deg, white, white), center no-repeat white scroll;
 }
 
-/* line 150, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/core/_textures.scss */
+/* line 157, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/core/_textures.scss */
 .navigation-centered {
-  background: url(url(/textures/refills/fancy_deboss.png)), -webkit-linear-gradient(-450deg, #3e494b, #556467), center no-repeat #3e494b scroll;
-  background: url(url(/textures/refills/fancy_deboss.png)), linear-gradient(180deg, #3e494b, #556467), center no-repeat #3e494b scroll;
+  background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/textures/inverted/paper.png"), -webkit-linear-gradient(-315deg, #3e494b, #556467), center no-repeat #3e494b scroll;
+  background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/textures/inverted/paper.png"), linear-gradient(45deg, #3e494b, #556467), center no-repeat #3e494b scroll;
 }
 
-/* line 1, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
+/* line 6, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/core/_typography.scss */
+.page-header {
+  color: #958977;
+  margin: 0 auto 1.75rem auto;
+  text-align: center;
+  font-weight: 800;
+  font-size: 2.5rem;
+}
+
+/* line 14, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/core/_typography.scss */
+.basic {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.333em;
+  font-weight: 100;
+  margin-top: 2rem;
+  color: #3e494b;
+}
+/* line 20, /Users/gawalsh/.rvm/gems/ruby-2.1.2/gems/bourbon-4.2.6/app/assets/stylesheets/addons/_clearfix.scss */
+.basic::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+/* line 20, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/core/_typography.scss */
+.basic article {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  margin-left: 25.58941%;
+}
+/* line 89, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.basic article:last-child {
+  margin-right: 0;
+}
+
+/* line 5, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
 .navigation-centered {
   width: 100%;
 }
-/* line 7, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
+/* line 11, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
 .navigation-centered .mobile-logo {
   display: inline;
   float: left;
 }
 @media screen and (min-width: 900px) {
-  /* line 7, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
+  /* line 11, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
   .navigation-centered .mobile-logo {
     display: none;
   }
 }
-/* line 13, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
+/* line 17, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
 .navigation-centered .mobile-logo .ef {
   fill: #e1e1e1;
-  height: 2rem;
-  max-height: 2rem;
+  height: 1.65rem;
   margin-top: 0.5rem;
-  margin-left: 1rem;
+  margin-left: 0.25rem;
 }
-/* line 21, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
+/* line 24, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
 .navigation-centered .navigation-centered-mobile-menu {
   float: right;
-  padding-top: 0.5em;
+  padding: 0.5em 0 0.75rem 0;
+}
+/* line 27, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
+.navigation-centered .navigation-centered-mobile-menu i {
+  margin-right: 0.25rem;
+  color: #e1e1e1;
+  font-size: 2rem;
+}
+/* line 31, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
+.navigation-centered .navigation-centered-mobile-menu i:hover {
+  color: #e17f62;
 }
 @media screen and (min-width: 900px) {
-  /* line 21, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
+  /* line 24, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
   .navigation-centered .navigation-centered-mobile-menu {
     display: none;
   }
 }
-/* line 28, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
+/* line 39, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
 .navigation-centered .navigation-centered-wrapper {
   max-width: 68em;
   margin-left: auto;
   margin-right: auto;
   position: relative;
   min-height: 3rem;
-  margin-bottom: 2rem;
 }
 /* line 20, /Users/gawalsh/.rvm/gems/ruby-2.1.2/gems/bourbon-4.2.6/app/assets/stylesheets/addons/_clearfix.scss */
 .navigation-centered .navigation-centered-wrapper::after {
@@ -6359,7 +6427,13 @@ body {
   content: "";
   display: table;
 }
-/* line 35, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
+@media screen and (min-width: 900px) {
+  /* line 39, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
+  .navigation-centered .navigation-centered-wrapper {
+    margin-bottom: 2rem;
+  }
+}
+/* line 48, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
 .navigation-centered ul.navigation-centered-menu {
   clear: both;
   display: none;
@@ -6367,121 +6441,171 @@ body {
   overflow: visible;
   padding: 0;
   width: 100%;
+  margin-left: -0.75rem;
 }
-/* line 42, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
+/* line 56, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
 .navigation-centered ul.navigation-centered-menu.show {
   display: block;
 }
 @media screen and (min-width: 900px) {
-  /* line 35, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
+  /* line 48, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
   .navigation-centered ul.navigation-centered-menu {
     display: block;
     text-align: center;
   }
 }
-/* line 50, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
+/* line 64, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
 .navigation-centered ul li.nav-link {
   display: block;
-  text-align: right;
+  text-align: center;
   width: 100%;
 }
-/* line 54, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
+/* line 68, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
 .navigation-centered ul li.nav-link a {
   display: inline-block;
   text-decoration: none;
   color: #e1e1e1;
   font-size: 1.75rem;
   text-transform: lowercase;
+  font-weight: 800;
 }
-/* line 60, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
+/* line 75, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
 .navigation-centered ul li.nav-link a:hover {
   text-decoration: none;
   color: #e17f62;
 }
-/* line 65, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
+/* line 80, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
 .navigation-centered ul li.nav-link:last-child a {
   padding-right: 0;
 }
 @media screen and (min-width: 900px) {
-  /* line 50, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
+  /* line 64, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
   .navigation-centered ul li.nav-link {
     display: inline;
   }
-  /* line 70, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
+  /* line 85, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
   .navigation-centered ul li.nav-link a {
     padding-right: 1em;
   }
 }
-/* line 75, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
+/* line 90, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
 .navigation-centered li.logo.nav-link {
   display: none;
   line-height: 0;
 }
 @media screen and (min-width: 900px) {
-  /* line 75, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
+  /* line 90, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
   .navigation-centered li.logo.nav-link {
     display: inline;
   }
 }
-/* line 82, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
+/* line 96, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
 .navigation-centered li.logo.nav-link .logo {
   margin-bottom: -0.66667em;
   max-height: 2em;
 }
-/* line 85, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
+/* line 99, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
 .navigation-centered li.logo.nav-link .logo .ef {
   fill: #e1e1e1;
   height: 2rem;
   margin-top: 0.5rem;
   margin-bottom: -0.45rem;
 }
-/* line 90, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
+/* line 104, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_nav.scss */
 .navigation-centered li.logo.nav-link .logo .ef:hover {
   fill: #e17f62;
 }
 
 /* line 4, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_footer.scss */
+.footer {
+  background-color: #272e2f;
+  background-image: linear-gradient(180deg, #272e2f, #3e494b);
+  padding-top: 3em;
+  width: 100%;
+}
+/* line 15, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_footer.scss */
 .footer .footer-logo {
-  margin-bottom: 1em;
-  margin-right: 1em;
-}
-@media screen and (min-width: 900px) {
-  /* line 4, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_footer.scss */
-  .footer .footer-logo {
-    float: left;
-    margin-bottom: 0;
-  }
-}
-/* line 13, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_footer.scss */
-.footer .footer-logo img {
-  height: 2.2em;
+  margin-bottom: 2em;
+  text-align: center;
 }
 /* line 18, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_footer.scss */
+.footer .footer-logo .ef-logo {
+  fill: #e1e1e1;
+  height: 3rem;
+}
+/* line 23, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_footer.scss */
+.footer .footer-links {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 1.5em;
+  margin-right: -1.25rem;
+}
+/* line 30, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_footer.scss */
 .footer ul {
-  margin: 0;
-  padding-left: 0;
+  -webkit-flex-basis: 13em;
+  -moz-flex-basis: 13em;
+  flex-basis: 13em;
+  -ms-flex-preferred-size: 13em;
+  -webkit-flex-shrink: 0;
+  -moz-flex-shrink: 0;
+  flex-shrink: 0;
+  -ms-flex-negative: 0;
+  margin-bottom: 3em;
+  padding: 0;
 }
-@media screen and (min-width: 900px) {
-  /* line 18, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_footer.scss */
-  .footer ul {
-    float: left;
-    padding-top: 0.3em;
-  }
-}
-/* line 27, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_footer.scss */
-.footer ul li {
+/* line 36, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_footer.scss */
+.footer li {
   line-height: 1.5em;
-  padding-right: 1em;
+  list-style: none;
+  text-align: center;
 }
-@media screen and (min-width: 900px) {
-  /* line 27, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_footer.scss */
-  .footer ul li {
-    display: inline;
-    text-align: left;
-  }
+/* line 41, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_footer.scss */
+.footer li a {
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+}
+/* line 44, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_footer.scss */
+.footer li a:focus, .footer li a:hover {
+  color: white;
+}
+/* line 49, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_footer.scss */
+.footer li h3 {
+  color: white;
+  font-size: 1em;
+  margin-bottom: 0.4em;
+}
+/* line 54, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_footer.scss */
+.footer p {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.9em;
+  line-height: 1.5em;
+  margin: auto;
+  max-width: 35em;
+  text-align: center;
 }
 
-/* line 4, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_parallax.scss */
+/* line 8, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_parallax.scss */
 .parallax-window {
   max-height: 30em;
   overflow: hidden;
@@ -6490,16 +6614,19 @@ body {
   width: 100%;
 }
 
-/* line 12, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_parallax.scss */
+/* line 16, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_parallax.scss */
 .parallax-static-content {
-  color: #9A9A8A;
   padding: 8em 0;
   position: relative;
   z-index: 9;
 }
 
-/* line 19, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_parallax.scss */
+/* line 22, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/components/_parallax.scss */
 .parallax-background {
+  -webkit-filter: grayscale(50%);
+  filter: grayscale(50%);
+  -webkit-filter: brightness(1.1);
+  filter: brightness(1.1);
   background-position: top;
   background-size: cover;
   background-color: beige;
@@ -6524,75 +6651,69 @@ body {
 }
 
 /* line 4, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
-.side-image {
-  margin-top: 2rem;
-  background: #F9F9F9;
-}
-@media screen and (min-width: 900px) {
-  /* line 4, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
-  .side-image {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
-  }
-}
-/* line 22, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
-.side-image .images-wrapper {
-  background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png"), -webkit-linear-gradient(#B5EBEB, #5DAC5D), no-repeat #B5EBEB scroll;
-  background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png"), linear-gradient(#B5EBEB, #5DAC5D), no-repeat #B5EBEB scroll;
-  background-color: #B5EBEB;
-  background-size: cover;
-  border-bottom: 1px solid rgba(38, 74, 38, 0.2);
-  display: block;
-  min-height: 12em;
-  padding: 3em;
-}
-@media screen and (min-width: 900px) {
-  /* line 22, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
-  .side-image .images-wrapper {
-    display: table-cell;
-    width: 33.33333%;
-    background-position: bottom;
-    background-size: cover;
-    border-right: 1px solid rgba(38, 74, 38, 0.2);
-  }
-}
-/* line 39, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
-.side-image .side-image-content {
-  display: table-cell;
+.image-gradient-dynamic {
+  line-height: 0;
+  position: relative;
   width: 100%;
-  padding: 1em 1em 4em 1em;
 }
-@media screen and (min-width: 900px) {
-  /* line 39, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
-  .side-image .side-image-content {
-    display: table-cell;
-    width: 66.66667%;
-    padding: 4em 4em 8em 4em;
+/* line 18, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
+.image-gradient-dynamic img {
+  height: auto;
+  left: 0;
+  position: relative;
+  top: 0;
+  width: 100%;
+}
+/* line 25, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
+.image-gradient-dynamic .copy {
+  left: 50%;
+  margin: auto;
+  position: absolute;
+  text-align: center;
+  top: 56%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  font-size: 2rem;
+}
+@media screen and (min-width: 600px) {
+  /* line 25, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
+  .image-gradient-dynamic .copy {
+    font-size: 3.75em;
   }
 }
-/* line 48, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
-.side-image .side-image-content h1 {
-  margin-bottom: 0.9em;
+/* line 37, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
+.image-gradient-dynamic .copy p {
+  font-family: "ff-dax-compact-web-pro", sans-serif;
+  color: #e1e1e1;
+  line-height: 2.5rem;
+  padding: 2.5em 0;
+  position: relative;
 }
-/* line 52, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
-.side-image .side-image-content h4 {
-  background: #BBB;
-  color: white;
-  display: inline-block;
-  font-size: 0.75em;
-  margin-bottom: 1.3em;
-  padding: 3px 8px;
-  text-transform: uppercase;
+/* line 46, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
+.image-gradient-dynamic .overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(225, 127, 98, 0.05);
+  background-image: linear-gradient(0deg, rgba(225, 127, 98, 0.05), rgba(62, 73, 75, 0.15));
+  display: block;
 }
-/* line 62, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
-.side-image .side-image-content p {
-  color: #333;
-  line-height: 1.5;
-  margin-bottom: 3em;
+/* line 55, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
+.image-gradient-dynamic .overlay::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(236, 200, 150, 0.15);
+  background-image: linear-gradient(90deg, rgba(236, 200, 150, 0.1), rgba(149, 137, 119, 0.15));
+  content: "";
+  display: block;
 }
 
-/* line 69, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
+/* line 68, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
 .cards {
   margin: 2rem 0 2rem 0;
   display: -webkit-box;
@@ -6620,7 +6741,7 @@ body {
   -ms-flex-pack: justify;
 }
 
-/* line 76, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
+/* line 75, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
 .card {
   -webkit-flex-basis: 15em;
   -moz-flex-basis: 15em;
@@ -6636,19 +6757,19 @@ body {
   background-color: #f7f7f7;
   border-radius: 3px;
   border: 1px solid #ddd;
-  box-shadow: 0 2px 4px #e6e6e6;
+  box-shadow: 0 2px 4px #c8c8c8;
   cursor: pointer;
   margin: 0 1em 1.5em 1em;
   position: relative;
 }
-/* line 104, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
+/* line 102, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
 .card .card-image {
   overflow: hidden;
   height: 150px;
   max-height: 150px;
-  background-color: #F8F2B4;
+  background-color: #e17f62;
 }
-/* line 110, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
+/* line 107, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
 .card .card-image img {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -6658,29 +6779,39 @@ body {
   width: 100%;
   opacity: 1;
 }
-/* line 119, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
+/* line 115, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
 .card .card-header {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  background-color: #f7f7f7;
+  background-color: #3e494b;
+  color: #e1e1e1;
   border-bottom: 1px solid #ddd;
-  border-radius: 3px 3px 0 0;
   font-weight: bold;
   line-height: 1.5em;
   padding: 0.5em 0.75em;
 }
-/* line 129, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
+/* line 123, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
+.card .card-header a {
+  text-decoration: none;
+  color: #e1e1e1;
+}
+/* line 126, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
+.card .card-header a:hover {
+  text-decoration: none;
+  color: #e17f62;
+}
+/* line 132, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
 .card .card-copy {
   font-size: 0.9em;
   line-height: 1.5em;
   padding: 0.75em 0.75em;
 }
-/* line 134, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
+/* line 136, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
 .card .card-copy p {
   margin: 0 0 0.75em;
 }
-/* line 139, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
+/* line 140, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
 .card:focus, .card:hover {
   cursor: pointer;
 }
@@ -6688,16 +6819,16 @@ body {
 .card:focus img, .card:hover img {
   opacity: 0.7;
 }
-/* line 148, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
+/* line 147, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
 .card:active {
   background-color: #f7f7f7;
 }
-/* line 151, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
+/* line 149, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/home.scss */
 .card:active .card-header {
   background-color: #f7f7f7;
 }
 
-/* line 1, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/postings.scss */
+/* line 4, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/postings.scss */
 .posts {
   max-width: 68em;
   margin-left: auto;
@@ -6709,23 +6840,341 @@ body {
   content: "";
   display: table;
 }
-/* line 3, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/postings.scss */
-.posts .heading {
-  display: table-cell;
-  width: 100%;
-}
 /* line 7, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/postings.scss */
 .posts .body .left-nav {
-  display: table-cell;
-  width: 16.66667%;
+  vertical-align: top;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 14.70196%;
+}
+/* line 89, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.posts .body .left-nav:last-child {
+  margin-right: 0;
 }
 /* line 10, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/postings.scss */
+.posts .body .left-nav ul {
+  list-style: none;
+}
+/* line 12, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/postings.scss */
+.posts .body .left-nav ul li {
+  font-size: 1.333em;
+}
+/* line 14, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/postings.scss */
+.posts .body .left-nav ul li a {
+  text-decoration: none;
+}
+/* line 20, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/postings.scss */
 .posts .body .right-well {
-  display: table-cell;
-  width: 83.33333%;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 82.94039%;
+}
+/* line 89, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.posts .body .right-well:last-child {
+  margin-right: 0;
+}
+/* line 22, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/postings.scss */
+.posts .body .right-well .postbody {
+  font-size: 1.333em;
+  font-weight: 100;
+  margin-top: 2rem;
+}
+/* line 26, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/postings.scss */
+.posts .body .right-well .postbody .initimg {
+  display: none;
+}
+/* line 29, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/postings.scss */
+.posts .body .right-well .postbody .postimg {
+  float: right;
+  margin: 0 1rem 0 1rem;
+}
+/* line 33, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/postings.scss */
+.posts .body .right-well .postbody .postimg.tall {
+  max-height: 400px;
+}
+/* line 36, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/postings.scss */
+.posts .body .right-well .postbody .postimg.wide {
+  max-width: 400px;
+}
+/* line 41, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/postings.scss */
+.posts .body .right-well .postpreview .img {
+  width: 100%;
+  margin-bottom: 1rem;
+  background-size: cover;
+  height: 200px;
+  background-repeat: no-repeat;
+}
+/* line 48, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/postings.scss */
+.posts .body .right-well .postpreview .title {
+  font-weight: 500;
+  color: #e17f62;
+  font-size: 2rem;
+}
+/* line 53, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/postings.scss */
+.posts .body .right-well .postpreview .snippet {
+  font-weight: 100;
+}
+/* line 55, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/postings.scss */
+.posts .body .right-well .postpreview .snippet:after {
+  content: " ...";
+}
+/* line 59, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/postings.scss */
+.posts .body .right-well .postpreview .rule {
+  margin: 1rem 0 2rem 0;
+  color: #6f716a;
+}
+/* line 66, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/postings.scss */
+.posts .overlaytitle {
+  color: #3e494b;
 }
 
-/* line 39, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/application.scss */
+/* line 5, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/shows.scss */
+.shows {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 20, /Users/gawalsh/.rvm/gems/ruby-2.1.2/gems/bourbon-4.2.6/app/assets/stylesheets/addons/_clearfix.scss */
+.shows::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+/* line 7, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/shows.scss */
+.shows .show:last-of-type {
+  margin-bottom: 4rem;
+}
+/* line 8, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/shows.scss */
+.shows .show:last-of-type hr {
+  display: none;
+}
+/* line 13, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/shows.scss */
+.shows .show {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 20, /Users/gawalsh/.rvm/gems/ruby-2.1.2/gems/bourbon-4.2.6/app/assets/stylesheets/addons/_clearfix.scss */
+.shows .show::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+/* line 15, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/shows.scss */
+.shows .show hr {
+  margin: 2rem 0 2rem 0;
+}
+/* line 18, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/shows.scss */
+.shows .show .flyer {
+  vertical-align: top;
+}
+/* line 20, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/shows.scss */
+.shows .show .flyer img {
+  margin: 0 auto 0 auto;
+  vertical-align: top;
+}
+/* line 26, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/shows.scss */
+.shows .show .info .description {
+  font-size: 1rem;
+  font-weight: 100;
+  color: #6f716a;
+  font-size: 1.333em;
+}
+/* line 32, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/shows.scss */
+.shows .show .info a {
+  font-size: 1rem;
+  font-weight: 100;
+  color: #e17f62;
+}
+/* line 40, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/shows.scss */
+.shows .show.upcoming .flyer {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 14.70196%;
+}
+/* line 89, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.shows .show.upcoming .flyer:last-child {
+  margin-right: 0;
+}
+/* line 42, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/shows.scss */
+.shows .show.upcoming .flyer img {
+  max-width: 400px;
+}
+/* line 46, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/shows.scss */
+.shows .show.upcoming .info {
+  margin-left: 8.5298%;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+}
+/* line 89, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.shows .show.upcoming .info:last-child {
+  margin-right: 0;
+}
+/* line 49, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/shows.scss */
+.shows .show.upcoming .info h2 {
+  font-size: 1.25rem;
+  color: #3e494b;
+}
+/* line 56, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/shows.scss */
+.shows .show.past .flyer {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 14.70196%;
+}
+/* line 89, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.shows .show.past .flyer:last-child {
+  margin-right: 0;
+}
+/* line 58, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/shows.scss */
+.shows .show.past .flyer img {
+  max-width: 120px;
+}
+/* line 62, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/shows.scss */
+.shows .show.past .info {
+  margin-left: 17.05961%;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+}
+/* line 89, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.shows .show.past .info:last-child {
+  margin-right: 0;
+}
+/* line 65, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/shows.scss */
+.shows .show.past .info h3 {
+  font-size: 1.15rem;
+  color: #6f716a;
+}
+
+/* line 5, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/albums.scss */
+.albums {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 20, /Users/gawalsh/.rvm/gems/ruby-2.1.2/gems/bourbon-4.2.6/app/assets/stylesheets/addons/_clearfix.scss */
+.albums::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+/* line 7, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/albums.scss */
+.albums .album {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 14.70196%;
+  margin-left: 42.64902%;
+}
+/* line 89, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.albums .album:last-child {
+  margin-right: 0;
+}
+/* line 10, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/albums.scss */
+.albums .album .cover {
+  text-align: center;
+  margin: 0 auto 0 auto;
+  vertical-align: top;
+}
+/* line 12, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/albums.scss */
+.albums .album .cover img {
+  width: 250px;
+  height: 250px;
+}
+/* line 19, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/albums.scss */
+.albums .album .info {
+  text-align: center;
+  font-weight: 100;
+}
+/* line 21, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/albums.scss */
+.albums .album .info h1 {
+  font-weight: 100;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+/* line 25, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/albums.scss */
+.albums .album .info h1 a {
+  color: #ecc896;
+  text-decoration: none;
+}
+/* line 28, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/albums.scss */
+.albums .album .info h1 a:hover {
+  color: #e17f62;
+  text-decoration: none;
+}
+/* line 37, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/albums.scss */
+.albums .album.detail .left {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+}
+/* line 89, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.albums .album.detail .left:last-child {
+  margin-right: 0;
+}
+/* line 39, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/albums.scss */
+.albums .album.detail .left .cover {
+  width: 100%;
+}
+/* line 42, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/albums.scss */
+.albums .album.detail .left .buy {
+  margin-top: 0.5rem;
+}
+/* line 44, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/albums.scss */
+.albums .album.detail .left .buy .price {
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: #e17f62;
+}
+/* line 49, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/albums.scss */
+.albums .album.detail .left .buy .button {
+  font-size: 1rem;
+  float: right;
+}
+/* line 55, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/albums.scss */
+.albums .album.detail .right {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 65.88078%;
+}
+/* line 89, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/neat/grid/_span-columns.scss */
+.albums .album.detail .right:last-child {
+  margin-right: 0;
+}
+/* line 57, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/albums.scss */
+.albums .album.detail .right .title {
+  margin: 0 0 0 1rem;
+  font-weight: 400;
+  font-size: 3rem;
+  color: #958977;
+}
+/* line 64, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/albums.scss */
+.albums .album.detail .right .info {
+  text-align: left;
+  text-transform: uppercase;
+  margin-left: 1rem;
+  font-size: 1.25rem;
+  color: #6f716a;
+  font-weight: 100;
+}
+/* line 72, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/albums.scss */
+.albums .album.detail .right .description {
+  margin: 0.5rem 0 2rem 1rem;
+  font-size: 1rem;
+  font-weight: 100;
+  color: #3e494b;
+}
+
+/* line 42, /Users/gawalsh/Sites/RubymineProjects/earthlyframes/app/assets/stylesheets/application.scss */
 body {
   font-family: "futura-pt",sans-serif !important;
 }

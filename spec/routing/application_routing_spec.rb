@@ -11,9 +11,6 @@ RSpec.describe ApplicationController, type: :routing do
     it 'routes to eula' do
       expect(:get => '/eula').to route_to('eula#index')
     end
-    it 'routes to privacy' do
-      expect(:get => '/privacy').to route_to('privacy#index')
-    end
   end
 end
 

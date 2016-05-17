@@ -5,8 +5,6 @@
 .albums{
   @include outer-container;
   .album{
-    @include span-columns(2);
-    @include shift(5);
     .cover{
       text-align: center;
       img{
