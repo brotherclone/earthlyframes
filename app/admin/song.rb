@@ -8,8 +8,8 @@ ActiveAdmin.register Song do
       f.input :trt, :label => 'Total Running Time'
       f.input :song_order, :label => 'Sequence on Album'
       f.input :album_id, :label => 'Album', :as => :select, :collection => Album.all.map{|a| ["#{a.title}", a.id]}
-      f.input :lyrics, :input_html => { :class => 'tinymce' }
-      f.input :notes, :input_html => { :class => 'tinymce' }
+      f.input :lyrics, :input_html => { :class => 'tinymce' }, :hint => 'Lyrics for the song.'
+      f.input :notes, :input_html => { :class => 'tinymce' }, :hint => 'Notes on the song.'
     end
     f.actions
   end

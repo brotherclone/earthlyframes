@@ -7,7 +7,7 @@ ActiveAdmin.register Show do
       f.input :title
       f.input :showdate, as: :datepicker
       f.input :brief_description
-      f.input :description, :input_html => { :class => 'tinymce' }
+      f.input :description, :input_html => { :class => 'tinymce' }, :hint => 'Show Description'
       f.input :location
       f.input :link, :label => 'Link to event or venue'
       f.input :flyer, :as => :file
