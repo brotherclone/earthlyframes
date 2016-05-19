@@ -8,12 +8,12 @@
     hr{
       display: none;
     }
-    margin-bottom: 4rem;
   }
   .show{
     @include outer-container;
     hr{
-      margin: 2rem 0 2rem 0;
+      margin-bottom: 4rem;
+      border-color: $color-storm;
     }
     .flyer{
       vertical-align: top;
@@ -47,8 +47,14 @@
       @include shift(1);
       @include span-columns(4);
       h2{
-        font-size: 1.25rem;
-        color: $color-storm;
+        a {
+          font-size: 2.25rem;
+          color: $color-storm;
+          text-decoration: none;
+          &:hover{
+            color: $color-peach;
+          }
+        }
       }
     }
   }
@@ -63,8 +69,14 @@
       @include shift(2);
       @include span-columns(6);
       h3{
-        font-size: 1.15rem;
-        color: $color-grey;
+        a {
+          font-size: 2rem;
+          color: $color-grey;
+          text-decoration: none;
+          &:hover{
+            color: $color-peach;
+          }
+        }
       }
     }
   }

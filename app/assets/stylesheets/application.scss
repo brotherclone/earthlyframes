@@ -1,7 +1,6 @@
 // Earthly Frames Style Guide
 //
 // Styleguide: ef
-
 // Third Party Libraries
 //
 // Styleguide: ef.libs
@@ -24,6 +23,7 @@
 // Components
 //
 // Styleguide: ef.components
+$footer-height: 3rem;
 @import "components/nav";
 @import "components/footer";
 @import "components/parallax";
@@ -39,7 +39,20 @@
 //Body
 //
 // Styleguide: ef.core.body
+
+html, body{
+  height: 100%;
+}
 body{
   font-family: "futura-pt",sans-serif !important;
   @extend %level-2-texture;
+  .main-wrap{
+    margin-bottom: $footer-height*-1;
+    min-height: 100%;
+    &:after{
+      content: '';
+      display: block;
+      height: $footer-height;
+    }
+  }
 }

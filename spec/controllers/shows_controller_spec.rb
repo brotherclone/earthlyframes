@@ -18,20 +18,20 @@ RSpec.describe ShowsController, type: :controller do
     end
   end
 
-  describe 'GET #new' do
-    it 'assigns a new show as @show' do
-      get :new
-      expect(assigns(:show)).to be_a_new(Show)
-    end
-  end
-
-  describe 'GET #edit' do
-    it 'assigns the requested show as @show' do
-      show = FactoryGirl.create(:show)
-      get :edit, {:id => show.to_param}
-      expect(assigns(:show)).to eq(show)
-    end
-  end
+  # describe 'GET #new' do
+  #   it 'assigns a new show as @show' do
+  #     get :new
+  #     expect(assigns(:show)).to be_a_new(Show)
+  #   end
+  # end
+  #
+  # describe 'GET #edit' do
+  #   it 'assigns the requested show as @show' do
+  #     show = FactoryGirl.create(:show)
+  #     get :edit, {:id => show.to_param}
+  #     expect(assigns(:show)).to eq(show)
+  #   end
+  # end
 
   describe 'POST #create' do
     context 'with valid params' do
@@ -53,17 +53,17 @@ RSpec.describe ShowsController, type: :controller do
       end
     end
 
-    context 'with invalid params' do
-      it 'assigns a newly created but unsaved show as @show' do
-        post :create, {:show => FactoryGirl.attributes_for(:show, :title => nil)}
-        expect(assigns(:show)).to be_a_new(Show)
-      end
-
-      it 're-renders the new template' do
-        post :create, {:show => FactoryGirl.attributes_for(:show, :title => nil)}
-        expect(response).to render_template('new')
-      end
-    end
+    # context 'with invalid params' do
+    #   it 'assigns a newly created but unsaved show as @show' do
+    #     post :create, {:show => FactoryGirl.attributes_for(:show, :title => nil)}
+    #     expect(assigns(:show)).to be_a_new(Show)
+    #   end
+    #
+    #   it 're-renders the new template' do
+    #     post :create, {:show => FactoryGirl.attributes_for(:show, :title => nil)}
+    #     expect(response).to render_template('new')
+    #   end
+    # end
   end
 
   describe 'PUT #update' do
@@ -88,19 +88,19 @@ RSpec.describe ShowsController, type: :controller do
       end
     end
 
-    context 'with invalid params' do
-      it 'assigns the show as @show' do
-        show = FactoryGirl.create(:show)
-        put :update, {:id => show.to_param, :show => FactoryGirl.attributes_for(:show, :title => nil)}
-        expect(assigns(:show)).to eq(show)
-      end
-
-      it 're-renders the edit template' do
-        show = FactoryGirl.create(:show)
-        put :update, {:id => show.to_param, :show => FactoryGirl.attributes_for(:show, :title => nil)}
-        expect(response).to render_template('edit')
-      end
-    end
+    # context 'with invalid params' do
+    #   it 'assigns the show as @show' do
+    #     show = FactoryGirl.create(:show)
+    #     put :update, {:id => show.to_param, :show => FactoryGirl.attributes_for(:show, :title => nil)}
+    #     expect(assigns(:show)).to eq(show)
+    #   end
+    #
+    #   it 're-renders the edit template' do
+    #     show = FactoryGirl.create(:show)
+    #     put :update, {:id => show.to_param, :show => FactoryGirl.attributes_for(:show, :title => nil)}
+    #     expect(response).to render_template('edit')
+    #   end
+    # end
   end
 
   describe 'DELETE #destroy' do

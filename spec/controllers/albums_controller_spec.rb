@@ -17,20 +17,20 @@ RSpec.describe AlbumsController, type: :controller do
     end
   end
 
-  describe 'GET #new' do
-    it 'assigns a new album as @album' do
-      get :new
-      expect(assigns(:album)).to be_a_new(Album)
-    end
-  end
+  # describe 'GET #new' do
+  #   it 'assigns a new album as @album' do
+  #     get :new
+  #     expect(assigns(:album)).to be_a_new(Album)
+  #   end
+  # end
 
-  describe 'GET #edit' do
-    it 'assigns the requested album as @album' do
-      album = FactoryGirl.create(:album)
-      get :edit, {:id => album.to_param}
-      expect(assigns(:album)).to eq(album)
-    end
-  end
+  # describe 'GET #edit' do
+  #   it 'assigns the requested album as @album' do
+  #     album = FactoryGirl.create(:album)
+  #     get :edit, {:id => album.to_param}
+  #     expect(assigns(:album)).to eq(album)
+  #   end
+  # end
 
   describe 'POST #create' do
     context 'with valid params' do
@@ -52,17 +52,17 @@ RSpec.describe AlbumsController, type: :controller do
       end
     end
 
-    context 'with invalid params' do
-      it 'assigns a newly created but unsaved album as @album' do
-        post :create, {:album => FactoryGirl.attributes_for(:album, :title => nil)}
-        expect(assigns(:album)).to be_a_new(Album)
-      end
-
-      it 're-renders the new template' do
-        post :create, {:album => FactoryGirl.attributes_for(:album, :title => nil)}
-        expect(response).to render_template('new')
-      end
-    end
+    # context 'with invalid params' do
+    #   it 'assigns a newly created but unsaved album as @album' do
+    #     post :create, {:album => FactoryGirl.attributes_for(:album, :title => nil)}
+    #     expect(assigns(:album)).to be_a_new(Album)
+    #   end
+    #
+    #   it 're-renders the new template' do
+    #     post :create, {:album => FactoryGirl.attributes_for(:album, :title => nil)}
+    #     expect(response).to render_template('new')
+    #   end
+    # end
   end
 
   describe 'PUT #update' do
@@ -86,19 +86,19 @@ RSpec.describe AlbumsController, type: :controller do
       end
     end
 
-    context 'with invalid params' do
-      it 'assigns the album as @album' do
-        album = FactoryGirl.create(:album)
-        put :update, {:id => album.to_param, :album => FactoryGirl.attributes_for(:album, :title => nil)}
-        expect(assigns(:album)).to eq(album)
-      end
-
-      it 're-renders the edit template' do
-        album = FactoryGirl.create(:album)
-        put :update, {:id => album.to_param, :album => FactoryGirl.attributes_for(:album, :title => nil)}
-        expect(response).to render_template('edit')
-      end
-    end
+    # context 'with invalid params' do
+    #   it 'assigns the album as @album' do
+    #     album = FactoryGirl.create(:album)
+    #     put :update, {:id => album.to_param, :album => FactoryGirl.attributes_for(:album, :title => nil)}
+    #     expect(assigns(:album)).to eq(album)
+    #   end
+    #
+    #   it 're-renders the edit template' do
+    #     album = FactoryGirl.create(:album)
+    #     put :update, {:id => album.to_param, :album => FactoryGirl.attributes_for(:album, :title => nil)}
+    #     expect(response).to render_template('edit')
+    #   end
+    # end
   end
 
   describe 'DELETE #destroy' do

@@ -1,5 +1,3 @@
-= render :partial => 'components/nav'
-
 -p = Post.first(3)
 -p.each do |post|
   -@cardholder << CardItem.new(post.title, post.description, post.main_image, post_path(post.id))
@@ -29,5 +27,3 @@
             = card.title
         .card-copy
           = card.description.to_s.truncate(80)
-
-= render :partial => 'components/footer'

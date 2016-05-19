@@ -1,4 +1,3 @@
-= render :partial => 'components/nav'
 .shows
   %h1{:class=>'page-header'} Shows
   -@showbydate.each do |s|
@@ -6,10 +5,12 @@
     - if s.showdate >= today
       .show.upcoming
         .flyer
-          %img{:src=>s.flyer}
+          %a{:href=> shows_path+'/'+s.id.to_s}
+            %img{:src=>s.flyer}
         .info
           %h2
-            =s.title+' | '+s.showdate.strftime('%F').to_s+' '+s.showdate.strftime('%H:%M').to_s
+            %a{:href=> shows_path+'/'+s.id.to_s}
+              =s.title+' | '+s.showdate.strftime('%F').to_s+' '+s.showdate.strftime('%H:%M').to_s
           .description
             =s.description.html_safe
             %a{:href => s.link}
@@ -18,11 +19,12 @@
     - else
       .show.past
         .flyer
-          %img{:src=>s.flyer}
+          %a{:href=> shows_path+'/'+s.id.to_s}
+            %img{:src=>s.flyer}
         .info
           %h3
-            =s.title
+            %a{:href=> shows_path+'/'+s.id.to_s}
+              =s.title
           .description
             =s.description.html_safe
         %hr
-= render :partial => 'components/footer'

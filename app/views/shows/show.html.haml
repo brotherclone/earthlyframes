@@ -1,3 +1,30 @@
-= render :partial => 'components/nav'
-.outer
-= render :partial => 'components/footer'
+.performance-outer
+  .performance-inner
+    .left-flyer
+    .right-info
+      %h3
+        = @show.title
+      .info-hold
+        .info-pair
+          %span.label
+            Date
+          %span.detail
+          - today = Date.today
+          - if @show.showdate >= today
+            =@show.showdate.strftime('%F').to_s+' '+@show.showdate.strftime('%H:%M').to_s
+          - else
+            This show occured in the past:
+            =@show.showdate.strftime('%F').to_s
+        .info-pair
+          %span.label
+            Location
+          %span.detail
+            = @show.location
+        .info-pair
+          %span.label
+            Description
+          %span.detail
+            = @show.description.html_safe
+        .more-info
+          %a{:href=>@show.link}
+            %button
