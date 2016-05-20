@@ -1,13 +1,20 @@
 .albums
+  .back-button
+    %a{:href=>albums_path}
+      %button
+        %i
+        %span
+          Back
   .album.detail
     .left
       %img{:src => @album.cover, :class=>'cover', :alt => @album.title}
       .buy
         %span{:class=>'price'}
           =number_to_currency(@album.price, :unit => '$')
-        %a{:href=>@album.buylink, :class=>'button'}
-          %i
-          %span Buy
+        %a{:href=>@album.buylink}
+          %button
+            %i
+            %span Buy
     .right
       .title
         =@album.title

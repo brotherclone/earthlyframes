@@ -2,28 +2,37 @@
 //
 // ef.layouts.albums
 
-.albums{
+.albums {
   @include outer-container;
-  .album{
-    .cover{
+  @include media($medium-screen-down){
+    margin-top: 2rem;
+  }
+  .back-button {
+    @include back-button();
+  }
+  .album {
+    .cover {
       text-align: center;
-      img{
+      img {
         width: 250px;
         height: 250px;
       }
       margin: 0 auto 0 auto;
       vertical-align: top;
     }
-    .info{
-     text-align: center;
-      h1{
+    .info {
+      text-align: center;
+      &.offset {
+        margin-top: 1rem;
+      }
+      h1 {
         font-weight: 100;
         font-size: 3rem;
         margin-bottom: 0.5rem;
-        a{
+        a {
           color: $color-bare;
           text-decoration: none;
-          &:hover{
+          &:hover {
             color: $color-peach;
             text-decoration: none;
           }
@@ -31,35 +40,44 @@
       }
       font-weight: 100;
     }
-    &.detail{
-      .left{
+    &.detail {
+      .left {
         @include span-columns(4);
-        .cover{
+        .cover {
           width: 100%;
         }
-        .buy{
+        .buy {
           margin-top: 0.5rem;
-          .price{
+          .price {
             font-weight: 400;
             font-size: 1.25rem;
             color: $color-peach;
           }
-          .button{
-            font-size: 1rem;
+          a {
             float: right;
+            button {
+              @include ef-button();
+              @include ef-button-size('sm');
+              i {
+                @include fa-icon();
+                &:before {
+                  content: $fa-var-cart-plus;
+                }
+              }
+            }
           }
         }
       }
-      .right{
+      .right {
         @include span-columns(8);
-        .title{
+        .title {
           margin: 0 0 0 1rem;
           font-weight: 400;
           font-size: 3rem;
           color: $color-taupe;
         }
 
-        .info{
+        .info {
           text-align: left;
           text-transform: uppercase;
           margin-left: 1rem;
@@ -67,10 +85,10 @@
           color: $color-grey;
           font-weight: 100;
         }
-        .description{
+        .description {
           margin: 0.5rem 0 2rem 1rem;
           font-size: 1rem;
-          font-weight:100;
+          font-weight: 100;
           color: $color-storm;
         }
       }

@@ -3,6 +3,9 @@
 // ef.layouts.postings
 .posts {
   @include outer-container;
+  @include media($medium-screen-down){
+    margin-top: 2rem;
+  }
   .body {
     .left-nav {
       vertical-align: top;

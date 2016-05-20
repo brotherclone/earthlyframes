@@ -4,17 +4,17 @@
 
 .shows{
   @include outer-container;
+  @include media($medium-screen-down){
+    margin-top: 2rem;
+  }
   .show:last-of-type{
+    margin-bottom: 4rem;
     hr{
       display: none;
     }
   }
   .show{
     @include outer-container;
-    hr{
-      margin-bottom: 4rem;
-      border-color: $color-storm;
-    }
     .flyer{
       vertical-align: top;
       img{
@@ -33,6 +33,10 @@
         font-size: 1rem;
         font-weight: 100;
         color: $color-peach;
+      }
+      hr{
+        margin-bottom: 4rem;
+        border-color: transparentize($color-storm,0.8);
       }
     }
   }
@@ -75,6 +79,58 @@
           text-decoration: none;
           &:hover{
             color: $color-peach;
+          }
+        }
+      }
+    }
+  }
+}
+
+.performance-outer{
+  @include outer-container;
+  @include media($medium-screen-down){
+    margin-top: 2rem;
+  }
+  .back-button{
+    @include back-button();
+  }
+  .performance-inner{
+    .left-flyer{
+      @include shift(2);
+      @include span-columns(5);
+    }
+    .right-info{
+      @include shift(1);
+      @include span-columns(4);
+      h3{
+        color: $color-peach;
+      }
+      .info-hold{
+
+        .info-pair{
+          .label{
+            font-family: $base-font-family;
+            font-size: 1.25rem;
+            display: block;
+          }
+          .detail{
+            font-size: 1rem;
+            font-family: $heading-font-family;
+            &.date{
+              white-space: nowrap;
+            }
+          }
+        }
+        .more-info{
+          button{
+            @include ef-button();
+            @include ef-button-size('sm');
+            i{
+              @include fa-icon();
+              &:before{
+                content: $fa-var-arrow-circle-o-right;
+              }
+            }
           }
         }
       }

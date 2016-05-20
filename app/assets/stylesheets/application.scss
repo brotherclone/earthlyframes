@@ -1,6 +1,8 @@
 // Earthly Frames Style Guide
 //
 // Styleguide: ef
+
+
 // Third Party Libraries
 //
 // Styleguide: ef.libs
@@ -19,6 +21,13 @@
 @import "core/pallette";
 @import "core/textures";
 @import "core/typography";
+
+
+// Elements
+//
+// Styleguide: ef.elements
+@import "elements/buttons";
+
 
 // Components
 //

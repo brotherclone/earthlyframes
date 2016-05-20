@@ -1,20 +1,27 @@
 .performance-outer
+  .back-button
+    %a{:href=>shows_path}
+      %button
+        %i
+        %span
+          Back
   .performance-inner
     .left-flyer
+      %img{:src=>@show.flyer}
     .right-info
-      %h3
+      %h2
         = @show.title
       .info-hold
         .info-pair
           %span.label
             Date
-          %span.detail
-          - today = Date.today
-          - if @show.showdate >= today
-            =@show.showdate.strftime('%F').to_s+' '+@show.showdate.strftime('%H:%M').to_s
-          - else
-            This show occured in the past:
-            =@show.showdate.strftime('%F').to_s
+          %span.detail.date
+            - today = Date.today
+            - if @show.showdate >= today
+              =@show.showdate.strftime('%F').to_s+' '+@show.showdate.strftime('%H:%M').to_s
+            - else
+              This show occured in the past:
+              =@show.showdate.strftime('%F').to_s
         .info-pair
           %span.label
             Location
@@ -28,3 +35,6 @@
         .more-info
           %a{:href=>@show.link}
             %button
+              %span
+                More Information
+              %i

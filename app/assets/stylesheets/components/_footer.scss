@@ -59,4 +59,21 @@
     max-width: 35em;
     text-align: center;
   }
+  hr{
+    width: 80%;
+    margin: 0 auto 0 auto;
+    border: 1px solid transparentize($color-white, 0.9);
+    margin-bottom: 2rem;
+  }
+  .copyright{
+    text-align: center;
+    color: $color-grey;
+    i{
+      @include fa-icon();
+      &:before{
+        content: $fa-var-copyright;
+      }
+    }
+    padding-bottom: 2rem;
+  }
 }

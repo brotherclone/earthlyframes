@@ -1,3 +1,4 @@
+- today = Date.today
 %footer.footer{:role => 'contentinfo'}
   .footer-logo
     = inline_svg 'svg/logo.svg', class: 'ef-logo'
@@ -26,4 +27,8 @@
       %li
         %a{:href => eula_path} Terms and Conditions
   %hr
-  %p Copyright &copy; 2016. The Imaginary Foundation
+  .copyright
+    Copyright
+    %i
+    = today.strftime('%Y').to_s+'. '
+    The Imaginary Foundation

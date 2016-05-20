@@ -1,0 +1,53 @@
+// Typography
+//
+//
+// ef.elements.button
+
+@mixin ef-button-size($size: 'med'){
+  @if $size == 'sm'{
+    font-size: 0.875rem;
+    padding: 0.366rem 0.875rem 0.366rem 0.875rem;
+  }@else if $size == 'med'{
+    font-size: 1rem;
+    padding: 0.75rem 1rem 0.75rem 1rem;
+  }@else if $size == 'lg'{
+    font-size: 1.5rem;
+    padding: 1.25rem 1.5rem 1.25rem 1.5rem;
+  }
+
+}
+
+
+@mixin ef-button($col:$color-storm, $bg:$color-white, $border: $color-storm, $hovcol: $color-white, $hovbg: $color-peach, $hovborder: $color-taupe){
+  text-decoration: none;
+  font-family: $heading-font-family;
+  background-color: $bg;
+  color: $col;
+  border: 1px solid $border;
+  border-radius: 0;
+  background-image: none;
+  text-shadow: none;
+  @include ef-button-size();
+  &:hover{
+    color: $hovcol;
+    background-color: $hovbg;
+    border-color: $hovborder;
+  }
+}
+
+
+
+@mixin back-button(){
+  button{
+    @include ef-button($color-storm, transparent, transparent, $color-peach, $color-white, $color-peach);
+    @include ef-button-size('sm');
+    box-shadow: none;
+    i{
+      @include fa-icon();
+      &:before{
+        content: $fa-var-arrow-left;
+      }
+    }
+  }
+  margin-bottom: 1rem;
+};
