@@ -1,5 +1,11 @@
 .posts
   .heading
+    .back-button
+      %a{:href=>posts_path}
+        %button
+          %i
+          %span
+            Back
   .body
     .left-nav
       = render :partial => 'components/postnav'
