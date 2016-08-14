@@ -303,6 +303,7 @@ DEPENDENCIES
   pg
   rails (= 4.1.9)
   rails_12factor
+  rake
   rspec-rails
   sass-rails (~> 5.0.0)
   sdoc

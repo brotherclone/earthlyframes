@@ -33,6 +33,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'table_print'
   gem 'erb2haml' #rake haml:replace_erbs / rake haml:convert_erbs
+  gem 'rake'
 end
 
 group :doc do
