@@ -8,6 +8,7 @@ require 'capybara/rspec'
 require 'capybara/rails'
 
 
+
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|

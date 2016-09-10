@@ -1,3 +1,7 @@
+Capybara.register_driver :selenium do |app|
+  Capybara::Selenium::Driver.new(app, :browser => :chrome)
+end
+
 describe 'About display correctly', :type => :feature do
 
   it 'checks the about index page', :js => true  do

@@ -34,6 +34,7 @@ group :development, :test do
   gem 'table_print'
   gem 'erb2haml' #rake haml:replace_erbs / rake haml:convert_erbs
   gem 'rake'
+  gem 'chromedriver-helper'
 end
 
 group :doc do
