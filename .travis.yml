@@ -4,10 +4,9 @@ rvm:
 sudo: required
 
 before_install:
+  - bundle config git.allow_insecure true
   - gem install bundler
   - gem install activeadmin -v '1.0.0.pre2'
 
 install:
   - bundle install
-  - bundle clean
-  - bundle exec rake setup
