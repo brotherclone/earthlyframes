@@ -18,21 +18,6 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-  # describe 'GET #new' do
-  #   it 'assigns a new post as @post' do
-  #     get :new
-  #     expect(assigns(:post)).to be_a_new(Post)
-  #   end
-  # end
-  #
-  # describe 'GET #edit' do
-  #   it 'assigns the requested post as @post' do
-  #     post = FactoryGirl.create(:post)
-  #     get :edit, {:id => post.to_param}
-  #     expect(assigns(:post)).to eq(post)
-  #   end
-  # end
-
   describe 'POST #create' do
     context 'with valid params' do
       it 'creates a new Post' do
@@ -53,17 +38,6 @@ RSpec.describe PostsController, type: :controller do
       end
     end
 
-    # context 'with invalid params' do
-    #   it 'assigns a newly created but unsaved post as @post' do
-    #     post :create, {:post => FactoryGirl.attributes_for(:post, :title=>nil)}
-    #     expect(assigns(:post)).to be_a_new(Post)
-    #   end
-    #
-    #   it 're-renders the new template' do
-    #     post :create, {:post => FactoryGirl.attributes_for(:post, :title=>nil)}
-    #     expect(response).to render_template('new')
-    #   end
-    # end
   end
 
   describe 'PUT #update' do
@@ -87,20 +61,6 @@ RSpec.describe PostsController, type: :controller do
         expect(response).to redirect_to(post)
       end
     end
-
-    # context 'with invalid params' do
-    #   it 'assigns the post as @post' do
-    #     post = FactoryGirl.create(:post)
-    #     put :update, {:id => post.to_param, :post => FactoryGirl.attributes_for(:post, :title => nil)}
-    #     expect(assigns(:post)).to eq(post)
-    #   end
-    #
-    #   it 're-renders the edit template' do
-    #     post = FactoryGirl.create(:post)
-    #     put :update, {:id => post.to_param, :post => FactoryGirl.attributes_for(:post, :title => nil)}
-    #     expect(response).to render_template('edit')
-    #   end
-    # end
   end
 
   describe 'DELETE #destroy' do

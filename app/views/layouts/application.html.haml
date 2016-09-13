@@ -9,6 +9,8 @@
     = csrf_meta_tags
   %body
     .main-wrap
-      = render :partial => 'components/nav'
+      -if !@no_nav
+        = render :partial => 'components/nav'
       = yield
-    = render :partial => 'components/footer'
+    -if !@no_footer
+      = render :partial => 'components/footer'

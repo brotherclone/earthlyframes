@@ -1,0 +1,17 @@
+// Shows
+//
+// ef.layouts.soon
+
+.outer{
+  @include outer-container;
+  .inner{
+    @include shift(4);
+    @include span-columns(4);
+    h1.soon{
+      margin-top: 55%;
+      font-size: modular-scale(5);
+      font-weight: 300;
+      color: $color-storm;
+    }
+  }
+}

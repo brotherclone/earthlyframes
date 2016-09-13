@@ -11,5 +11,11 @@ Rails.application.routes.draw do
   get 'home', to:'home#index'
   get 'about', to:'about#index'
   get 'eula', to:'eula#index'
-  root 'home#index'
+
+  if Rails.env.development?
+    root 'soon#index'
+  else
+    root 'home#index'
+  end
+
 end
