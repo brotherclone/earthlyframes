@@ -7,7 +7,7 @@ RSpec.describe ShowsController, type: :routing do
     end
 
     it 'checks that dev routes to soon' do
-      if Rails.env.development?
+      if Rails.env.production?
         expect(:get => '/').to route_to('soon#index')
       else
         expect(:get => '/').to route_to('home#index')

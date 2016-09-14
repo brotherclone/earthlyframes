@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get 'about', to:'about#index'
   get 'eula', to:'eula#index'
 
-  if Rails.env.development?
+  if Rails.env.production?
     root 'soon#index'
   else
     root 'home#index'
