@@ -7,8 +7,9 @@
   .inner{
     @include shift(4);
     @include span-columns(4);
+    text-align: center;
     h1.soon{
-      margin-top: 55%;
+      margin-top: 35% !important;
       font-size: modular-scale(5);
       font-weight: 300;
       color: $color-storm;
