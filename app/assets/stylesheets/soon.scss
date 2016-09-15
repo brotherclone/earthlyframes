@@ -5,8 +5,6 @@
 .outer{
   @include outer-container;
   .inner{
-    @include shift(4);
-    @include span-columns(4);
     text-align: center;
     h1.soon{
       margin-top: 35% !important;
