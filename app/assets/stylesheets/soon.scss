@@ -2,13 +2,12 @@
 //
 // ef.layouts.soon
 
-.outer{
-  @include outer-container;
-  .inner{
+.soon{
+  .soon-inner{
     text-align: center;
-    h1.soon{
+    .soon-inner{
       margin-top: 35% !important;
-      font-size: modular-scale(5);
+      font-size: 3rem;
       font-weight: 300;
       color: $color-storm;
     }

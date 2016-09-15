@@ -1,4 +1,4 @@
-describe 'Sbows display correctly', :type => :feature do
+describe 'Shows display correctly', :type => :feature do
 
   it 'checks the shows index page', :js => true  do
     visit about_path
