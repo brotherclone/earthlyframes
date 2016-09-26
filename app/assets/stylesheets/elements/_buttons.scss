@@ -18,10 +18,11 @@
 }
 
 
-@mixin ef-button($col:$color-storm, $bg:$color-white, $border: $color-storm, $hovcol: $color-white, $hovbg: $color-peach, $hovborder: $color-taupe){
+@mixin ef-button($col:$color-storm, $bg:transparent, $border: transparent, $hovcol: $color-white, $hovbg: $color-peach, $hovborder: $color-taupe){
   text-decoration: none;
   font-family: $heading-font-family;
   background-color: $bg;
+  box-shadow: none;
   color: $col;
   border: 1px solid $border;
   border-radius: 0;
