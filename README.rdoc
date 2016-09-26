@@ -1,4 +1,6 @@
-https://travis-ci.org/brotherclone/earthlyframes.svg?branch=master
+![alt text](https://travis-ci.org/brotherclone/earthlyframes.svg?branch=master "Travis Build Status")
+
+
 
 == Earthly Frames
 
