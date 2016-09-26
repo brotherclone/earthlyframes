@@ -9,4 +9,11 @@ describe 'Albums display correctly', :type => :feature do
     expect(page).to have_css('div.albums')
   end
 
+  it 'checks that songs expand', :js => true do
+    album = FactoryGirl.create(:album_with_song)
+    visit album_path(album.id.to_s)
+    click_link('songid_'+album.id.to_s)
+    expect(page).to have_content('LYRICS')
+  end
+
 end

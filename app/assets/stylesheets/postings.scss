@@ -28,6 +28,9 @@
           a{
             font-weight: 600;
             text-decoration: none;
+            &:hover{
+              color: $color-peach;
+            }
           }
         }
       }
@@ -75,9 +78,16 @@
           background-repeat: no-repeat;
         }
         .title{
-          font-weight: 500;
-          color: $color-peach;
-          font-size: 2rem;
+          a{
+            font-weight: 500;
+            color: $color-storm;
+            font-size: 2rem;
+            text-decoration: none;
+            &:hover{
+              text-decoration: none;
+              color: $color-peach;
+            }
+          }
         }
         .snippet{
           font-weight: 100;

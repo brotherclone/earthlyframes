@@ -19,6 +19,35 @@
       .title
         =@album.title
       .info
-        =@album.format+' | '+@album.released.strftime('%b %y')
+        -if @album.released
+          =@album.format+' | '+@album.released.strftime('%b %y')
+        -else
+          =@album.format
       .description
         =@album.description.html_safe
+      -if @album.songs
+        %hr
+        %h2{:class=>'track-listing'}
+          Track Listing:
+        %ol{:class=>'song-list'}
+          -minLength = 5
+          -@album.songs.each do |s|
+            -sid = s.id.to_s
+            %li
+              -if s.lyrics.length > minLength || s.notes.length > minLength
+                %a{:class=>'expander', :href=>'javascript:songExpand('+sid+')', :id=>'songid_'+sid}
+                  =s.title+' '+s.trt
+                  %i
+                .expander-content{:id=>'songcontent_'+sid}
+                  -if s.lyrics.length > minLength
+                    %h3 Lyrics
+                    =s.lyrics.html_safe
+                  -if s.lyrics.length > minLength && s.notes.length > minLength
+                    %hr
+                  -if s.notes.length > minLength
+                    %h3 Notes
+                    =s.notes.html_safe
+              -else
+                %span{:class=>'expander'}
+                  =s.title+' '+s.trt
+

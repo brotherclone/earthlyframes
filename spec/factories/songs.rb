@@ -5,7 +5,7 @@ FactoryGirl.define do
   end
 
   sequence :sorder do |n|
-    n.to_s
+    n
   end
 
   factory :song do

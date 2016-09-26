@@ -91,6 +91,65 @@
           font-weight: 100;
           color: $color-storm;
         }
+        .track-listing{
+          color: $color-storm;
+          font-size: 1.55rem;
+          font-weight: 100;
+        }
+        .song-list{
+          font-size: 1.25rem;
+          font-weight: 200;
+          color: $color-peach;
+          li{
+            counter-increment:item;
+            list-style-type:none;
+            &:before{
+              font-weight: 100;
+              color: $color-storm;
+              content:counter(item) ".";
+            }
+            a{
+              cursor: pointer;
+              color: $color-taupe;
+              text-decoration: none;
+              i{
+                @include fa-icon();
+                &:before{
+                  content: $fa-var-arrow-circle-o-down;
+                }
+              }
+              &.expanded{
+                i:before{
+                    content: $fa-var-arrow-circle-o-up;
+                  }
+                }
+              }
+            span{
+              color: $color-taupe;
+            }
+            .expander-content{
+              h3{
+                text-transform: uppercase;
+                font-weight: 100;
+                font-size: 0.875rem;
+                color: $color-taupe;
+                &:first-child{
+                  margin-top: 1rem;
+                }
+              }
+              p{
+                display: block !important;
+                color: $color-storm;
+                font-weight: 200;
+                font-size: 0.875rem;
+              }
+              display: none;
+              &.expanded{
+                display: block;
+              }
+            }
+          }
+        }
       }
     }
   }
