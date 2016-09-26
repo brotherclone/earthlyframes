@@ -1,4 +1,4 @@
-![alt tag](https://travis-ci.org/brotherclone/earthlyframes.svg?branch=master)
+build status :: {<img src="https://travis-ci.org/brotherclone/earthlyframes.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/brotherclone/earthlyframes]
 
 == Earthly Frames
 
