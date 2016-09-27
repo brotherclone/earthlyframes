@@ -1,6 +1,6 @@
 ActiveAdmin.register Post do
 
-  permit_params :body,:title,:main_image,:inline_image, :description
+  permit_params :body,:title,:main_image,:inline_image,:description, :overlay_bright
 
   form(:html => { :multipart => true }) do |f|
     f.inputs do
@@ -9,6 +9,7 @@ ActiveAdmin.register Post do
       f.input :body, :input_html => { :class => 'tinymce' }, :hint => 'The main post body'
       f.input :main_image, :as => :file
       f.input :main_image_cache, :as => :hidden
+      f.input :overlay_bright, :as => :radio
       f.input :inline_image, :as => :file
       f.input :inline_image_cache, :as => :hidden
     end

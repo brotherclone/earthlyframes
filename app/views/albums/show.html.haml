@@ -30,24 +30,24 @@
         %h2{:class=>'track-listing'}
           Track Listing:
         %ol{:class=>'song-list'}
-          -minLength = 5
+          -min_length = 5
           -@album.songs.each do |s|
             -sid = s.id.to_s
             %li
-              -if s.lyrics.length > minLength || s.notes.length > minLength
+              -if s.lyrics.length > min_length || s.notes.length > min_length
                 %a{:class=>'expander', :href=>'javascript:songExpand('+sid+')', :id=>'songid_'+sid}
                   =s.title+' '+s.trt
                   %i
                 .expander-content{:id=>'songcontent_'+sid}
-                  -if s.lyrics.length > minLength
+                  -if s.lyrics.length > min_length
                     %h3 Lyrics
                     =s.lyrics.html_safe
-                  -if s.lyrics.length > minLength && s.notes.length > minLength
+                  -if s.lyrics.length > min_length && s.notes.length > min_length
                     %hr
-                  -if s.notes.length > minLength
+                  -if s.notes.length > min_length
                     %h3 Notes
                     =s.notes.html_safe
               -else
                 %span{:class=>'expander'}
-                  =s.title+' '+s.trt
+                  =s.title+' | '+s.trt
 

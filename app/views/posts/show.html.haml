@@ -13,8 +13,12 @@
       .post
         #js-parallax-window.parallax-window
           .parallax-static-content
-            %h1{:class=>'overlaytitle'}
-              =@post.title
+            -if @post.overlay_bright
+              %h1{:class=>'bright-title'}
+                =@post.title
+            -else
+              %h1{:class=>'overlaytitle'}
+                =@post.title
           #js-parallax-background.parallax-background{:style =>'background: url('+ @post.main_image.to_s+') repeat;'}
         .postbody
           %img{:src => @post.inline_image, :class=>'initimg'}

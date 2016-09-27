@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160926173306) do
+ActiveRecord::Schema.define(version: 20160927124850) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,11 +61,12 @@ ActiveRecord::Schema.define(version: 20160926173306) do
   end
 
   create_table "posts", force: true do |t|
-    t.string "title"
-    t.text   "body"
-    t.string "main_image"
-    t.string "inline_image"
-    t.string "description"
+    t.string  "title"
+    t.text    "body"
+    t.string  "main_image"
+    t.string  "inline_image"
+    t.string  "description"
+    t.boolean "overlay_bright"
   end
 
   create_table "shows", force: true do |t|
