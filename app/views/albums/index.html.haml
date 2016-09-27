@@ -1,6 +1,6 @@
 .albums
   %h1{:class=>'page-header'} Albums
-  -@albumsByDate.each do |a|
+  -@albums.each do |a|
     .album
       .cover
         %a{:href=> albums_path+'/'+a.id.to_s}

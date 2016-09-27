@@ -1,6 +1,6 @@
 .shows
   %h1{:class=>'page-header'} Shows
-  -@showbydate.each do |s|
+  -@shows.each do |s|
     - today = Date.today
     - if s.showdate >= today
       .show.upcoming

@@ -14,6 +14,7 @@
     }
   }
   .show{
+    margin-top: 2rem;
     @include outer-container;
     .flyer{
       vertical-align: top;
@@ -85,7 +86,6 @@
     }
   }
 }
-
 .performance-outer{
   @include outer-container;
   @include media($medium-screen-down){
@@ -106,7 +106,6 @@
         color: $color-peach;
       }
       .info-hold{
-
         .info-pair{
           .label{
             font-family: $base-font-family;
