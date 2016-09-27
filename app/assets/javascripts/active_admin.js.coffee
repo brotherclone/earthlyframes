@@ -6,6 +6,8 @@ $(document).ready ->
     mode: "textareas"
     theme: "modern"
     menubar:false
+    browser_spellcheck: true
+    plugins : 'link'
   return
 
 
