@@ -1,13 +1,19 @@
 .albums
   %h1{:class=>'page-header'} Albums
-  -@albums.each do |a|
-    .album
-      .cover
-        %a{:href=> albums_path+'/'+a.id.to_s}
-          %img{:src=>a.cover}
-      .info.offset
-        %h1
+  -if @albums.length
+    -@albums.each do |a|
+      .album
+        .cover
           %a{:href=> albums_path+'/'+a.id.to_s}
-            =a.title
-        %h2
-          =a.format
+            %img{:src=>a.cover}
+        .info.offset
+          %h1
+            %a{:href=> albums_path+'/'+a.id.to_s}
+              =a.title
+          %h2
+            =a.format
+          - if a.brief_description
+            %p
+              =a.brief_description
+  -else
+    %p There are no published albums at this time.

@@ -1,30 +1,33 @@
 .shows
   %h1{:class=>'page-header'} Shows
-  -@shows.each do |s|
-    - today = Date.today
-    - if s.showdate >= today
-      .show.upcoming
-        .flyer
-          %a{:href=> shows_path+'/'+s.id.to_s}
-            %img{:src=>s.flyer}
-        .info
-          %h2
+  -if @shows.length
+    -@shows.each do |s|
+      - today = Date.today
+      - if s.showdate >= today
+        .show.upcoming
+          .flyer
             %a{:href=> shows_path+'/'+s.id.to_s}
-              =s.title+' | '+s.showdate.strftime('%F').to_s+' '+s.showdate.strftime('%H:%M').to_s
-          .description
-            =s.description.html_safe
-            %a{:href => s.link}
-              Location
-          %hr
-    - else
-      .show.past
-        .flyer
-          %a{:href=> shows_path+'/'+s.id.to_s}
-            %img{:src=>s.flyer}
-        .info
-          %h3
+              %img{:src=>s.flyer}
+          .info
+            %h2
+              %a{:href=> shows_path+'/'+s.id.to_s}
+                =s.title+' | '+s.showdate.strftime('%F').to_s+' '+s.showdate.strftime('%H:%M').to_s
+            .description
+              =s.description.html_safe
+              %a{:href => s.link}
+                Location
+            %hr
+      - else
+        .show.past
+          .flyer
             %a{:href=> shows_path+'/'+s.id.to_s}
-              =s.title
-          .description
-            =s.description.html_safe
-          %hr
+              %img{:src=>s.flyer}
+          .info
+            %h3
+              %a{:href=> shows_path+'/'+s.id.to_s}
+                =s.title
+            .description
+              =s.description.html_safe
+            %hr
+  -else
+    %p There are no published shows at this time.

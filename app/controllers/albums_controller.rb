@@ -1,7 +1,7 @@
 class AlbumsController < ApplicationController
   before_action :set_album, only: [:show, :edit, :update, :destroy]
   def index
-    @albums = Album.all.order(released: :desc)
+    @albums = Album.all.order(released: :desc).where(is_live: true)
   end
 
   def show
@@ -53,6 +53,6 @@ class AlbumsController < ApplicationController
     end
 
     def album_params
-      params.require(:album).permit(:title, :cover, :description, :price, :released, :buylink, :format, :brief_description)
+      params.require(:album).permit(:title, :cover, :description, :price, :released, :buylink, :format, :brief_description, :is_live)
     end
 end

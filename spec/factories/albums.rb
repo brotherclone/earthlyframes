@@ -11,6 +11,10 @@ FactoryGirl.define do
     buylink {Faker::Internet.url}
     format{Faker::Commerce.product_name}
     cover {'http://www.placehold.it/300x300'}
+    is_live {true}
+    trait :wip do
+      is_live {false}
+    end
     factory :album_with_song do
       after(:create) do |album|
         create(:song, album: album)

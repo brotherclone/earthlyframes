@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160927124850) do
+ActiveRecord::Schema.define(version: 20160928145709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,23 +50,26 @@ ActiveRecord::Schema.define(version: 20160927124850) do
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "albums", force: true do |t|
-    t.string "title"
-    t.text   "description"
-    t.string "cover"
-    t.float  "price"
-    t.date   "released"
-    t.string "buylink"
-    t.string "format"
-    t.string "brief_description"
+    t.string  "title"
+    t.text    "description"
+    t.string  "cover"
+    t.float   "price"
+    t.date    "released"
+    t.string  "buylink"
+    t.string  "format"
+    t.string  "brief_description"
+    t.boolean "is_live",           default: false, null: false
   end
 
   create_table "posts", force: true do |t|
-    t.string  "title"
-    t.text    "body"
-    t.string  "main_image"
-    t.string  "inline_image"
-    t.string  "description"
-    t.boolean "overlay_bright"
+    t.string   "title"
+    t.text     "body"
+    t.string   "main_image"
+    t.string   "inline_image"
+    t.string   "description"
+    t.boolean  "overlay_bright"
+    t.boolean  "is_live",        default: false, null: false
+    t.datetime "post_date"
   end
 
   create_table "shows", force: true do |t|
@@ -77,6 +80,7 @@ ActiveRecord::Schema.define(version: 20160927124850) do
     t.string   "link"
     t.string   "flyer"
     t.string   "brief_description"
+    t.boolean  "is_live",           default: false, null: false
   end
 
   create_table "songs", force: true do |t|
@@ -89,23 +93,5 @@ ActiveRecord::Schema.define(version: 20160927124850) do
   end
 
   add_index "songs", ["album_id"], name: "index_songs_on_album_id", using: :btree
-
-  create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-  end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

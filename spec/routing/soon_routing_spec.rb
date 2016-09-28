@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ShowsController, type: :routing do
+RSpec.describe SoonController, type: :routing do
   describe 'routing' do
     it 'routes to #index' do
       expect(:get => '/soon').to route_to('soon#index')

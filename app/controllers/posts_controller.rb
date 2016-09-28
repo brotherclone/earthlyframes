@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order(post_date: :asc).where(is_live: true)
   end
 
   def show
@@ -61,6 +61,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:body,:title,:main_image,:inline_image,:description,:overlay_bright)
+      params.require(:post).permit(:body,:title,:main_image,:inline_image,:description,:overlay_bright, :post_date, :is_live)
     end
 end

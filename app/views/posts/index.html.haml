@@ -1,16 +1,19 @@
 .posts
   %h1{:class=>'page-header'} Postings
-  .body
-    .left-nav
-      = render :partial => 'components/postnav'
-    .right-well
-      -@posts.each do |p|
-        .postpreview
-          .img{:style =>'background: url('+p.main_image.to_s+')'}
-          .title
-            %a{:href=> posts_path+'/'+p.id.to_s}
-              =p.title
-          .snippet
-            =p.description
-          .rule
-            %hr
+  -if @posts.length
+    .body
+      .left-nav
+        = render :partial => 'components/postnav'
+      .right-well
+        -@posts.each do |p|
+          .postpreview
+            .img{:style =>'background: url('+p.main_image.to_s+')'}
+            .title
+              %a{:href=> posts_path+'/'+p.id.to_s}
+                =p.title
+            .snippet
+              =p.description
+            .rule
+              %hr
+  -else
+    %p There are no published posts at this time.

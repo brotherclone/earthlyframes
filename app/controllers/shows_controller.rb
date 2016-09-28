@@ -2,7 +2,7 @@ class ShowsController < ApplicationController
   before_action :set_show, only: [:show, :edit, :update, :destroy]
 
   def index
-    @shows = Show.all.order(showdate: :desc)
+    @shows = Show.all.order(showdate: :desc).where(is_live: true)
   end
 
   def show
@@ -57,6 +57,6 @@ class ShowsController < ApplicationController
     end
 
     def show_params
-      params.require(:show).permit(:title,:showdate,:description,:location,:link,:flyer,:brief_description)
+      params.require(:show).permit(:title,:showdate,:description,:location,:link,:flyer,:brief_description,:is_live)
     end
 end

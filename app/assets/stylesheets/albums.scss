@@ -38,6 +38,14 @@
           }
         }
       }
+      p{
+        margin: -0.5rem auto 1.5em auto;
+        max-width: 250px;
+        font-size: 0.875rem;
+        color: $color-grey;
+        font-weight: 100;
+        padding: 0.25rem;
+      }
       font-weight: 100;
     }
     &.detail {
@@ -76,7 +84,6 @@
           font-size: 3rem;
           color: $color-taupe;
         }
-
         .info {
           text-align: left;
           text-transform: uppercase;

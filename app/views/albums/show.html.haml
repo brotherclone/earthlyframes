@@ -1,53 +1,59 @@
 .albums
-  .back-button
+  -if @album.is_live
+    .back-button
+      %a{:href=>albums_path}
+        %button
+          %i
+          %span
+            Back
+    .album.detail
+      .left
+        %img{:src => @album.cover, :class=>'cover', :alt => @album.title}
+        .buy
+          %span{:class=>'price'}
+            =number_to_currency(@album.price, :unit => '$')
+          %a{:href=>@album.buylink}
+            %button
+              %i
+              %span Buy
+      .right
+        .title
+          =@album.title
+        .info
+          -if @album.released
+            =@album.format+' | '+@album.released.strftime('%b %y')
+          -else
+            =@album.format
+        .description
+          =@album.description.html_safe
+        -if @album.songs
+          %hr
+          %h2{:class=>'track-listing'}
+            Track Listing:
+          %ol{:class=>'song-list'}
+            -min_length = 5
+            -@album.songs.each do |s|
+              -sid = s.id.to_s
+              %li
+                -if s.lyrics.length > min_length || s.notes.length > min_length
+                  %a{:class=>'expander', :href=>'javascript:songExpand('+sid+')', :id=>'songid_'+sid}
+                    =s.title+' '+s.trt
+                    %i
+                  .expander-content{:id=>'songcontent_'+sid}
+                    -if s.lyrics.length > min_length
+                      %h3 Lyrics
+                      =s.lyrics.html_safe
+                    -if s.lyrics.length > min_length && s.notes.length > min_length
+                      %hr
+                    -if s.notes.length > min_length
+                      %h3 Notes
+                      =s.notes.html_safe
+                -else
+                  %span{:class=>'expander'}
+                    =s.title+' | '+s.trt
+
+  -else
+    %p This album is being updated. Please check back shortly.
     %a{:href=>albums_path}
-      %button
-        %i
-        %span
-          Back
-  .album.detail
-    .left
-      %img{:src => @album.cover, :class=>'cover', :alt => @album.title}
-      .buy
-        %span{:class=>'price'}
-          =number_to_currency(@album.price, :unit => '$')
-        %a{:href=>@album.buylink}
-          %button
-            %i
-            %span Buy
-    .right
-      .title
-        =@album.title
-      .info
-        -if @album.released
-          =@album.format+' | '+@album.released.strftime('%b %y')
-        -else
-          =@album.format
-      .description
-        =@album.description.html_safe
-      -if @album.songs
-        %hr
-        %h2{:class=>'track-listing'}
-          Track Listing:
-        %ol{:class=>'song-list'}
-          -min_length = 5
-          -@album.songs.each do |s|
-            -sid = s.id.to_s
-            %li
-              -if s.lyrics.length > min_length || s.notes.length > min_length
-                %a{:class=>'expander', :href=>'javascript:songExpand('+sid+')', :id=>'songid_'+sid}
-                  =s.title+' '+s.trt
-                  %i
-                .expander-content{:id=>'songcontent_'+sid}
-                  -if s.lyrics.length > min_length
-                    %h3 Lyrics
-                    =s.lyrics.html_safe
-                  -if s.lyrics.length > min_length && s.notes.length > min_length
-                    %hr
-                  -if s.notes.length > min_length
-                    %h3 Notes
-                    =s.notes.html_safe
-              -else
-                %span{:class=>'expander'}
-                  =s.title+' | '+s.trt
+      Return to Albums listing.
 

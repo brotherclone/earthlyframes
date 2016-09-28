@@ -1,25 +1,29 @@
 .posts
-  .heading
-    .back-button
-      %a{:href=>posts_path}
-        %button
-          %i
-          %span
-            Back
-  .body
-    .left-nav
-      = render :partial => 'components/postnav'
-    .right-well
-      .post
-        #js-parallax-window.parallax-window
-          .parallax-static-content
-            -if @post.overlay_bright
-              %h1{:class=>'bright-title'}
-                =@post.title
-            -else
-              %h1{:class=>'overlaytitle'}
-                =@post.title
-          #js-parallax-background.parallax-background{:style =>'background: url('+ @post.main_image.to_s+') repeat;'}
-        .postbody
-          %img{:src => @post.inline_image, :class=>'initimg'}
-          =@post.body.html_safe
+  -if @post.is_live
+    .heading
+      .back-button
+        %a{:href=>posts_path}
+          %button
+            %i
+            %span
+              Back
+    .body
+      .left-nav
+        = render :partial => 'components/postnav'
+      .right-well
+        .post
+          #js-parallax-window.parallax-window
+            .parallax-static-content
+              -if @post.overlay_bright
+                %h1{:class=>'bright-title'}
+                  =@post.title
+              -else
+                %h1{:class=>'overlaytitle'}
+                  =@post.title
+            #js-parallax-background.parallax-background{:style =>'background: url('+ @post.main_image.to_s+') repeat;'}
+          .postbody
+            %img{:src => @post.inline_image, :class=>'initimg'}
+            =@post.body.html_safe
+  -else
+    %p This post is not available.
+    %a{:href=>posts_path} Return to Posts listing.
