@@ -1,12 +1,9 @@
 // Shows
 //
-// ef.layouts.shows
+// Styleguide: ef.layouts.shows
 
 .shows{
   @include outer-container;
-  @include media($medium-screen-down){
-    margin-top: 2rem;
-  }
   .show:last-of-type{
     margin-bottom: 4rem;
     hr{
@@ -14,21 +11,39 @@
     }
   }
   .show{
-    margin-top: 2rem;
-    @include outer-container;
+    @include display(flex);
+    @include justify-content(space-between);
     .flyer{
       vertical-align: top;
+      @include media($medium-screen-down) {
+        display:none;
+      }
       img{
+        min-width: 200px;
         margin: 0 auto 0 auto;
         vertical-align: top;
       }
     }
     .info{
+      margin-left:2rem;
+      @include media($medium-screen-down) {
+        margin-left:0;
+        padding: 0 1rem 0 1rem;
+      }
       .description{
         font-size: 1rem;
         font-weight: 100;
         color: $color-grey;
-        font-size: modular-scale(1);
+      }
+      h2{
+        a {
+          font-size: 2.25rem;
+          color: $color-storm;
+          text-decoration: none;
+          &:hover{
+            color: $color-peach;
+          }
+        }
       }
       a{
         font-size: 1rem;
@@ -41,69 +56,35 @@
       }
     }
   }
-  .show.upcoming{
-    .flyer{
-      @include span-columns(2);
-      img{
-        max-width: 400px;
-      }
-    }
-    .info{
-      @include shift(1);
-      @include span-columns(4);
-      h2{
-        a {
-          font-size: 2.25rem;
-          color: $color-storm;
-          text-decoration: none;
-          &:hover{
-            color: $color-peach;
-          }
-        }
-      }
-    }
-  }
-  .show.past{
-    .flyer{
-      @include span-columns(2);
-      img{
-        max-width: 120px;
-      }
-    }
-    .info{
-      @include shift(2);
-      @include span-columns(6);
-      h3{
-        a {
-          font-size: 2rem;
-          color: $color-grey;
-          text-decoration: none;
-          &:hover{
-            color: $color-peach;
-          }
-        }
-      }
-    }
-  }
 }
 .performance-outer{
+  margin-top: 1rem;
   @include outer-container;
-  @include media($medium-screen-down){
-    margin-top: 2rem;
-  }
   .back-button{
     @include back-button();
   }
   .performance-inner{
+    @include display(flex);
+    @include justify-content(space-between);
+
     .left-flyer{
-      @include shift(2);
-      @include span-columns(5);
+      @include media($medium-screen-down) {
+        display:none;
+      }
+      img{
+        min-width: 350px;
+      }
     }
     .right-info{
-      @include shift(1);
-      @include span-columns(4);
-      h3{
+      margin-left:2rem;
+      @include media($medium-screen-down) {
+        margin-left:0;
+        padding: 0 1rem 0 1rem;
+      }
+      h2{
         color: $color-peach;
+        font-size: 1.5rem;
+        margin-bottom: 0.25rem;
       }
       .info-hold{
         .info-pair{
@@ -111,6 +92,7 @@
             font-family: $base-font-family;
             font-size: 1.25rem;
             display: block;
+            margin: 1rem 0 0.5rem 0;
           }
           .detail{
             font-size: 1rem;

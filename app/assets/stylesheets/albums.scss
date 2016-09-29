@@ -1,12 +1,10 @@
 // Shows
 //
-// ef.layouts.albums
+// Styleguide: ef.layouts.albums
 
 .albums {
   @include outer-container;
-  @include media($medium-screen-down){
-    margin-top: 2rem;
-  }
+  margin-top: 2rem;
   .back-button {
     @include back-button();
   }
@@ -41,7 +39,7 @@
       p{
         margin: -0.5rem auto 1.5em auto;
         max-width: 250px;
-        font-size: 0.875rem;
+        font-size: 1rem;
         color: $color-grey;
         font-weight: 100;
         padding: 0.25rem;

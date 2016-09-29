@@ -1,11 +1,14 @@
 // Postings
 //
-// ef.layouts.postings
+// Styleguide: ef.layouts.postings
+
 .posts {
   @include outer-container;
-  @include media($medium-screen-down){
-    margin-top: 2rem;
-
+  &.individual{
+    margin-top: -1.5rem;
+    @include media($medium-screen-down){
+      margin-top: -2.5rem;
+    }
   }
   .heading{
     visibility: hidden;
@@ -56,11 +59,11 @@
         }
         .postimg{
           float: right;
-          margin: 0 1rem 0 1rem;
+          margin: 0 0 1rem 0.2rem;
           @include media($medium-screen-down){
-            margin: 1rem 0 1rem 0;
             float: none;
           }
+          width: 98%;
           padding: 1rem;
           max-width: 450px;
         }
@@ -73,8 +76,8 @@
       }
       .postpreview{
         .img{
-          width: 100%;
-          margin-bottom: 1rem;
+          width: 98%;
+          margin: 0 0 1rem 0.2rem;
           background-size: cover;
           height: 200px;
           background-repeat: no-repeat;

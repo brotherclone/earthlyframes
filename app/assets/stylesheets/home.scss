@@ -1,3 +1,7 @@
+// The Earthly Frames
+//
+// Styleguide: ef.layouts.home
+
 .outer{
   @include outer-container();
 }
@@ -47,8 +51,8 @@
     @include position(absolute, 0);
     background-color: transparentize($image-gradient-color-top, $transparency-top);
     background-image: linear-gradient($vertical-angle,
-            transparentize($image-gradient-color-top, $transparency-top),
-            transparentize($image-gradient-color-bottom, $transparency-bottom)
+    transparentize($image-gradient-color-top, $transparency-top),
+    transparentize($image-gradient-color-bottom, $transparency-bottom)
     );
     display: block;
 
