@@ -1,6 +1,6 @@
 parallax = ->
   if $('#js-parallax-window').length > 0
-    plxBackground = $('#js-parallax-background')
+    plxBackground = $('#js-parallax-background,#js-parallax-background-bright')
     plxWindow = $('#js-parallax-window')
     plxWindowTopToPageTop = $(plxWindow).offset().top
     windowTopToPageTop = $(window).scrollTop()

@@ -1,9 +1,11 @@
+-today = Date.today
 -p = Post.where(is_live: true).first(3)
 -p.each do |post|
   -@cardholder << CardItem.new(post.title, post.description, post.main_image, post_path(post.id))
 -s = Show.where(is_live: true).first(3)
 -s.each do |show|
-  -@cardholder << CardItem.new(show.title, show.brief_description, show.flyer, show_path(show.id))
+  -if show.showdate >= today
+    -@cardholder << CardItem.new(show.title, show.brief_description, show.flyer, show_path(show.id))
 -a = Album.where(is_live: true).first(3)
 -a.each do |album|
   -@cardholder << CardItem.new(album.title, album.brief_description, album.cover, album_path(album.id))

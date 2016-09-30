@@ -11,12 +11,14 @@
           .info
             %h2
               %a{:href=> shows_path+'/'+s.id.to_s}
-                =s.title+' | '+s.showdate.strftime('%F').to_s+' '+s.showdate.strftime('%H:%M').to_s
+                =s.title
+            %h3
+              =s.showdate.strftime('%F').to_s+' '+s.showdate.strftime('%H:%M').to_s
             .description
-              =s.description.html_safe
+              =s.brief_description
               %a{:href => s.link}
                 Location
-            %hr
+        %hr
       - else
         .show.past
           .flyer
@@ -27,7 +29,8 @@
               %a{:href=> shows_path+'/'+s.id.to_s}
                 =s.title
             .description
-              =s.description.html_safe
-            %hr
+              %strong Past Event:
+              =s.brief_description
+        %hr
   -else
     %p There are no published shows at this time.

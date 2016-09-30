@@ -4,9 +4,10 @@
 
 .shows{
   @include outer-container;
-  .show:last-of-type{
+  hr{
     margin-bottom: 4rem;
-    hr{
+    border-color: transparentize($color-storm,0.8);
+    &:last-of-type{
       display: none;
     }
   }
@@ -19,16 +20,18 @@
         display:none;
       }
       img{
-        min-width: 200px;
+        max-width: 200px;
         margin: 0 auto 0 auto;
         vertical-align: top;
       }
     }
     .info{
       margin-left:2rem;
+      width: 100%;
       @include media($medium-screen-down) {
         margin-left:0;
         padding: 0 1rem 0 1rem;
+        text-align: center;
       }
       .description{
         font-size: 1rem;
@@ -40,6 +43,7 @@
           font-size: 2.25rem;
           color: $color-storm;
           text-decoration: none;
+          font-weight: 600;
           &:hover{
             color: $color-peach;
           }
@@ -49,10 +53,6 @@
         font-size: 1rem;
         font-weight: 100;
         color: $color-peach;
-      }
-      hr{
-        margin-bottom: 4rem;
-        border-color: transparentize($color-storm,0.8);
       }
     }
   }
@@ -66,7 +66,6 @@
   .performance-inner{
     @include display(flex);
     @include justify-content(space-between);
-
     .left-flyer{
       @include media($medium-screen-down) {
         display:none;

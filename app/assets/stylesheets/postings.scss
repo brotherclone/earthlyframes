@@ -108,6 +108,7 @@
     color: $color-storm;
   }
   .bright-title{
-    color: $color-peach;
+    color: #fff;
+    text-shadow: 0 5px 10px transparentize($color-storm, 0.35);
   }
 }
