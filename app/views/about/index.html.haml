@@ -3,13 +3,22 @@
     %h1{:class=>'page-header'} About
     %article
       %p
-        %a{:href=>'http://www.imaginary.foundation'} Gabriel Walsh
-        plays experimental rock music as The Earthly Frames. Walsh's earlier recording project was called
-        %a{:href => yourteamring_path}Your Team Ring
+        %span{:itemscope=> true, :itemtype=> 'http://schema.org/Person'}
+          %a{:href=>'http://www.imaginary.foundation', :itemprop=>'name'} Gabriel Walsh
+        plays experimental rock music as
+        %span{:itemscope=>true, :itemtype=>'http://schema.org/MusicGroup'}
+          %span{:itemprop=>'name'} The Earthly Frames.
+        Walsh's earlier recording project was called
+        %span{:itemscope=>true, :itemtype=>'http://schema.org/MusicGroup'}
+          %a{:itemprop=>'name',:href => yourteamring_path} Your Team Ring
         and he released music under this moniker from 1995-2005. You can find the music of Your Team Ring
         %a{:href => yourteamring_path}here.
       %p
-        With the Earthly Frames, the high-concept, psychedelia has carried over from Your Team Ring but the lo-fi, whimsical folk have given way to synths and loops. This new sound allows for The Earthly Frames to play live and constantly rework songs.
+        With the Earthly Frames, the high-concept,
+        %span{:itemprop=>'genre'} psychedelia
+        has carried over from Your Team Ring but the
+        %span{:itemprop=>'genre'}lo-fi,
+        whimsical folk have given way to synths and loops. This new sound allows for The Earthly Frames to play live and constantly rework songs.
       %p
         Walsh, the constant dabbler, has incorporated multimedia into Earthly Frames releases.
         %a{:href => album_path(1)}Volume 1
@@ -17,4 +26,5 @@
         %a{:href => album_path(3)}Hoarding Eleven
         went so far as to accompany the release with a short film, book by Walsh's father and card game.
       %p
-        The Earthly Frames reside at Walsh's custom studio in Maryland.
+        The Earthly Frames reside at Walsh's custom studio in
+        %span{:itemprop=>'location', :itemscope=>true, :itemtype=>'http://schema.org/Place'}Maryland.
