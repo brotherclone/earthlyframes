@@ -24,6 +24,9 @@
           .postbody
             %img{:src => @post.inline_image, :class=>'initimg'}
             =@post.body.html_safe
+        .more-prev
+          = link_to('Previous Post', @post.prev_post) if @post.prev_post
+          = link_to('Next Post', @post.next_post) if @post.next_post
   -else
     %p This post is not available.
     %a{:href=>posts_path} Return to Posts listing.

@@ -11,7 +11,3 @@ $(document).ready ->
   else
     initimg.addClass 'width'
   initimg.removeClass 'initimg'
-
-  $('.snippet').each ->
-  $(this).find('p:not(:first)').hide()
-  return

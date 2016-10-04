@@ -102,6 +102,25 @@
           color: $color-grey;
         }
       }
+      .more-prev{
+        margin: 2rem 0 1rem 0;
+        a{
+          font-size: 0.75rem;
+          color: $color-storm;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-weight: 600;
+          &:hover{
+            color: $color-peach;
+          }
+        }
+        a:nth-child(1){
+          float: left;
+        }
+        a:nth-child(2){
+          float: right;
+        }
+      }
     }
   }
   .overlaytitle{
