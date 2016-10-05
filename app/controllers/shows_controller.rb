@@ -3,9 +3,17 @@ class ShowsController < ApplicationController
 
   def index
     @shows = Show.all.order(showdate: :desc).where(is_live: true)
+    respond_to do |format|
+      format.html {render :index}
+      format.json {render :json => @shows}
+    end
   end
 
   def show
+    respond_to do |format|
+      format.html {render :show}
+      format.json {render :json => @show}
+    end
   end
 
   def new

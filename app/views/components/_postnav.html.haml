@@ -1,6 +1,5 @@
--pastposts = Post.last(5)
 %ul
-  -pastposts.each do |p|
+  -@nav_posts.each do |p|
     %li
       %a{:href=> posts_path+'/'+p.id.to_s}
         =p.title

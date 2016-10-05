@@ -14,5 +14,4 @@ ActiveAdmin.register Song do
     f.actions
   end
 
-
 end

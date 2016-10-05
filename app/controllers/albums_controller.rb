@@ -2,9 +2,17 @@ class AlbumsController < ApplicationController
   before_action :set_album, only: [:show, :edit, :update, :destroy]
   def index
     @albums = Album.all.order(released: :desc).where(is_live: true)
+    respond_to do |format|
+      format.html { render :index}
+      format.json { render :json => @albums}
+    end
   end
 
   def show
+    respond_to do |format|
+      format.html { render :show}
+      format.json { render :json => @album}
+    end
   end
 
   def new

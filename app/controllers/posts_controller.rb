@@ -3,10 +3,23 @@ class PostsController < ApplicationController
 
 
   def index
-    @posts = Post.all.order(post_date: :asc).where(is_live: true)
+    @posts = Post.all.order(post_date: :asc).where(is_live: true).last(3)
+    @all_posts = Post.all.order(post_date: :asc).where(is_live: true)
+    @nav_posts = Post.all.order(post_date: :asc).where(is_live: true).last(8)
+
+    respond_to do |format|
+      format.html { render :index}
+      format.json {render :json => @all_posts}
+    end
+
   end
 
   def show
+    @nav_posts = Post.all.order(post_date: :asc).where(is_live: true).last(8)
+    respond_to do |format|
+      format.html { render :show}
+      format.json {render :json => @post}
+    end
   end
 
 
@@ -56,11 +69,11 @@ class PostsController < ApplicationController
 
   private
 
-    def set_post
-      @post = Post.find(params[:id])
-    end
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
-    def post_params
-      params.require(:post).permit(:body,:title,:main_image,:inline_image,:description,:overlay_bright, :post_date, :is_live)
-    end
+  def post_params
+    params.require(:post).permit(:body, :title, :main_image, :inline_image, :description, :overlay_bright, :post_date, :is_live)
+  end
 end
