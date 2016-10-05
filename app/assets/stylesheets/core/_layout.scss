@@ -24,9 +24,9 @@ $large-screen-down: new-breakpoint(max-width $large-screen 8);
   }
 }
 
-body{
+html,body{
   overflow-x: hidden;
-  p{
-    display:block !important;
-  }
+}
+p{
+  display:block !important;
 }
