@@ -13,4 +13,5 @@ RSpec.describe Post, type: :model do
   it 'has a valid Factory with a Work In Progress Trait' do
     expect(build(:post, :wip)).to be_valid
   end
+
 end

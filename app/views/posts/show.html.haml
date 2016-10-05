@@ -22,11 +22,16 @@
                   =@post.title
             #js-parallax-background.parallax-background{:style =>'background: url('+ @post.main_image.to_s+') repeat;'}
           .postbody
-            %img{:src => @post.inline_image, :class=>'initimg'}
+            -if @post.inline_image
+              %img{:src => @post.inline_image, :class=>'initimg'}
             =@post.body.html_safe
         .more-prev
           = link_to('Previous Post', @post.prev_post) if @post.prev_post
-          = link_to('Next Post', @post.next_post) if @post.next_post
+          -if @post.next_post && !@post.prev_post
+            %span{:class => 'lone'}
+              = link_to('Next Post', @post.next_post)
+          -else
+            = link_to('Next Post', @post.next_post) if @post.next_post
   -else
     %p This post is not available.
     %a{:href=>posts_path} Return to Posts listing.

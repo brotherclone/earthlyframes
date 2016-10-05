@@ -79,16 +79,6 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-  describe 'Posting sequence' do
-    it 'checks a published next and prev post' do
-      nposts = FactoryGirl.create_list(:post,3)
-      npost = nposts[1]
-      get :show, {:id => npost.to_param}
-      expect(npost.next_post).to be_valid
-      expect(npost.prev_post).to be_valid
-    end
-  end
-
 end
 
 
