@@ -157,3 +157,21 @@
 %header-texture{
   @include texture(45deg, $color-storm, lighten($color-storm, 10%), 1, 0);
 }
+
+.example-header-texture{
+  @extend %example-swatch;
+  @extend %header-texture;
+}
+
+.example-body-texture{
+  @extend %example-swatch;
+  @extend %level-2-texture;
+}
+
+%example-swatch{
+  width : 200px;
+  height: 200px;
+  margin: 0 auto 0 auto;
+  border: 1px solid transparentize($color-storm, 0.2);
+  border-radius: 5px;
+}

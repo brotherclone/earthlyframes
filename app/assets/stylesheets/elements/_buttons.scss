@@ -36,6 +36,9 @@
   }
 }
 
+.example-button{
+  @include ef-button();
+}
 
 
 @mixin back-button(){
@@ -52,3 +55,7 @@
   }
   margin-bottom: 1rem;
 };
+
+.example-back-button{
+  @include back-button();
+}

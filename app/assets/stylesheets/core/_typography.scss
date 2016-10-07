@@ -24,4 +24,8 @@
       display: block !important;
     }
   }
+  &.example{
+    margin: 0 auto 0 auto;
+    max-width: 800px;
+  }
 }
