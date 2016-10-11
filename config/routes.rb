@@ -12,11 +12,6 @@ Rails.application.routes.draw do
   get 'ytr', to:'your_team_ring_archive#index'
   get 'yourteamring', to:'your_team_ring_archive#index'
   get 'your-team-ring', to:'your_team_ring_archive#index'
-
-  if Rails.env.production?
-    root 'soon#index'
-  else
-    root 'home#index'
-  end
+  root 'home#index'
 
 end

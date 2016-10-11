@@ -6,13 +6,9 @@ RSpec.describe SoonController, type: :routing do
       expect(:get => '/soon').to route_to('soon#index')
     end
 
-    it 'checks that dev routes to soon' do
+    it 'checks that coming soon is no longer live.' do
       if Rails.env.production?
-        expect(:get => '/').to route_to('soon#index')
-      else
-        expect(:get => '/').to route_to('home#index')
-      end
-    end
-
+        expect(:get => '/').not_to route_to('soon#index')
+     end
   end
 end
