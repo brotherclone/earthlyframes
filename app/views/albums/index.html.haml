@@ -2,18 +2,18 @@
   %h1{:class=>'page-header'} Albums
   -if @albums.length
     -@albums.each do |a|
-      .album
-        .cover
+      .album{:itemscope => true, :itemtype => 'http://schema.org/MusicGroup'}
+        .cover{:itemprop=>'image'}
           %a{:href=> albums_path+'/'+a.id.to_s}
             %img{:src=>a.cover}
         .info.offset
           %h1
-            %a{:href=> albums_path+'/'+a.id.to_s}
+            %a{:href=> albums_path+'/'+a.id.to_s, :itemprop => 'name'}
               =a.title
-          %h2
+          %h2{:itemprop => 'additionalType'}
             =a.format
           - if a.brief_description
-            %p
+            %p{:itemprop => 'about'}
               =a.brief_description
   -else
     %p There are no published albums at this time.

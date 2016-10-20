@@ -6,9 +6,10 @@
           %i
           %span
             Back
-    .album.detail
+    .album.detail{:itemscope => true, :itemtype => 'http://schema.org/MusicGroup'}
       .left
-        %img{:src => @album.cover, :class=>'cover', :alt => @album.title}
+        %span{:class=>'screen-reader-only', :itemprop=>'byArtist'} The Earthly Frames
+        %img{:src => @album.cover, :class=>'cover', :alt => @album.title, :itemprop =>'image'}
         .buy
           %span{:class=>'price'}
             =number_to_currency(@album.price, :unit => '$')
@@ -17,14 +18,14 @@
               %i
               %span Buy
       .right
-        .title
+        .title{:itemprop => 'name'}
           =@album.title
-        .info
+        .info{:itemprop => 'datePublished'}
           -if @album.released
             =@album.format+' | '+@album.released.strftime('%b %y')
           -else
             =@album.format
-        .description
+        .description{:itemprop => 'description'}
           =@album.description.html_safe
         -if @album.songs
           %hr
@@ -34,7 +35,7 @@
             -min_length = 5
             -@album.songs.each do |s|
               -sid = s.id.to_s
-              %li
+              %li{:itemprop=>'track'}
                 -if s.lyrics.length > min_length || s.notes.length > min_length
                   %a{:class=>'expander', :href=>'javascript:songExpand('+sid+')', :id=>'songid_'+sid}
                     =s.title+' '+s.trt
@@ -42,12 +43,14 @@
                   .expander-content{:id=>'songcontent_'+sid}
                     -if s.lyrics.length > min_length
                       %h3 Lyrics
-                      =s.lyrics.html_safe
+                      .lyrics{:itemprop=>'lyrics'}
+                        =s.lyrics.html_safe
                     -if s.lyrics.length > min_length && s.notes.length > min_length
                       %hr
                     -if s.notes.length > min_length
                       %h3 Notes
-                      =s.notes.html_safe
+                      .notes{:itemprop => 'about'}
+                        =s.notes.html_safe
                 -else
                   %span{:class=>'expander'}
                     =s.title+' | '+s.trt
