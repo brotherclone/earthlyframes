@@ -1,9 +1,9 @@
 ruby '2.1.2'
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 gem 'rails', '4.1.9'
 gem 'pg'
-gem 'sass-rails', '~> 5.0.0'
+gem 'sass-rails', '~> 5.0.0.beta1'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails'
 gem 'jquery-rails'
@@ -19,7 +19,7 @@ gem 'neat'
 gem 'cloudinary'
 gem 'inline_svg'
 gem 'font-awesome-sass', '~> 4.5.0'
-#gem 'livingstyleguide'
+gem 'livingstyleguide'
 
 group :development, :test do
   gem 'rspec-rails'
