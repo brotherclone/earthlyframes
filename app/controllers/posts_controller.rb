@@ -3,9 +3,9 @@ class PostsController < ApplicationController
 
 
   def index
-    @posts = Post.all.order(post_date: :asc).where(is_live: true).last(3)
-    @all_posts = Post.all.order(post_date: :asc).where(is_live: true)
-    @nav_posts = Post.all.order(post_date: :asc).where(is_live: true).last(8)
+    @posts = Post.all.order(post_date: :desc).where(is_live: true).last(3)
+    @all_posts = Post.all.order(post_date: :desc).where(is_live: true)
+    @nav_posts = Post.all.order(post_date: :desc).where(is_live: true).last(8)
 
     respond_to do |format|
       format.html { render :index}
@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @nav_posts = Post.all.order(post_date: :asc).where(is_live: true).last(8)
+    @nav_posts = Post.all.order(post_date: :desc).where(is_live: true).last(8)
     respond_to do |format|
       format.html { render :show}
       format.json {render :json => @post}
