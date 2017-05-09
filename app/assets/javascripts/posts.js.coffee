@@ -1,4 +1,4 @@
-$(document).ready ->
+positionImages = () ->
   initimg = $('.initimg')
   iW = initimg.width()
   iH = initimg.height()
@@ -11,3 +11,12 @@ $(document).ready ->
   else
     initimg.addClass 'width'
   initimg.removeClass 'initimg'
+
+
+$(document).ready ->
+  positionImages()
+return
+
+$(document).on 'page:load', ->
+  positionImages()
+return

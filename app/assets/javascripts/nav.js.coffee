@@ -1,4 +1,4 @@
-$(document).ready ->
+mobileNav = () ->
   menuToggle = $('#js-navigation-centered-mobile-menu').unbind()
   $('#js-navigation-centered-menu').removeClass 'show'
   menuToggle.on 'click', (e) ->
@@ -9,3 +9,12 @@ $(document).ready ->
       return
     return
   return
+
+
+$(document).ready ->
+  mobileNav()
+return
+
+$(document).on 'page:load', ->
+  mobileNav()
+return
