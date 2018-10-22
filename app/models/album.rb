@@ -9,3 +9,5 @@ class Album < ActiveRecord::Base
     )
   end
 end
+
+#ToDo Add video to API

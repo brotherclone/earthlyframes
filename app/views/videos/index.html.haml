@@ -1,0 +1,7 @@
+.videos
+  %h1{:class=>'page-header'} Videos
+  -if @videos.length
+    -@videos.each do |v|
+      %a{:href=> videos_path+'/'+v.id.to_s}
+  -else
+    %p There are no published albums at this time.

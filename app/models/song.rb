@@ -1,5 +1,6 @@
 class Song < ActiveRecord::Base
   validates :title, presence: true
   belongs_to :album
+  has_one :video
   accepts_nested_attributes_for :album
 end
