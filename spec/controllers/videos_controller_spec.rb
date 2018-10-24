@@ -15,6 +15,13 @@ RSpec.describe VideosController, type: :controller do
       get :show, {:id => video.to_param}
       expect(assigns(:video)).to eq(video)
     end
+    it 'gets a video url as @video_url' do
+      video = FactoryGirl.create(:video)
+      video_url = "https://player.vimeo.com/video/" + video.video_service_id
+      get :show, {:id => video.to_param}
+      expect(assigns(:video_url)).to eq(video_url)
+    end
+
   end
 
   describe 'POST #create' do

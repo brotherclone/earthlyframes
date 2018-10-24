@@ -1,11 +1,13 @@
 class VideosController < ApplicationController
   before_action :set_video, only: [:show, :edit, :update, :destroy]
+  include VideosHelper
 
   def index
     @videos = Video.all
   end
 
   def show
+    @video_url = "#{video_url(@video)}"
   end
 
   def new
@@ -60,6 +62,6 @@ class VideosController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def video_params
-    params.require(:video).permit(:title, :description, :video_type, :video_service_id)
+    params.require(:video).permit(:title, :description, :video_type, :video_service_id, :song_id)
   end
 end

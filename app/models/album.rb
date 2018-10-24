@@ -4,10 +4,18 @@ class Album < ActiveRecord::Base
   has_many :songs, -> { order(song_order: :asc) }
 
   def as_json(options={})
-    super(:only => [:title, :cover, :description, :price, :released, :buylink, :format, :brief_description],
-          :include => {:songs => {:only =>[:title, :trt, :notes, :lyrics], :order => 'song_order desc'}}
+    super(:only => [:title,
+                    :cover,
+                    :description,
+                    :price,
+                    :released,
+                    :buylink,
+                    :format,
+                    :brief_description],
+          :include => {:songs => {:only =>[:title,
+                                           :trt,
+                                           :notes,
+                                           :lyrics], :order => 'song_order desc', :include => {:videos => {:only => [:video_service_id]}}}}
     )
   end
 end
-
-#ToDo Add video to API

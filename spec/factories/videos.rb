@@ -5,10 +5,8 @@ FactoryGirl.define do
   factory :video do
     title {:videotitle}
     description {Faker::Lorem.sentence}
-    video_type {'vimeo'}
+    video_type {'Vimeo'}
     video_service_id {'1234'}
     song
   end
 end
-
-# ToDo: Belongs to a song.

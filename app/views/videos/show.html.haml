@@ -1,10 +1,7 @@
-%p#notice= notice
-
-
-= link_to 'Edit', edit_video_path(@video)
-\|
-= link_to 'Back', videos_path
-
-
--#<iframe src="https://player.vimeo.com/video/257897673" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
--#<p><a href="https://vimeo.com/257897673">Side by Side Guided Styles</a> from <a href="https://vimeo.com/codeowl">Gabriel Walsh</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+.video
+  %iframe{:src => @video_url, :width=> '640', :height=> '360', :frameborder =>'0', :webkitallowfullscreen=> true, :mozallowfullscreen=> true, :allowfullscreen=> true}
+  %p
+    %a{:href=> @video_url} Side by Side Guided Styles
+    %span
+      from
+    %a{:href=> 'https://vimeo.com/codeowl'} Gabriel Walsh
