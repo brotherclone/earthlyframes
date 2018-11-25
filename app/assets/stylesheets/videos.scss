@@ -1,3 +1,38 @@
-// Place all the styles related to the Videos controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.videos {
+  margin-top: 2rem;
+  @include outer-container;
+  .video-listing {
+    display: flex;
+    align-content: space-between;
+    .video {
+      text-align: center;
+      @include span-columns(12);
+      .song-title {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: $color-storm;
+      }
+      .album-link {
+        font-size: 1.2rem;
+        font-weight: 200;
+        color: $color-peach;
+      }
+    }
+  }
+}
+
+.video{
+  .back-button{
+    @include back-button();
+  }
+  .player-container{
+    display: flex;
+    width: 100%;
+    iframe{
+     margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+

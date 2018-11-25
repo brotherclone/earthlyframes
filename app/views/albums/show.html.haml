@@ -41,6 +41,9 @@
                     =s.title+' '+s.trt
                     %i
                   .expander-content{:id=>'songcontent_'+sid}
+                    -if s.video
+                      %a{:href=> video_path(s.video.id), :class => 'video-link'}
+                        ="Watch the video for " + s.title
                     -if s.lyrics.length > min_length
                       %h3 Lyrics
                       .lyrics{:itemprop=>'lyrics'}

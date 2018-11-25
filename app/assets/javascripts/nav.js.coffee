@@ -13,8 +13,12 @@ mobileNav = () ->
 
 $(document).ready ->
   mobileNav()
-return
+  return
 
 $(document).on 'page:load', ->
   mobileNav()
-return
+  return
+
+$(window).resize ->
+  mobileNav()
+  return

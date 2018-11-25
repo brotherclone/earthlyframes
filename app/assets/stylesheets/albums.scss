@@ -146,6 +146,14 @@
                   margin-top: 1rem;
                 }
               }
+              .video-link {
+                color: $color-peach;
+                font-weight: 200;
+                font-size: 0.875rem;
+                &:hover{
+                  color: $color-storm;
+                }
+              }
               p{
                 display: block !important;
                 color: $color-storm;

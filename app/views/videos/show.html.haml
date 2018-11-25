@@ -1,7 +1,11 @@
 .video
-  %iframe{:src => @video_url, :width=> '640', :height=> '360', :frameborder =>'0', :webkitallowfullscreen=> true, :mozallowfullscreen=> true, :allowfullscreen=> true}
-  %p
-    %a{:href=> @video_url} Side by Side Guided Styles
-    %span
-      from
-    %a{:href=> 'https://vimeo.com/codeowl'} Gabriel Walsh
+  .back-button
+    %a{:href=>videos_path}
+      %button
+        %i
+        %span
+          Back
+  %h1{:class=>'page-header'}
+    =@video.song.title
+  .player-container
+    %iframe{:src => @video_url, :width=> '640', :height=> '360', :frameborder =>'0', :webkitallowfullscreen=> true, :mozallowfullscreen=> true, :allowfullscreen=> true}
