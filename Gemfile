@@ -1,8 +1,8 @@
 ruby '2.3.3'
 source 'http://rubygems.org'
 
-gem 'rails', '4.1.9'
-gem 'pg'
+gem 'rails', '4.2.5.1'
+gem 'pg', '~> 0.18.4'
 gem 'sass-rails', '~> 5.0.0.beta1'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails'
@@ -20,11 +20,13 @@ gem 'cloudinary'
 gem 'inline_svg'
 gem 'font-awesome-sass', '~> 4.5.0'
 gem 'livingstyleguide'
+gem 'rack', '>= 1.6.11'
+
 
 group :development, :test do
   gem 'rspec-rails'
   gem 'thor'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'faker'
   gem 'database_cleaner'
   gem 'capybara'
@@ -33,6 +35,7 @@ group :development, :test do
   gem 'erb2haml' #rake haml:replace_erbs / rake haml:convert_erbs
   gem 'rake'
   gem 'chromedriver-helper'
+  gem 'puma', '~> 3.12'
 end
 
 group :doc do
@@ -46,3 +49,5 @@ end
 group :production do
   gem 'rails_12factor'
 end
+
+

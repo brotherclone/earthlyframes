@@ -10,7 +10,7 @@ describe 'Albums display correctly', :type => :feature do
   end
 
   it 'checks that songs expand', :js => true do
-    album = FactoryGirl.create(:album_with_song)
+    album = FactoryBot.create(:album_with_song)
     visit album_path(album.id.to_s)
     click_link('songid_'+album.id.to_s)
     expect(page).to have_content('LYRICS')

@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   sequence :albumtitle do |n|
     Faker::Name.name + n.to_s
   end

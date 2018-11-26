@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
 
   sequence :showtitle do |n|
     Faker::Lorem.sentence + n.to_s
