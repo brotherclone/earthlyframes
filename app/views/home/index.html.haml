@@ -23,8 +23,7 @@
     -@cardholder.each do |card|
       .card
         %a{:href => card.link}
-          .card-image
-            %img{:alt => card.title, :src => card.img.to_s}
+          .card-image{ :style => "background-image:url(#{card.img.to_s})"}
         .card-header
           %a{:href => card.link}
             = card.title
