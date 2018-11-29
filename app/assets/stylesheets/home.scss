@@ -103,18 +103,17 @@
   cursor: pointer;
   margin: 0 $card-margin $base-spacing $card-margin;
   position: relative;
+  //lost gradient effect - but sizing was an issue.
   .card-image {
     overflow: hidden;
     height: 150px;
     max-height: 150px;
+    @include transition (all 0.2s ease-in-out);
+    opacity: 1;
     background-color: $card-image-hover-color;
-    img {
-      @include transition (all 0.2s ease-in-out);
-      border-top-left-radius: $base-border-radius;
-      border-top-right-radius: $base-border-radius;
-      width: 100%;
-      opacity: 1;
-    }
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
   .card-header {
     @include transition (all 0.2s ease-in-out);
