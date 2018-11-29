@@ -10,13 +10,14 @@
       .left
         %span{:class=>'screen-reader-only', :itemprop=>'byArtist'} The Earthly Frames
         %img{:src => @album.cover, :class=>'cover', :alt => @album.title, :itemprop =>'image'}
-        .buy
-          %span{:class=>'price'}
-            =number_to_currency(@album.price, :unit => '$')
-          %a{:href=>@album.buylink}
-            %button
-              %i
-              %span Buy
+        - if @album.price.to_i > 0
+          .buy
+            %span{:class=>'price'}
+              =number_to_currency(@album.price, :unit => '$')
+            %a{:href=>@album.buylink}
+              %button
+                %i
+                %span Buy
       .right
         .title{:itemprop => 'name'}
           =@album.title
