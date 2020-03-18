@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20181022211209) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "active_admin_comments", force: true do |t|
+  create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
     t.text     "body"
     t.string   "resource_id",   null: false
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20181022211209) do
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
 
-  create_table "admin_users", force: true do |t|
+  create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20181022211209) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "albums", force: true do |t|
+  create_table "albums", force: :cascade do |t|
     t.string  "title"
     t.text    "description"
     t.string  "cover"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20181022211209) do
     t.boolean "is_live",           default: false, null: false
   end
 
-  create_table "posts", force: true do |t|
+  create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
     t.string   "main_image"
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20181022211209) do
     t.datetime "post_date"
   end
 
-  create_table "shows", force: true do |t|
+  create_table "shows", force: :cascade do |t|
     t.string   "title"
     t.datetime "showdate"
     t.text     "description"
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 20181022211209) do
     t.boolean  "is_live",           default: false, null: false
   end
 
-  create_table "songs", force: true do |t|
+  create_table "songs", force: :cascade do |t|
     t.string  "title"
     t.string  "trt"
     t.text    "notes"
@@ -94,25 +94,7 @@ ActiveRecord::Schema.define(version: 20181022211209) do
 
   add_index "songs", ["album_id"], name: "index_songs_on_album_id", using: :btree
 
-  create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-  end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-
-  create_table "videos", force: true do |t|
+  create_table "videos", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "title"
