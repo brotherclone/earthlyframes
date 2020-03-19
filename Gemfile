@@ -32,7 +32,6 @@ group :development, :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'table_print'
-  gem 'erb2haml' #rake haml:replace_erbs / rake haml:convert_erbs
   gem 'rake'
   gem 'webdrivers'
   gem 'puma', '>= 3.12.4'
