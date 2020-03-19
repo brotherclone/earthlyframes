@@ -9,7 +9,7 @@ FactoryBot.define do
     main_image {'http://www.placehold.it/1250x500'}
     inline_image {'http://www.placehold.it/250x250'}
     overlay_bright {false}
-    post_date{Faker::Date.between(5.years.ago, Date.today)}
+    post_date{Faker::Date.between(from: 5.years.ago, to: Date.today)}
     is_live {true}
     trait :wip do
       is_live {false}
