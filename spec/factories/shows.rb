@@ -8,7 +8,7 @@ FactoryBot.define do
 
   factory :show do
     title { :showtitle }
-    showdate { Faker::Date.between(2.years.ago, Date.today) }
+    showdate { Faker::Date.between(from: 2.years.ago, to:Date.today) }
     brief_description { Faker::Lorem.sentence }
     description { Faker::Lorem.paragraph }
     location { addy }
