@@ -1,9 +1,9 @@
 ruby '2.6.3'
 source 'http://rubygems.org'
 
-gem 'rails', '4.2.11'
+gem 'rails', '~> 5.2'
 gem 'pg', '~> 0.18.4'
-gem 'sass-rails', '~> 5.0.0.beta1'
+gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails'
 gem 'jquery-rails'
@@ -12,7 +12,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'haml-rails'
 gem 'tinymce-rails'
 gem 'carrierwave'
-gem 'activeadmin', '1.0.0.pre5'
+gem 'activeadmin'
 gem 'devise', '>= 4.7.1'
 gem 'bourbon'
 gem 'neat'
@@ -36,6 +36,7 @@ group :development, :test do
   gem 'rake'
   gem 'webdrivers'
   gem 'puma', '>= 3.12.4'
+  gem 'rails-controller-testing'
 end
 
 group :doc do
@@ -45,9 +46,4 @@ end
 group :development do
   gem 'spring'
 end
-
-group :production do
-  gem 'rails_12factor'
-end
-
 
