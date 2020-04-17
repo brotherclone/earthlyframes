@@ -124,12 +124,12 @@
               i{
                 @include fa-icon();
                 &:before{
-                  content: $fa-var-arrow-circle-o-down;
+                  content: $fa-var-arrow-alt-circle-down;
                 }
               }
               &.expanded{
                 i:before{
-                    content: $fa-var-arrow-circle-o-up;
+                    content: $fa-var-arrow-alt-circle-up;
                   }
                 }
               }
