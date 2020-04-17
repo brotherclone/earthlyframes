@@ -108,7 +108,7 @@
             i{
               @include fa-icon();
               &:before{
-                content: $fa-var-arrow-circle-o-right;
+                content: $fa-var-arrow-alt-circle-right;
               }
             }
           }
