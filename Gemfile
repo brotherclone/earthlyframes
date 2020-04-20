@@ -19,7 +19,6 @@ gem 'cloudinary'
 gem 'inline_svg'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'rack', '>= 1.6.12'
-gem 'activeadmin_medium_editor'
 
 
 group :development, :test do
