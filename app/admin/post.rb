@@ -6,7 +6,7 @@ ActiveAdmin.register Post do
     f.inputs do
       f.input :title
       f.input :description
-      f.input :body, :input_html => {:class => 'tinymce'}, :hint => 'The main post body'
+      f.input :body, :label => 'Post Body'
       f.input :post_date, as: :datepicker
       f.input :main_image, :as => :file
       f.input :main_image_cache, :as => :hidden
