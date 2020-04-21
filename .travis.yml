@@ -16,6 +16,8 @@ script:
 services:
  - postgresql
 
+dist: trusty
+
 addons:
  postgresql: "12.2"
 
