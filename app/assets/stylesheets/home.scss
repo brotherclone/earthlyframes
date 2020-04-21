@@ -45,6 +45,12 @@
       padding: 2.5em 0;
       position: relative;
     }
+    &.orange{
+      p{
+        color: $color-peach;
+        @include text-shadow($color: rgba(0,0,0,.2));
+      }
+    }
   }
 
   .overlay {
