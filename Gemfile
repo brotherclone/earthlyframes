@@ -34,6 +34,7 @@ group :development, :test do
   gem 'webdrivers'
   gem 'puma', '>= 3.12.4'
   gem 'rails-controller-testing'
+  gem 'travis'
 end
 
 group :doc do
