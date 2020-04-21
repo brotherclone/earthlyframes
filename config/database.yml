@@ -58,7 +58,7 @@ development:
 test:
   <<: *default
   database: earthlyframes_test
-  username: gabrielwalsh
+  username: postgres
   password: amops
 
 # As with config/secrets.yml, you never want to store sensitive information,
