@@ -23,3 +23,4 @@ addons:
 
 before_script:
  - psql -c 'create database earthlyframes_test;' -U postgres
+ - psql -c "CREATE USER gabrielwalsh WITH PASSWORD 'amops';" -U postgres
