@@ -8,6 +8,14 @@
   $centered-navigation-logo-height: 2em;
   @extend %header-texture;
   width: 100%;
+  .mobile-nav {
+    margin-right: 0.25rem;
+    color: $color-white;
+    font-size: 2rem;
+    &:hover{
+      color: $color-peach;
+    }
+  }
   .mobile-logo {
     display: inline;
     float: left;
@@ -24,14 +32,6 @@
   .navigation-centered-mobile-menu {
     float: right;
     padding: 0.5em 0 0.75rem 0;
-    i{
-      margin-right: 0.25rem;
-      color: $color-white;
-      font-size: 2rem;
-      &:hover{
-        color: $color-peach;
-      }
-    }
     @include media ($large-screen) {
       display: none;
     }

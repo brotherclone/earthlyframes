@@ -3,7 +3,7 @@
     %a.mobile-logo{:href => root_url}
       = inline_svg_tag 'svg/logo.svg', class: 'ef'
     %a#js-navigation-centered-mobile-menu.navigation-centered-mobile-menu{:href => root_url}
-    =icon('fas','reorder')
+      %i{:class=>'fas fa-bars mobile-nav'}
     %nav{:role => 'navigation'}
       %ul#js-navigation-centered-menu.navigation-centered-menu
         %li.nav-link
