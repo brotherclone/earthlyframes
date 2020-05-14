@@ -114,17 +114,11 @@
             color: $color-peach;
           }
         }
-        a:nth-child(1){
+        .prev{
           float: left;
         }
-        a:nth-child(2){
+        .next{
           float: right;
-        }
-        .lone{
-          float: right;
-          a, a:nth-child(1){
-            float: none;
-          }
         }
       }
     }
