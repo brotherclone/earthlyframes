@@ -26,12 +26,11 @@
               %img{:src => @post.inline_image, :class=>'initimg'}
             =@post.body.html_safe
         .more-prev
-          = link_to('Newer', @post.next_post) if @post.next_post
-          -if @post.prev_post && !@post.next_post
-            %span{:class => 'lone'}
-              = link_to('Older', @post.prev_post)
-          -else
-            = link_to('Older', @post.prev_post) if @post.prev_post
+          .prev
+            = link_to('Previous', @post.prev_post) if @post.prev_post
+          .next
+            = link_to('Next', @post.next_post) if @post.next_post
+
   -else
     %p This post is not available.
     %a{:href=>posts_path} Return to Posts listing.
