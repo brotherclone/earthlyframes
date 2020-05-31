@@ -19,6 +19,11 @@ gem 'cloudinary'
 gem 'inline_svg'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'rack', '>= 1.6.12'
+gem 'actionpack', '>= 5.2.4.3'
+gem 'activesupport', '>= 5.2.4.3'
+gem 'activestorage', '>= 5.2.4.3'
+gem 'kaminari', '>= 1.2.1'
+
 
 
 group :development, :test do
@@ -32,7 +37,7 @@ group :development, :test do
   gem 'table_print'
   gem 'rake'
   gem 'webdrivers'
-  gem 'puma', '>= 3.12.4'
+  gem 'puma', '>= 4.3.5'
   gem 'rails-controller-testing'
   gem 'travis'
 end
