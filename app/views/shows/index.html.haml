@@ -1,4 +1,6 @@
 .shows
+  .ef-breadcrumbs
+    = render_breadcrumbs :tag => :span, :separator=> ""
   %h1{:class=>'page-header'} Shows
   -if @shows.length
     -@shows.each do |s|

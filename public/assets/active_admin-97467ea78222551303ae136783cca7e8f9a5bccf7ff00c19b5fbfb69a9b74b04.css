@@ -945,7 +945,7 @@ form.filter_form .filter_form_field.filter_check_boxes .check_boxes_wrapper labe
   vertical-align: baseline;
 }
 /* line 318, /Users/gawalsh/.bundle/ruby/2.1.0/activeadmin-1abec286611c/app/assets/stylesheets/active_admin/_forms.scss */
-form.filter_form .filter_form_field.filter_date_range .seperator {
+form.filter_form .filter_form_field.filter_date_range .separator {
   display: inline-block;
   text-align: center;
   width: 12px;

@@ -4,9 +4,6 @@
 
 .your-team-ring{
   @include outer-container();
-  .back-button{
-    @include back-button();
-  }
   .your-team-ring-inner{
     margin-top: 2rem;
     .your-team-ring-header{

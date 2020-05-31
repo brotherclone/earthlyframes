@@ -1,5 +1,10 @@
 class VideosController < ApplicationController
+
+  add_breadcrumb "Home", :root_path
+  add_breadcrumb "Videos", :videos_path
+
   before_action :set_video, only: [:show, :edit, :update, :destroy]
+
   include VideosHelper
 
   def index
@@ -7,6 +12,7 @@ class VideosController < ApplicationController
   end
 
   def show
+    add_breadcrumb @video.title.to_s, :video_path
     @video_url = "#{video_url(@video)}"
   end
 

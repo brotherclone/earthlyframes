@@ -1,10 +1,6 @@
 .video
-  .back-button
-    %a{:href=>videos_path}
-      %button
-        %i
-        %span
-          Back
+  .ef-breadcrumbs
+    = render_breadcrumbs :tag => :span, :separator=> ""
   %h1{:class=>'page-header'}
     =@video.song.title
   .player-container

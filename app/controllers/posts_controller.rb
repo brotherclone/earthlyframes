@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
 
+  add_breadcrumb "Home", :root_path
+  add_breadcrumb "Posts", :posts_path
+
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
     @posts = Post.all.order(post_date: :desc).where(is_live: true).last(6)
@@ -15,7 +18,11 @@ class PostsController < ApplicationController
   end
 
   def show
+
+    add_breadcrumb @post.title.to_s, :post_path
+
     @nav_posts = Post.all.order(post_date: :desc).where(is_live: true).last(8)
+
     respond_to do |format|
       format.html { render :show}
       format.json {render :json => @post}

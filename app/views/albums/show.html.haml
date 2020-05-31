@@ -1,11 +1,7 @@
 .albums
   -if @album.is_live
-    .back-button
-      %a{:href=>albums_path}
-        %button
-          %i
-          %span
-            Back
+    .ef-breadcrumbs
+      = render_breadcrumbs :tag => :span, :separator=> ""
     .album.detail{:itemscope => true, :itemtype => 'http://schema.org/MusicGroup'}
       .left
         %span{:class=>'screen-reader-only', :itemprop=>'byArtist'} The Earthly Frames

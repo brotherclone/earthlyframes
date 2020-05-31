@@ -1,4 +1,6 @@
 .videos
+  .ef-breadcrumbs
+    = render_breadcrumbs :tag => :span, :separator=> ""
   %h1{:class=>'page-header'} Videos
   .video-listing
     -if @videos.length >=1

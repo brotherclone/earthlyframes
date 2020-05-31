@@ -1,4 +1,6 @@
 .albums
+  .ef-breadcrumbs
+    = render_breadcrumbs :tag => :span, :separator=> ""
   %h1{:class=>'page-header'} Albums
   -if @albums.length
     -@albums.each do |a|

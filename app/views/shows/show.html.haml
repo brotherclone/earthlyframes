@@ -1,5 +1,7 @@
 .performance-outer
   -if @show.is_live
+    .ef-breadcrumbs
+      = render_breadcrumbs :tag => :span, :separator=> ""
     .back-button
       %a{:href=>shows_path}
         %button

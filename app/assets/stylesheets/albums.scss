@@ -5,9 +5,6 @@
 .albums {
   @include outer-container;
   margin-top: 2rem;
-  .back-button {
-    @include back-button();
-  }
   .album {
     .cover {
       text-align: center;

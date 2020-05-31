@@ -62,6 +62,8 @@ GEM
     bcrypt (3.1.13)
     bourbon (7.0.0)
       thor (~> 1.0)
+    breadcrumbs_on_rails (4.0.0)
+      rails (>= 5.0)
     builder (3.2.4)
     capybara (3.32.2)
       addressable
@@ -374,6 +376,7 @@ DEPENDENCIES
   activestorage (>= 5.2.4.3)
   activesupport (>= 5.2.4.3)
   bourbon
+  breadcrumbs_on_rails
   capybara
   carrierwave
   cloudinary

@@ -1,5 +1,10 @@
 class AlbumsController < ApplicationController
+
+  add_breadcrumb "Home", :root_path
+  add_breadcrumb "Albums", :albums_path
+
   before_action :set_album, only: [:show, :edit, :update, :destroy]
+
   def index
     @albums = Album.all.order(released: :desc).where(is_live: true)
     respond_to do |format|
@@ -9,6 +14,9 @@ class AlbumsController < ApplicationController
   end
 
   def show
+
+    add_breadcrumb @album.title.to_s, album_path
+
     respond_to do |format|
       format.html { render :show}
       format.json { render :json => @album}
