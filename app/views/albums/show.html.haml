@@ -7,13 +7,13 @@
         %span{:class=>'screen-reader-only', :itemprop=>'byArtist'} The Earthly Frames
         %img{:src => @album.cover, :class=>'cover', :alt => @album.title, :itemprop =>'image'}
         - if @album.price.to_i > 0
-          .buy
-            %span{:class=>'price'}
-              =number_to_currency(@album.price, :unit => '$')
-            %a{:href=>@album.buylink}
-              %button
-                %i
-                %span Buy
+          -#.buy
+          -#  %span{:class=>'price'}
+          -#    =number_to_currency(@album.price, :unit => '$')
+          -#  %a{:href=>@album.buylink}
+          -#    %button
+          -#      %i
+          -#      %span Buy
       .right
         .title{:itemprop => 'name'}
           =@album.title
@@ -35,8 +35,11 @@
               %li{:itemprop=>'track'}
                 -if s.lyrics.length > min_length || s.notes.length > min_length
                   %a{:class=>'expander', :href=>'javascript:songExpand('+sid+')', :id=>'songid_'+sid}
-                    =s.title+' '+s.trt
-                    %i
+                    = s.title+' '+s.trt
+                  - if s.streaming_links
+                    - s.streaming_links.each do |streaming_link|
+                      %a{:href => streaming_link.link, :class=> "streaming-link" }
+                        %i{:class=> ("fab fa-" + streaming_link.streaming_service.icon_url)}
                   .expander-content{:id=>'songcontent_'+sid}
                     -if s.video
                       %a{:href=> video_path(s.video.id), :class => 'video-link'}

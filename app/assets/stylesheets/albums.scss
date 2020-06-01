@@ -49,27 +49,6 @@
         .cover {
           width: 100%;
         }
-        .buy {
-          margin-top: 0.5rem;
-          .price {
-            font-weight: 400;
-            font-size: 1.25rem;
-            color: $color-peach;
-          }
-          a {
-            float: right;
-            button {
-              @include ef-button();
-              @include ef-button-size('sm');
-              i {
-                @include fa-icon();
-                &:before {
-                  content: $fa-var-cart-plus;
-                }
-              }
-            }
-          }
-        }
       }
       .right {
         @include span-columns(8);
@@ -114,22 +93,11 @@
               color: $color-storm;
               content:counter(item) ".";
             }
-            a{
+            a {
               cursor: pointer;
               color: $color-taupe;
               text-decoration: none;
-              i{
-                @include fa-icon();
-                &:before{
-                  content: $fa-var-arrow-alt-circle-down;
-                }
-              }
-              &.expanded{
-                i:before{
-                    content: $fa-var-arrow-alt-circle-up;
-                  }
-                }
-              }
+            }
             span{
               color: $color-taupe;
             }

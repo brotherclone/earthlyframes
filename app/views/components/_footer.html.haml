@@ -20,17 +20,29 @@
       %li
         %h3 Follow
       %li
-        %a{:href => 'https://earthlyframes.bandcamp.com/'} Bandcamp
+        %a{:href => 'https://earthlyframes.bandcamp.com/'}
+          %i{:class => 'fab fa-bandcamp'}
+          Bandcamp
       %li
-        %a{:href => 'https://soundcloud.com/earthly-frames'} SoundCloud
+        %a{:href => 'https://soundcloud.com/earthly-frames'}
+          %i{:class => 'fab fa-soundcloud'}
+          SoundCloud
       %li
-        %a{:href => 'https://www.twitch.tv/earthlyframes'} Twitch
+        %a{:href => 'https://www.twitch.tv/earthlyframes'}
+          %i{:class => 'fab fa-twitch'}
+          Twitch
       %li
-        %a{:href => 'https://twitter.com/earthly_the'} Twitter
+        %a{:href => 'https://twitter.com/earthly_the'}
+          %i{:class => 'fab fa-soundcloud'}
+          SoundCloud
       %li
-        %a{:href => 'https://www.instagram.com/earthlyframes/'} Instagram
+        %a{:href => 'https://www.instagram.com/earthlyframes/'}
+          %i{:class => 'fab fa-instagram'}
+          Instagram
       %li
-        %a{:href => 'https://www.youtube.com/channel/UCsFwAFMufPXaqAgcMkRhHfw'} YouTube
+        %a{:href => 'https://www.youtube.com/channel/UCsFwAFMufPXaqAgcMkRhHfw'}
+          %i{:class => 'fab fa-youtube'}
+          YouTube
       %li
         %a{:href => 'https://www.discogs.com/artist/633661-Gabriel-Walsh-2'} Discogs
     %ul
@@ -43,5 +55,5 @@
   %hr
   .copyright
     Copyright
-    %i
+    %i{:class=> "fas fa-copyright"}
     = today.strftime('%Y').to_s+'. '
