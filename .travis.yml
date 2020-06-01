@@ -20,3 +20,7 @@ dist: trusty
 
 addons:
  postgresql: "9.5"
+
+before_script:
+ - psql -c 'drop database earthlyframes_test;' -U postgres
+ - psql -c 'create database earthlyframes_test;' -U postgres

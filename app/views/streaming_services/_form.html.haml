@@ -1,0 +1,10 @@
+= form_for @streaming_service do |f|
+  - if @streaming_service.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@streaming_service.errors.count, "error")} prohibited this streaming_service from being saved:"
+      %ul
+        - @streaming_service.errors.full_messages.each do |message|
+          %li= message
+
+  .actions
+    = f.submit 'Save'

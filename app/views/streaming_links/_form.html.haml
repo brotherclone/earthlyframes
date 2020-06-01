@@ -1,0 +1,10 @@
+= form_for @streaming_link do |f|
+  - if @streaming_link.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@streaming_link.errors.count, "error")} prohibited this streaming_link from being saved:"
+      %ul
+        - @streaming_link.errors.full_messages.each do |message|
+          %li= message
+
+  .actions
+    = f.submit 'Save'

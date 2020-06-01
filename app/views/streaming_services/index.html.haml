@@ -1,0 +1,19 @@
+%h1 Listing streaming_services
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @streaming_services.each do |streaming_service|
+      %tr
+        %td= link_to 'Show', streaming_service
+        %td= link_to 'Edit', edit_streaming_service_path(streaming_service)
+        %td= link_to 'Destroy', streaming_service, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Streaming service', new_streaming_service_path

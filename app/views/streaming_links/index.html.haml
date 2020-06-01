@@ -1,0 +1,19 @@
+%h1 Listing streaming_links
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @streaming_links.each do |streaming_link|
+      %tr
+        %td= link_to 'Show', streaming_link
+        %td= link_to 'Edit', edit_streaming_link_path(streaming_link)
+        %td= link_to 'Destroy', streaming_link, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Streaming link', new_streaming_link_path

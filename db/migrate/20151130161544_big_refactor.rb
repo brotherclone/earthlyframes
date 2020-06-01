@@ -1,4 +1,4 @@
-class BigRefactor < ActiveRecord::Migration
+class BigRefactor < ActiveRecord::Migration[5.2]
   def change
       add_column :songs, :song_order, :string
       drop_table :images
