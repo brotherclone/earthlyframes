@@ -15,7 +15,7 @@ $(document).ready ->
   mobileNav()
   return
 
-$(document).on 'page:load', ->
+$(document).on 'turbolinks:load', ->
   mobileNav()
   return
 

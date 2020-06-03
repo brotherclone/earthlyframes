@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Show, type: :model do
-  it 'has a vaild Factory' do
+  it 'has a valid Factory' do
     expect(build(:show)).to be_valid
   end
   it 'is invalid without a title' do

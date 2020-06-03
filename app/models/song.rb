@@ -3,4 +3,5 @@ class Song < ActiveRecord::Base
   belongs_to :album
   has_one :video
   accepts_nested_attributes_for :album
+  has_many :streaming_links
 end

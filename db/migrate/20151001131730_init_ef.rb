@@ -1,4 +1,4 @@
-class InitEf < ActiveRecord::Migration
+class InitEf < ActiveRecord::Migration[5.2]
   def up
     create_table :albums do |d|
       d.string :title
