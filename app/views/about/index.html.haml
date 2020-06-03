@@ -1,24 +1,25 @@
-.basic
-  .basic-inner
-    %h1{:class=>'page-header'} About
-    %article
-      %p
-        %span{:itemscope=> true, :itemtype=> 'http://schema.org/Person'}
-          %span Gabriel Walsh
-        plays experimental rock music as
-        %span{:itemscope=>true, :itemtype=>'http://schema.org/MusicGroup'}
-          %span{:itemprop=>'name'} The Earthly Frames.
-        Walsh's earlier recording project was called
-        %span{:itemscope=>true, :itemtype=>'http://schema.org/MusicGroup'}
-          %a{:itemprop=>'name',:href => yourteamring_path} Your Team Ring
-        and he released music under this moniker from 1995-2005. You can find the music of Your Team Ring
-        %a{:href => yourteamring_path}here.
-      %p
-        With the Earthly Frames, the high-concept,
-        %span{:itemprop=>'genre'} psychedelia
-        has carried over from Your Team Ring but the
-        %span{:itemprop=>'genre'}lo-fi,
-        whimsical folk have given way to darker synths, processed guitars and scrounged loops. This new sound allows for The Earthly Frames to play live and constantly rework songs.
-      %p
-        The Earthly Frames reside at Walsh's custom studio in
-        %span{:itemprop=>'location', :itemscope=>true, :itemtype=>'http://schema.org/Place'}Maryland.
+.generic
+  .ef-breadcrumbs
+    = render_breadcrumbs :tag => :span, :separator=> ""
+  %h1{:class=>'page-header'} About
+  %article
+  %p
+    %span{:itemscope=> true, :itemtype=> 'http://schema.org/Person'}
+      %span Gabriel Walsh
+    plays experimental rock music as
+    %span{:itemscope=>true, :itemtype=>'http://schema.org/MusicGroup'}
+      %span{:itemprop=>'name'} The Earthly Frames.
+    Walsh's earlier recording project was called
+    %span{:itemscope=>true, :itemtype=>'http://schema.org/MusicGroup'}
+      %a{:itemprop=>'name',:href => yourteamring_path} Your Team Ring
+    and he released music under this moniker from 1995-2005. You can find the music of Your Team Ring
+    %a{:href => yourteamring_path}here.
+  %p
+    With the Earthly Frames, the high-concept,
+    %span{:itemprop=>'genre'} psychedelia
+    has carried over from Your Team Ring but the
+    %span{:itemprop=>'genre'}lo-fi,
+    whimsical folk have given way to darker synths, processed guitars and scrounged loops. This new sound allows for The Earthly Frames to play live and constantly rework songs.
+  %p
+    The Earthly Frames reside at Walsh's custom studio in
+    %span{:itemprop=>'location', :itemscope=>true, :itemtype=>'http://schema.org/Place'}Maryland.

@@ -17,6 +17,6 @@ $(document).ready ->
   positionImages()
 return
 
-$(document).on 'page:load', ->
+$(document).on 'turbolinks:load', ->
   positionImages()
 return

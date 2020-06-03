@@ -1,4 +1,6 @@
 .posts
+  .ef-breadcrumbs
+    = render_breadcrumbs :tag => :span, :separator=> ""
   %h1{:class=>'page-header'} Postings
   -if @posts.length
     .body

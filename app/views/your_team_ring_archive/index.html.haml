@@ -1,10 +1,6 @@
 .your-team-ring
-  .back-button
-    %a{:href=>home_path}
-      %button
-        %i
-        %span
-          Back
+  .ef-breadcrumbs
+    = render_breadcrumbs :tag => :span, :separator=> ""
   .your-team-ring-inner
     .your-team-ring-header
       %h1 Your Team Ring

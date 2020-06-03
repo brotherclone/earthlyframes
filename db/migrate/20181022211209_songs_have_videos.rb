@@ -1,4 +1,4 @@
-class SongsHaveVideos < ActiveRecord::Migration
+class SongsHaveVideos < ActiveRecord::Migration[5.2]
 
   def up
     add_reference :videos, :song, index:true

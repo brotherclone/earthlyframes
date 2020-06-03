@@ -1,5 +1,7 @@
 .posts.individual
   -if @post.is_live
+    .ef-breadcrumbs
+      = render_breadcrumbs :tag => :span, :separator=> ""
     .heading
       .back-button
         %a{:href=>posts_path}

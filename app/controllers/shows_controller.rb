@@ -1,4 +1,8 @@
 class ShowsController < ApplicationController
+
+  add_breadcrumb "Home", :root_path
+  add_breadcrumb "Shows", :shows_path
+
   before_action :set_show, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -10,6 +14,9 @@ class ShowsController < ApplicationController
   end
 
   def show
+
+    add_breadcrumb @show.title.to_s, :show_path
+
     respond_to do |format|
       format.html {render :show}
       format.json {render :json => @show}

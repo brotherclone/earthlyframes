@@ -1,4 +1,4 @@
-class CreateVideos < ActiveRecord::Migration
+class CreateVideos < ActiveRecord::Migration[5.2]
   def up
     create_table :videos do |t|
       t.timestamps

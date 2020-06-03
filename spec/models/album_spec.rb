@@ -2,11 +2,14 @@ require 'rails_helper'
 
 RSpec.describe Album, type: :model do
 
-  it 'has a vaild Factory' do
+  it 'has a valid Factory' do
     expect(build(:album)).to be_valid
   end
-  it 'has a vaild Factory with has many callbacks' do
+  it 'has a valid Factory with songs' do
     expect(build(:album_with_song)).to be_valid
+  end
+  it 'has a valid Factory with streaming link' do
+    expect(build(:album_with_streaming_links)).to be_valid
   end
   it 'has a valid Factory with a Work In Progress Trait' do
     expect(build(:album, :wip)).to be_valid

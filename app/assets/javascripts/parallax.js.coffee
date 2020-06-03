@@ -29,7 +29,7 @@ $(document).ready ->
     parallax()
     return
   return
-$(document).on 'page:load', ->
+$(document).on 'turbolinks:load', ->
   parallax()
   $('body').scroll ->
     parallax()

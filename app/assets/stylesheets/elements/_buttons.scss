@@ -37,22 +37,3 @@
   @include ef-button();
 }
 
-
-@mixin back-button(){
-  button{
-    @include ef-button($color-storm, transparent, transparent, $color-peach, $color-white, $color-peach);
-    @include ef-button-size('sm');
-    box-shadow: none;
-    i{
-      @include fa-icon();
-      &:before{
-        content: $fa-var-arrow-left;
-      }
-    }
-  }
-  margin-bottom: 1rem;
-};
-
-.example-back-button{
-  @include back-button();
-}

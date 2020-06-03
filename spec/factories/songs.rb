@@ -10,14 +10,19 @@ FactoryBot.define do
 
   factory :song do
     title {:songtitle}
-    trt {Faker::Number.number(3)}
+    trt { '3:33' }
     notes {Faker::Lorem.paragraph}
     lyrics {Faker::Lorem.paragraph}
-    song_order {:sorder}
+    song_order { :sorder }
     album
     factory :song_with_video do
       after(:create) do |song|
         create(:video, song: song)
+      end
+    end
+    factory :song_with_streaming_links do
+      after(:create) do |song|
+        create(:streaming_link, song:song)
       end
     end
   end

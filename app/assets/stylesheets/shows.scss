@@ -60,9 +60,6 @@
 .performance-outer{
   margin-top: 1rem;
   @include outer-container;
-  .back-button{
-    @include back-button();
-  }
   .performance-inner{
     @include display(flex);
     @include justify-content(space-between);

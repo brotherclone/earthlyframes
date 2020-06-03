@@ -12,10 +12,6 @@
   }
   .heading{
     visibility: hidden;
-    .back-button{
-      @include back-button();
-      margin-left: 1rem;
-    }
     @include media($medium-screen-down){
       visibility: visible;
     }

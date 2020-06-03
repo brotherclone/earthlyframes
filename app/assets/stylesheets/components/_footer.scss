@@ -70,12 +70,6 @@
   .copyright{
     text-align: center;
     color: $color-grey;
-    i{
-      @include fa-icon();
-      &:before{
-        content: $fa-var-copyright;
-      }
-    }
     padding-bottom: 2rem;
   }
 }

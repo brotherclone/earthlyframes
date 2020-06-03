@@ -22,9 +22,6 @@
 }
 
 .video{
-  .back-button{
-    @include back-button();
-  }
   .player-container{
     display: flex;
     width: 100%;
