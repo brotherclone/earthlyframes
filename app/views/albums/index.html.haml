@@ -18,8 +18,8 @@
             %div{:class=>"album-streaming-links"}
               - a.streaming_links.each do | album_streaming_link |
                 %span{:class => "album-streaming-link"}
-                %a{:href => album_streaming_link.link, :class=> "streaming-link icon-only" }
-                  %i{:class=> ("fab fa-" + album_streaming_link.streaming_service.icon_url)}
+                  %a{:href => album_streaming_link.link, :class=> "streaming-link icon-only" }
+                    %i{:class=> ("fab fa-" + album_streaming_link.streaming_service.icon_url)}
           - if a.brief_description
             %p{:itemprop => 'about'}
               =a.brief_description

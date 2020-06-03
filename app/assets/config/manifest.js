@@ -1,3 +1,3 @@
-//= link portrait1.jpg
+//= link ef.jpg
 //= link application.css
 //= link application.js

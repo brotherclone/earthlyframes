@@ -10,15 +10,17 @@
           .buy
             %span{:class=>'price'}
               =number_to_currency(@album.price, :unit => '$')
-            %a{:class=> "from-band-camp", :href=> @album.buylink.to_s}
-              Buy on Bandcamp
+            %a{:class=> "from-bandcamp", :href=> @album.buylink.to_s}
+              %span{:class=> "on"}
+                Buy on
+              Bandcamp
         - if @album.streaming_links
           %div{:class => "album-streaming-links"}
-          - @album.streaming_links.each do | album_streaming_link |
-            %span{:class => "album-streaming-link"}
-              %a{:href => album_streaming_link.link, :class=> "streaming-link" }
-                = "Listen on " + album_streaming_link.streaming_service.name.to_s
-                %i{:class=> ("fab fa-" + album_streaming_link.streaming_service.icon_url)}
+            - @album.streaming_links.each do | album_streaming_link |
+              %span{:class => "album-streaming-link"}
+                %a{:href => album_streaming_link.link, :class=> "streaming-link" }
+                  = "Listen on " + album_streaming_link.streaming_service.name.to_s
+                  %i{:class=> ("fab fa-" + album_streaming_link.streaming_service.icon_url)}
       .right
         .title{:itemprop => 'name'}
           =@album.title
@@ -43,7 +45,7 @@
                     = s.title+' '+s.trt
                   - if s.streaming_links
                     - s.streaming_links.each do |streaming_link|
-                      %a{:href => streaming_link.link, :class=> "streaming-link" }
+                      %a{:href => streaming_link.link, :class=> "streaming-link icon-only" }
                         %i{:class=> ("fab fa-" + streaming_link.streaming_service.icon_url)}
                   .expander-content{:id=>'songcontent_'+sid}
                     -if s.video
