@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-
   resources :streaming_services
   resources :streaming_links
   resources :videos
-
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :shows
