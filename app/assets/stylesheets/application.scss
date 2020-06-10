@@ -60,7 +60,6 @@ html, body{
 }
 body{
   font-family: "futura-pt",sans-serif !important;
-  @extend %level-2-texture;
   .main-wrap{
     margin-bottom: $footer-height*-1;
     min-height: 100%;

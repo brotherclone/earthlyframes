@@ -6,7 +6,7 @@
   $large-screen: em(860) !default;
   $centered-navigation-height: 60px;
   $centered-navigation-logo-height: 2em;
-  @extend %header-texture;
+  background-color: $color-storm;
   width: 100%;
   .mobile-nav {
     margin-right: 0.25rem;
