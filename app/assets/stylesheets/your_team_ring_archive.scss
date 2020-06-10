@@ -3,13 +3,10 @@
 // Styleguide: ef.layouts.your-team-ring
 
 .your-team-ring{
-  @include outer-container();
   .your-team-ring-inner{
     margin-top: 2rem;
     .your-team-ring-header{
       text-align: center;
-      @include span-columns(8);
-      @include shift(2);
       h1{
         font-size: 4.5rem;
         color: $color-peach;

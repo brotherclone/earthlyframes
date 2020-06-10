@@ -3,23 +3,15 @@
 // Styleguide: ef.layouts.postings
 
 .posts {
-  @include outer-container;
   &.individual{
     margin-top: -1.5rem;
-    @include media($medium-screen-down){
-      margin-top: -2.5rem;
-    }
   }
   .heading{
     visibility: hidden;
-    @include media($medium-screen-down){
-      visibility: visible;
-    }
   }
   .body {
     .left-nav {
       vertical-align: top;
-      @include span-columns(2);
       ul{
         list-style: none;
         li{
@@ -33,32 +25,21 @@
           }
         }
       }
-      @include media($medium-screen-down){
-        display:none;
-        width:0;
-      }
     }
     .right-well {
-      @include span-columns(10);
-      @include media($medium-screen-down){
-        width: 100%;
-      }
+
       .postbody{
         font-size: modular-scale(1);
         font-weight: 100;
         margin-top: 2rem;
-        @include media($medium-screen-down){
-          padding: 0 2rem 0 2rem;
-        }
+
         .initimg{
           display:none;
         }
         .postimg{
           float: right;
           margin: 0 0 1rem 0.2rem;
-          @include media($medium-screen-down){
-            float: none;
-          }
+
           width: 98%;
           padding: 1rem;
           max-width: 450px;

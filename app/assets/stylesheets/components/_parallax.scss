@@ -20,8 +20,6 @@ $parallax-background-height: $parallax-window-height * 2;
 }
 
 .parallax-background {
-  @include filter(grayscale(50%));
-  @include filter(brightness(1.1));
   background-position: top;
   background-size: cover;
   background-color: beige;

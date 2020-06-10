@@ -2,13 +2,15 @@
 //
 // Styleguide: ef
 
+// Typography
+@import url("https://use.typekit.net/amw6xzf.css");
+
+$base-font-family: "expo-sans-pro", sans-serif;
+$heading-font-family: "poiret-one", sans-serif;
 
 // Third Party Libraries
 //
 // Styleguide: ef.libs
-@import "bourbon/bourbon";
-@import "neat/neat";
-@import "base/base";
 @import "active_admin";
 @import "font-awesome-sprockets";
 @import "font-awesome";

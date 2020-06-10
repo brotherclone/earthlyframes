@@ -3,7 +3,6 @@
 // Styleguide: ef.layouts.albums
 
 .albums {
-  @include outer-container;
   margin-top: 2rem;
   .album {
     .cover {
@@ -65,7 +64,6 @@
     }
     &.detail {
       .left {
-        @include span-columns(4);
         .cover {
           width: 100%;
         }
@@ -74,9 +72,6 @@
           text-align: center;
           font-size: 1rem;
           .on{
-            @include media($medium-screen) {
-              display: inline;
-            }
               display: none;
           }
           .price{
@@ -97,7 +92,6 @@
         }
       }
       .right {
-        @include span-columns(8);
         .title {
           margin: 0 0 0 1rem;
           font-weight: 400;
