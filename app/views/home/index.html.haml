@@ -1,3 +1,4 @@
+
 -today = Date.today
 -a = Album.where(is_live: true).last(3)
 -a.each do |album|
@@ -13,19 +14,13 @@
 -@cardholder = @cardholder.shuffle
 -@cardholder = @cardholder.take(3)
 
-.outer
-  .image-gradient-dynamic
-    %img{ :src=>asset_path('ef.jpg'), :alt=>'Earthly Frames'}
-    .overlay
-    .copy.orange
-      %p The Earthly Frames
-  .cards
-    -@cardholder.each do |card|
-      .card
-        %a{:href => card.link}
-          .card-image{ :style => "background-image:url(#{card.img.to_s})"}
-        .card-header
-          %a{:href => card.link}
-            = card.title
-        .card-copy
-          = card.description.to_s.truncate(80)
+
+-@cardholder.each do |card|
+  %div
+    %a{:href => card.link}
+      %div{ :style => "background-image:url(#{card.img.to_s})"}
+    %div
+      %a{:href => card.link}
+        = card.title
+    %div
+      = card.description.to_s.truncate(80)

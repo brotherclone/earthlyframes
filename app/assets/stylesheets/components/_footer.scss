@@ -1,0 +1,29 @@
+.social-footer {
+  .social-footer-left{
+   .ef-logo{
+        fill: $color-white;
+        height: 3rem;
+        color: $color-white;
+      }
+  }
+  padding: 1rem;
+  background: $color-storm;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .social-footer-icons {
+    li{
+      font-size: 1rem;
+      a{
+        color: $color-white;
+        &:hover {
+          color: $color-peach;
+        }
+      }
+    }
+    li:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
+

@@ -22,7 +22,10 @@ gem 'activesupport', '>= 5.2.4.3'
 gem 'activestorage', '>= 5.2.4.3'
 gem 'kaminari', '>= 1.2.1'
 gem 'breadcrumbs_on_rails'
-
+gem 'foundation-rails'
+gem 'autoprefixer-rails'
+gem 'tinymce-rails'
+gem 'inline_svg'
 
 
 group :development, :test do

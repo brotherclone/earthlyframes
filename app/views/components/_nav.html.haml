@@ -1,19 +1,13 @@
-%header.navigation-centered{:role => 'banner'}
-  .navigation-centered-wrapper
-    %a.mobile-logo{:href => root_url}
-      = inline_svg_tag 'svg/logo.svg', class: 'ef'
-    %a#js-navigation-centered-mobile-menu.navigation-centered-mobile-menu{:href => root_url}
-      %i{:class=>'fas fa-bars mobile-nav'}
-    %nav{:role => 'navigation'}
-      %ul#js-navigation-centered-menu.navigation-centered-menu
-        %li.nav-link
-          %a{:href =>  about_url} About
-        %li.nav-link
-          %a{:href => albums_url} Albums
-        %li.nav-link.logo
-          %a.logo{:href => root_url}
-            = inline_svg_tag 'svg/logo.svg', class: 'ef'
-        %li.nav-link
-          %a{:href => posts_url} Posts
-        %li.nav-link
-          %a{:href => videos_url} Videos
+%header{:class=>"sticky-shrinknav-header"}
+  %h1{:class=>"sticky-shrinknav-header-title"} The Earthly Frames
+  %ul{:class=>"menu align-center sticky-shrinknav-menu"}
+    %li
+      %a{:href=> root_url, :tab=>{ :index=>"0"} } Home
+    %li
+      %a{:href=> about_url, :tab=>{ :index=>"0"} } About
+    %li
+      %a{:href=> albums_url, :tab=>{ :index=>"0"} } Albums
+    %li
+      %a{:href=> posts_url, :tab=>{ :index=>"0"} } Posts
+    %li
+      %a{:href=> videos_url, :tab=>{ :index=>"0"} } Videos

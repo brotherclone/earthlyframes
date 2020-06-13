@@ -1,59 +1,21 @@
-- today = Date.today
-%footer.footer{:role => 'contentinfo'}
-  .footer-logo
-    = inline_svg_tag 'svg/logo.svg', class: 'ef-logo'
-  .footer-links
-    %ul
+%footer.social-footer
+  .social-footer-left
+    %a{:href => "#"}
+      = inline_svg_tag 'svg/logo.svg', class: 'ef-logo'
+  .social-footer-icons
+    %ul.menu.simple
       %li
-        %h3 On this site
+        %a{:href => 'https://earthlyframes.bandcamp.com/', :tab=> {:index => 0}}
+          %i.fab.fa-bandcamp{ :alt=> "Bandcamp"}
       %li
-        %a{:href => about_path} About
+        %a{:href => 'https://soundcloud.com/earthly-frames/', :tab=> {:index => 0}}
+          %i.fab.fa-soundcloud{ :alt=> "SoundCloud"}
       %li
-        %a{:href => albums_path} Albums
+        %a{:href => 'https://www.twitch.tv/earthlyframes/', :tab=> {:index => 0}}
+          %i.fab.fa-twitch{ :alt=> "Twitch"}
       %li
-        %a{:href => shows_path} Shows
+        %a{:href => 'https://twitter.com/earthly_the/', :tab=> {:index => 0}}
+          %i.fab.fa-twitter{ :alt=> "Twitter"}
       %li
-        %a{:href => posts_path} Posts
-      %li
-        %a{:href => videos_path} Videos
-    %ul
-      %li
-        %h3 Follow
-      %li
-        %a{:href => 'https://earthlyframes.bandcamp.com/'}
-          %i{:class => 'fab fa-bandcamp'}
-          Bandcamp
-      %li
-        %a{:href => 'https://soundcloud.com/earthly-frames'}
-          %i{:class => 'fab fa-soundcloud'}
-          SoundCloud
-      %li
-        %a{:href => 'https://www.twitch.tv/earthlyframes'}
-          %i{:class => 'fab fa-twitch'}
-          Twitch
-      %li
-        %a{:href => 'https://twitter.com/earthly_the'}
-          %i{:class => 'fab fa-soundcloud'}
-          SoundCloud
-      %li
-        %a{:href => 'https://www.instagram.com/earthlyframes/'}
-          %i{:class => 'fab fa-instagram'}
-          Instagram
-      %li
-        %a{:href => 'https://www.youtube.com/channel/UCsFwAFMufPXaqAgcMkRhHfw'}
-          %i{:class => 'fab fa-youtube'}
-          YouTube
-      %li
-        %a{:href => 'https://www.discogs.com/artist/633661-Gabriel-Walsh-2'} Discogs
-    %ul
-      %li
-        %h3 Etc
-      %li
-        %a{:href => eula_path} Terms and Conditions
-      %li
-        %a{:href => yourteamring_path} Your Team Ring Archive
-  %hr
-  .copyright
-    Copyright
-    %i{:class=> "fas fa-copyright"}
-    = today.strftime('%Y').to_s+'. '
+        %a{:href => 'https://www.instagram.com/earthlyframes/', :tab=> {:index => 0}}
+          %i.fab.fa-instagram{ :alt=> "Instagram"}

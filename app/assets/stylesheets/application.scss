@@ -1,74 +1,18 @@
-// Earthly Frames Style Guide
-//
-// Styleguide: ef
 
-// Typography
-@import url("https://use.typekit.net/amw6xzf.css");
-
-$base-font-family: "expo-sans-pro", sans-serif;
-$heading-font-family: "poiret-one", sans-serif;
+//$base-font-family: "expo-sans-pro", sans-serif;
+//$heading-font-family: "poiret-one", sans-serif;
 
 // Third Party Libraries
-//
-// Styleguide: ef.libs
+@import url("https://use.typekit.net/amw6xzf.css");
 @import "active_admin";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "foundation_and_overrides";
 
-// Core Visuals
-//
-// Styleguide: ef.core
-@import "core/animation";
-@import "core/layout";
-@import "core/lighting";
+// Core Styles
 @import "core/palette";
-@import "core/textures";
-@import "core/typography";
-@import "core/accessibility";
-
-
-// Elements
-//
-// Styleguide: ef.elements
-@import "elements/breadcrumbs";
-@import "elements/buttons";
-
 
 // Components
-//
-// Styleguide: ef.components
-$footer-height: 3rem;
 @import "components/nav";
 @import "components/footer";
-@import "components/parallax";
 
-// Layouts
-//
-// Styleguide: ef.layouts
-@import "home";
-@import "postings";
-@import "shows";
-@import "albums";
-@import "soon";
-@import "videos";
-@import "your_team_ring_archive";
-
-//Body
-//
-// Styleguide: ef.core.body
-html, body{
-  height: 100%;
-  overflow-x: hidden;
-}
-body{
-  font-family: "futura-pt",sans-serif !important;
-  .main-wrap{
-    margin-bottom: $footer-height*-1;
-    min-height: 100%;
-    &:after{
-      content: '';
-      display: block;
-      height: $footer-height;
-    }
-  }
-}
