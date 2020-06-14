@@ -1,26 +1,34 @@
 
 -today = Date.today
--a = Album.where(is_live: true).last(3)
+-a = Album.where(is_live: true).last(1)
 -a.each do |album|
-  -@cardholder << CardItem.new(album.title, album.brief_description, album.cover, album_path(album.id))
--p = Post.where(is_live: true).last(3)
--p.each do |post|
-  -@cardholder << CardItem.new(post.title, post.description, post.main_image, post_path(post.id))
--s = Show.where(is_live: true).last(3)
--s.each do |show|
-  -if show.showdate >= today
-    -@cardholder << CardItem.new(show.title, show.brief_description, show.flyer, show_path(show.id))
-
--@cardholder = @cardholder.shuffle
--@cardholder = @cardholder.take(3)
+  -@cardholder << CardItem.new(albums_path(album.id),album.cover, "sub", album.title, album.description, "Album", albums_path, "record-vinyl")
+-# -p = Post.where(is_live: true).last(1)
+-# -p.each do |post|
+-#   -@cardholder << CardItem.new(post.title, post.description, post.main_image, post_path(post.id))
+-# -s = Show.where(is_live: true).last(1)
+-# -s.each do |show|
+-#   -if show.showdate >= today
+-#     -@cardholder << CardItem.new(show.title, show.brief_description, show.flyer, show_path(show.id))
 
 
--@cardholder.each do |card|
-  %div
-    %a{:href => card.link}
-      %div{ :style => "background-image:url(#{card.img.to_s})"}
-    %div
-      %a{:href => card.link}
-        = card.title
-    %div
-      = card.description.to_s.truncate(80)
+-#
+-# -@cardholder.each do |card|
+-#   %div
+-#     %a{:href => card.link}
+-#       %div{ :style => "background-image:url(#{card.img.to_s})"}
+-#     %div
+-#       %a{:href => card.link}
+-#         = card.title
+-#     %div
+-#       = card.description.to_s.truncate(80)
+.container-padded.card-holder.row.column.medium-5.large-3.column
+  - @cardholder.each do |card|
+    = render :partial => "components/hover-card", :locals=> {:link => card.link,
+                                                            :img=> card.img,
+                                                            :description => card.description,
+                                                            :category=> card.category,
+                                                            :title=> card.title,
+                                                            :sub_title => card.sub_title,
+                                                            :category_link=> card.category_link,
+                                                            :category_icon_name=> card.category_icon_name}

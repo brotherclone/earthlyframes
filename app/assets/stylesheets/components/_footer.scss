@@ -1,4 +1,10 @@
+footer{
+  height: ($sticky-shrinknav-hero-height*2);
+  background: $color-storm;
+}
+
 .social-footer {
+  margin-top: 0;
   .social-footer-left{
    .ef-logo{
         fill: $color-white;

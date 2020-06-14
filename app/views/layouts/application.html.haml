@@ -13,5 +13,7 @@
 
   %body
     = render :partial => 'components/nav'
-    = yield
-    = render :partial => 'components/footer'
+    .grid-container.full
+      .grid-x.grid-margin-x
+        = yield
+      = render :partial => 'components/footer'

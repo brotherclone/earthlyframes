@@ -1,0 +1,25 @@
+-@link = link
+-@img = img
+-@sub_title = sub_title
+-@title = title
+-@description = description
+-@category = category
+-@category_link = category_link
+-@category_icon_name = category_icon_name
+
+.card-article-hover.card
+  %a{:href => @link}
+    %img{:src => @img}/
+  .card-section
+    %p.meta-data.article-subtext
+      = @sub_title
+    %a{:href => @link}
+      %h3.article-title
+        = @title
+    %p.article-desc
+      = @description
+  .card-divider.flex-container.align-middle
+    %i{:class=>"fas fa-" +@category_icon_name}
+    %a.author{:href => @category_link}
+      = @category
+  .hover-border
