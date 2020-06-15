@@ -1,3 +1,9 @@
+$sticky-shrinknav-menu-height: rem-calc(60);
+$sticky-shrinknav-hero-height: 300px;
+
+body {
+  padding-top: $sticky-shrinknav-hero-height + 30px;
+}
 
 .sticky-shrinknav-menu {
   @include horizontal-center;
@@ -43,5 +49,19 @@
   left: 0;
   overflow: hidden;
   transition: all 0.5s ease;
+}
+
+body.sticky-shrinknav-wrapper {
+  padding-top: 130px;
+
+  .sticky-shrinknav-header{
+    height: $sticky-shrinknav-menu-height;
+    background-color: rgba($primary-color, 0.9);
+
+    .sticky-shrinknav-header-title{
+      transform: scale(0);
+      transition: all 0.3s ease;
+    }
+  }
 }
 

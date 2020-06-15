@@ -1,5 +1,19 @@
 %header{:class=>"sticky-shrinknav-header"}
-  %h1{:class=>"sticky-shrinknav-header-title"}
+  %h1{:class=>"sticky-shrinknav-header-title", :role=>"navigation"}
+    The Earthly Frames
   %ul{:class=>"menu align-center sticky-shrinknav-menu"}
     %li
-      %a Home
+      %a{:href=> root_path}
+        Home
+    %li
+      %a{:href=>about_url}
+        About
+    %li
+      %a{:href=> albums_url}
+        Albums
+    %li
+      %a{:href=> posts_url}
+        Posts
+    %li
+      %a{:href=> videos_url}
+        Videos
