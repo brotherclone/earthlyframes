@@ -4,4 +4,4 @@
   %h1{:class=>'page-header'}
     =@video.song.title
   .player-container
-    %iframe{:src => @video_url, :width=> '640', :height=> '360', :frameborder =>'0', :webkitallowfullscreen=> true, :mozallowfullscreen=> true, :allowfullscreen=> true}
+    %iframe{:src => @video.video_embed_url, :width=> '640', :height=> '360', :frameborder =>'0', :webkitallowfullscreen=> true, :mozallowfullscreen=> true, :allowfullscreen=> true}
