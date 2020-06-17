@@ -321,6 +321,9 @@ GEM
       tilt
     sdoc (1.1.0)
       rdoc (>= 5.0)
+    seed_dump (3.3.1)
+      activerecord (>= 4)
+      activesupport (>= 4)
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
@@ -412,6 +415,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails
   sdoc
+  seed_dump
   selenium-webdriver
   spring
   table_print

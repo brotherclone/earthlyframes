@@ -4,6 +4,7 @@ class Album < ActiveRecord::Base
   has_many :songs, -> { order(song_order: :asc) }
   has_many :streaming_links
 
+
   def as_json(options={})
     super(:only => [:title,
                     :cover,
@@ -13,10 +14,14 @@ class Album < ActiveRecord::Base
                     :buylink,
                     :format,
                     :brief_description],
-          :include => {:songs => {:only =>[:title,
-                                           :trt,
-                                           :notes,
-                                           :lyrics], :order => 'song_order desc', :include => {:videos => {:only => [:video_service_id]}}}}
+                      :include => {:songs => {:only =>[:title,
+                                                       :trt,
+                                                       :notes,
+                                                       :lyrics], :order => 'song_order desc',
+                                                        :include => [{:video => {:methods=> :video_embed_url, :only => [ :title, :description, :video_type]}},
+                                                                     {:streaming_links => { :methods=> :streaming_service_name,:only=>[:link]}}]
+            }
+          }
     )
   end
 end

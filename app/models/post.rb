@@ -12,7 +12,7 @@ class Post < ActiveRecord::Base
   end
 
   def as_json(options={})
-    super(:only => [:body, :title, :inline_image, :description, :post_date],
+    super(:only => [:id, :body, :title, :inline_image, :main_image, :description, :post_date],
           :include => {}
     )
   end

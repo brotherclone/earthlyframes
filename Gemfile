@@ -26,6 +26,8 @@ gem 'foundation-rails'
 gem 'autoprefixer-rails'
 gem 'tinymce-rails'
 gem 'inline_svg'
+gem 'seed_dump'
+
 
 
 group :development, :test do
