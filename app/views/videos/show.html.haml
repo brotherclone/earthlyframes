@@ -1,7 +1,10 @@
-.video
-  .ef-breadcrumbs
-    = render_breadcrumbs :tag => :span, :separator=> ""
-  %h1{:class=>'page-header'}
-    =@video.song.title
-  .player-container
-    %iframe{:src => @video.video_embed_url, :width=> '640', :height=> '360', :frameborder =>'0', :webkitallowfullscreen=> true, :mozallowfullscreen=> true, :allowfullscreen=> true}
+.grid-x.grid-padding-x
+  .cell.medium-6.large-offset-1.grid-margin-y
+    = render :partial=> "components/breadcrumb"
+-#.video
+-#  .ef-breadcrumbs
+-#    = render_breadcrumbs :tag => :span, :separator=> ""
+-#  %h1{:class=>'page-header'}
+-#    =@video.song.title
+-#  .player-container
+-#    %iframe{:src => @video.video_embed_url, :width=> '640', :height=> '360', :frameborder =>'0', :webkitallowfullscreen=> true, :mozallowfullscreen=> true, :allowfullscreen=> true}

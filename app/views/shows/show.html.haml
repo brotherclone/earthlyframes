@@ -1,47 +1,51 @@
-.performance-outer
-  -if @show.is_live
-    .ef-breadcrumbs
-      = render_breadcrumbs :tag => :span, :separator=> ""
-    .back-button
-      %a{:href=>shows_path}
-        %button
-          %i
-          %span
-            Back
-    .performance-inner
-      .left-flyer
-        %img{:src=>@show.flyer}
-      .right-info
-        %h2
-          = @show.title
-        .info-hold
-          .info-pair
-            %span.label
-              Date
-            %span.detail.date
-              - today = Date.today
-              - if @show.showdate >= today
-                =@show.showdate.strftime('%F').to_s+' '+@show.showdate.strftime('%H:%M').to_s
-              - else
-                This show occured in the past:
-                =@show.showdate.strftime('%F').to_s
-          .info-pair
-            %span.label
-              Location
-            %span.detail
-              = @show.location
-          .info-pair
-            %span.label
-              Description
-            %span.detail
-              = @show.description.html_safe
-          .more-info
-            %a{:href=>@show.link}
-              %button
-                %span
-                  More Information
-                %i
-  -else
-    %p This show is not available.
-    %a{:href=>shows_path} Return to Shows listing.
+.grid-x.grid-padding-x
+  .cell.medium-6.large-offset-1.grid-margin-y
+    = render :partial=> "components/breadcrumb"
 
+-#.performance-outer
+-#  -if @show.is_live
+-#    .ef-breadcrumbs
+-#      = render_breadcrumbs :tag => :span, :separator=> ""
+-#    .back-button
+-#      %a{:href=>shows_path}
+-#        %button
+-#          %i
+-#          %span
+-#            Back
+-#    .performance-inner
+-#      .left-flyer
+-#        %img{:src=>@show.flyer}
+-#      .right-info
+-#        %h2
+-#          = @show.title
+-#        .info-hold
+-#          .info-pair
+-#            %span.label
+-#              Date
+-#            %span.detail.date
+-#              - today = Date.today
+-#              - if @show.showdate >= today
+-#                =@show.showdate.strftime('%F').to_s+' '+@show.showdate.strftime('%H:%M').to_s
+-#              - else
+-#                This show occured in the past:
+-#                =@show.showdate.strftime('%F').to_s
+-#          .info-pair
+-#            %span.label
+-#              Location
+-#            %span.detail
+-#              = @show.location
+-#          .info-pair
+-#            %span.label
+-#              Description
+-#            %span.detail
+-#              = @show.description.html_safe
+-#          .more-info
+-#            %a{:href=>@show.link}
+-#              %button
+-#                %span
+-#                  More Information
+-#                %i
+-#  -else
+-#    %p This show is not available.
+-#    %a{:href=>shows_path} Return to Shows listing.
+-#

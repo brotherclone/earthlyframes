@@ -8,18 +8,18 @@
 -@category_icon_name = category_icon_name
 
 .card-article-hover.card
-  %a{:href => @link}
-    %img{:src => @img}/
+  %a{:href => @link, :tab=>{:index=>0}}
+    %img{:src => @img, :alt=> @title }
   .card-section
     %p.meta-data.article-subtext
       = @sub_title
-    %a{:href => @link}
-      %h3.article-title
+    %h3.article-title
+      %a{:href => @link, :tab=>{:index=>0} }
         = @title
     %p.article-desc
-      = @description
+      = @description.html_safe
   .card-divider.flex-container.align-middle
     %i{:class=>"fas fa-" +@category_icon_name}
-    %a.author{:href => @category_link}
+    %a.category{:href => @category_link, :tab=>{:index=>0}}
       = @category
   .hover-border

@@ -1,21 +1,24 @@
-.posts
-  .ef-breadcrumbs
-    = render_breadcrumbs :tag => :span, :separator=> ""
-  %h1{:class=>'page-header'} Postings
-  -if @posts.length
-    .body
-      .left-nav
-        = render :partial => 'components/postnav'
-      .right-well
-        -@posts.each do |p|
-          .postpreview
-            .img{:style =>'background: url('+p.main_image.to_s+')'}
-            .title
-              %a{:href=> posts_path+'/'+p.id.to_s}
-                =p.title
-            .snippet
-              =p.description
-            .rule
-              %hr
-  -else
-    %p There are no published posts at this time.
+.grid-x.grid-padding-x
+  .cell.medium-6.large-offset-1.grid-margin-y
+    = render :partial=> "components/breadcrumb"
+-#.posts
+-#  .ef-breadcrumbs
+-#    = render_breadcrumbs :tag => :span, :separator=> ""
+-#  %h1{:class=>'page-header'} Postings
+-#  -if @posts.length
+-#    .body
+-#      .left-nav
+-#        = render :partial => 'components/postnav'
+-#      .right-well
+-#        -@posts.each do |p|
+-#          .postpreview
+-#            .img{:style =>'background: url('+p.main_image.to_s+')'}
+-#            .title
+-#              %a{:href=> posts_path+'/'+p.id.to_s}
+-#                =p.title
+-#            .snippet
+-#              =p.description
+-#            .rule
+-#              %hr
+-#  -else
+-#    %p There are no published posts at this time.

@@ -13,16 +13,13 @@ body {
   width: 100%;
   background-color: rgba($primary-color, 0.1);
   transition: all 0.5s ease;
-
   li {
     border-radius: 2px;
     transition: all 0.3s ease;
-
     &:hover {
       box-shadow: 0 0 0 1px $white;
     }
   }
-
   a {
     color: $white;
   }
@@ -53,11 +50,9 @@ body {
 
 body.sticky-shrinknav-wrapper {
   padding-top: 130px;
-
   .sticky-shrinknav-header{
     height: $sticky-shrinknav-menu-height;
     background-color: rgba($primary-color, 0.9);
-
     .sticky-shrinknav-header-title{
       transform: scale(0);
       transition: all 0.3s ease;
