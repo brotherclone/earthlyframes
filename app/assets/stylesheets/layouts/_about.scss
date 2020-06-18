@@ -1,0 +1,13 @@
+.about{
+  @include xy-cell();
+  @include breakpoint(large){
+    @include xy-cell(6);
+    text-align: left;
+    @include xy-cell-offset(3);
+  }
+  @include breakpoint(medium){
+    @include xy-cell(8);
+    @include xy-cell-offset(2);
+  }
+  text-align: center;
+}

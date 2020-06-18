@@ -21,9 +21,11 @@ $sticky-shrinknav-hero-height: 300px;
 @import "core/palette";
 
 // Components
+@import "components/breadcrumbs";
 @import "components/footer";
 @import "components/nav";
 @import "components/hover_card";
 
 // Layouts
+@import "layouts/about";
 @import "layouts/home";
