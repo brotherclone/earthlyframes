@@ -1,0 +1,12 @@
+.album-list {
+
+  .albums{
+    margin-bottom: 2rem;
+    .album{
+      @include breakpoint(large){
+        width: 300px;
+      }
+      width: 100%;
+    }
+  }
+}

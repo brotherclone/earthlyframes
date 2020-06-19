@@ -11,7 +11,6 @@ body {
   height: $sticky-shrinknav-menu-height;
   line-height: $sticky-shrinknav-menu-height;
   width: 100%;
-  background-color: rgba($primary-color, 0.1);
   transition: all 0.5s ease;
   li {
     border-radius: 2px;
@@ -31,15 +30,16 @@ body {
   transform: translateY(-$sticky-shrinknav-menu-height/2);
   margin-bottom: 0;
   color: $white;
+  font-weight: 800;
 }
 
 .sticky-shrinknav-header {
   width: 100%;
   height: $sticky-shrinknav-hero-height;
+  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: lighten($primary-color, 10%);
   text-align: center;
   position: fixed;
   top: 0;
