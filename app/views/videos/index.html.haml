@@ -1,20 +1,13 @@
 = render :partial=> "components/breadcrumb"
-
--#.videos
--#  .ef-breadcrumbs
--#    = render_breadcrumbs :tag => :span, :separator=> ""
--#  %h1{:class=>'page-header'} Videos
--#  .video-listing
--#    -if @videos.length >=1
--#      -@videos.each do |v|
--#        .video
--#          %a{:href=> videos_path+'/'+v.id.to_s, :class => 'song-title'}
--#            = v.song.title
--#          %br
--#          from
--#          -aid = v.song.album.id.to_s
--#          %a{:href=> albums_path+'/'+ aid, :class=>'album-link'}
--#            = v.song.album.title
--#          %hr
--#    -else
--#      %p{:class=>'error'} There are no published albums at this time.
+.videos
+  %h1
+    Videos
+  .video-listing
+    -if @videos.length >=1
+      -@videos.each do |v|
+        %h2
+          =v.song.title
+        .player-container
+          %iframe{:src => v.video_embed_url, :width=> '640', :height=> '360', :frameborder =>'0', :webkitallowfullscreen=> true, :mozallowfullscreen=> true, :allowfullscreen=> true}
+    -else
+      %p{:class=>'error'} There are no published albums at this time.

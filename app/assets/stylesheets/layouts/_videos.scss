@@ -1,0 +1,14 @@
+.videos{
+  @include breakpoint(large){
+    @include xy-cell-offset(2);
+    @include xy-cell-size(10);
+  }
+  @include xy-cell;
+}
+.video{
+  @include breakpoint(large){
+    @include xy-cell-offset(2);
+    @include xy-cell-size(10);
+  }
+  @include xy-cell;
+}
