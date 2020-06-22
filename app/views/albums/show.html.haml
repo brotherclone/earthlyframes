@@ -36,34 +36,12 @@
             %h2{:class=>'track-listing'}
               Track Listing:
             %ol{:class=>'song-list'}
-              -min_length = 5
               -@album.songs.each do |s|
-                -sid = s.id.to_s
-                %li{:itemprop=>'track'}
-                  -if s.lyrics.length > min_length || s.notes.length > min_length || s.streaming_links
-                    %a{:class=>'expander', :href=>'javascript:songExpand('+sid+')', :id=>'songid_'+sid}
-                      = s.title+' '+s.trt
-                    - if s.streaming_links
-                      - s.streaming_links.each do |streaming_link|
-                        %a{:href => streaming_link.link, :class=> "streaming-link icon-only" }
-                          %i{:class=> ("fab fa-" + streaming_link.streaming_service.icon_url)}
-                    .expander-content{:id=>'songcontent_'+sid}
-                      -if s.video
-                        %a{:href=> video_path(s.video.id), :class => 'video-link'}
-                          ="Watch the video for " + s.title
-                      -if s.lyrics.length > min_length
-                        %h3 Lyrics
-                        .lyrics{:itemprop=>'lyrics'}
-                          =s.lyrics.html_safe
-                      -if s.lyrics.length > min_length && s.notes.length > min_length
-                        %hr
-                      -if s.notes.length > min_length
-                        %h3 Notes
-                        .notes{:itemprop => 'about'}
-                          =s.notes.html_safe
-                  -else
-                    %span{:class=>'expander'}
-                      =s.title+' | '+s.trt
+                - song_id = s.id.to_s
+                %li
+                  %span.song-select{:tab=>{:index=>0},:data=>{:toggle=>"songMenu_"+song_id}}
+                    = s.title
+                    = render :partial=> "components/song_tabbed_display", :locals=>{:song=>s, :song_id=>song_id}
     - else
       %p This album is being updated. Please check back shortly.
       %a{:href=>albums_path}

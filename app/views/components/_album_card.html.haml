@@ -16,10 +16,12 @@
           %span{:class => "album-streaming-link"}
           %a{:href => album_streaming_link.link, :class=> "streaming-link icon-only" }
             %i{:class=> ("fab fa-" + album_streaming_link.streaming_service.icon_url)}
-  %img{:src=> @cover_image, :alt=> @album_title, :itemprop=>'image'}
+  %a{:href=> @album_link, :tab=>{:index=>0}}
+    %img{:src=> @cover_image, :alt=> @album_title, :itemprop=>'image'}
   .album-description
-    %h3
-      = @album_title
+    %a{:href=> @album_link, :tab=>{:index=>0}}
+      %h3
+        = @album_title
     %p{:itemprop => 'about'}
       = @album_description
       | Released:

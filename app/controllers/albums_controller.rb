@@ -14,9 +14,8 @@ class AlbumsController < ApplicationController
   end
 
   def show
-
+    gon.album_songs = @album.songs
     add_breadcrumb @album.title.to_s, album_path
-
     respond_to do |format|
       format.html { render :show}
       format.json { render :json => @album}

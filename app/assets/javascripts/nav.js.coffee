@@ -12,16 +12,3 @@ mobileNav = () ->
 $(window).scroll ->
   mobileNav()
   return
-#
-#$(document).ready ->
-#  mobileNav()
-#  return
-#
-#$(document).on 'turbolinks:load', ->
-#  mobileNav()
-#  return
-#
-#$(window).resize ->
-#  mobileNav()
-#  return
-

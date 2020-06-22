@@ -25,8 +25,8 @@ gem 'breadcrumbs_on_rails'
 gem 'foundation-rails'
 gem 'autoprefixer-rails'
 gem 'tinymce-rails'
-gem 'inline_svg'
 gem 'seed_dump'
+gem 'gon'
 
 
 

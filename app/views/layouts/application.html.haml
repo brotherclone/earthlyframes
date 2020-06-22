@@ -9,8 +9,8 @@
 
     = stylesheet_link_tag "application"
     = javascript_include_tag "application", "data-turbolinks-track" => true
+    = include_gon
     = csrf_meta_tag
-
   %body
     = render :partial => 'components/nav'
     .grid-container.full
