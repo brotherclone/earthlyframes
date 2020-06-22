@@ -7,7 +7,7 @@ class Video < ActiveRecord::Base
     {:you_tube => "YouTube", :vimeo => "Vimeo"}
   end
 
-  def video_embded_url
+  def video_embed_url
     video_services = services
     if video_type == video_services[:vimeo]
       "https://player.vimeo.com/video/" + video_service_id
@@ -19,7 +19,7 @@ class Video < ActiveRecord::Base
   end
 
   def as_json(options={})
-    super(:only => [:title, :video_type], :methods=> [:video_embded_url], :include => {:song=> {:only =>[:title], :include=> {:album=>{:only=>[:title]}}}})
+    super(:only => [:title, :video_type], :methods=> [:video_embed_url], :include => {:song=> {:only =>[:title], :include=> {:album=>{:only=>[:title]}}}})
   end
 
-  end
+end

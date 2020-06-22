@@ -17,7 +17,7 @@ class VideosController < ApplicationController
   def show
     add_breadcrumb @video.title.to_s, :video_path
     respond_to do |format|
-      format.html { render :index}
+      format.html { render :show}
       format.json { render :json => @video}
     end
   end
@@ -73,6 +73,6 @@ class VideosController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def video_params
-    params.require(:video).permit(:title, :description, :video_type, :video_service_id, :song_id)
+    params.require(:video).permit(:title, :description, :video_type, :video_service_id, :song_id, :video_embed_url)
   end
 end

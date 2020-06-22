@@ -4,18 +4,24 @@ class CardItem
   end
 
   @@array = Array.new
-  attr_accessor :title, :img, :description, :link
+  attr_accessor :link, :img, :sub_title, :title, :description, :category, :category_link, :category_icon_name
 
   def self.all_instances
     @@array
   end
 
-  def initialize(title,description, img, link)
-    @title = title
-    @img = img
-    @description = description
+  def initialize(link, img, sub_title, title, description, category, category_link, category_icon_name)
     @link = link
+    @img = img
+    @sub_title = sub_title
+    @title = title
+    @description = description
+    @category = category
+    @category_link = category_link
+    @category_icon_name = category_icon_name
     @@array << self
   end
 
 end
+
+

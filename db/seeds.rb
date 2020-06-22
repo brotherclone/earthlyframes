@@ -1,3 +1,29 @@
+<<<<<<< HEAD
+album_lists = [
+    
+]
+
+album_lists.each do | title,
+                      description,
+                      cover,
+                      price,
+                      released,
+                      buylink,
+                      format,
+                      brief_description,
+                      is_live|
+  Album.create( title: title,
+                description: description,
+                cover: cover,
+                price: price,
+                released: released,
+                buylink: buylink,
+                format: format,
+                brief_description: brief_description,
+                is_live: is_live)
+
+end
+=======
 Album.create!([
                   {title: "Hoarding Eleven", description: "<p><em>Hoarding Eleven</em> is a story told over&nbsp;multiple mediums: a short film, a&nbsp;card game, a novella and an EP.</p>\r\n<p>In the movie, Donny Reyes, played&nbsp;by Eliud Kauffman, works as a&nbsp;supervisor for a financially strapped&nbsp;outdoor advertising company. Donny's world begins to crumble&nbsp;after he inspects a mysterious&nbsp;billboard design that conjures lost&nbsp;memories and surfaces his fears of&nbsp;failing his very talented daughter.</p>\r\n<p>The novella, written by the director's father, bookends the film to reveal how Donny and his family have&nbsp;all struggled with their repressed&nbsp;talents and paranoia - the shadow&nbsp;of their powerful imaginations.</p>\r\n<p>The card game explores the&nbsp;notion of that a sequence of&nbsp;symbols, like those found on the&nbsp;mysterious billboard, can unlock&nbsp;dreams and memories or&nbsp;overload one's consciousness.&nbsp;Each player of the game attempt&nbsp;to arrange a sequence of handpainted&nbsp;cards as other players&nbsp;counter by intervening or&nbsp;tricking them into building a&nbsp;sequence of their own undoing.</p>\r\n<p>The musical portion of the project is provided by The Earthly Frames. The sound is a strange mix of&nbsp;sampled country western and dub-influenced rock music.</p>\r\n<p><strong>Please note</strong>, the <em>Hoarding Eleven</em> album and bundle are no longer available. But you can still purchase the card game and novella via print on-demand services.</p>", cover: "v1474977955/dqasobg2hqau38jaji7r.png", price: 23.2, released: "2012-10-01", buylink: "https://www.thegamecrafter.com/games/hoarding-eleven", format: "Game Box", brief_description: "Multi-format Story", is_live: false},
                   {title: "Hoarding Seventeen", description: "<p>Much of <em>Hoarding Eleven&nbsp;</em>was dedicated to soundtracks, dialog collages and the like. This EP pulls out the more self-contained songs and adds new parts, mixes and remastering.</p>", cover: "v1491914951/wzqtqgo5jio793i6u5lj.jpg", price: 2.0, released: "2017-04-18", buylink: "https://earthlyframes.bandcamp.com/album/hoarding-seventeen", format: "Digital", brief_description: "Recorded in 2011 as part of the \"Hoarding Eleven\" multi-media project, these four songs have been tweak, remixed and remastered.", is_live: true},
@@ -147,3 +173,4 @@ Show.create!([
   {title: "Pete's Candy Store", showdate: "2010-10-03 00:00:00", description: "<p>So L'il,&nbsp;The Earthly Frames,&nbsp;Season Finale</p>", location: "Willamsburg, Brooklyn", link: "http://www.petescandystore.com/", flyer: "v1475010847/gj3tywhccdmc2kcjgj9r.jpg", brief_description: "So L'il Returns! ", is_live: true},
   {title: "Binah Festival", showdate: "2013-09-01 00:00:00", description: "<p><strong>Binah Comic &amp; Solillians Single Party</strong></p>\r\n<p>The comic book &lsquo;Binah&rsquo; is a collaboration between the illustrator Ian Densford and the writer Ben Malkin. Ben wrote the script about a teleporter named Binah, who, along with her team of powers (Metamorphosis, The Daughter of Illusions, &amp; Flush), &nbsp;stages five &lsquo;signs from G-d.&rsquo; The signs are meant to try &amp; secretly convince her people, the Solilians, that they need to move their home &amp; holy land, Strong Island, or suffer inevitable atomic annihilation. Amidst a sea of escalating tension, hatred and violence from their neighboring countries (~particularly Old Jersey, whose people the Ifwhen, are very close to atomic capability), the Solilians find themselves eternally on the defensive, and constantly having to anticipate when the next attack or tragedy will be. Binah, who does not love her own government, but rather simply wants peace, believes she was visited by G-d in a dream, informed she is the Messiah, and that it&rsquo;s her duty to get the Solilians to emigrate to a far-away island she&rsquo;s bought before it&rsquo;s to late. The &lsquo;signs from G-d&rsquo; do get people talking, and the drunk noir detective Blaze Braff (who himself has super-speed) is sent in by Strong Island&rsquo;s government to get to the bottom of it. Quite a bit ensues but we&rsquo;ll save that for the comic. Suffice to say, in light of recent events, this tale is more relevant than ever.</p>\r\n<p>&nbsp;</p>\r\n<p>Visit BinahComic.tumblr.com to read the first five pages.</p>\r\n<p>&nbsp;</p>\r\n<p>Show featured: Common Prayer, The Earthly Frames, The Stargazer Lilies, So L'il, Honeychild Coleman,Electric Djinn</p>\r\n<p>&nbsp;</p>", location: "The Colony Cafe, Woodstock, NY", link: "http://hvmusic.com/listing/club_detail.php?listing_id=446", flyer: "v1475009286/xaykml0mwlgn7f4kngfe.jpg", brief_description: "The Binah Comics & Solilians 7-inch Release Party", is_live: true}
 ])
+>>>>>>> develop

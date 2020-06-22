@@ -1,19 +1,22 @@
-%header.navigation-centered{:role => 'banner'}
-  .navigation-centered-wrapper
-    %a.mobile-logo{:href => root_url}
-      = inline_svg_tag 'svg/logo.svg', class: 'ef'
-    %a#js-navigation-centered-mobile-menu.navigation-centered-mobile-menu{:href => root_url}
-      %i{:class=>'fas fa-bars mobile-nav'}
-    %nav{:role => 'navigation'}
-      %ul#js-navigation-centered-menu.navigation-centered-menu
-        %li.nav-link
-          %a{:href =>  about_url} About
-        %li.nav-link
-          %a{:href => albums_url} Albums
-        %li.nav-link.logo
-          %a.logo{:href => root_url}
-            = inline_svg_tag 'svg/logo.svg', class: 'ef'
-        %li.nav-link
-          %a{:href => posts_url} Posts
-        %li.nav-link
-          %a{:href => videos_url} Videos
+%header{:class=>"sticky-shrinknav-header", :style=> "background-image:url("+ asset_path('top.jpg') +");"}
+  %h1{:class=>"sticky-shrinknav-header-title", :role=>"navigation"}
+    The Earthly Frames
+  %ul{:class=>"menu align-center sticky-shrinknav-menu"}
+    %li
+      %a{:href=> root_path}
+        Home
+    %li
+      %a{:href=>about_path}
+        About
+    %li
+      %a{:href=> albums_path}
+        Albums
+    %li
+      %a{:href=> posts_path}
+        Posts
+    %li
+      %a{:href=> videos_path}
+        Videos
+    %li
+      %a{:href=> shows_path}
+        Shows

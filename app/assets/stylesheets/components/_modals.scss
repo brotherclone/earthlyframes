@@ -1,0 +1,7 @@
+.modal-close{
+  &:hover{
+    cursor: pointer;
+    color: $color-peach;
+  }
+  float: right;
+}

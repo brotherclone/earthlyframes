@@ -1,0 +1,21 @@
+.album-card {
+  @include card-container($color-white, $color-storm, 0.5rem, 3rem, 0.25rem, $card-shadow);
+  .additional-info {
+    @include card-divider();
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+    .format{
+      text-transform: uppercase;
+    }
+  }
+  .album-description{
+    @include card-section();
+    .album-title{
+      @include breakpoint(large){
+        font-size: 200%;
+      }
+      font-size: 160%;
+    }
+  }
+}
