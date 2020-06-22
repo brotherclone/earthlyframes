@@ -1,0 +1,67 @@
+.albums-header, .album-header{
+  @include breakpoint(large){
+    @include xy-cell-offset(2);
+    @include xy-cell-size(10);
+  }
+  @include xy-cell;
+}
+.albums{
+  @include xy-grid;
+  .album-listing{
+    @include breakpoint(large){
+      &:nth-child(3n+1){
+        @include xy-cell-offset(2);
+      }
+      @include xy-cell-size(3);
+    }
+    @include xy-cell();
+  }
+}
+
+.album{
+  @include xy-grid();
+  .cover-and-links{
+    @include breakpoint(large){
+      @include xy-cell-offset(2);
+      @include xy-cell-size(4);
+    }
+    @include xy-cell();
+    .purchase{
+      font-size: 110%;
+      margin: 0.5rem 0 0.5rem 0;
+    }
+  }
+  .album-description{
+    font-size: 110%;
+    @include breakpoint(large){
+      @include xy-cell-size(4);
+      margin-top: 0;
+    }
+    margin-top: 2rem;
+    @include xy-cell();
+  }
+  .streaming-links{
+    display: flex;
+    align-content: space-between;
+    .streaming-link{
+      margin-right: 0.5rem;
+      @include breakpoint(medium){
+       .service-name{
+         display: none !important;
+       }
+      }
+      .service-name{
+        display:inline;
+      }
+    }
+  }
+}
+.tracks{
+  @include breakpoint(large){
+    @include xy-cell-offset(2);
+    @include xy-cell-size(10);
+  }
+  @include xy-cell;
+}
+
+

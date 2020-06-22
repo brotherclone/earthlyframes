@@ -22,4 +22,4 @@ class Video < ActiveRecord::Base
     super(:only => [:title, :video_type], :methods=> [:video_embed_url], :include => {:song=> {:only =>[:title], :include=> {:album=>{:only=>[:title]}}}})
   end
 
-  end
+end

@@ -8,4 +8,9 @@ describe 'Videos display correctly', :type => :feature do
     expect(page).to have_css('div.videos')
   end
 
+  it 'checks for a breadcrumb', :js => true do
+    visit about_path
+    expect(page).to have_css('ul.breadcrumbs')
+  end
+
 end

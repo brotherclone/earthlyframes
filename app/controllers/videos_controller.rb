@@ -17,7 +17,7 @@ class VideosController < ApplicationController
   def show
     add_breadcrumb @video.title.to_s, :video_path
     respond_to do |format|
-      format.html { render :index}
+      format.html { render :show}
       format.json { render :json => @video}
     end
   end

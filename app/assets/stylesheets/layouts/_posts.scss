@@ -1,0 +1,22 @@
+.posts{
+  @include breakpoint(large){
+    @include xy-cell-offset(2);
+    @include xy-cell-size(8);
+  }
+  @include xy-cell;
+  .posting{
+    @include breakpoint(large) {
+      font-size: 130%;
+    }
+    font-size: 110%;
+  }
+}
+
+.post{
+  @include breakpoint(large){
+    @include xy-cell-offset(2);
+    @include xy-cell-size(8);
+  }
+  @include xy-cell;
+  font-size: 120%;
+}

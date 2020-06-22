@@ -20,7 +20,7 @@
     %img{:src=> @cover_image, :alt=> @album_title, :itemprop=>'image'}
   .album-description
     %a{:href=> @album_link, :tab=>{:index=>0}}
-      %h3
+      %h3.album-title
         = @album_title
     %p{:itemprop => 'about'}
       = @album_description

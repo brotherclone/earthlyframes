@@ -10,7 +10,11 @@ RSpec.describe VideosController, type: :routing do
     it 'routes to #new' do
       expect(:get => '/videos/new').to route_to('videos#new')
     end
-    
+
+    it 'routes to #show' do
+      expect(:get => '/videos/1').to route_to('videos#show', :id => '1')
+    end
+
     it 'routes to #edit' do
       expect(:get => '/videos/1/edit').to route_to('videos#edit', :id => '1')
     end

@@ -14,7 +14,7 @@
                 %a{:href=> shows_path+'/'+s.id.to_s}
                   =s.title
               %h5
-                =s.showdate.strftime('%D').to_s+', '+s.showdate.strftime('%H:%M').to_s
+                =s.showdate.strftime('%D')+', '+s.showdate.strftime('%H:%M')
               =s.brief_description
               %a{:href => s.link}
                 Details

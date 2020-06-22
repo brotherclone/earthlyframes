@@ -10,11 +10,11 @@
       %dd
         - today = Date.today
         - if @show.showdate >= today
-          =@show.showdate.strftime('%F').to_s+' '+@show.showdate.strftime('%H:%M').to_s
+          =@show.showdate.strftime('%F')+' '+@show.showdate.strftime('%H:%M')
         - else
           %strong
             This show occured in the past:
-          =@show.showdate.strftime('%D').to_s
+          =@show.showdate.strftime('%D')
       %dt
         Location
       %dd

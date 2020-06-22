@@ -6,4 +6,9 @@ describe 'Coming Soon display correctly', :type => :feature do
     expect(page).to have_content('Your Team Ring')
   end
 
+  it 'checks for a breadcrumb', :js => true do
+    visit about_path
+    expect(page).to have_css('ul.breadcrumbs')
+  end
+
 end
