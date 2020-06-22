@@ -13,7 +13,5 @@
     = csrf_meta_tag
   %body
     = render :partial => 'components/nav'
-    .grid-container.full
-      .grid-x.grid-margin-x
-        = yield
-      = render :partial => 'components/footer'
+    = yield
+    = render :partial => 'components/footer'

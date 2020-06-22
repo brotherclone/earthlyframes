@@ -1,13 +1,14 @@
 .about{
-  @include xy-cell();
   @include breakpoint(large){
-    @include xy-cell(6);
-    text-align: left;
-    @include xy-cell-offset(3);
-  }
-  @include breakpoint(medium){
-    @include xy-cell(8);
+    font-size: 130%;
     @include xy-cell-offset(2);
+    @include xy-cell-size(4);
   }
-  text-align: center;
+  @include xy-cell;
+}
+.about-photo{
+  @include breakpoint(large){
+    @include xy-cell-size(4);
+  }
+  @include xy-cell;
 }

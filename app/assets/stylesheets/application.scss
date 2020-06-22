@@ -27,9 +27,10 @@ $sticky-shrinknav-hero-height: 300px;
 @import "components/nav";
 @import "components/hover_card";
 @import "components/modals";
-@import "components/song_tabbed_display";
+@import "components/song_display";
 
 // Layouts
-@import "layouts/albums";
 @import "layouts/about";
+@import "layouts/albums";
+@import "layouts/eula";
 @import "layouts/home";

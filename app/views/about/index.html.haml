@@ -1,6 +1,6 @@
+= render :partial=> "components/breadcrumb"
 .page
   .about
-    = render :partial=> "components/breadcrumb"
     %h1 About
     %article
       %p
@@ -23,3 +23,5 @@
       %p
         The Earthly Frames reside at Walsh's custom studio in
         %span{:itemprop=>'location', :itemscope=>true, :itemtype=>'http://schema.org/Place'}Maryland.
+  .about-photo
+    %img{:src=> asset_path("portrait3.jpg")}

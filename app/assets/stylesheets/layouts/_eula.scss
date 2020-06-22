@@ -1,0 +1,8 @@
+.eula{
+  @include breakpoint(large){
+    font-size: 130%;
+    @include xy-cell-offset(2);
+    @include xy-cell-size(8);
+  }
+  @include xy-cell;
+}

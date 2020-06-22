@@ -9,5 +9,5 @@ body{
 }
 
 .page{
-  @include xy-grid-container();
+  @include xy-grid();
 }

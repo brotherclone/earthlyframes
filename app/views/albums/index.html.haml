@@ -1,19 +1,18 @@
-.page
-  .album-list
-    = render :partial=> "components/breadcrumb"
-    %h1 Albums
-    -if @albums.length
-      - album_matrix = @albums.each_slice(3).to_a
-      - album_matrix.each do |row|
-        .grid-x.grid-margin-x.small-up-2.medium-up-3.albums
-          - row.each do |a|
-            .cell.album
-              = render :partial=> "components/album_card", :locals=> {:album_title=> a.title,
-                                                                 :cover_image=> a.cover,
-                                                                 :album_description => a.brief_description,
-                                                                 :album_link=> albums_path+'/'+a.id.to_s,
-                                                                 :album_format => a.format,
-                                                                 :album_streaming_links => a.streaming_links,
-                                                                 :album_release_date => a.released}
-    - else
-      %p There are no published albums at this time.
+
+= render :partial=> "components/breadcrumb"
+%h1 Albums
+-if @albums.length
+  - album_matrix = @albums.each_slice(3).to_a
+  - album_matrix.each do |row|
+    .grid-x.grid-margin-x.small-up-2.medium-up-3.albums
+      - row.each do |a|
+        .cell.album
+          = render :partial=> "components/album_card", :locals=> {:album_title=> a.title,
+                                                             :cover_image=> a.cover,
+                                                             :album_description => a.brief_description,
+                                                             :album_link=> albums_path+'/'+a.id.to_s,
+                                                             :album_format => a.format,
+                                                             :album_streaming_links => a.streaming_links,
+                                                             :album_release_date => a.released}
+- else
+  %p There are no published albums at this time.

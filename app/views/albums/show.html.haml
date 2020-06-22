@@ -1,48 +1,37 @@
-.grid-x.grid-padding-x
-  .cell.medium-6.large-offset-1.grid-margin-y
-    = render :partial=> "components/breadcrumb"
-    -if @album.is_live
-      .album.detail{:itemscope => true, :itemtype => 'http://schema.org/MusicGroup'}
-        .left
-          %span{:class=>'screen-reader-only', :itemprop=>'byArtist'} The Earthly Frames
-          %img{:src => @album.cover, :class=>'cover', :alt => @album.title, :itemprop =>'image'}
-          - if @album.price.to_i > 0
-            .buy
-              %span{:class=>'price'}
-                =number_to_currency(@album.price, :unit => '$')
-              %a{:class=> "from-bandcamp", :href=> @album.buylink.to_s}
-                %span{:class=> "on"}
-                  Buy on
-                Bandcamp
-          - if @album.streaming_links
-            %div{:class => "album-streaming-links"}
-              - @album.streaming_links.each do | album_streaming_link |
-                %span{:class => "album-streaming-link"}
-                  %a{:href => album_streaming_link.link, :class=> "streaming-link" }
-                    = "Listen on " + album_streaming_link.streaming_service.name.to_s
-                    %i{:class=> ("fab fa-" + album_streaming_link.streaming_service.icon_url)}
-        .right
-          .title{:itemprop => 'name'}
-            =@album.title
-          .info{:itemprop => 'datePublished'}
-            -if @album.released
-              =@album.format+' | '+@album.released.strftime('%b %y')
-            -else
-              =@album.format
-          .description{:itemprop => 'description'}
-            =@album.description.html_safe
-          -if @album.songs
-            %hr
-            %h2{:class=>'track-listing'}
-              Track Listing:
-            %ol{:class=>'song-list'}
-              -@album.songs.each do |s|
-                - song_id = s.id.to_s
-                %li
-                  %span.song-select{:tab=>{:index=>0},:data=>{:toggle=>"songMenu_"+song_id}}
-                    = s.title
-                    = render :partial=> "components/song_tabbed_display", :locals=>{:song=>s, :song_id=>song_id}
-    - else
-      %p This album is being updated. Please check back shortly.
-      %a{:href=>albums_path}
-        Return to Albums listing.
+= render :partial=> "components/breadcrumb"
+%span{:itemscope => true, :itemtype => 'http://schema.org/MusicGroup'}
+  -if @album.is_live
+    %span{:class=>'screen-reader-only', :itemprop=>'byArtist'} The Earthly Frames
+    %h1{:itemprop=> 'name'}
+      =@album.title
+    -if @album.released
+      %h4{:itemprop => 'datePublished'}
+        =@album.format+' | '+@album.released.strftime('%b %y')
+    -else
+      %h4
+        =@album.format
+    %img{:src => @album.cover, :class=>'cover', :alt => @album.title, :itemprop =>'image'}
+    - if @album.price.to_i > 0
+      %a{:class=> "from-bandcamp", :href=> @album.buylink.to_s}
+        Purchase on Bandcamp
+      %span{:class=>'price'}
+        = number_to_currency(@album.price, :unit => '$')
+    - if @album.streaming_links
+      - @album.streaming_links.each do | album_streaming_link |
+        %span
+          %a{:href => album_streaming_link.link, :class=> "streaming-link" }
+            = "Listen on " + album_streaming_link.streaming_service.name.to_s
+            %i{:class=> ("fab fa-" + album_streaming_link.streaming_service.icon_url)}
+    %span{:itemprop => 'description'}
+      =@album.description.html_safe
+
+      -# -if @album.songs
+      -#   %h2{:class=>'track-listing'}
+      -#     Track Listing:
+      -#     %ol{:class=>'song-list'}
+      -#       -@album.songs.each do |s|
+      -#         - song_id = s.id.to_s
+      -#           %li
+      -#             %span.song-select{:tab=>{:index=>0},:data=>{:toggle=>"songMenu_"+song_id}}
+      -#               = s.title
+      -#           = render :partial=> "components/song_display", :locals=>{:song=>s, :song_id=>song_id}
