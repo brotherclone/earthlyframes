@@ -16,3 +16,6 @@
 //= require_tree .
 //= require foundation
 $(function(){ $(document).foundation(); });
+$(document).on('turbolinks:load', function() {
+    $(function(){ $(document).foundation(); });
+});
