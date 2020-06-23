@@ -9,7 +9,7 @@
 
     = stylesheet_link_tag "application"
     = javascript_include_tag "application", "data-turbolinks-track" => true
-    = include_gon
+    = Gon::Base.render_data
     = csrf_meta_tag
   %body
     = render :partial => 'components/nav'
