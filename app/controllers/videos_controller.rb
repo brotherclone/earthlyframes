@@ -5,15 +5,21 @@ class VideosController < ApplicationController
 
   before_action :set_video, only: [:show, :edit, :update, :destroy]
 
-  include VideosHelper
 
   def index
     @videos = Video.all
+    respond_to do |format|
+      format.html { render :index}
+      format.json { render :json => @videos}
+    end
   end
 
   def show
     add_breadcrumb @video.title.to_s, :video_path
-    @video_url = "#{video_url(@video)}"
+    respond_to do |format|
+      format.html { render :show}
+      format.json { render :json => @video}
+    end
   end
 
   def new
@@ -25,7 +31,6 @@ class VideosController < ApplicationController
 
   def create
     @video = Video.new(video_params)
-
     respond_to do |format|
       if @video.save
         format.html { redirect_to @video, notice: 'Video was successfully created.' }
@@ -68,6 +73,6 @@ class VideosController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def video_params
-    params.require(:video).permit(:title, :description, :video_type, :video_service_id, :song_id)
+    params.require(:video).permit(:title, :description, :video_type, :video_service_id, :song_id, :video_embed_url)
   end
 end

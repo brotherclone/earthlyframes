@@ -1,110 +1,63 @@
-// Footer
-//
-// Styleguide: ef.components.navigation
+$sticky-shrinknav-menu-height: rem-calc(60);
+$sticky-shrinknav-hero-height: 300px;
 
-.navigation-centered {
-  $large-screen: em(860) !default;
-  $centered-navigation-height: 60px;
-  $centered-navigation-logo-height: 2em;
-  @extend %header-texture;
+body {
+  padding-top: $sticky-shrinknav-hero-height + 30px;
+}
+
+.sticky-shrinknav-menu {
+  @include horizontal-center;
+  background-color: rgba(20,20,20,0.2);
+  bottom: 0;
+  height: $sticky-shrinknav-menu-height;
+  line-height: $sticky-shrinknav-menu-height;
   width: 100%;
-  .mobile-nav {
-    margin-right: 0.25rem;
-    color: $color-white;
-    font-size: 2rem;
-    &:hover{
-      color: $color-peach;
+  transition: all 0.5s ease;
+  li {
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    &:hover {
+      box-shadow: 0 0 0 1px $white;
     }
   }
-  .mobile-logo {
-    display: inline;
-    float: left;
-    @include media($large-screen) {
-      display: none;
-    }
-    .ef {
-      fill: $color-white;
-      height: 1.65rem;
-      margin-top: 0.5rem;
-      margin-left: 0.25rem;
-    }
+  a {
+    color: $white;
   }
-  .navigation-centered-mobile-menu {
-    float: right;
-    padding: 0.5em 0 0.75rem 0;
-    @include media ($large-screen) {
-      display: none;
-    }
-  }
-  .navigation-centered-wrapper {
-    @include clearfix;
-    @include outer-container;
-    position: relative;
-    min-height: 3rem;
-    @include media ($large-screen) {
-      margin-bottom: 2rem;
-    }
-  }
-  ul.navigation-centered-menu {
-    clear: both;
-    display: none;
-    margin: 0 auto;
-    overflow: visible;
-    padding: 0;
-    width: 100%;
-    margin-left: -0.75rem;
-    &.show {
-      display: block;
-    }
-    @include media ($large-screen) {
-      display: block;
-      text-align: center;
-    }
-  }
-  ul li.nav-link {
-    display: block;
-    text-align: center;
-    width: 100%;
-    a {
-      display: inline-block;
-      text-decoration: none;
-      color: $color-white;
-      font-size: 1.75rem;
-      text-transform: lowercase;
-      font-weight: 800;
-      &:hover{
-        text-decoration: none;
-        color: $color-peach;
-      }
-    }
-    &:last-child a {
-      padding-right: 0;
-    }
-    @include media($large-screen) {
-      display: inline;
-      a {
-        padding-right: 1em;
-      }
-    }
-  }
-  li.logo.nav-link {
-    display: none;
-    line-height: 0;
-    @include media($large-screen) {
-      display: inline;
-    }
-    .logo {
-      margin-bottom: -$centered-navigation-logo-height / 3;
-      max-height: $centered-navigation-logo-height;
-      .ef{
-        fill: $color-white;
-        height: 2rem;
-        margin-top: 0.5rem;
-        margin-bottom: -0.45rem;
-        &:hover{
-          fill:$color-peach;
-        }
-      }
+}
+
+.sticky-shrinknav-header-title {
+  transition: all 0.3s ease;
+  position: relative;
+  transform: translateY(-$sticky-shrinknav-menu-height/2);
+  margin-bottom: 0;
+  color: $white;
+  font-weight: 800;
+}
+
+.sticky-shrinknav-header {
+  width: 100%;
+  height: $sticky-shrinknav-hero-height;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+body.sticky-shrinknav-wrapper {
+  padding-top: 130px;
+  .sticky-shrinknav-header{
+    height: $sticky-shrinknav-menu-height;
+    background-color: rgba($primary-color, 0.9);
+    .sticky-shrinknav-header-title{
+      transform: scale(0);
+      transition: all 0.3s ease;
     }
   }
 }
+

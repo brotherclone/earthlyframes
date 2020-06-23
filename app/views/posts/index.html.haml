@@ -1,21 +1,15 @@
+= render :partial=> "components/breadcrumb"
 .posts
-  .ef-breadcrumbs
-    = render_breadcrumbs :tag => :span, :separator=> ""
-  %h1{:class=>'page-header'} Postings
+  %h1 Postings
   -if @posts.length
-    .body
-      .left-nav
-        = render :partial => 'components/postnav'
-      .right-well
-        -@posts.each do |p|
-          .postpreview
-            .img{:style =>'background: url('+p.main_image.to_s+')'}
-            .title
-              %a{:href=> posts_path+'/'+p.id.to_s}
-                =p.title
-            .snippet
-              =p.description
-            .rule
-              %hr
+    -@posts.each do |p|
+      .posting
+        %h2
+          = p.title
+        %h4
+          = p.post_date.strftime('%F')
+        %img{:src=> p.main_image}
+        %p
+          = p.body.html_safe
   -else
     %p There are no published posts at this time.

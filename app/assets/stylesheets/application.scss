@@ -1,73 +1,41 @@
-// Earthly Frames Style Guide
-//
-// Styleguide: ef
-
+// Initial Values
+$base-font-family: "expo-sans-pro", sans-serif;
+$heading-font-family: "poiret-one", sans-serif;
+$sticky-shrinknav-menu-height: rem-calc(60);
+$sticky-shrinknav-hero-height: 300px;
 
 // Third Party Libraries
-//
-// Styleguide: ef.libs
-@import "bourbon/bourbon";
-@import "neat/neat";
-@import "base/base";
+@import url("https://use.typekit.net/amw6xzf.css");
 @import "active_admin";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "foundation_and_overrides";
 
-// Core Visuals
-//
-// Styleguide: ef.core
-@import "core/animation";
-@import "core/layout";
-@import "core/lighting";
-@import "core/palette";
-@import "core/textures";
-@import "core/typography";
+// Utilities
+@import "utilities/rem";
+@import "utilities/maps";
+
+// Core
 @import "core/accessibility";
-
-
-// Elements
-//
-// Styleguide: ef.elements
-@import "elements/breadcrumbs";
-@import "elements/buttons";
-
+@import "core/lighting";
+@import "core/layout";
+@import "core/palette";
 
 // Components
-//
-// Styleguide: ef.components
-$footer-height: 3rem;
-@import "components/nav";
+@import "components/album_card";
+@import "components/breadcrumbs";
 @import "components/footer";
-@import "components/parallax";
+@import "components/nav";
+@import "components/hover_card";
+@import "components/modals";
+@import "components/song_display";
 
 // Layouts
-//
-// Styleguide: ef.layouts
-@import "home";
-@import "postings";
-@import "shows";
-@import "albums";
-@import "soon";
-@import "videos";
-@import "your_team_ring_archive";
-
-//Body
-//
-// Styleguide: ef.core.body
-html, body{
-  height: 100%;
-  overflow-x: hidden;
-}
-body{
-  font-family: "futura-pt",sans-serif !important;
-  @extend %level-2-texture;
-  .main-wrap{
-    margin-bottom: $footer-height*-1;
-    min-height: 100%;
-    &:after{
-      content: '';
-      display: block;
-      height: $footer-height;
-    }
-  }
-}
+@import "layouts/about";
+@import "layouts/albums";
+@import "layouts/eula";
+@import "layouts/home";
+@import "layouts/posts";
+@import "layouts/shows";
+@import "layouts/videos";
+@import "layouts/ytr_archive";

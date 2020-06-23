@@ -1,38 +1,33 @@
+= render :partial=> "components/breadcrumb"
+.shows-header
+  %h1 Shows
 .shows
-  .ef-breadcrumbs
-    = render_breadcrumbs :tag => :span, :separator=> ""
-  %h1{:class=>'page-header'} Shows
   -if @shows.length
     -@shows.each do |s|
       - today = Date.today
       - if s.showdate >= today
-        .show.upcoming
-          .flyer
-            %a{:href=> shows_path+'/'+s.id.to_s}
-              %img{:src=>s.flyer}
-          .info
-            %h2
-              %a{:href=> shows_path+'/'+s.id.to_s}
-                =s.title
-            %h3
-              =s.showdate.strftime('%F').to_s+' '+s.showdate.strftime('%H:%M').to_s
-            .description
+        .show
+          .poster
+            %img{:src=>s.flyer}
+            .info
+              %h4
+                %a{:href=> shows_path+'/'+s.id.to_s}
+                  =s.title
+              %h5
+                =s.showdate.strftime('%D')+', '+s.showdate.strftime('%H:%M')
               =s.brief_description
               %a{:href => s.link}
-                Location
+                Details
         %hr
       - else
-        .show.past
-          .flyer
-            %a{:href=> shows_path+'/'+s.id.to_s}
-              %img{:src=>s.flyer}
-          .info
-            %h2
-              %a{:href=> shows_path+'/'+s.id.to_s}
-                =s.title
-            .description
+        .show
+          .poster
+            %img{:src=>s.flyer}
+            .info
+              %h4
+                %a{:href=> shows_path+'/'+s.id.to_s}
+                  =s.title
               %strong Past Event:
               =s.brief_description
-        %hr
   -else
     %p There are no published shows at this time.

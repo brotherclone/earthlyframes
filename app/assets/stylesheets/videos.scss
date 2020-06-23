@@ -1,12 +1,10 @@
 .videos {
   margin-top: 2rem;
-  @include outer-container;
   .video-listing {
     display: flex;
     align-content: space-between;
     .video {
       text-align: center;
-      @include span-columns(12);
       .song-title {
         font-size: 1.5rem;
         font-weight: 400;

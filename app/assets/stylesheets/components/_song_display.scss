@@ -1,0 +1,41 @@
+.song-modal{
+
+}
+.song-menu{
+  @include tabs-container;
+  .song-menu-item{
+    @include tabs-title;
+  }
+  .song-information-container{
+    @include tabs-content;
+    .song-information{
+      @include tabs-panel;
+    }
+  }
+}
+
+.song-select{
+  &:hover{
+    color: $color-peach;
+    cursor: pointer;
+  }
+}
+
+.song{
+  @include xy-grid-container;
+  .top-container{
+    @include xy-grid;
+    margin-bottom: 1rem;
+    .streaming-links,.song-video{
+      @include xy-cell(12);
+      @include breakpoint(medium){
+        @include xy-cell(6);
+      }
+    }
+    .streaming-links{
+      .streaming-link{
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
