@@ -4,7 +4,7 @@ class Album < ActiveRecord::Base
   has_many :songs, -> { order(song_order: :asc) }
   has_many :streaming_links
   accepts_nested_attributes_for :streaming_links
-  
+
   def as_json(options={})
     super(:only => [:title,
                     :cover,
