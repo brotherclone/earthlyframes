@@ -15,7 +15,8 @@
           - @song.streaming_links.each do |streaming_link|
             %a{:href => streaming_link.link, :class=> "streaming-link icon-only" }
               %i{:class=> ("fab fa-" + streaming_link.streaming_service.icon_url)}
-              = streaming_link.streaming_service.name
+              - if @song.streaming_links.length() <=2
+                = streaming_link.streaming_service.name
       - if @song.video
         .song-video
           %a{:href=> video_path(@song.video.id), :class => 'song-video-link'}

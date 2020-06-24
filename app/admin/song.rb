@@ -9,8 +9,8 @@ ActiveAdmin.register Song do
       f.input :trt, :label => 'Total Running Time'
       f.input :song_order, :label => 'Sequence on Album'
       f.input :album_id, :label => 'Album', :as => :select, :collection => Album.all.map{|a| ["#{a.title}", a.id]}
-      f.input :lyrics, :hint => 'Lyrics for the song.'
-      f.input :notes, :hint => 'Notes on the song.'
+      f.input :lyrics, :input_html => { :class => 'tinymce' }
+      f.input :notes, :input_html => { :class => 'tinymce' }
       f.inputs do
         f.has_many :streaming_links, heading: "Streaming Links", allow_destroy: true, new_record: true do |s|
           s.input :link, :label => 'Link'

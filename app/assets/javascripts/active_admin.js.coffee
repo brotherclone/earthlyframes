@@ -1,12 +1,15 @@
 #= require active_admin/base
 
-#$(document).ready ->
-#  tinyMCE.init
-#    mode: "textareas"
-#    theme: "modern"
-#    menubar:false
-#    browser_spellcheck: true
-#    plugins : 'link'
-#  return
+initTinyMCE = () ->
+  console.log "loading TinyMCE"
+  tinyMCE.init
+    mode: "textareas"
+  return
+
+
+$(document).ready ->
+  initTinyMCE()
+
+
 
 
