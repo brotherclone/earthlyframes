@@ -8,7 +8,7 @@ ActiveAdmin.register Album do
       f.input :title
       f.input :brief_description
       f.input :format
-      f.input :description, :label => 'Description'
+      f.input :description, :input_html => { :class => 'tinymce' }
       f.input :price
       f.input :released, :as => :datepicker
       f.input :buylink
@@ -24,5 +24,4 @@ ActiveAdmin.register Album do
     end
     f.actions
   end
-
 end
