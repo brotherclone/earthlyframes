@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  devise_for :users
   resources :streaming_services
   resources :streaming_links
   resources :videos
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
   resources :shows
   resources :posts
   resources :albums
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
   get 'ytr', to:'your_team_ring_archive#index'
   get 'yourteamring', to:'your_team_ring_archive#index'
   get 'your-team-ring', to:'your_team_ring_archive#index'
+  get 'pulsar', to: 'pulsar#index'
   root 'home#index'
 
 end

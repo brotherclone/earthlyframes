@@ -1,0 +1,11 @@
+- flash.each do |key, value|
+  - if key == 'alert'
+    %div{:class=> 'alert-box warning', :data=>{:alert=>true}}
+      = value
+      %a{:href=>"#", :class=>"close"}
+        &times;
+  -else
+    %div{:class=> 'alert-box '+ key, :data=>{:alert=>true}}
+      = value
+      %a{:href=>"#", :class=>"close"}
+        &times;

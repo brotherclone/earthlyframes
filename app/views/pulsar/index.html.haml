@@ -1,0 +1,7 @@
+%h1 Welcome
+- if !user_signed_in?
+  = link_to 'Register', new_user_registration_path, class:"welcome"
+- else
+  %a
+    continue
+    = current_user.email
