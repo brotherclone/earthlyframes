@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Prompt, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it 'has a valid Factory' do
+    expect(build(:prompt)).to be_valid
+  end
+
 end

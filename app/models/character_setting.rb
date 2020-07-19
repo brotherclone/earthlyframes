@@ -1,2 +1,2 @@
-class CharacterSetting < ApplicationRecord
+class CharacterSetting  < ActiveRecord::Base
 end

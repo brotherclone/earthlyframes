@@ -5,13 +5,16 @@ class CreateEntries < ActiveRecord::Migration[5.2]
       t.timestamps
     end
 
-    add_reference :entry, :log, index: true
-    add_reference :entry, :prompt, index: true
-    add_reference :entry, :character, index: true
+    add_reference :entries, :log, index: true
+    add_reference :entries, :prompt, index: true
+    add_reference :entries, :character, index: true
 
   end
 
   def self.down
+    remove_reference :entries, :log
+    remove_reference :entries, :prompt
+    remove_reference :entries, :character
     drop_table :entries
   end
 

@@ -1,4 +1,4 @@
-class CharacterRole < ApplicationRecord
+class CharacterRole  < ActiveRecord::Base
   belongs_to :log
-  validates_uniqueness_of :background, scope: :log_id
+  accepts_nested_attributes_for :log
 end

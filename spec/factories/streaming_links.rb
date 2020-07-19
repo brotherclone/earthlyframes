@@ -4,7 +4,7 @@ FactoryBot.define do
     song
     album
     streaming_service
-    link {'https://www.stream.com/'}
+    link {Faker::Internet.url}
   end
 
 end
