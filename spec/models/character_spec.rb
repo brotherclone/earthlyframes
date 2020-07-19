@@ -14,4 +14,12 @@ RSpec.describe Character, type: :model do
     expect(build(:character_with_entries)).to be_valid
   end
 
+  it 'has a valid Factory with a Dead Trait' do
+    expect(build(:character, :is_dead)).to be_valid
+  end
+
+  it 'has a valid Factory with a Wounded Trait' do
+    expect(build(:character, :is_wounded)).to be_valid
+  end
+
 end

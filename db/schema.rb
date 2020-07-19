@@ -90,6 +90,8 @@ ActiveRecord::Schema.define(version: 2020_07_19_155733) do
   create_table "characters", force: :cascade do |t|
     t.string "name"
     t.string "additional_bio"
+    t.integer "current_health", default: 3, null: false
+    t.integer "max_health", default: 3, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "character_role_id"

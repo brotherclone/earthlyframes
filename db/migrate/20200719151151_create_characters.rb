@@ -4,6 +4,8 @@ class CreateCharacters < ActiveRecord::Migration[5.2]
     create_table :characters do |t|
       t.string :name
       t.string :additional_bio
+      t.integer :current_health, default: 3, null: false
+      t.integer :max_health, default: 3, null: false
       t.timestamps
     end
 

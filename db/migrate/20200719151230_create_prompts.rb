@@ -9,7 +9,7 @@ class CreatePrompts < ActiveRecord::Migration[5.2]
   end
 
   def self.down
-    remove_reference :prompt, :song
+    remove_reference :prompts, :song
     drop_table :prompts
   end
 end
