@@ -1,0 +1,2 @@
+class CharacterSetting < ApplicationRecord
+end

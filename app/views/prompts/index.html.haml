@@ -1,0 +1,19 @@
+%h1 Listing prompts
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @prompts.each do |prompt|
+      %tr
+        %td= link_to 'Show', prompt
+        %td= link_to 'Edit', edit_prompt_path(prompt)
+        %td= link_to 'Destroy', prompt, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Prompt', new_prompt_path

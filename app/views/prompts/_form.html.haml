@@ -1,0 +1,10 @@
+= form_for @prompt do |f|
+  - if @prompt.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@prompt.errors.count, "error")} prohibited this prompt from being saved:"
+      %ul
+        - @prompt.errors.full_messages.each do |message|
+          %li= message
+
+  .actions
+    = f.submit 'Save'

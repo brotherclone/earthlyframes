@@ -1,0 +1,2 @@
+class CharacterDescriptor < ApplicationRecord
+end
