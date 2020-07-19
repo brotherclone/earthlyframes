@@ -5,4 +5,5 @@ class Character < ActiveRecord::Base
   belongs_to :character_role
   belongs_to :user
   has_many :entries
+  validates :name, presence: true
 end

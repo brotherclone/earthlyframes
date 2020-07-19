@@ -14,5 +14,15 @@ FactoryBot.define do
     unconfirmed_email { Faker:: Internet.email }
     failed_attempts { Faker::Number.number(digits: 1) }
     unlock_token { Faker::Internet.password }
+    factory :user_with_characters do
+      after(:create) do |user|
+        create(:character, user:user)
+      end
+    end
+    factory :user_with_entries do
+      after(:create) do |user|
+        create(:entry, user:user)
+      end
+    end
   end
 end

@@ -6,4 +6,9 @@ RSpec.describe Log, type: :model do
     expect(build(:log)).to be_valid
   end
 
+  it 'should be valid with a group of entries' do
+    expect(build(:log_with_entries)).to be_valid
+  end
+
+
 end

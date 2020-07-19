@@ -7,5 +7,10 @@ FactoryBot.define do
     character_setting
     character_role
     character_descriptor
+    factory :character_with_entries do
+      after(:create) do |character|
+        create(:entry, character:character)
+      end
+    end
   end
 end

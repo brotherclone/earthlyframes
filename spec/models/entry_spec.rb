@@ -6,4 +6,5 @@ RSpec.describe Entry, type: :model do
     expect(build(:entry)).to be_valid
   end
 
+
 end
