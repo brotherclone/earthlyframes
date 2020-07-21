@@ -6,6 +6,8 @@ class CharactersController < ApplicationController
   end
 
   def show
+    @no_ef_header = true
+    @no_ef_footer = true
   end
 
   def new
@@ -17,6 +19,8 @@ class CharactersController < ApplicationController
 
   def create
     @character = Character.new(character_params)
+
+    # TODO: Don't redirect just notify
 
     respond_to do |format|
       if @character.save

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :shows
   resources :posts
   resources :albums
+
   get 'soon', to:'soon#index'
   get 'home', to:'home#index'
   get 'about', to:'about#index'
@@ -24,6 +25,9 @@ Rails.application.routes.draw do
   get 'yourteamring', to:'your_team_ring_archive#index'
   get 'your-team-ring', to:'your_team_ring_archive#index'
   get 'pulsar', to: 'pulsar#index'
+  get 'pulsar/character-creation', to:'pulsar#create_character'
+  get 'pulsar/entry', to:'pulsar#create_entry'
+
   root 'home#index'
 
 end
