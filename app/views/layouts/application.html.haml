@@ -12,6 +12,9 @@
     = Gon::Base.render_data
     = csrf_meta_tag
   %body
-    = render :partial => 'components/nav'
+    - if !@no_ef_header
+      = render :partial => 'components/nav'
+    = render :partial => 'components/toast'
     = yield
-    = render :partial => 'components/footer'
+    - if !@no_ef_footer
+      = render :partial => 'components/footer'

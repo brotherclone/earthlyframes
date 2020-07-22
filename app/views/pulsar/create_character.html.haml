@@ -1,0 +1,13 @@
+- if @character_role && @character_setting && @character_background && @character_descriptor
+  %h1
+    You are a
+    = @character_descriptor.descriptor
+    = @character_role.character_role
+    from
+    = @character_setting.time
+    ,
+    = @character_setting.place
+    who is
+    = @character_background.background
+    - character = {:user_id=> current_user.id, :name=>"joey hoey", :additional_bio=> "almost never late", :character_setting_id=> @character_setting.id, :character_background_id=> @character_background.id, :character_role_id=> @character_role.id, :character_descriptor_id=> @character_descriptor.id }
+    = link_to 'Uhh... okay', characters_path(:character => character), :method => 'post'

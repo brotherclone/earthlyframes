@@ -25,6 +25,11 @@ FactoryBot.define do
         create(:streaming_link, song:song)
       end
     end
+    factory :song_with_prompt do
+      after(:create) do |song|
+        create(:prompt, song:song)
+      end
+    end
   end
 
 end
