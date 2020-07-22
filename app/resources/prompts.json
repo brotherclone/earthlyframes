@@ -1,0 +1,32 @@
+[
+  {
+    "encounter_type": "start",
+    "prompt_title": "",
+    "prompt_text": "",
+    "damage": 0
+  },
+  {
+    "encounter_type": "normal",
+    "prompt_title": "",
+    "prompt_text": "",
+    "damage": 1
+  },
+  {
+    "encounter_type": "normal",
+    "prompt_title": "",
+    "prompt_text": "",
+    "damage": 1
+  },
+  {
+    "encounter_type": "penultimate",
+    "prompt_title": "",
+    "prompt_text": "",
+    "damage": 0
+  },
+  {
+    "encounter_type": "end",
+    "prompt_title": "",
+    "prompt_text": "",
+    "damage": 0
+  }
+]

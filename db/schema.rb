@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_19_155733) do
+ActiveRecord::Schema.define(version: 2020_07_22_202101) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -140,6 +140,9 @@ ActiveRecord::Schema.define(version: 2020_07_19_155733) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "song_id"
+    t.integer "encounter_type"
+    t.string "prompt_title"
+    t.integer "damage"
     t.index ["song_id"], name: "index_prompts_on_song_id"
   end
 

@@ -60,6 +60,6 @@ class PromptsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def prompt_params
-    params.require(:prompt).permit(:song_id, :prompt_text, :prompt_image)
+    params.require(:prompt).permit(:song_id, :prompt_text, :prompt_image, :prompt_title, :damage, :encounter_type)
   end
 end

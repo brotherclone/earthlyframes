@@ -32,5 +32,13 @@ namespace :game_data do
       CharacterBackground.create(character_background.to_h)
     end
   end
+
+  task :load_prompts do
+    file = File.join(Rails.root, 'app', 'resources', 'prompts.json')
+    prompts_list = JSON.parse(File.read(file))
+    prompts_list.each do | prompt |
+      Prompt.create(prompt.to_h)
+    end
+  end
   
 end
