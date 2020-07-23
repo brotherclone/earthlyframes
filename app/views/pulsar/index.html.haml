@@ -1,28 +1,34 @@
 %h1 Welcome
+
 - if !user_signed_in?
   = link_to 'Register', new_user_registration_path, class:"welcome"
 - else
-  %h2
-    = current_user.email
-  %hr
-  - user_characters = Character.where(user_id: current_user.id).where('current_health > :dead', dead:0)
-  - if user_characters.count > 0
-    = user_characters.count
-    total characters
-    - user_characters.each do |character|
-      - character_entries = Entry.where(character_id: character.id)
-      - if character_entries.count > 0
-        = character_entries.count
-        by
-        = character.name
-      - else
-        no entries by
-        = character.name
-        %a{:href=> pulsar_entry_path(:character_id=> character.id)}
-          create an entry
-
+  - if @log
+    - if @user_characters_in_log
+      - @user_characters_in_log.each do | character_in_log |
+        - if character_in_log.current_health > 0
+          = character_in_log.name
+          alive
+        - else
+          = character_in_log.name
+          dead
+    - else
+      %a
+        create a new character in this log
+      or
+      %a
+        send this log to a friend
   - else
-    %p
-      No Characters
-      %a{:href=> pulsar_character_creation_path}
-        Create a character
+    - if @user_characters
+      - @user_characters.each do | character |
+        - if character.current_health > 0
+          = character.name
+          alive
+        - else
+          = character.name
+          dead
+    - else
+      %a
+        create a new character
+
+
