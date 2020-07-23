@@ -9,6 +9,7 @@ FactoryBot.define do
     character_descriptor
     current_health { Faker::Number.number(digits: 1) }
     max_health { Faker::Number.number(digits: 1) }
+    log
     trait :is_dead do
       current_health {0}
       max_health {0}

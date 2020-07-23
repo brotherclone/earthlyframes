@@ -60,6 +60,6 @@ class CharacterRolesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def character_role_params
-    params.require(:character_role).permit(:character_role, :log_id)
+    params.require(:character_role).permit(:character_role)
   end
 end

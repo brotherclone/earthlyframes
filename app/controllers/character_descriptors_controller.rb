@@ -60,6 +60,6 @@ class CharacterDescriptorsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def character_descriptor_params
-    params.require(:character_descriptor).permit(:descriptor, :log_id)
+    params.require(:character_descriptor).permit(:descriptor)
   end
 end

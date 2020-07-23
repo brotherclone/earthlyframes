@@ -68,16 +68,12 @@ ActiveRecord::Schema.define(version: 2020_07_22_202101) do
     t.string "descriptor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "log_id"
-    t.index ["log_id"], name: "index_character_descriptors_on_log_id"
   end
 
   create_table "character_roles", force: :cascade do |t|
     t.string "character_role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "log_id"
-    t.index ["log_id"], name: "index_character_roles_on_log_id"
   end
 
   create_table "character_settings", force: :cascade do |t|
@@ -90,8 +86,8 @@ ActiveRecord::Schema.define(version: 2020_07_22_202101) do
   create_table "characters", force: :cascade do |t|
     t.string "name"
     t.string "additional_bio"
-    t.integer "current_health", default: 3, null: false
-    t.integer "max_health", default: 3, null: false
+    t.integer "current_health", default: 4, null: false
+    t.integer "max_health", default: 4, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "character_role_id"
@@ -99,10 +95,12 @@ ActiveRecord::Schema.define(version: 2020_07_22_202101) do
     t.bigint "character_background_id"
     t.bigint "character_setting_id"
     t.bigint "user_id"
+    t.bigint "log_id"
     t.index ["character_background_id"], name: "index_characters_on_character_background_id"
     t.index ["character_descriptor_id"], name: "index_characters_on_character_descriptor_id"
     t.index ["character_role_id"], name: "index_characters_on_character_role_id"
     t.index ["character_setting_id"], name: "index_characters_on_character_setting_id"
+    t.index ["log_id"], name: "index_characters_on_log_id"
     t.index ["user_id"], name: "index_characters_on_user_id"
   end
 
@@ -110,11 +108,9 @@ ActiveRecord::Schema.define(version: 2020_07_22_202101) do
     t.string "entry_text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "log_id"
     t.bigint "prompt_id"
     t.bigint "character_id"
     t.index ["character_id"], name: "index_entries_on_character_id"
-    t.index ["log_id"], name: "index_entries_on_log_id"
     t.index ["prompt_id"], name: "index_entries_on_prompt_id"
   end
 

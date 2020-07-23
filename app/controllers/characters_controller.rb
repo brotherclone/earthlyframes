@@ -66,6 +66,6 @@ class CharactersController < ApplicationController
   def character_params
     params.require(:character).permit(:user_id, :name, :additional_bio, :character_setting_id,
                                       :character_background_id, :character_role_id,
-                                      :character_descriptor_id, :current_health, :maximum_health)
+                                      :character_descriptor_id, :current_health, :maximum_health, :log_id)
   end
 end

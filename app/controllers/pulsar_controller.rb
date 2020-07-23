@@ -5,6 +5,7 @@ class PulsarController < ApplicationController
   end
 
   def create_character
+
     @no_ef_header = true
     @no_ef_footer = true
 
@@ -25,6 +26,29 @@ class PulsarController < ApplicationController
     @no_ef_header = true
     @no_ef_footer = true
     @current_character = Character.find(params[:character_id])
+
+    unless @current_character.entries
+      @prompt = Prompt.where(encounter_type = '0')
+    end
+
+    case @current_character.health
+
+    when 4
+      puts "full health - do start"
+    when 3
+      puts "1 damage - do any normal"
+    when 2
+      puts "2 damage do penultimate"
+    when 1
+      puts "3 damage do final"
+    when 0
+      puts "dead show last"
+    else
+      puts "something wrong"
+    end
+
+    @entry = Entry.create( :prompt_id => @prompt.id, :character_id => @current_character.id )
+
   end
 
 end

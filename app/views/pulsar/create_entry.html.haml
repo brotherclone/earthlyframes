@@ -1,3 +1,7 @@
 %h1
   Enter
   = @current_character.name
+
+  = form_for @entry, url(action: "update"), html: {class:"form"} do |f|
+    = f.text_field :entry_text
+    = f.submit "Add Entry"
