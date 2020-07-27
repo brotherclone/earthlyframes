@@ -25,6 +25,27 @@ class PulsarController < ApplicationController
     @no_ef_header = true
     @no_ef_footer = true
 
+    @log = Log.find_by id: params[:log_id]
+
+    @descriptors = CharacterDescriptor.all
+    @backgrounds = CharacterBackground.all
+    @settings = CharacterSetting.all
+    @roles = CharacterRole.all
+
+    if @log
+      @log.characters.each do |character|
+        @descriptors.delete(character.character_descriptor)
+        @backgrounds.delete(character.character_background)
+        @settings.delete(character.character_setting)
+        @roles.delete(character.character_role)
+      end
+    end
+
+    gon.descriptors = @descriptors
+    gon.backgrounds = @backgrounds
+    gon.settings = @settings
+    gon.roles = @roles
+
   end
 
   def create_entry

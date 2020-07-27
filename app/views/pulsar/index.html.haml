@@ -13,11 +13,11 @@
           = character_in_log.name
           dead
     - else
-      %a
-        create a new character in this log
+      = link_to "create a new character in this log", pulsar_character_creation_path(log_id: @log.id)
       or
+      = link_to "send this log to a friend", pulsar_share_path(log_id:@log.id)
       %a
-        send this log to a friend
+
   - else
     - if @user_characters
       - @user_characters.each do | character |
@@ -28,7 +28,7 @@
           = character.name
           dead
     - else
-      %a
-        create a new character
+      = link_to "create a new character", pulsar_character_creation_path
+
 
 

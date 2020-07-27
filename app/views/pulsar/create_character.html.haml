@@ -1,0 +1,10 @@
+- if @log
+  = @log.id
+-else
+  %div
+    you are a
+    %span{:id=>'descriptor'}
+    ,
+    %span{:id=>'role'}
+  %a{:href=> '#', :id=> 'rollOne'}
+    roll

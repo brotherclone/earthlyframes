@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   resources :shows
   resources :posts
   resources :albums
-
   get 'soon', to:'soon#index'
   get 'home', to:'home#index'
   get 'about', to:'about#index'
@@ -29,7 +28,6 @@ Rails.application.routes.draw do
   get 'pulsar/entry', to:'pulsar#create_entry'
   get 'pulsar/share', to: 'pulsar#send_log'
   get 'pulsar/so-long', to:'pulsar#so_long'
-
   root 'home#index'
 
 end
