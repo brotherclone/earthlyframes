@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get 'pulsar', to: 'pulsar#index'
   get 'pulsar/character-creation', to:'pulsar#create_character'
   get 'pulsar/entry', to:'pulsar#create_entry'
+  post 'pulsar/entry', to:'pulsar#do_entry'
   get 'pulsar/share', to: 'pulsar#send_log'
   get 'pulsar/so-long', to:'pulsar#so_long'
   root 'home#index'

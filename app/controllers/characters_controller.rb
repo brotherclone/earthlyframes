@@ -6,8 +6,7 @@ class CharactersController < ApplicationController
   end
 
   def show
-    @no_ef_header = true
-    @no_ef_footer = true
+
   end
 
   def new

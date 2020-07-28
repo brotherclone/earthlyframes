@@ -1,32 +1,44 @@
 [
   {
     "encounter_type": 1,
-    "prompt_title": "",
-    "prompt_text": "",
+    "prompt_title": "Starting",
+    "prompt_text": "Quisque aliquam mauris semper dictum condimentum. In vitae risus at nisl iaculis tristique sit amet sit amet enim. Etiam non hendrerit urna, ac consequat tellus. Vivamus varius maximus augue a molestie. Aenean rutrum nibh eu mollis lobortis. Sed et est eget arcu dapibus tempus eu hendrerit turpis. Vestibulum mollis non nisi ac ultricies. Proin volutpat pharetra ex, sed faucibus ipsum feugiat vel. Quisque non gravida ipsum. Curabitur porttitor egestas quam eu ullamcorper. Sed eu ante vitae sapien auctor volutpat. Sed malesuada gravida magna ac vestibulum. Nullam commodo magna id leo ultrices, suscipit elementum purus semper. Phasellus vel massa ac libero hendrerit condimentum sit amet rhoncus quam. Cras a neque nisl.",
+    "damage": 1
+  },
+  {
+    "encounter_type": 0,
+    "prompt_title": "Normal 1 does damage",
+    "prompt_text": "Duis placerat feugiat massa, iaculis egestas orci egestas sed. Pellentesque eget tortor scelerisque, laoreet metus a, pellentesque est. Sed vulputate sem non dolor convallis, vitae rhoncus orci porta. Suspendisse condimentum varius ante eu dignissim. Vestibulum sed cursus magna. In pretium bibendum dolor at pulvinar. Maecenas magna libero, dignissim eget sem in, bibendum convallis dolor. Nam tincidunt eleifend purus, et facilisis turpis vehicula id. Aliquam velit leo, fermentum eget convallis et, imperdiet at enim. Vivamus ultricies lobortis est quis elementum.",
+    "damage": 1
+  },
+  {
+    "encounter_type": 0,
+    "prompt_title": "Normal 2 does damage.",
+    "prompt_text": "Duis sollicitudin tortor nisi, nec viverra quam mollis eu. Aenean viverra mauris quis mattis venenatis. Integer tincidunt lorem nec purus molestie, vitae vestibulum arcu faucibus. In at blandit nisl. Aliquam posuere vitae massa id maximus. Maecenas at ullamcorper tellus. Aliquam erat volutpat. Sed pulvinar ac nunc at posuere. Pellentesque quis nibh sit amet sem tempor scelerisque. Maecenas condimentum sollicitudin aliquam. Nam quis urna quis ipsum tempus fringilla. Phasellus condimentum blandit odio in porttitor. Donec id vulputate nisi. Ut sed dui dignissim, feugiat ligula sed, semper nisl.",
+    "damage": 1
+  },
+  {
+    "encounter_type": 0,
+    "prompt_title": "Normal 3",
+    "prompt_text": "Aliquam erat volutpat. Nulla tincidunt posuere felis, vel pellentesque risus tristique sit amet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean ipsum turpis, ornare id felis ut, dictum facilisis nunc. Proin iaculis arcu a arcu eleifend ornare. Morbi nisi massa, pretium vitae tincidunt id, tempor vitae elit. Proin imperdiet vulputate enim. Morbi porta, erat non euismod sagittis, orci ex luctus velit, nec placerat arcu nulla eget enim. Integer vel efficitur arcu, semper hendrerit neque. Donec mollis turpis mattis pellentesque convallis. Nulla ut pharetra tortor. Cras dignissim tempor mauris ac luctus. Fusce vel nibh tellus.",
     "damage": 0
   },
   {
     "encounter_type": 0,
-    "prompt_title": "",
-    "prompt_text": "",
-    "damage": 1
-  },
-  {
-    "encounter_type": 0,
-    "prompt_title": "",
-    "prompt_text": "",
-    "damage": 1
+    "prompt_title": "Normal 4",
+    "prompt_text": "Duis sollicitudin tortor nisi, nec viverra quam mollis eu. Aenean viverra mauris quis mattis venenatis. Integer tincidunt lorem nec purus molestie, vitae vestibulum arcu faucibus. In at blandit nisl. Aliquam posuere vitae massa id maximus. Maecenas at ullamcorper tellus. Aliquam erat volutpat. Sed pulvinar ac nunc at posuere. Pellentesque quis nibh sit amet sem tempor scelerisque. Maecenas condimentum sollicitudin aliquam. Nam quis urna quis ipsum tempus fringilla. Phasellus condimentum blandit odio in porttitor. Donec id vulputate nisi. Ut sed dui dignissim, feugiat ligula sed, semper nisl.",
+    "damage": 0
   },
   {
     "encounter_type": 2,
-    "prompt_title": "",
-    "prompt_text": "",
-    "damage": 0
+    "prompt_title": "Pen ultimate",
+    "prompt_text": "Aliquam erat volutpat. Nulla tincidunt posuere felis, vel pellentesque risus tristique sit amet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean ipsum turpis, ornare id felis ut, dictum facilisis nunc. Proin iaculis arcu a arcu eleifend ornare. Morbi nisi massa, pretium vitae tincidunt id, tempor vitae elit. Proin imperdiet vulputate enim. Morbi porta, erat non euismod sagittis, orci ex luctus velit, nec placerat arcu nulla eget enim. Integer vel efficitur arcu, semper hendrerit neque. Donec mollis turpis mattis pellentesque convallis. Nulla ut pharetra tortor. Cras dignissim tempor mauris ac luctus. Fusce vel nibh tellus.",
+    "damage": 1
   },
   {
     "encounter_type": 3,
-    "prompt_title": "",
-    "prompt_text": "",
-    "damage": 0
+    "prompt_title": "Final",
+    "prompt_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus aliquam erat, sit amet sollicitudin orci dictum in. Nulla sed aliquet augue. Morbi iaculis at est vitae tincidunt. Vestibulum pharetra pretium neque eget efficitur. Sed convallis turpis sit amet tincidunt dapibus. Morbi a libero volutpat, tristique justo sit amet, faucibus ante. Praesent purus urna, pellentesque ac eros eu, convallis tincidunt urna. Nunc dui eros, posuere et sem aliquam, condimentum posuere quam. Phasellus in sollicitudin lectus. Nunc ut placerat mi. Nunc dapibus quam a ultrices hendrerit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc varius est in vestibulum cursus.",
+    "damage": 1
   }
 ]

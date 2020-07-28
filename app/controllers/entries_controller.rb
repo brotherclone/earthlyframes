@@ -1,5 +1,7 @@
 class EntriesController < ApplicationController
+
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
+  after_action :update_character, on: :create
 
   def index
     @entries = Entry.all
@@ -17,10 +19,9 @@ class EntriesController < ApplicationController
 
   def create
     @entry = Entry.new(entry_params)
-
     respond_to do |format|
       if @entry.save
-        format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
+        format.html { redirect_to pulsar_path, notice: 'Entry was successfully created.' }
         format.json { render :show, status: :created, location: @entry }
       else
         format.html { render :new }
@@ -29,6 +30,13 @@ class EntriesController < ApplicationController
     end
   end
 
+  def update_character
+    prompt = Prompt.find_by id: @entry.prompt_id
+    if prompt.damage >= 1
+      health =  @entry.character.current_health - prompt.damage
+      @entry.character.update_attributes(current_health: health)
+    end
+  end
 
   def update
     respond_to do |format|

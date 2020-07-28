@@ -1,8 +1,25 @@
-= @character.name
-= @character.character_descriptor.descriptor
-= @character.character_setting.time
-= @character.character_setting.place
-= @character.character_background.background
-= @character.character_role.character_role
+%h1
+  = @character.name
+%h2
+  = @character.current_health
+  = "/"
+  = @character.max_health
+%ul
+  %li
+    = @character.character_descriptor.descriptor
+  %li
+    = @character.character_setting.time
+  %li
+    = @character.character_setting.place
+  %li
+    = @character.character_background.background
+  %li
+    = @character.character_role.character_role
+
+
+- @character.entries.each do |e|
+  %p
+    = e.entry_text
+
 
 = link_to "create a new entry with this character", pulsar_entry_path(character_id: @character.id)

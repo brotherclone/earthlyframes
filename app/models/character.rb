@@ -7,4 +7,6 @@ class Character < ActiveRecord::Base
   belongs_to :log
   has_many :entries
   validates :name, presence: true
+
+
 end

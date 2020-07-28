@@ -22,8 +22,6 @@ class PulsarController < ApplicationController
       end
     end
 
-
-
   end
 
   def create_character
@@ -66,8 +64,21 @@ class PulsarController < ApplicationController
     @no_ef_footer = true
 
     @current_character = Character.find_by id: params[:character_id]
+    case @current_character.current_health
+    when 4
+      @prompt = Prompt.where(encounter_type: 1).take
+    when 1
+      @prompt = Prompt.where(encounter_type: 2).take
+    when 0
+      @prompt = Prompt.where(encounter_type: 3).take
+    else
+      prompts = Prompt.where(encounter_type: 0)
+      @prompt = prompts.sample
+    end
 
   end
+
+
 
   def send_log
 
