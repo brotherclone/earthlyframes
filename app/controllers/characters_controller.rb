@@ -19,12 +19,9 @@ class CharactersController < ApplicationController
 
   def create
     @character = Character.new(character_params)
-
-    # TODO: Don't redirect just notify
-
     respond_to do |format|
       if @character.save
-        format.html { redirect_to @character, notice: 'Character was successfully created.' }
+        format.html { redirect_to pulsar_entry_path(character_id: @character.id), notice: 'Character was successfully created.' }
         format.json { render :show, status: :created, location: @character }
       else
         format.html { render :new }
@@ -35,19 +32,9 @@ class CharactersController < ApplicationController
 
 
   def update
-    respond_to do |format|
-      if @character.update(character_params)
-        format.html { redirect_to @character, notice: 'Character was successfully updated.' }
-        format.json { render :show, status: :ok, location: @character }
-      else
-        format.html { render :edit }
-        format.json { render json: @character.errors, status: :unprocessable_entity }
-      end
-    end
+
   end
 
-  # DELETE /characters/1
-  # DELETE /characters/1.json
   def destroy
     @character.destroy
     respond_to do |format|
@@ -62,7 +49,6 @@ class CharactersController < ApplicationController
     @character = Character.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def character_params
     params.require(:character).permit(:user_id, :name, :additional_bio, :character_setting_id,
                                       :character_background_id, :character_role_id,

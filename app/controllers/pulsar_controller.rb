@@ -7,12 +7,18 @@ class PulsarController < ApplicationController
 
     if user_signed_in?
       @user_characters = Character.find_by id: current_user.id
+      unless @user_characters.kind_of?(Array)
+        @user_characters = [@user_characters]
+      end
     end
 
     if params[:log_id]
       @log = Log.find_by id: params[:log_id]
       if @log
         @user_characters_in_log = Character.find_by id: current_user.id, log_id: @log.id
+        unless  @user_characters_in_log .kind_of?(Array)
+          @user_characters_in_log  = [ @user_characters_in_log ]
+        end
       end
     end
 
@@ -41,10 +47,16 @@ class PulsarController < ApplicationController
       end
     end
 
-    gon.descriptors = @descriptors
-    gon.backgrounds = @backgrounds
-    gon.settings = @settings
-    gon.roles = @roles
+    @descriptor = @descriptors.sample
+    @background = @backgrounds.sample
+    @setting = @settings.sample
+    @role = @roles.sample
+
+    if %w[a e i o u A E I O U].include? @descriptor[0]
+      @article = 'an'
+    else
+      @article = 'a'
+    end
 
   end
 
@@ -52,6 +64,8 @@ class PulsarController < ApplicationController
 
     @no_ef_header = true
     @no_ef_footer = true
+
+    @current_character = Character.find_by id: params[:character_id]
 
   end
 

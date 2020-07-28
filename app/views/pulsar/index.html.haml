@@ -1,5 +1,4 @@
 %h1 Welcome
-
 - if !user_signed_in?
   = link_to 'Register', new_user_registration_path, class:"welcome"
 - else
@@ -7,28 +6,19 @@
     - if @user_characters_in_log
       - @user_characters_in_log.each do | character_in_log |
         - if character_in_log.current_health > 0
-          = character_in_log.name
-          alive
+          = link_to character_in_log.name, character_path(character_in_log)
         - else
           = character_in_log.name
-          dead
     - else
       = link_to "create a new character in this log", pulsar_character_creation_path(log_id: @log.id)
       or
       = link_to "send this log to a friend", pulsar_share_path(log_id:@log.id)
-      %a
-
   - else
     - if @user_characters
       - @user_characters.each do | character |
         - if character.current_health > 0
-          = character.name
-          alive
+          = link_to character.name, character_path(character)
         - else
           = character.name
-          dead
     - else
       = link_to "create a new character", pulsar_character_creation_path
-
-
-

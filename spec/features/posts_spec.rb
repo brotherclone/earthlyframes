@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe 'Posts display correctly', :type => :feature do
 
   it 'checks the posts index page', :js => true  do

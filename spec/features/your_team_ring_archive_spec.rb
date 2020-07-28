@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe 'Coming Soon display correctly', :type => :feature do
 
   it 'checks the shows index page', :js => true  do

@@ -1,2 +1,8 @@
 = @character.name
 = @character.character_descriptor.descriptor
+= @character.character_setting.time
+= @character.character_setting.place
+= @character.character_background.background
+= @character.character_role.character_role
+
+= link_to "create a new entry with this character", pulsar_entry_path(character_id: @character.id)
