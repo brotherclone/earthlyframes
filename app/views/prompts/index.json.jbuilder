@@ -1,1 +1,4 @@
-json.array! @prompts, partial: "prompts/prompt", as: :prompt
+json.array!(@prompts) do |prompt|
+  json.extract! prompt, :id
+  json.url prompts_url(prompt, format: :json)
+end

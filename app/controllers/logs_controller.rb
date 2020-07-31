@@ -3,9 +3,21 @@ class LogsController < ApplicationController
 
   def index
     @logs = Log.all
+    @no_ef_header = true
+    @no_ef_footer = true
+    respond_to do |format|
+      format.html { render :index}
+      format.json { render :json => @logs }
+    end
   end
 
   def show
+    @no_ef_header = true
+    @no_ef_footer = true
+    respond_to do |format|
+      format.html { render :show}
+      format.json { render :json => @log }
+    end
   end
 
   def new

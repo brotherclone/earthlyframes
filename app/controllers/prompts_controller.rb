@@ -3,9 +3,21 @@ class PromptsController < ApplicationController
 
   def index
     @prompts = Prompt.all
+    @no_ef_header = true
+    @no_ef_footer = true
+    respond_to do |format|
+      format.html { render :index}
+      format.json { render :json => @prompts }
+    end
   end
 
   def show
+    @no_ef_header = true
+    @no_ef_footer = true
+    respond_to do |format|
+      format.html { render :show}
+      format.json { render :json => @prompt}
+    end
   end
 
   def new

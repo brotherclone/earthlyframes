@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  devise_for :users
+
   resources :prompts
   resources :logs
   resources :entries
@@ -7,9 +12,6 @@ Rails.application.routes.draw do
   resources :character_backgrounds
   resources :character_descriptors
   resources :character_roles
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-  devise_for :users
   resources :streaming_services
   resources :streaming_links
   resources :videos

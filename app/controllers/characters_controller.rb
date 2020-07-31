@@ -3,10 +3,21 @@ class CharactersController < ApplicationController
 
   def index
     @characters = Character.all
+    @no_ef_header = true
+    @no_ef_footer = true
+    respond_to do |format|
+      format.html { render :index}
+      format.json { render :json => @characters }
+    end
   end
 
   def show
-    @character = Character.find_by id: @character.id
+    @no_ef_header = true
+    @no_ef_footer = true
+    respond_to do |format|
+      format.html { render :show}
+      format.json { render :json => @character}
+    end
   end
 
   def new

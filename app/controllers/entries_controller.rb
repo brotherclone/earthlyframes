@@ -5,9 +5,21 @@ class EntriesController < ApplicationController
 
   def index
     @entries = Entry.all
+    @no_ef_header = true
+    @no_ef_footer = true
+    respond_to do |format|
+      format.html { render :index}
+      format.json { render :json => @entries }
+    end
   end
 
   def show
+    @no_ef_header = true
+    @no_ef_footer = true
+    respond_to do |format|
+      format.html { render :show}
+      format.json { render :json => @entry }
+    end
   end
 
   def new
@@ -32,10 +44,12 @@ class EntriesController < ApplicationController
   end
 
   def update_character
-    prompt = Prompt.find_by id: @entry.prompt_id
-    if prompt.damage >= 1
-      health =  @entry.character.current_health - prompt.damage
-      @entry.character.update_attributes(current_health: health)
+    if @entry
+      prompt = Prompt.find_by id: @entry.prompt_id
+      if prompt.damage >= 1
+        health =  @entry.character.current_health - prompt.damage
+        @entry.character.update_attributes(current_health: health)
+      end
     end
   end
 

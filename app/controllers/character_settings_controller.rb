@@ -1,11 +1,24 @@
 class CharacterSettingsController < ApplicationController
+
   before_action :set_character_setting, only: [:show, :edit, :update, :destroy]
 
   def index
     @character_settings = CharacterSetting.all
+    @no_ef_header = true
+    @no_ef_footer = true
+    respond_to do |format|
+      format.html { render :index}
+      format.json { render :json => @character_settings }
+    end
   end
 
   def show
+    @no_ef_header = true
+    @no_ef_footer = true
+    respond_to do |format|
+      format.html { render :show}
+      format.json { render :json => @character_setting}
+    end
   end
 
   def new

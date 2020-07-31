@@ -3,9 +3,21 @@ class CharacterDescriptorsController < ApplicationController
 
   def index
     @character_descriptors = CharacterDescriptor.all
+    @no_ef_header = true
+    @no_ef_footer = true
+    respond_to do |format|
+      format.html { render :index}
+      format.json { render :json => @character_descriptors}
+    end
   end
 
   def show
+    @no_ef_header = true
+    @no_ef_footer = true
+    respond_to do |format|
+      format.html { render :show}
+      format.json { render :json => @character_descriptor}
+    end
   end
 
   def new
