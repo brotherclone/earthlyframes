@@ -6,6 +6,7 @@ class CreateCharacters < ActiveRecord::Migration[5.2]
       t.string :additional_bio
       t.integer :current_health, default: 4, null: false
       t.integer :max_health, default: 4, null: false
+      t.boolean :archived, default: false
       t.timestamps
     end
 

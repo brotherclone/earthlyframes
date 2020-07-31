@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_22_202101) do
+ActiveRecord::Schema.define(version: 2020_07_19_151232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 2020_07_22_202101) do
     t.string "additional_bio"
     t.integer "current_health", default: 4, null: false
     t.integer "max_health", default: 4, null: false
+    t.boolean "archived", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "character_role_id"
@@ -117,6 +118,7 @@ ActiveRecord::Schema.define(version: 2020_07_22_202101) do
   create_table "logs", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "title"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -133,12 +135,12 @@ ActiveRecord::Schema.define(version: 2020_07_22_202101) do
   create_table "prompts", force: :cascade do |t|
     t.string "prompt_text"
     t.string "prompt_image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "song_id"
     t.integer "encounter_type"
     t.string "prompt_title"
     t.integer "damage"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "song_id"
     t.index ["song_id"], name: "index_prompts_on_song_id"
   end
 

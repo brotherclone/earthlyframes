@@ -2,23 +2,18 @@
 - if !user_signed_in?
   = link_to 'Register', new_user_registration_path, class:"welcome"
 - else
-  - if @log
-    - if @user_characters_in_log
-      - @user_characters_in_log.each do | character_in_log |
-        - if character_in_log.current_health > 0
-          = link_to character_in_log.name, character_path(character_in_log)
-        - else
-          = character_in_log.name
-    - else
-      = link_to "create a new character in this log", pulsar_character_creation_path(log_id: @log.id)
-      or
-      = link_to "send this log to a friend", pulsar_share_path(log_id:@log.id)
+  - if @user_characters
+    - living_check = 0
+    - @user_characters.each do |character|
+      - if !character.archived
+        = link_to character.name, character_path(character)
+        -if character.current_health > 0
+          - living_check += 1
+          = link_to "write", pulsar_entry_path(character_id: character.id)
+    - if living_check <= 0
+      -if @log
+        = link_to "create character", pulsar_character_creation_path(log_id: @log.id)
+      - else
+      = link_to "create character", pulsar_character_creation_path
   - else
-    - if @user_characters
-      - @user_characters.each do | character |
-        - if character.current_health > 0
-          = link_to character.name, character_path(character)
-        - else
-          = character.name
-    - else
-      = link_to "create a new character", pulsar_character_creation_path
+    create a new character

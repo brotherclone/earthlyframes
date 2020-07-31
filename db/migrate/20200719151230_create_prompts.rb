@@ -3,6 +3,9 @@ class CreatePrompts < ActiveRecord::Migration[5.2]
     create_table :prompts do |t|
       t.string :prompt_text
       t.string :prompt_image
+      t.integer :encounter_type
+      t.string :prompt_title
+      t.integer :damage
       t.timestamps
     end
     add_reference :prompts, :song,  index:true

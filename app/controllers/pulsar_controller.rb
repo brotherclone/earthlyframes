@@ -6,20 +6,11 @@ class PulsarController < ApplicationController
     @no_ef_footer = true
 
     if user_signed_in?
-      @user_characters = Character.find_by id: current_user.id
-      unless @user_characters.kind_of?(Array)
-        @user_characters = [@user_characters]
-      end
+      @user_characters = Character.where({:user_id=> current_user.id})
     end
 
     if params[:log_id]
       @log = Log.find_by id: params[:log_id]
-      if @log
-        @user_characters_in_log = Character.find_by id: current_user.id, log_id: @log.id
-        unless  @user_characters_in_log .kind_of?(Array)
-          @user_characters_in_log  = [ @user_characters_in_log ]
-        end
-      end
     end
 
   end
@@ -43,6 +34,9 @@ class PulsarController < ApplicationController
         @settings.delete(character.character_setting)
         @roles.delete(character.character_role)
       end
+    else
+      log_title = "The Pulsar Palace"
+      @new_log = Log.create(title: log_title)
     end
 
     @descriptor = @descriptors.sample
@@ -64,6 +58,7 @@ class PulsarController < ApplicationController
     @no_ef_footer = true
 
     @current_character = Character.find_by id: params[:character_id]
+
     case @current_character.current_health
     when 4
       @prompt = Prompt.where(encounter_type: 1).take
@@ -85,12 +80,17 @@ class PulsarController < ApplicationController
     @no_ef_header = true
     @no_ef_footer = true
 
+    @current_character = Character.find_by id: params[:character_id]
+
+
   end
 
   def so_long
 
     @no_ef_header = true
     @no_ef_footer = true
+
+    @current_character = Character.find_by id: params[:character_id]
 
   end
 

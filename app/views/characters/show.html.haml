@@ -21,5 +21,7 @@
   %p
     = e.entry_text
 
-
-= link_to "create a new entry with this character", pulsar_entry_path(character_id: @character.id)
+-if @character.current_health > 0
+  = link_to "create a new entry with this character", pulsar_entry_path(character_id: @character.id)
+-else
+  = link_to "back", pulsar_path

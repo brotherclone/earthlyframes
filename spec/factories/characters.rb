@@ -10,8 +10,12 @@ FactoryBot.define do
     current_health { 4 }
     max_health { 4 }
     log
+    archived { false }
     trait :is_dead do
       current_health {0}
+    end
+    trait :is_archived do
+      archived { true }
     end
     trait :is_wounded do
       current_health {1}

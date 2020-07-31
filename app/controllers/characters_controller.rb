@@ -14,6 +14,7 @@ class CharactersController < ApplicationController
   end
 
   def edit
+
   end
 
   def create
@@ -31,6 +32,9 @@ class CharactersController < ApplicationController
 
 
   def update
+    if @character.save
+      redirect_to pulsar_entry_path(character_id: @character.id), notice: 'Character was successfully updated.'
+    end
 
   end
 
@@ -43,7 +47,7 @@ class CharactersController < ApplicationController
   end
 
   private
-  # Use callbacks to share common setup or constraints between actions.
+
   def set_character
     @character = Character.find(params[:id])
   end
@@ -51,6 +55,6 @@ class CharactersController < ApplicationController
   def character_params
     params.require(:character).permit(:user_id, :name, :additional_bio, :character_setting_id,
                                       :character_background_id, :character_role_id,
-                                      :character_descriptor_id, :current_health, :maximum_health, :log_id)
+                                      :character_descriptor_id, :current_health, :maximum_health, :log_id, :archived)
   end
 end
