@@ -1,5 +1,7 @@
 %h1
   Goodbye
   = @current_character.name
-
-= link_to "Ok", pulsar_share_path
+- if @current_character.log_id
+  = link_to "Ok", pulsar_share_path(character_id: @current_character.id)
+-else
+  rut roh

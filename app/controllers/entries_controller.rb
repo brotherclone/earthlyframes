@@ -20,8 +20,9 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.new(entry_params)
     respond_to do |format|
+      character = Character.find_by id: @entry.character_id
       if @entry.save
-        format.html { redirect_to pulsar_path, notice: 'Entry was successfully created.' }
+        format.html { redirect_to character_path(character), notice: 'Entry was successfully created.' }
         format.json { render :show, status: :created, location: @entry }
       else
         format.html { render :new }

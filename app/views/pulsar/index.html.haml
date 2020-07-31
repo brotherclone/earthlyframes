@@ -12,8 +12,11 @@
           = link_to "write", pulsar_entry_path(character_id: character.id)
     - if living_check <= 0
       -if @log
-        = link_to "create character", pulsar_character_creation_path(log_id: @log.id)
+        = link_to "create another character to continue the story", pulsar_character_creation_path(log_id: @log.id)
       - else
-      = link_to "create character", pulsar_character_creation_path
+        = link_to "create another character", pulsar_character_creation_path
   - else
-    create a new character
+    -if @log
+      = link_to "create a character to continue the story", pulsar_character_creation_path(log_id: @log.id)
+    - else
+      = link_to "create your first character", pulsar_character_creation_path

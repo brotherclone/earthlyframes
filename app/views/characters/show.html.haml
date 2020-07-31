@@ -21,7 +21,14 @@
   %p
     = e.entry_text
 
--if @character.current_health > 0
+- if @character.current_health > 0
   = link_to "create a new entry with this character", pulsar_entry_path(character_id: @character.id)
--else
-  = link_to "back", pulsar_path
+  - if @character.log_id
+    = link_to "home", pulsar_path(log_id: @character.log_id)
+  - else
+    = link_to "home", pulsar_path
+- else
+  - if @character.archived
+    = link_to "back", pulsar_path(log_id: @character.log_id)
+  - else
+    = link_to "you need to archive", pulsar_so_long_path(character_id: @character.id)

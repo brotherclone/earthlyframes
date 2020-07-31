@@ -92,6 +92,11 @@ class PulsarController < ApplicationController
 
     @current_character = Character.find_by id: params[:character_id]
 
+    unless @current_character.log_id
+      @log = Log.create(title: "Pulsar Palace")
+      @current_character.update_attributes(log_id: @log.id)
+    end
+    @current_character.update_attributes(archived: true)
   end
 
 end

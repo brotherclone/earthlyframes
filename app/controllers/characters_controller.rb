@@ -6,7 +6,7 @@ class CharactersController < ApplicationController
   end
 
   def show
-
+    @character = Character.find_by id: @character.id
   end
 
   def new
