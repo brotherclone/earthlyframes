@@ -3,9 +3,21 @@ class PromptsController < ApplicationController
 
   def index
     @prompts = Prompt.all
+    @no_ef_header = true
+    @no_ef_footer = true
+    respond_to do |format|
+      format.html { render :index}
+      format.json { render :json => @prompts }
+    end
   end
 
   def show
+    @no_ef_header = true
+    @no_ef_footer = true
+    respond_to do |format|
+      format.html { render :show}
+      format.json { render :json => @prompt}
+    end
   end
 
   def new
@@ -60,6 +72,6 @@ class PromptsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def prompt_params
-    params.require(:prompt).permit(:song_id, :prompt_text, :prompt_image)
+    params.require(:prompt).permit(:song_id, :prompt_text, :prompt_image, :prompt_title, :damage, :encounter_type)
   end
 end

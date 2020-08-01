@@ -1,11 +1,25 @@
 class EntriesController < ApplicationController
+
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
+  after_action :update_character, on: :create
 
   def index
     @entries = Entry.all
+    @no_ef_header = true
+    @no_ef_footer = true
+    respond_to do |format|
+      format.html { render :index}
+      format.json { render :json => @entries }
+    end
   end
 
   def show
+    @no_ef_header = true
+    @no_ef_footer = true
+    respond_to do |format|
+      format.html { render :show}
+      format.json { render :json => @entry }
+    end
   end
 
   def new
@@ -17,10 +31,10 @@ class EntriesController < ApplicationController
 
   def create
     @entry = Entry.new(entry_params)
-
     respond_to do |format|
+      character = Character.find_by id: @entry.character_id
       if @entry.save
-        format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
+        format.html { redirect_to character_path(character), notice: 'Entry was successfully created.' }
         format.json { render :show, status: :created, location: @entry }
       else
         format.html { render :new }
@@ -29,14 +43,21 @@ class EntriesController < ApplicationController
     end
   end
 
+  def update_character
+    if @entry
+      prompt = Prompt.find_by id: @entry.prompt_id
+      if prompt.damage >= 1
+        health =  @entry.character.current_health - prompt.damage
+        @entry.character.update_attributes(current_health: health)
+      end
+    end
+  end
 
   def update
     respond_to do |format|
       if @entry.update(entry_params)
-        format.html { redirect_to @entry, notice: 'Entry was successfully updated.' }
         format.json { render :show, status: :ok, location: @entry }
       else
-        format.html { render :edit }
         format.json { render json: @entry.errors, status: :unprocessable_entity }
       end
     end

@@ -1,26 +1,39 @@
 class CharacterBackgroundsController < ApplicationController
+
   before_action :set_character_background, only: [:show, :edit, :update, :destroy]
 
   def index
-    @character_backgrounds = ChracterBackground.all
+    @character_backgrounds = CharacterBackground.all
+    @no_ef_header = true
+    @no_ef_footer = true
+    respond_to do |format|
+      format.html { render :index}
+      format.json { render :json => @character_backgrounds}
+    end
   end
 
   def show
+    @no_ef_header = true
+    @no_ef_footer = true
+    respond_to do |format|
+      format.html { render :show}
+      format.json { render :json => @character_background}
+    end
   end
 
   def new
-    @character_background = ChracterBackground.new
+    @character_background = CharacterBackground.new
   end
 
   def edit
   end
 
   def create
-    @character_background = ChracterBackground.new(character_background_params)
+    @character_background = CharacterBackground.new(character_background_params)
 
     respond_to do |format|
       if @character_background.save
-        format.html { redirect_to @character_background, notice: 'ChracterBackground was successfully created.' }
+        format.html { redirect_to @character_background, notice: 'CharacterBackground was successfully created.' }
         format.json { render :show, status: :created, location: @character_background }
       else
         format.html { render :new }
@@ -33,7 +46,7 @@ class CharacterBackgroundsController < ApplicationController
   def update
     respond_to do |format|
       if @character_background.update(character_background_params)
-        format.html { redirect_to @character_background, notice: 'ChracterBackground was successfully updated.' }
+        format.html { redirect_to @character_background, notice: 'CharacterBackground was successfully updated.' }
         format.json { render :show, status: :ok, location: @character_background }
       else
         format.html { render :edit }
@@ -41,25 +54,23 @@ class CharacterBackgroundsController < ApplicationController
       end
     end
   end
-
-  # DELETE /character_backgrounds/1
-  # DELETE /character_backgrounds/1.json
+  
+  
   def destroy
     @character_background.destroy
     respond_to do |format|
-      format.html { redirect_to character_backgrounds_url, notice: 'ChracterBackground was successfully destroyed.' }
+      format.html { redirect_to character_backgrounds_url, notice: 'CharacterBackground was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-  # Use callbacks to share common setup or constraints between actions.
+
   def set_character_background
-    @character_background = ChracterBackground.find(params[:id])
+    @character_background = CharacterBackground.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def character_background_params
-    params.require(:character_background).permit(:character_background)
+    params.require(:character_background).permit(:background)
   end
 end

@@ -7,11 +7,15 @@ FactoryBot.define do
     character_setting
     character_role
     character_descriptor
-    current_health { Faker::Number.number(digits: 1) }
-    max_health { Faker::Number.number(digits: 1) }
+    current_health { 4 }
+    max_health { 4 }
+    log
+    archived { false }
     trait :is_dead do
       current_health {0}
-      max_health {0}
+    end
+    trait :is_archived do
+      archived { true }
     end
     trait :is_wounded do
       current_health {1}

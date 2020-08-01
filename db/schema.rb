@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_19_155733) do
+ActiveRecord::Schema.define(version: 2020_07_19_151232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,16 +68,12 @@ ActiveRecord::Schema.define(version: 2020_07_19_155733) do
     t.string "descriptor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "log_id"
-    t.index ["log_id"], name: "index_character_descriptors_on_log_id"
   end
 
   create_table "character_roles", force: :cascade do |t|
     t.string "character_role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "log_id"
-    t.index ["log_id"], name: "index_character_roles_on_log_id"
   end
 
   create_table "character_settings", force: :cascade do |t|
@@ -90,8 +86,9 @@ ActiveRecord::Schema.define(version: 2020_07_19_155733) do
   create_table "characters", force: :cascade do |t|
     t.string "name"
     t.string "additional_bio"
-    t.integer "current_health", default: 3, null: false
-    t.integer "max_health", default: 3, null: false
+    t.integer "current_health", default: 4, null: false
+    t.integer "max_health", default: 4, null: false
+    t.boolean "archived", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "character_role_id"
@@ -99,10 +96,12 @@ ActiveRecord::Schema.define(version: 2020_07_19_155733) do
     t.bigint "character_background_id"
     t.bigint "character_setting_id"
     t.bigint "user_id"
+    t.bigint "log_id"
     t.index ["character_background_id"], name: "index_characters_on_character_background_id"
     t.index ["character_descriptor_id"], name: "index_characters_on_character_descriptor_id"
     t.index ["character_role_id"], name: "index_characters_on_character_role_id"
     t.index ["character_setting_id"], name: "index_characters_on_character_setting_id"
+    t.index ["log_id"], name: "index_characters_on_log_id"
     t.index ["user_id"], name: "index_characters_on_user_id"
   end
 
@@ -110,17 +109,16 @@ ActiveRecord::Schema.define(version: 2020_07_19_155733) do
     t.string "entry_text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "log_id"
     t.bigint "prompt_id"
     t.bigint "character_id"
     t.index ["character_id"], name: "index_entries_on_character_id"
-    t.index ["log_id"], name: "index_entries_on_log_id"
     t.index ["prompt_id"], name: "index_entries_on_prompt_id"
   end
 
   create_table "logs", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "title"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -137,6 +135,9 @@ ActiveRecord::Schema.define(version: 2020_07_19_155733) do
   create_table "prompts", force: :cascade do |t|
     t.string "prompt_text"
     t.string "prompt_image"
+    t.integer "encounter_type"
+    t.string "prompt_title"
+    t.integer "damage"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "song_id"

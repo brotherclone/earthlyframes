@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  devise_for :users
+
   resources :prompts
   resources :logs
   resources :entries
@@ -7,16 +12,12 @@ Rails.application.routes.draw do
   resources :character_backgrounds
   resources :character_descriptors
   resources :character_roles
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-  devise_for :users
   resources :streaming_services
   resources :streaming_links
   resources :videos
   resources :shows
   resources :posts
   resources :albums
-
   get 'soon', to:'soon#index'
   get 'home', to:'home#index'
   get 'about', to:'about#index'
@@ -27,7 +28,8 @@ Rails.application.routes.draw do
   get 'pulsar', to: 'pulsar#index'
   get 'pulsar/character-creation', to:'pulsar#create_character'
   get 'pulsar/entry', to:'pulsar#create_entry'
-
+  get 'pulsar/share', to: 'pulsar#send_log'
+  get 'pulsar/so-long', to:'pulsar#so_long'
   root 'home#index'
 
 end

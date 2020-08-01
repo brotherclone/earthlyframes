@@ -6,8 +6,8 @@ RSpec.describe User, type: :model do
     expect(build(:user)).to be_valid
   end
 
-  it 'should be valid with characters' do
-    expect(build(:user_with_characters)).to be_valid
+  it 'should be valid with a character' do
+    expect(build(:user_with_character)).to be_valid
   end
 
   it 'should be valid with entries' do

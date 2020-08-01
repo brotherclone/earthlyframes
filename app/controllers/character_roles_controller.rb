@@ -3,9 +3,21 @@ class CharacterRolesController < ApplicationController
 
   def index
     @character_roles = CharacterRole.all
+    @no_ef_header = true
+    @no_ef_footer = true
+    respond_to do |format|
+      format.html { render :index}
+      format.json { render :json => @character_roles }
+    end
   end
 
   def show
+    @no_ef_header = true
+    @no_ef_footer = true
+    respond_to do |format|
+      format.html { render :show}
+      format.json { render :json => @character_role}
+    end
   end
 
   def new
@@ -60,6 +72,6 @@ class CharacterRolesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def character_role_params
-    params.require(:character_role).permit(:character_role, :log_id)
+    params.require(:character_role).permit(:character_role)
   end
 end

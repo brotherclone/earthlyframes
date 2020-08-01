@@ -1,13 +1,57 @@
-- if @character_role && @character_setting && @character_background && @character_descriptor
-  %h1
-    You are a
-    = @character_descriptor.descriptor
-    = @character_role.character_role
+- if @log
+  %div
+    current log
+    = @log.id
+    you are
+    = @article
+    = @descriptor.descriptor
+    = @role.character_role
     from
-    = @character_setting.time
-    ,
-    = @character_setting.place
-    who is
-    = @character_background.background
-    - character = {:user_id=> current_user.id, :name=>"joey hoey", :additional_bio=> "almost never late", :character_setting_id=> @character_setting.id, :character_background_id=> @character_background.id, :character_role_id=> @character_role.id, :character_descriptor_id=> @character_descriptor.id }
-    = link_to 'Uhh... okay', characters_path(:character => character), :method => 'post'
+    = @setting.time
+    = @setting.place
+    who
+    = @background.background
+
+    = link_to "Re-Roll", pulsar_character_creation_url
+
+    = form_for(Character.new) do |f|
+      = f.label :name, "What's your characters name?"
+      = f.text_field :name
+      = f.label :additional_bio, "Any additional biographical notes or characteristics?"
+      = f.text_field :additional_bio
+      = f.text_field :character_descriptor_id, :value => @descriptor.id, :type => 'hidden'
+      = f.text_field :character_role_id, :value => @role.id, :type => 'hidden'
+      = f.text_field :character_setting_id, :value => @setting.id, :type => 'hidden'
+      = f.text_field :character_background_id, :value => current_user.id, :type => 'hidden'
+      = f.text_field :user_id, :value => current_user.id, :type => 'hidden'
+      = f.text_field :log_id, :value => @log.id, :type => 'hidden'
+      = submit_tag "Save and proceed"
+
+-else
+  %div
+    new log
+    = @new_log.id
+    you are
+    = @article
+    = @descriptor.descriptor
+    = @role.character_role
+    from
+    = @setting.time
+    = @setting.place
+    who
+    = @background.background
+
+    = link_to "Re-Roll", pulsar_character_creation_url
+
+    = form_for(Character.new) do |f|
+      = f.label :name, "What's your characters name?"
+      = f.text_field :name
+      = f.label :additional_bio, "Any additional biographical notes or characteristics?"
+      = f.text_field :additional_bio
+      = f.text_field :character_descriptor_id, :value => @descriptor.id, :type => 'hidden'
+      = f.text_field :character_role_id, :value => @role.id, :type => 'hidden'
+      = f.text_field :character_setting_id, :value => @setting.id, :type => 'hidden'
+      = f.text_field :character_background_id, :value => current_user.id, :type => 'hidden'
+      = f.text_field :user_id, :value => current_user.id, :type => 'hidden'
+      = f.text_field :log_id, :value => @new_log.id, :type => 'hidden'
+      = submit_tag "Save and proceed"

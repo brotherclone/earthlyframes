@@ -4,8 +4,9 @@ class CreateCharacters < ActiveRecord::Migration[5.2]
     create_table :characters do |t|
       t.string :name
       t.string :additional_bio
-      t.integer :current_health, default: 3, null: false
-      t.integer :max_health, default: 3, null: false
+      t.integer :current_health, default: 4, null: false
+      t.integer :max_health, default: 4, null: false
+      t.boolean :archived, default: false
       t.timestamps
     end
 
@@ -14,6 +15,8 @@ class CreateCharacters < ActiveRecord::Migration[5.2]
     add_reference :characters, :character_background, index:true
     add_reference :characters, :character_setting, index:true
     add_reference :characters, :user, index:true
+    add_reference :characters, :log, index:true
+
   end
 
   def self.down
@@ -22,6 +25,7 @@ class CreateCharacters < ActiveRecord::Migration[5.2]
     remove_reference :characters, :character_background
     remove_reference :characters, :character_setting
     remove_reference :characters, :user
+    remove_reference :characters, :log
     drop_table :characters
   end
 

@@ -1,4 +1,7 @@
 class CharacterDescriptor < ActiveRecord::Base
-  belongs_to :log
-  accepts_nested_attributes_for :log
+
+  def as_json(options={})
+    super(:only => [:id, :descriptor])
+  end
+
 end

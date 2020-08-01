@@ -3,11 +3,21 @@ class CharactersController < ApplicationController
 
   def index
     @characters = Character.all
+    @no_ef_header = true
+    @no_ef_footer = true
+    respond_to do |format|
+      format.html { render :index}
+      format.json { render :json => @characters }
+    end
   end
 
   def show
     @no_ef_header = true
     @no_ef_footer = true
+    respond_to do |format|
+      format.html { render :show}
+      format.json { render :json => @character}
+    end
   end
 
   def new
@@ -15,16 +25,14 @@ class CharactersController < ApplicationController
   end
 
   def edit
+
   end
 
   def create
     @character = Character.new(character_params)
-
-    # TODO: Don't redirect just notify
-
     respond_to do |format|
       if @character.save
-        format.html { redirect_to @character, notice: 'Character was successfully created.' }
+        format.html { redirect_to pulsar_entry_path(character_id: @character.id), notice: 'Character was successfully created.' }
         format.json { render :show, status: :created, location: @character }
       else
         format.html { render :new }
@@ -35,19 +43,12 @@ class CharactersController < ApplicationController
 
 
   def update
-    respond_to do |format|
-      if @character.update(character_params)
-        format.html { redirect_to @character, notice: 'Character was successfully updated.' }
-        format.json { render :show, status: :ok, location: @character }
-      else
-        format.html { render :edit }
-        format.json { render json: @character.errors, status: :unprocessable_entity }
-      end
+    if @character.save
+      redirect_to pulsar_entry_path(character_id: @character.id), notice: 'Character was successfully updated.'
     end
+
   end
 
-  # DELETE /characters/1
-  # DELETE /characters/1.json
   def destroy
     @character.destroy
     respond_to do |format|
@@ -57,15 +58,14 @@ class CharactersController < ApplicationController
   end
 
   private
-  # Use callbacks to share common setup or constraints between actions.
+
   def set_character
     @character = Character.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def character_params
     params.require(:character).permit(:user_id, :name, :additional_bio, :character_setting_id,
                                       :character_background_id, :character_role_id,
-                                      :character_descriptor_id, :current_health, :maximum_health)
+                                      :character_descriptor_id, :current_health, :maximum_health, :log_id, :archived)
   end
 end
