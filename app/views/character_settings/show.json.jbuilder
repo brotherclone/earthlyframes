@@ -1,1 +1,1 @@
-json.extract! @character_descriptor
+json.extract! @character_setting

@@ -1,4 +1,4 @@
-json.array!(@character_descriptors) do |descriptor|
-  json.extract! descriptor, :id
-  json.url character_descriptor_url(descriptor, format: :json)
+json.array!(@character_settings) do |setting|
+  json.extract! setting, :id
+  json.url character_setting_url(setting, format: :json)
 end

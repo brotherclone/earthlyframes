@@ -1,4 +1,4 @@
-json.array!(@character_descriptors) do |descriptor|
-  json.extract! descriptor, :id
-  json.url character_descriptor_url(descriptor, format: :json)
+json.array!(@character_roles) do |role|
+  json.extract! role, :id
+  json.url character_role_url(role, format: :json)
 end
