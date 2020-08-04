@@ -1,44 +1,70 @@
 [
   {
     "encounter_type": 1,
-    "prompt_title": "Starting",
-    "prompt_text": "Quisque aliquam mauris semper dictum condimentum. In vitae risus at nisl iaculis tristique sit amet sit amet enim. Etiam non hendrerit urna, ac consequat tellus. Vivamus varius maximus augue a molestie. Aenean rutrum nibh eu mollis lobortis. Sed et est eget arcu dapibus tempus eu hendrerit turpis. Vestibulum mollis non nisi ac ultricies. Proin volutpat pharetra ex, sed faucibus ipsum feugiat vel. Quisque non gravida ipsum. Curabitur porttitor egestas quam eu ullamcorper. Sed eu ante vitae sapien auctor volutpat. Sed malesuada gravida magna ac vestibulum. Nullam commodo magna id leo ultrices, suscipit elementum purus semper. Phasellus vel massa ac libero hendrerit condimentum sit amet rhoncus quam. Cras a neque nisl.",
+    "prompt_title": "In a dream? In a ship?",
+    "prompt_text": "You arrive and the gateway to the Pulsar Palace estate. You hear its crackling pops and pings luring you closer. Take some time to listen and write down your impressions. What does the palace look like? Who else is there? Speaking of which, who are you? And how exactly did you find your way here?",
+    "song_id": 1,
     "damage": 1
   },
   {
     "encounter_type": 0,
-    "prompt_title": "Normal 1 does damage",
-    "prompt_text": "Duis placerat feugiat massa, iaculis egestas orci egestas sed. Pellentesque eget tortor scelerisque, laoreet metus a, pellentesque est. Sed vulputate sem non dolor convallis, vitae rhoncus orci porta. Suspendisse condimentum varius ante eu dignissim. Vestibulum sed cursus magna. In pretium bibendum dolor at pulvinar. Maecenas magna libero, dignissim eget sem in, bibendum convallis dolor. Nam tincidunt eleifend purus, et facilisis turpis vehicula id. Aliquam velit leo, fermentum eget convallis et, imperdiet at enim. Vivamus ultricies lobortis est quis elementum.",
+    "prompt_title": "Not quite in. Not quite out",
+    "prompt_text": "This is a strange room with doors on either end. Did you mean to come here? There is a pattern on the wall, like tiny eyes looking at you, it burns into your body, knocking you off course. What is this? How do you react? ",
+    "song_id": 2,
     "damage": 1
   },
   {
     "encounter_type": 0,
-    "prompt_title": "Normal 2 does damage.",
-    "prompt_text": "Duis sollicitudin tortor nisi, nec viverra quam mollis eu. Aenean viverra mauris quis mattis venenatis. Integer tincidunt lorem nec purus molestie, vitae vestibulum arcu faucibus. In at blandit nisl. Aliquam posuere vitae massa id maximus. Maecenas at ullamcorper tellus. Aliquam erat volutpat. Sed pulvinar ac nunc at posuere. Pellentesque quis nibh sit amet sem tempor scelerisque. Maecenas condimentum sollicitudin aliquam. Nam quis urna quis ipsum tempus fringilla. Phasellus condimentum blandit odio in porttitor. Donec id vulputate nisi. Ut sed dui dignissim, feugiat ligula sed, semper nisl.",
+    "prompt_title": "Everyone knows, everyone sees",
+    "prompt_text": "This space is vast and ornate with a grand stairwell. As you stumble into this room, its inhabitants grow silent. Their masked faces slowly turn towards you. As you scan their faces, a cold numbness comes over you. It pushes you from your body. You think you can make it the other stairs, but you're just so very tired. Why is this happening?",
+    "song_id": 3,
     "damage": 1
   },
   {
     "encounter_type": 0,
-    "prompt_title": "Normal 3",
-    "prompt_text": "Aliquam erat volutpat. Nulla tincidunt posuere felis, vel pellentesque risus tristique sit amet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean ipsum turpis, ornare id felis ut, dictum facilisis nunc. Proin iaculis arcu a arcu eleifend ornare. Morbi nisi massa, pretium vitae tincidunt id, tempor vitae elit. Proin imperdiet vulputate enim. Morbi porta, erat non euismod sagittis, orci ex luctus velit, nec placerat arcu nulla eget enim. Integer vel efficitur arcu, semper hendrerit neque. Donec mollis turpis mattis pellentesque convallis. Nulla ut pharetra tortor. Cras dignissim tempor mauris ac luctus. Fusce vel nibh tellus.",
+    "prompt_title": "A happy gathering",
+    "prompt_text": "Sprawled on soft furniture, beautiful guests pay you no mind as you enter this inviting room. There are shelves with collections of writings in books and scrolls. The festive laugh and still don't seem to notice you or the limp, feathered creature lying still on a table in the center of the room. What is it?",
+    "song_id": 4,
     "damage": 0
   },
   {
     "encounter_type": 0,
-    "prompt_title": "Normal 4",
-    "prompt_text": "Duis sollicitudin tortor nisi, nec viverra quam mollis eu. Aenean viverra mauris quis mattis venenatis. Integer tincidunt lorem nec purus molestie, vitae vestibulum arcu faucibus. In at blandit nisl. Aliquam posuere vitae massa id maximus. Maecenas at ullamcorper tellus. Aliquam erat volutpat. Sed pulvinar ac nunc at posuere. Pellentesque quis nibh sit amet sem tempor scelerisque. Maecenas condimentum sollicitudin aliquam. Nam quis urna quis ipsum tempus fringilla. Phasellus condimentum blandit odio in porttitor. Donec id vulputate nisi. Ut sed dui dignissim, feugiat ligula sed, semper nisl.",
+    "prompt_title": "Inviting, but not for you",
+    "prompt_text": "A basket of fruit lays on the bed of this dimly lit room. There are trunks and luggage placed carefully on the backwall. Someone has go through a lot of trouble to make this feel welcoming, yet this welcome is not extended to you. Who is staying here?",
+    "song_id": 5,
+    "damage": 0
+  },
+  {
+    "encounter_type": 0,
+    "prompt_title": "Alone in a kingly place",
+    "prompt_text": "This cavernous room looks important. You can imagine hundreds of people meeting at this hall's grand tables. Laws have been written here. People's fate decided. Yet, there is no one here now. Where have they all gone?",
+    "song_id": 6,
+    "damage": 0
+  },
+  {
+    "encounter_type": 0,
+    "prompt_title": "Dangerous Knowledge",
+    "prompt_text": "You catch a glimpse of a green book. It's the first thing you've seen in the palace that is familiar, but still you can't remember its title. You pick up this green book, trying to read its title, but it's letters jitter and become wet; illegible. The book seems to stare back at you and you try to will yourself to focus and read its cover. The more you hold on to it, the more you feel your self, too, being scrambled - becoming undone. You can't hold on. You drop the book to the floor? What secrets did you think its pages held?",
+    "song_id": 7,
+    "damage": 0
+  },
+  {
+    "encounter_type": 0,
+    "prompt_title": "A crib, a rocketing chair, a stuffed rabbit, on fire",
+    "prompt_text": "You find a small room filled with the sweet smell of a baby's hair. This place is filled with play things and places to listen to a storybook being softly read. This loving, soft atmosphere allows you to let down your guard. As you take a seat in a rocking chair near you notice there's a strange light coming from the crib beside you. The baby's toy rabbit is propped in the middle of the small mattress and it is on fire. What do you do? ",
+    "song_id": 8,
     "damage": 0
   },
   {
     "encounter_type": 2,
-    "prompt_title": "Pen ultimate",
-    "prompt_text": "Aliquam erat volutpat. Nulla tincidunt posuere felis, vel pellentesque risus tristique sit amet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean ipsum turpis, ornare id felis ut, dictum facilisis nunc. Proin iaculis arcu a arcu eleifend ornare. Morbi nisi massa, pretium vitae tincidunt id, tempor vitae elit. Proin imperdiet vulputate enim. Morbi porta, erat non euismod sagittis, orci ex luctus velit, nec placerat arcu nulla eget enim. Integer vel efficitur arcu, semper hendrerit neque. Donec mollis turpis mattis pellentesque convallis. Nulla ut pharetra tortor. Cras dignissim tempor mauris ac luctus. Fusce vel nibh tellus.",
+    "prompt_title": "There's no hiding here.",
+    "prompt_text": "The masked stares, the pointing and whispering. The guests here are closing in on you. If they surround you you'll have no way out. You sprint down a small hallway hoping to avoid them. The door at the end of the hall looks like an exit. You open it, expecting the fresh outdoor air, you're disappointed to have your eyes burn from the smell of camphor and dusty overcoats. This room is filled with the guests outerwear. Down the hall, you can see the guests, dozens of them slowly walking toward you. How do you escape?",
     "damage": 1
   },
   {
     "encounter_type": 3,
-    "prompt_title": "Final",
-    "prompt_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus aliquam erat, sit amet sollicitudin orci dictum in. Nulla sed aliquet augue. Morbi iaculis at est vitae tincidunt. Vestibulum pharetra pretium neque eget efficitur. Sed convallis turpis sit amet tincidunt dapibus. Morbi a libero volutpat, tristique justo sit amet, faucibus ante. Praesent purus urna, pellentesque ac eros eu, convallis tincidunt urna. Nunc dui eros, posuere et sem aliquam, condimentum posuere quam. Phasellus in sollicitudin lectus. Nunc ut placerat mi. Nunc dapibus quam a ultrices hendrerit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc varius est in vestibulum cursus.",
+    "prompt_title": "Floating over the gardens",
+    "prompt_text": "Something has gone wrong. You feel ripped from your body and from the grounds of the Pulsar Palace. As your vision fails you see the marble statues and topiaries fall away beneath you. There is only the emptiness of space in front of you. The star field beyond is forever unreachable. Your time here is over. Maybe another lost soul can finish what you've started here at the Pulsar Palace.",
     "damage": 1
   }
 ]
