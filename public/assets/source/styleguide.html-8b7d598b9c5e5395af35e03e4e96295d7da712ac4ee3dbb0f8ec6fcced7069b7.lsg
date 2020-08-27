@@ -1,8 +1,0 @@
-// Replace with your default Sass/SCSS file name:
-@scss application.scss
-
-// Set the HTML title of the document:
-@title Imaginary Style Guide
-
-// Import all your style guide files
-@import css/**/*.lsg

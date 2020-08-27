@@ -1,3 +1,6 @@
+- @no_ef_header = true
+- @no_ef_footer = true
+
 %h2
   Edit #{resource_name.to_s.humanize}
 = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
