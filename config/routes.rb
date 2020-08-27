@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :shows
   resources :posts
   resources :albums
+  get 'player-characters', to:'player_characters#index'
   get 'soon', to:'soon#index'
   get 'home', to:'home#index'
   get 'about', to:'about#index'
