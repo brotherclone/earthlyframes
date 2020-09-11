@@ -1,5 +1,6 @@
 class CharactersController < ApplicationController
-  before_action :set_character, only: [:show, :edit, :update, :destroy]
+  before_action :set_character, only: [:show, :update, :destroy]
+  skip_before_action :verify_authenticity_token, only: :create
 
   def index
     @characters = Character.all
@@ -20,20 +21,12 @@ class CharactersController < ApplicationController
     end
   end
 
-  def new
-    @character = Character.new
-  end
-
-  def edit
-
-  end
-
   def create
     @character = Character.new(character_params)
     respond_to do |format|
       if @character.save
         format.html { redirect_to pulsar_entry_path(character_id: @character.id), notice: 'Character was successfully created.' }
-        format.json { render :show, status: :created, location: @character }
+        format.json { render :json=> @character }
       else
         format.html { render :new }
         format.json { render json: @character.errors, status: :unprocessable_entity }
@@ -46,7 +39,6 @@ class CharactersController < ApplicationController
     if @character.save
       redirect_to pulsar_entry_path(character_id: @character.id), notice: 'Character was successfully updated.'
     end
-
   end
 
   def destroy
@@ -66,6 +58,6 @@ class CharactersController < ApplicationController
   def character_params
     params.require(:character).permit(:user_id, :name, :additional_bio, :character_setting_id,
                                       :character_background_id, :character_role_id,
-                                      :character_descriptor_id, :current_health, :maximum_health, :log_id, :archived)
+                                      :character_descriptor_id, :current_health, :max_health, :log_id, :archived)
   end
 end

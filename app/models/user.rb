@@ -4,5 +4,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
 
   has_many :characters
+  has_many :tags
 
 end
