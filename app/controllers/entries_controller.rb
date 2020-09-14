@@ -1,7 +1,7 @@
 class EntriesController < ApplicationController
 
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
-  after_action :update_character, on: :create
+  skip_before_action :verify_authenticity_token, only: [:create, :update, :destroy]
 
   def index
     @entries = Entry.all
@@ -32,10 +32,9 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.new(entry_params)
     respond_to do |format|
-      character = Character.find_by id: @entry.character_id
       if @entry.save
-        format.html { redirect_to character_path(character), notice: 'Entry was successfully created.' }
-        format.json { render :show, status: :created, location: @entry }
+        format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
+        format.json { render json: @entry }
       else
         format.html { render :new }
         format.json { render json: @entry.errors, status: :unprocessable_entity }
@@ -43,33 +42,22 @@ class EntriesController < ApplicationController
     end
   end
 
-  def update_character
-    if @entry
-      prompt = Prompt.find_by id: @entry.prompt_id
-      if prompt.damage >= 1
-        health =  @entry.character.current_health - prompt.damage
-        @entry.character.update_attributes(current_health: health)
-      end
-    end
-  end
 
   def update
     respond_to do |format|
       if @entry.update(entry_params)
-        format.json { render :show, status: :ok, location: @entry }
+        format.json { render json: @entry }
       else
         format.json { render json: @entry.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /entries/1
-  # DELETE /entries/1.json
   def destroy
     @entry.destroy
     respond_to do |format|
       format.html { redirect_to entries_url, notice: 'Entry was successfully destroyed.' }
-      format.json { head :no_content }
+      format.json { render json: {:message=> "success" }}
     end
   end
 
@@ -81,6 +69,6 @@ class EntriesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def entry_params
-    params.require(:entry).permit(:log_id, :entry_text, :prompt_id, :character_id)
+    params.require(:entry).permit(:entry_text, :prompt_id, :character_id)
   end
 end

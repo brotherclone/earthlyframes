@@ -1,11 +1,16 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :characters]
+  skip_before_action :verify_authenticity_token
 
   def index
     @users = User.all
   end
 
   def show
+    respond_to do |format|
+      format.html { render :show}
+      format.json { render :json => @user}
+    end
   end
 
   def new
@@ -13,6 +18,22 @@ class UsersController < ApplicationController
   end
 
   def edit
+  end
+
+  def characters
+    @characters = Character.find_by user_id: @user.id
+    respond_to do |format|
+      format.html { render :characters}
+      format.json { render :json => @characters}
+    end
+  end
+
+  def by_email
+    @user = User.find_by email: params[:email]
+    respond_to do |format|
+      format.html { render :show}
+      format.json { render :json => @user}
+    end
   end
 
   def create
@@ -34,7 +55,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
+        format.json { render json: @user }
       else
         format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }

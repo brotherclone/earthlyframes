@@ -1,5 +1,6 @@
 class LogsController < ApplicationController
   before_action :set_log, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token, only: [:create, :update]
 
   def index
     @logs = Log.all
@@ -24,16 +25,22 @@ class LogsController < ApplicationController
     @log = Log.new
   end
 
+  def invite_by_email
+    respond_to do |format|
+      format.json { render json: {:message => 'not implemented yet.'} }
+
+    end
+  end
+
   def edit
   end
 
   def create
     @log = Log.new(log_params)
-
     respond_to do |format|
       if @log.save
         format.html { redirect_to @log, notice: 'Log was successfully created.' }
-        format.json { render :show, status: :created, location: @log }
+        format.json { render json: @log }
       else
         format.html { render :new }
         format.json { render json: @log.errors, status: :unprocessable_entity }

@@ -24,6 +24,16 @@ class PromptsController < ApplicationController
     @prompt = Prompt.new
   end
 
+  def get_from_last_entry
+    entry = Entry.find_by id: params[:entry_id]
+    #ToDo: Prompt selection
+    @prompt = Prompt.find_by id: 1
+    respond_to do |format|
+      format.html { render :show}
+      format.json { render :json => @prompt}
+    end
+  end
+
   def edit
   end
 

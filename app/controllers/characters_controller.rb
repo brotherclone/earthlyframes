@@ -1,6 +1,6 @@
 class CharactersController < ApplicationController
-  before_action :set_character, only: [:show, :update, :destroy]
-  skip_before_action :verify_authenticity_token, only: :create
+  before_action :set_character, only: [:show, :update, :destroy, :archive]
+  skip_before_action :verify_authenticity_token, only: [:create, :archive, :update, :destroy]
 
   def index
     @characters = Character.all
@@ -25,8 +25,8 @@ class CharactersController < ApplicationController
     @character = Character.new(character_params)
     respond_to do |format|
       if @character.save
-        format.html { redirect_to pulsar_entry_path(character_id: @character.id), notice: 'Character was successfully created.' }
-        format.json { render :json=> @character }
+        format.html { redirect_to @character, notice: 'Character was successfully created.' }
+        format.json { render json: @character }
       else
         format.html { render :new }
         format.json { render json: @character.errors, status: :unprocessable_entity }
@@ -34,18 +34,33 @@ class CharactersController < ApplicationController
     end
   end
 
+  def archive
+    @character.archived = true
+    @character.save
+    respond_to do |format|
+    format.json { render :json => @character }
+      format.html { redirect_to @character, notice: 'Character was successfully archived.' }
+      format.json { render :json => @character }
+    end
+  end
+
 
   def update
-    if @character.save
-      redirect_to pulsar_entry_path(character_id: @character.id), notice: 'Character was successfully updated.'
+    respond_to do |format|
+      if @character.update(character_params)
+        format.html { redirect_to @character, notice: 'Character was successfully updated.' }
+        format.json { render json: @character}
+      else
+        format.html { render :edit }
+        format.json { render json: @album.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   def destroy
     @character.destroy
     respond_to do |format|
-      format.html { redirect_to characters_url, notice: 'Character was successfully destroyed.' }
-      format.json { head :no_content }
+      format.json { render json: {:message=> "success" }}
     end
   end
 
