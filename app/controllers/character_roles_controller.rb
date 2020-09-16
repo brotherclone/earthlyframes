@@ -21,7 +21,6 @@ class CharacterRolesController < ApplicationController
   end
 
   def new
-    @character_role = CharacterRole.new
   end
 
   def edit
@@ -48,7 +47,7 @@ class CharacterRolesController < ApplicationController
         format.html { redirect_to @character_role, notice: 'CharacterRole was successfully updated.' }
         format.json { render :show, status: :ok, location: @character_role }
       else
-        format.html { render :edit }
+        format.html { render :show }
         format.json { render json: @character_role.errors, status: :unprocessable_entity }
       end
     end
@@ -60,7 +59,7 @@ class CharacterRolesController < ApplicationController
     @character_role.destroy
     respond_to do |format|
       format.html { redirect_to character_roles_url, notice: 'CharacterRole was successfully destroyed.' }
-      format.json { head :no_content }
+      format.json {render json: {:message=> "success" } }
     end
   end
 

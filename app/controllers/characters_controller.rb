@@ -1,4 +1,5 @@
 class CharactersController < ApplicationController
+
   before_action :set_character, only: [:show, :update, :destroy, :archive]
   skip_before_action :verify_authenticity_token, only: [:create, :archive, :update, :destroy]
 

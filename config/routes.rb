@@ -2,11 +2,13 @@ Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :users
-  devise_scope :user do
-    post 'api/user/create', to:'users#new'
-    post 'api/user/sign-in', to:'devise/sessions#new'
+
+  scope :api, defaults: { format: :json } do
+    devise_for :users, controllers: {session: :sessions }, path_names: {sign_in: :login}
+    resource :users, only: [:show, :update, :characters, :destroy]
   end
+
+
   resources :tags
   resources :prompts
   resources :logs
@@ -22,6 +24,7 @@ Rails.application.routes.draw do
   resources :shows
   resources :posts
   resources :albums
+
   get 'soon', to:'soon#index'
   get 'home', to:'home#index'
   get 'about', to:'about#index'
@@ -29,14 +32,11 @@ Rails.application.routes.draw do
   get 'ytr', to:'your_team_ring_archive#index'
   get 'yourteamring', to:'your_team_ring_archive#index'
   get 'your-team-ring', to:'your_team_ring_archive#index'
-
-  #post 'api/user/create', to:'users#create'
-  #post 'api/user/sign-in', to:'devise/sessions#new'
-
-  get 'api/user/:id/characters', to: 'users#characters'
+  post 'api/users/create', to:'users#create'
+  get 'api/users/:id/characters', to: 'users#characters'
   get 'api/get-user-by-email', to:'users#by_email'
-  put 'api/user/:id', to:'users#update'
-  get 'api/user/:id', to:'users#show'
+  put 'api/users/:id', to:'users#update'
+  get 'api/users/:id', to:'users#show'
   post 'api/entry/create', to:'entries#create'
   get 'api/entry/:id', to:'entries#show'
   put 'api/entry/:id', to:'entries#update'
@@ -46,12 +46,11 @@ Rails.application.routes.draw do
   post 'api/characters/create', to:'characters#create'
   put 'api/characters/:id', to:'characters#update'
   delete 'api/characters/:id', to:'characters#update'
-
+  post 'api/characters/:id/archive', to:'characters#archive'
   get 'api/prompts/', to:'prompts#get_from_last_entry'
   get 'api/logs/:id/invite', to: 'logs#invite_by_email'
   get 'api/logs/:id', to:'logs#show'
   post 'api/logs/create', to:'logs#create'
-
 
   root 'home#index'
 

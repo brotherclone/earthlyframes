@@ -22,7 +22,6 @@ class CharacterSettingsController < ApplicationController
   end
 
   def new
-    @character_setting = CharacterSetting.new
   end
 
   def edit
@@ -49,19 +48,17 @@ class CharacterSettingsController < ApplicationController
         format.html { redirect_to @character_setting, notice: 'CharacterSetting was successfully updated.' }
         format.json { render :show, status: :ok, location: @character_setting }
       else
-        format.html { render :edit }
+        format.html { render :show }
         format.json { render json: @character_setting.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /character_settings/1
-  # DELETE /character_settings/1.json
   def destroy
     @character_setting.destroy
     respond_to do |format|
       format.html { redirect_to character_settings_url, notice: 'CharacterSetting was successfully destroyed.' }
-      format.json { head :no_content }
+      format.json { render json: {:message=> "success" } }
     end
   end
 

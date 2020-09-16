@@ -28,7 +28,7 @@ gem 'tinymce-rails'
 gem 'seed_dump'
 gem 'gon'
 gem 'figaro'
-
+gem 'jwt'
 
 group :development, :test do
   gem 'rspec-rails'
