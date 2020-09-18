@@ -28,6 +28,15 @@ class EntriesController < ApplicationController
   def edit
   end
 
+  def by_character
+    character = Character.find_by id: params[:character_id]
+    @entries = Entry.where(character_id: character.id)
+    respond_to do |format|
+      format.html { render :index}
+      format.json { render :json => @entries }
+    end
+  end
+
   def create
     @entry = Entry.new(entry_params)
     respond_to do |format|
