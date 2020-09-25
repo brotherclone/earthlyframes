@@ -1,6 +1,4 @@
-Capybara.register_driver :selenium do |app|
-  Capybara::Selenium::Driver.new(app, :browser => :chrome)
-end
+require 'rails_helper'
 
 describe 'About display correctly', :type => :feature do
 

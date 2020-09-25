@@ -27,7 +27,7 @@ gem 'autoprefixer-rails'
 gem 'tinymce-rails'
 gem 'seed_dump'
 gem 'gon'
-gem 'tinymce-rails'
+gem 'figaro'
 
 
 group :development, :test do
