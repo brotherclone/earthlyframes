@@ -42,12 +42,21 @@ namespace :game_data do
     end
   end
 
+  task :load_consequences => [ :environment ] do
+    file = File.join(Rails.root, 'app', 'resources', 'consequences.json')
+    consequences_list = JSON.parse(File.read(file))
+    consequences_list.each do | consequence |
+      Consequence.create(consequence.to_h)
+    end
+  end
+
   task :all => [ :environment] do
     Rake::Task["game_data:load_character_roles"].invoke
     Rake::Task["game_data:load_character_settings"].invoke
     Rake::Task["game_data:load_character_descriptors"].invoke
     Rake::Task["game_data:load_character_backgrounds"].invoke
     Rake::Task["game_data:load_prompts"].invoke
+    Rake::Task["game_data:load_consequences"].invoke
   end
 
 end
