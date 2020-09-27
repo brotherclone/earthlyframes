@@ -2,7 +2,7 @@ namespace :game_data do
 
   desc 'Import JSON-based game data or delete game data.'
 
-  task :load_character_roles => [ :environment ] do
+  task :load_character_roles => [:environment ] do
     file = File.join(Rails.root, 'app', 'resources', 'character_roles.json')
     character_role_list = JSON.parse(File.read(file))
     character_role_list.each do |character_role|
@@ -50,7 +50,7 @@ namespace :game_data do
     end
   end
 
-  task :all => [ :environment] do
+  task :all => [:environment] do
     Rake::Task["game_data:load_character_roles"].invoke
     Rake::Task["game_data:load_character_settings"].invoke
     Rake::Task["game_data:load_character_descriptors"].invoke
