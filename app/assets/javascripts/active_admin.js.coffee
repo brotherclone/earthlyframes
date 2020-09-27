@@ -3,7 +3,9 @@
 initTinyMCE = () ->
   console.log "loading TinyMCE"
   tinyMCE.init
-    mode: "textareas"
+    mode: 'textareas',
+    toolbar: 'link',
+    plugins: 'code'
   return
 
 
