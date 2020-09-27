@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
@@ -24,6 +25,7 @@ Rails.application.routes.draw do
   resources :shows
   resources :posts
   resources :albums
+  resources :consequences
 
   get 'soon', to:'soon#index'
   get 'home', to:'home#index'
@@ -52,6 +54,7 @@ Rails.application.routes.draw do
   get 'api/logs/:id/invite', to: 'logs#invite_by_email'
   get 'api/logs/:id', to:'logs#show'
   post 'api/logs/create', to:'logs#create'
+  post 'api/consequences', to: 'consequences#reveal'
 
   root 'home#index'
 
