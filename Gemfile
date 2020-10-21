@@ -13,8 +13,6 @@ gem 'haml-rails'
 gem 'carrierwave'
 gem 'activeadmin'
 gem 'devise', '>= 4.7.1'
-gem 'bourbon'
-gem 'neat'
 gem 'cloudinary'
 gem 'inline_svg'
 gem 'font-awesome-sass', '~> 5.12.0'
@@ -24,7 +22,12 @@ gem 'activesupport', '>= 5.2.4.3'
 gem 'activestorage', '>= 5.2.4.3'
 gem 'kaminari', '>= 1.2.1'
 gem 'breadcrumbs_on_rails'
-
+gem 'foundation-rails'
+gem 'autoprefixer-rails'
+gem 'tinymce-rails'
+gem 'seed_dump'
+gem 'gon'
+gem 'figaro'
 
 
 group :development, :test do

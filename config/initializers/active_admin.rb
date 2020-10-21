@@ -4,7 +4,7 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Earthlyframes"
+  config.site_title = "The Earthly Frames"
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
@@ -266,4 +266,7 @@ ActiveAdmin.setup do |config|
   # of those filters by default here.
   #
   # config.include_default_association_filters = true
+  #
+  config.register_javascript 'tinymce.js'
+  config.register_stylesheet 'admin/tinyMCE.css'
 end

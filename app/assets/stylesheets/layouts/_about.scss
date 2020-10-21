@@ -1,0 +1,14 @@
+.about{
+  @include breakpoint(large){
+    font-size: 130%;
+    @include xy-cell-offset(2);
+    @include xy-cell-size(4);
+  }
+  @include xy-cell;
+}
+.about-photo{
+  @include breakpoint(large){
+    @include xy-cell-size(4);
+  }
+  @include xy-cell;
+}

@@ -69,3 +69,9 @@ crashlytics-build.properties
 fabric.properties
 
 .sass-cache
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
+# Ignore application configuration
+/config/application.yml

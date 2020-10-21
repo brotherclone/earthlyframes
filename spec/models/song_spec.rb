@@ -13,4 +13,7 @@ RSpec.describe Song, type: :model do
   it 'has a valid Factory with streaming links' do
     expect(build(:song_with_streaming_links)).to be_valid
   end
+  it 'has a valid factory with an associated prompt' do
+    expect(build(:song_with_prompt)).to be_valid
+  end
 end

@@ -14,9 +14,8 @@ class AlbumsController < ApplicationController
   end
 
   def show
-
+    gon.album_songs = @album.songs
     add_breadcrumb @album.title.to_s, album_path
-
     respond_to do |format|
       format.html { render :show}
       format.json { render :json => @album}
@@ -69,6 +68,6 @@ class AlbumsController < ApplicationController
     end
 
     def album_params
-      params.require(:album).permit(:title, :cover, :description, :price, :released, :buylink, :format, :brief_description, :is_live)
+      params.require(:album).permit(:title, :cover, :description, :price, :released, :buylink, :format, :brief_description, :is_live, :streaming_links_attributes[:link, :streaming_service_id])
     end
 end
