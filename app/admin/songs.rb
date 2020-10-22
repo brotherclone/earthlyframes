@@ -3,7 +3,7 @@ ActiveAdmin.register Song do
   permit_params :title, :trt, :notes, :lyrics, :album_id, :song_order,
   streaming_links_attributes: [:id, :link, :streaming_service_id]
 
-  form(:html => { :multipart => true }) do |f|
+  form(:html => {:multipart => true}) do |f|
     f.inputs do
       f.input :title
       f.input :trt, :label => 'Total Running Time'
@@ -19,6 +19,12 @@ ActiveAdmin.register Song do
       end
     end
     f.actions
+  end
+
+  index do
+    selectable_column
+    column :title
+    column :album
   end
 
 end
