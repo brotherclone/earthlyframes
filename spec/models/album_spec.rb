@@ -17,4 +17,10 @@ RSpec.describe Album, type: :model do
   it 'is invalid without a title' do
     expect(build(:album, title: nil)).to_not be_valid
   end
+  it 'is valid if not part of the Rainbow Table' do
+    expect(build(:album, rainbow_table: 0)).to be_valid
+  end
+  it 'is valid if part of the Rainbow Table' do
+    expect(build(:album, rainbow_table: 1)).to be_valid
+  end
 end

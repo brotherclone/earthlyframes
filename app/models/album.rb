@@ -4,6 +4,7 @@ class Album < ActiveRecord::Base
   has_many :songs, -> { order(song_order: :asc) }
   has_many :streaming_links
   accepts_nested_attributes_for :streaming_links
+  enum rainbow_table: [:not_associated, :black, :red, :orange, :yellow, :green, :blue, :indigo, :violet, :white]
 
   def as_json(options={})
     super(:only => [:title,
@@ -13,6 +14,7 @@ class Album < ActiveRecord::Base
                     :released,
                     :buylink,
                     :format,
+                    :rainbow_table,
                     :brief_description],
                       :include => {:songs => {:only =>[:title,
                                                        :trt,
