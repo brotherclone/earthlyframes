@@ -1,0 +1,104 @@
+.rainbow-cards {
+
+  .rainbow-card {
+    padding: 2.5rem 0 2.5rem 0;
+    h2{
+      font-weight: 800;
+    }
+    &.black {
+      color: white;
+      background-color: black;
+      a{
+        color: white;
+        &:hover{
+          color: red;
+        }
+      }
+    }
+
+    &.red {
+      color: white;
+      background-color: red;
+      a{
+        color: white;
+        &:hover{
+          color: orange;
+        }
+      }
+    }
+
+    &.orange {
+      background-color: orange;
+      a{
+        color: black;
+        &:hover{
+          color: yellow;
+        }
+      }
+    }
+
+    &.yellow {
+      background-color: yellow;
+      a{
+        color: black;
+        &:hover{
+          color: green;
+        }
+      }
+    }
+
+    &.green {
+      color: white;
+      background-color: green;
+      a{
+        color: white;
+        &:hover{
+          color: blue;
+        }
+      }
+    }
+
+    &.blue {
+      color: white;
+      background-color: blue;
+      a{
+        color: white;
+        &:hover{
+          color: indigo;
+        }
+      }
+    }
+
+    &.indigo {
+      color: white;
+      background-color: indigo;
+      a{
+        color: white;
+        &:hover{
+          color: violet;
+        }
+      }
+
+    }
+
+    &.violet {
+      background-color: violet;
+      a{
+        color: black;
+        &:hover{
+          color: white;
+        }
+      }
+    }
+
+    &.white {
+      background-color: white;
+      a{
+        color: black;
+        &:hover{
+          color: white;
+        }
+      }
+    }
+  }
+}
