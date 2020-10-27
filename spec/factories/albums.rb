@@ -9,6 +9,7 @@ FactoryBot.define do
     buylink { Faker::Internet.url }
     format { Faker::Commerce.product_name }
     cover { Faker::Internet.url }
+    rainbow_table { 1 }
     is_live {true}
     trait :wip do
       is_live {false}

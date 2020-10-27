@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_19_151232) do
+ActiveRecord::Schema.define(version: 2020_10_27_153128) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2020_07_19_151232) do
     t.string "format"
     t.string "brief_description"
     t.boolean "is_live", default: false, null: false
+    t.integer "rainbow_table"
   end
 
   create_table "character_backgrounds", force: :cascade do |t|
