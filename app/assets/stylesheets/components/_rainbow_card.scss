@@ -1,102 +1,132 @@
-.rainbow-cards {
+.rainbow-title{
+  @include breakpoint(large) {
+    @include xy-cell-offset(2);
+  }
+}
 
+.rainbow-cards {
   .rainbow-card {
-    padding: 2.5rem 0 2.5rem 0;
-    h2{
-      font-weight: 800;
+    .inner{
+      @include xy-grid;
+      @include breakpoint(large) {
+        @include xy-cell-offset(2);
+      }
+      .cover{
+        @include breakpoint(large){
+          @include xy-cell(3);
+          img{
+            max-height: 300px;
+            max-width: 300px;
+            width:auto;
+            height: auto;
+            display: block;
+          }
+        }
+        image{
+          height: 100%;
+          width:  100%;
+        }
+      }
+      .title{
+        @include breakpoint(large) {
+          text-align: right;
+        }
+        @include xy-cell(5);
+      }
     }
+    padding: 2.5rem 0 2.5rem 0;
     &.black {
-      color: white;
-      background-color: black;
+      color: $rainbow-table-white;
+      background-color: $rainbow-table-black;
       a{
-        color: white;
+        color: $rainbow-table-white;
         &:hover{
-          color: red;
+          color: $rainbow-table-red;
         }
       }
     }
 
     &.red {
-      color: white;
-      background-color: red;
+      color: $rainbow-table-white;
+      background-color: $rainbow-table-red;
       a{
-        color: white;
+        color: $rainbow-table-white;
         &:hover{
-          color: orange;
+          color: $rainbow-table-orange;
         }
       }
     }
 
     &.orange {
-      background-color: orange;
+      background-color: $rainbow-table-orange;
       a{
-        color: black;
+        color: $rainbow-table-black;
         &:hover{
-          color: yellow;
+          color: $rainbow-table-yellow;
         }
       }
     }
 
     &.yellow {
-      background-color: yellow;
+      background-color: $rainbow-table-yellow;
       a{
-        color: black;
+        color: $rainbow-table-black;;
         &:hover{
-          color: green;
+          color: $rainbow-table-green;
         }
       }
     }
 
     &.green {
-      color: white;
-      background-color: green;
+      color: $rainbow-table-white;
+      background-color: $rainbow-table-green;
       a{
-        color: white;
+        color: $rainbow-table-white;
         &:hover{
-          color: blue;
+          color: $rainbow-table-blue;
         }
       }
     }
 
     &.blue {
-      color: white;
-      background-color: blue;
+      color: $rainbow-table-white;
+      background-color: $rainbow-table-blue;
       a{
-        color: white;
+        color: $rainbow-table-white;
         &:hover{
-          color: indigo;
+          color: $rainbow-table-indigo;
         }
       }
     }
 
     &.indigo {
-      color: white;
-      background-color: indigo;
+      color: $rainbow-table-white;
+      background-color: $rainbow-table-indigo;
       a{
-        color: white;
+        color: $rainbow-table-white;
         &:hover{
-          color: violet;
+          color: $rainbow-table-violet;
         }
       }
 
     }
 
     &.violet {
-      background-color: violet;
+      background-color: $rainbow-table-violet;
       a{
-        color: black;
+        color: $rainbow-table-black;;
         &:hover{
-          color: white;
+          color: $rainbow-table-white;
         }
       }
     }
 
     &.white {
-      background-color: white;
+      background-color: $rainbow-table-white;
       a{
-        color: black;
+        color: $rainbow-table-black;;
         &:hover{
-          color: white;
+          color: $rainbow-table-white;
         }
       }
     }

@@ -8,8 +8,8 @@ describe 'Coming Soon display correctly', :type => :feature do
   end
 
   it 'checks for a breadcrumb', :js => true do
-    visit about_path
-    expect(page).to have_css('ul.breadcrumbs')
+    visit soon_path
+    expect(page).to_not have_css('ul.breadcrumbs')
   end
 
 end
