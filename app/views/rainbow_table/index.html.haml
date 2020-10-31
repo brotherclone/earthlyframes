@@ -1,0 +1,6 @@
+= render :partial=> "components/breadcrumb"
+%h1.rainbow-title
+  The Rainbow Table
+.rainbow-cards
+  - @rainbow_albums.each do |album|
+    = render :partial => "components/rainbow_card", :locals=> {:album => album }
