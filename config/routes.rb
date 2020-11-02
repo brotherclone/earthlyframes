@@ -2,8 +2,14 @@ Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :users
-  resources :songs
+
+  scope :api, defaults: { format: :json } do
+    devise_for :users, controllers: {session: :sessions }, path_names: {sign_in: :login}
+    resource :users, only: [:show, :update, :characters, :destroy]
+  end
+
+
+  resources :tags
   resources :prompts
   resources :logs
   resources :entries
@@ -26,12 +32,27 @@ Rails.application.routes.draw do
   get 'ytr', to:'your_team_ring_archive#index'
   get 'yourteamring', to:'your_team_ring_archive#index'
   get 'your-team-ring', to:'your_team_ring_archive#index'
-  get 'pulsar', to: 'pulsar#index'
-  get 'pulsar/character-creation', to:'pulsar#create_character'
-  get 'pulsar/entry', to:'pulsar#create_entry'
-  get 'pulsar/share', to: 'pulsar#send_log'
-  get 'pulsar/so-long', to:'pulsar#so_long'
-  get 'rainbow', to: 'rainbow_table#index'
+  post 'api/users/create', to:'users#create'
+  get 'api/users/:id/characters', to: 'users#characters'
+  get 'api/get-user-by-email', to:'users#by_email'
+  put 'api/users/:id', to:'users#update'
+  get 'api/users/:id', to:'users#show'
+  post 'api/entries/create', to:'entries#create'
+  get 'api/entries/:id', to:'entries#show'
+  put 'api/entries/:id', to:'entries#update'
+  delete 'api/entries/:id', to:'entries#destroy'
+  get 'api/entries-for-character', to:'entries#by_character'
+  get 'api/player-character-info', to:'player_characters#index'
+  get 'api/characters/:id', to:'characters#show'
+  post 'api/characters/create', to:'characters#create'
+  put 'api/characters/:id', to:'characters#update'
+  delete 'api/characters/:id', to:'characters#update'
+  post 'api/characters/:id/archive', to:'characters#archive'
+  get 'api/prompts/', to:'prompts#get_from_last_entry'
+  get 'api/logs/:id/invite', to: 'logs#invite_by_email'
+  get 'api/logs/:id', to:'logs#show'
+  post 'api/logs/create', to:'logs#create'
+
   root 'home#index'
 
 end

@@ -1,27 +1,45 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :characters]
+  #skip_before_action :verify_authenticity_token, only:[:create, :by_email]
+  protect_from_forgery with: :null_session
+  before_action :authenticate_user!, only:[:show, :characters, :update, :destroy]
 
   def index
-    @users = User.all
   end
 
   def show
-  end
-
-  def new
-    @user = User.new
+    respond_to do |format|
+      format.html { render :show}
+      format.json { render :json => @user}
+    end
   end
 
   def edit
   end
 
+  def characters
+    @characters = Character.find_by user_id: @user.id
+    respond_to do |format|
+      format.html { render :characters}
+      format.json { render :json => @characters}
+    end
+  end
+
+  def by_email
+    @user = User.find_by email: params[:email]
+    respond_to do |format|
+      format.html { render :show}
+      format.json { render :json => @user}
+    end
+  end
+
   def create
     @user = User.new(user_params)
-
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
+        format.json { render json: {:user=> @user, :access_token=> @user.generate_jwt }}
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -34,7 +52,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
+        format.json { render json: @user }
       else
         format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -42,8 +60,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
   def destroy
     @user.destroy
     respond_to do |format|
@@ -53,12 +69,11 @@ class UsersController < ApplicationController
   end
 
   private
-  # Use callbacks to share common setup or constraints between actions.
+
   def set_user
     @user = User.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
     params.require(:user).permit(:first_name, :last_name, :username, :email, :password, :encrypted_password,
                                  :reset_password_token, :reset_password_sent_at, :remember_created_at, :confirmation_token,
