@@ -55,6 +55,7 @@ Rails.application.routes.draw do
   get 'api/logs/:id', to:'logs#show'
   post 'api/logs/create', to:'logs#create'
   post 'api/consequences', to: 'consequences#reveal'
+  get 'rainbow', to: 'rainbow_table#index'
   root 'home#index'
 
 end
