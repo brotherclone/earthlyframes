@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :set_user, only: [:show, :edit, :update, :destroy, :characters]
-  #skip_before_action :verify_authenticity_token, only:[:create, :by_email]
-  protect_from_forgery with: :null_session
+  skip_before_action :verify_authenticity_token, only:[:create, :by_email]
   before_action :authenticate_user!, only:[:show, :characters, :update, :destroy]
 
   def index

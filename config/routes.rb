@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   get 'ytr', to:'your_team_ring_archive#index'
   get 'yourteamring', to:'your_team_ring_archive#index'
   get 'your-team-ring', to:'your_team_ring_archive#index'
+
   post 'api/users/create', to:'users#create'
   get 'api/users/:id/characters', to: 'users#characters'
   get 'api/get-user-by-email', to:'users#by_email'
