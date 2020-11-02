@@ -23311,7 +23311,7 @@ footer .eula a:hover {
 }
 
 /* line 4, app/assets/stylesheets/components/_nav.scss */
-body {
+body.ef {
   padding-top: 330px;
 }
 
@@ -23495,12 +23495,19 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
   color: #e17f62;
 }
 
-/* line 3, app/assets/stylesheets/components/_rainbow_card.scss */
+@media print, screen and (min-width: 64em) {
+  /* line 1, app/assets/stylesheets/components/_rainbow_card.scss */
+  .rainbow-title {
+    margin-left: calc(16.6666666667% + 0.6696428571rem);
+  }
+}
+
+/* line 8, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card {
   padding: 2.5rem 0 2.5rem 0;
 }
 
-/* line 4, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 9, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card .inner {
   display: -webkit-box;
   display: -webkit-flex;
@@ -23514,14 +23521,14 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
 }
 
 @media print, screen and (min-width: 64em) {
-  /* line 4, app/assets/stylesheets/components/_rainbow_card.scss */
+  /* line 9, app/assets/stylesheets/components/_rainbow_card.scss */
   .rainbow-cards .rainbow-card .inner {
     margin-left: calc(16.6666666667% + 0.6696428571rem);
   }
 }
 
 @media print, screen and (min-width: 64em) {
-  /* line 9, app/assets/stylesheets/components/_rainbow_card.scss */
+  /* line 14, app/assets/stylesheets/components/_rainbow_card.scss */
   .rainbow-cards .rainbow-card .inner .cover {
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 auto;
@@ -23531,7 +23538,7 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
     margin-left: 0.6696428571rem;
     margin-right: 0.6696428571rem;
   }
-  /* line 12, app/assets/stylesheets/components/_rainbow_card.scss */
+  /* line 17, app/assets/stylesheets/components/_rainbow_card.scss */
   .rainbow-cards .rainbow-card .inner .cover img {
     max-height: 300px;
     max-width: 300px;
@@ -23541,13 +23548,13 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
   }
 }
 
-/* line 20, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 25, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card .inner .cover image {
   height: 100%;
   width: 100%;
 }
 
-/* line 25, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 30, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card .inner .title {
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 auto;
@@ -23559,148 +23566,148 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
 }
 
 @media print, screen and (min-width: 64em) {
-  /* line 25, app/assets/stylesheets/components/_rainbow_card.scss */
+  /* line 30, app/assets/stylesheets/components/_rainbow_card.scss */
   .rainbow-cards .rainbow-card .inner .title {
     text-align: right;
   }
 }
 
-/* line 33, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 38, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card.black {
   color: #e6e5d4;
   background-color: #414141;
 }
 
-/* line 36, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 41, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card.black a {
   color: #e6e5d4;
 }
 
-/* line 38, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 43, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card.black a:hover {
   color: #ed4145;
 }
 
-/* line 44, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 49, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card.red {
   color: #e6e5d4;
   background-color: #ed4145;
 }
 
-/* line 47, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 52, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card.red a {
   color: #e6e5d4;
 }
 
-/* line 49, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 54, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card.red a:hover {
   color: #f1b02f;
 }
 
-/* line 55, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 60, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card.orange {
   background-color: #f1b02f;
 }
 
-/* line 57, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 62, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card.orange a {
   color: #414141;
 }
 
-/* line 59, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 64, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card.orange a:hover {
   color: #eade84;
 }
 
-/* line 65, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 70, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card.yellow {
   background-color: #eade84;
 }
 
-/* line 67, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 72, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card.yellow a {
   color: #414141;
 }
 
-/* line 69, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 74, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card.yellow a:hover {
   color: #a3d064;
 }
 
-/* line 75, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 80, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card.green {
   color: #e6e5d4;
   background-color: #a3d064;
 }
 
-/* line 78, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 83, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card.green a {
   color: #e6e5d4;
 }
 
-/* line 80, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 85, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card.green a:hover {
   color: #11b2aa;
 }
 
-/* line 86, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 91, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card.blue {
   color: #e6e5d4;
   background-color: #11b2aa;
 }
 
-/* line 89, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 94, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card.blue a {
   color: #e6e5d4;
 }
 
-/* line 91, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 96, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card.blue a:hover {
   color: #177c99;
 }
 
-/* line 97, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 102, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card.indigo {
   color: #e6e5d4;
   background-color: #177c99;
 }
 
-/* line 100, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 105, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card.indigo a {
   color: #e6e5d4;
 }
 
-/* line 102, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 107, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card.indigo a:hover {
   color: #915a69;
 }
 
-/* line 109, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 114, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card.violet {
   background-color: #915a69;
 }
 
-/* line 111, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 116, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card.violet a {
   color: #414141;
 }
 
-/* line 113, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 118, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card.violet a:hover {
   color: #e6e5d4;
 }
 
-/* line 119, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 124, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card.white {
   background-color: #e6e5d4;
 }
 
-/* line 121, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 126, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card.white a {
   color: #414141;
 }
 
-/* line 123, app/assets/stylesheets/components/_rainbow_card.scss */
+/* line 128, app/assets/stylesheets/components/_rainbow_card.scss */
 .rainbow-cards .rainbow-card.white a:hover {
   color: #e6e5d4;
 }
@@ -24373,4 +24380,15 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
   .your-team-ring-albums .your-team-ring-album:nth-child(2n+1) {
     margin-left: calc(16.6666666667% + 0.6696428571rem);
   }
+}
+
+/* line 2, app/assets/stylesheets/pulsar/main.scss */
+.as-button:hover {
+  cursor: pointer;
+}
+
+/* line 7, app/assets/stylesheets/pulsar/main.scss */
+.pulsar {
+  color: purple;
+  background-color: pink !important;
 }

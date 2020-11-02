@@ -1,3 +1,6 @@
+- @no_ef_header = true
+- @no_ef_footer = true
+
 %h2 Change your password
 = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
   = render "devise/shared/error_messages", resource: resource
