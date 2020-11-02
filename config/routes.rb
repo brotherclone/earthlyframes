@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
@@ -24,7 +25,8 @@ Rails.application.routes.draw do
   resources :shows
   resources :posts
   resources :albums
-  get 'player-characters', to:'player_characters#index'
+  resources :consequences
+
   get 'soon', to:'soon#index'
   get 'home', to:'home#index'
   get 'about', to:'about#index'
@@ -32,7 +34,10 @@ Rails.application.routes.draw do
   get 'ytr', to:'your_team_ring_archive#index'
   get 'yourteamring', to:'your_team_ring_archive#index'
   get 'your-team-ring', to:'your_team_ring_archive#index'
+<<<<<<< HEAD
 
+=======
+>>>>>>> feature/Tags
   post 'api/users/create', to:'users#create'
   get 'api/users/:id/characters', to: 'users#characters'
   get 'api/get-user-by-email', to:'users#by_email'
@@ -53,6 +58,10 @@ Rails.application.routes.draw do
   get 'api/logs/:id/invite', to: 'logs#invite_by_email'
   get 'api/logs/:id', to:'logs#show'
   post 'api/logs/create', to:'logs#create'
+<<<<<<< HEAD
+=======
+  post 'api/consequences', to: 'consequences#reveal'
+>>>>>>> feature/Tags
 
   root 'home#index'
 

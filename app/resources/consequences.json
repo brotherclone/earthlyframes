@@ -1,0 +1,14 @@
+[
+  {
+    "prompt_id": 1,
+    "condition": 0,
+    "image_url": "http://www.placekitten.com/100/100",
+    "description": "You enter the palace."
+  },
+  {
+    "prompt_id": 1,
+    "condition": 1,
+    "image_url": "http://www.placekitten.com/100/100",
+    "description": "You enter the palace, bleeding"
+  }
+]

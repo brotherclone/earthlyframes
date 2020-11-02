@@ -9,4 +9,20 @@ class Character < ActiveRecord::Base
   validates :name, presence: true
 
 
+  def as_json(options={})
+    super(:only => [:id,
+                    :name,
+                    :user_id,
+                    :additional_bio,
+                    :character_setting_id,
+                    :character_background_id,
+                    :character_role_id,
+                    :character_descriptor_id,
+                    :current_health,
+                    :max_health,
+                    :log_id,
+                    :archived
+    ])
+  end
+
 end

@@ -22,7 +22,6 @@ class CharacterBackgroundsController < ApplicationController
   end
 
   def new
-    @character_background = CharacterBackground.new
   end
 
   def edit
@@ -30,13 +29,12 @@ class CharacterBackgroundsController < ApplicationController
 
   def create
     @character_background = CharacterBackground.new(character_background_params)
-
     respond_to do |format|
       if @character_background.save
         format.html { redirect_to @character_background, notice: 'CharacterBackground was successfully created.' }
         format.json { render :show, status: :created, location: @character_background }
       else
-        format.html { render :new }
+        format.html { render :show }
         format.json { render json: @character_background.errors, status: :unprocessable_entity }
       end
     end
@@ -49,7 +47,7 @@ class CharacterBackgroundsController < ApplicationController
         format.html { redirect_to @character_background, notice: 'CharacterBackground was successfully updated.' }
         format.json { render :show, status: :ok, location: @character_background }
       else
-        format.html { render :edit }
+        format.html { render :show }
         format.json { render json: @character_background.errors, status: :unprocessable_entity }
       end
     end
@@ -60,7 +58,7 @@ class CharacterBackgroundsController < ApplicationController
     @character_background.destroy
     respond_to do |format|
       format.html { redirect_to character_backgrounds_url, notice: 'CharacterBackground was successfully destroyed.' }
-      format.json { head :no_content }
+      format.json { render json: {:message=> "success" } }
     end
   end
 

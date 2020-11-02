@@ -1,7 +1,6 @@
 namespace :ef_clean do
-
   desc 'Resets everything when fucking with models a lot' do
-    task :clean => [ :environment] do
+    task :clean => [:environment] do
       Rake::Task["db:drop"].invoke
       Rake::Task["db:create"].invoke
       Rake::Task["db:migrate"].invoke
@@ -9,5 +8,4 @@ namespace :ef_clean do
       Rake::Task["game_data:all"].invoke
     end
   end
-
 end

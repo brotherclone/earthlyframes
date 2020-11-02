@@ -21,7 +21,6 @@ class CharacterDescriptorsController < ApplicationController
   end
 
   def new
-    @character_descriptor = CharacterDescriptor.new
   end
 
   def edit
@@ -48,7 +47,7 @@ class CharacterDescriptorsController < ApplicationController
         format.html { redirect_to @character_descriptor, notice: 'CharacterDescriptor was successfully updated.' }
         format.json { render :show, status: :ok, location: @character_descriptor }
       else
-        format.html { render :edit }
+        format.html { render :show }
         format.json { render json: @character_descriptor.errors, status: :unprocessable_entity }
       end
     end
@@ -60,7 +59,7 @@ class CharacterDescriptorsController < ApplicationController
     @character_descriptor.destroy
     respond_to do |format|
       format.html { redirect_to character_descriptors_url, notice: 'CharacterDescriptor was successfully destroyed.' }
-      format.json { head :no_content }
+      format.json { render json: {:message=> "success" } }
     end
   end
 
