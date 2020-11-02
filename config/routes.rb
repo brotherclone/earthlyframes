@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resource :users, only: [:show, :update, :characters, :destroy]
   end
 
-
+  resources :songs
   resources :tags
   resources :prompts
   resources :logs
@@ -34,10 +34,6 @@ Rails.application.routes.draw do
   get 'ytr', to:'your_team_ring_archive#index'
   get 'yourteamring', to:'your_team_ring_archive#index'
   get 'your-team-ring', to:'your_team_ring_archive#index'
-<<<<<<< HEAD
-
-=======
->>>>>>> feature/Tags
   post 'api/users/create', to:'users#create'
   get 'api/users/:id/characters', to: 'users#characters'
   get 'api/get-user-by-email', to:'users#by_email'
@@ -58,11 +54,7 @@ Rails.application.routes.draw do
   get 'api/logs/:id/invite', to: 'logs#invite_by_email'
   get 'api/logs/:id', to:'logs#show'
   post 'api/logs/create', to:'logs#create'
-<<<<<<< HEAD
-=======
   post 'api/consequences', to: 'consequences#reveal'
->>>>>>> feature/Tags
-
   root 'home#index'
 
 end
