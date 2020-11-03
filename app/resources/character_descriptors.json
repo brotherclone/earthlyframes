@@ -1,8 +1,42 @@
 [
   {
-    "descriptor": "happy"
+    "descriptor": "crazed",
+    "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/descriptor-temp_oskkj9.png"
   },
   {
-    "descriptor": "sad"
+    "descriptor": "remorseful",
+    "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/descriptor-temp_oskkj9.png"
+  },
+  {
+    "descriptor": "worried",
+    "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/descriptor-temp_oskkj9.png"
+  },
+  {
+    "descriptor": "vengeful",
+    "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/descriptor-temp_oskkj9.png"
+  },
+  {
+    "descriptor": "sick",
+    "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/descriptor-temp_oskkj9.png"
+  },
+  {
+    "descriptor": "cursed",
+    "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/descriptor-temp_oskkj9.png"
+  },
+  {
+    "descriptor": "clumsy",
+    "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/descriptor-temp_oskkj9.png"
+  },
+  {
+    "descriptor": "misguided",
+    "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/descriptor-temp_oskkj9.png"
+  },
+  {
+    "descriptor": "curious",
+    "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/descriptor-temp_oskkj9.png"
+  },
+  {
+    "descriptor": "angry",
+    "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/descriptor-temp_oskkj9.png"
   }
 ]

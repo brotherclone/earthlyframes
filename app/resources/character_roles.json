@@ -1,8 +1,42 @@
 [
   {
-    "character_role": "actor"
+    "character_role": "Doctor",
+     "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/role-temp_tidgxw.png"
   },
   {
-    "character_role": "astronomer"
+    "character_role": "Sailor",
+     "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/role-temp_tidgxw.png"
+  },
+  {
+    "character_role": "Breeder",
+     "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/role-temp_tidgxw.png"
+  },
+  {
+    "character_role": "Detective",
+     "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/role-temp_tidgxw.png"
+  },
+  {
+    "character_role": "Janitor",
+     "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/role-temp_tidgxw.png"
+  },
+  {
+    "character_role": "Spy",
+     "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/role-temp_tidgxw.png"
+  },
+  {
+    "character_role": "Librarian",
+     "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/role-temp_tidgxw.png"
+  },
+  {
+    "character_role": "Inventor",
+     "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/role-temp_tidgxw.png"
+  },
+  {
+    "character_role": "Tax Collector",
+     "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/role-temp_tidgxw.png"
+  },
+  {
+    "character_role": "Partisan",
+     "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/role-temp_tidgxw.png"
   }
 ]

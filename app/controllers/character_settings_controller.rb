@@ -70,6 +70,6 @@ class CharacterSettingsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def character_setting_params
-    params.require(:character_setting).permit(:time, :place)
+    params.require(:character_setting).permit(:time, :place, :image_url)
   end
 end
