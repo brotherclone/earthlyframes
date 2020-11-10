@@ -76,5 +76,7 @@ fabric.properties
 # Ignore application configuration
 /config/application.yml
 
+# Dev Scaps
+/app/resources/tag_codes.json
 latest.dump
 cheatcodes.txt
