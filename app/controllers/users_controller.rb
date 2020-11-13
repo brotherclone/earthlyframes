@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end
 
   def characters
-    @characters = Character.find_by user_id: @user.id
+    @characters = Character.where user_id: @user.id
     respond_to do |format|
       format.html { render :characters}
       format.json { render :json => @characters}

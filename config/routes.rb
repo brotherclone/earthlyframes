@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   scope :api, defaults: { format: :json } do
-    devise_for :users, controllers: {session: :sessions }, path_names: {sign_in: :login}
+    devise_for :users, controllers: {session: :sessions }, path_names: {sign_in: :login, sign_out: :logout}
     resource :users, only: [:show, :update, :characters, :destroy]
   end
 

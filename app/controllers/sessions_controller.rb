@@ -13,4 +13,11 @@ class SessionsController < Devise::SessionsController
       render json: { errors: { 'email or password' => ['is invalid'] } }, status: :unprocessable_entity
     end
   end
+
+  def destroy
+    @user = User.where(:authentication_token=>params[:auth_token]).first
+    @user.reset_authentication_token!
+    render :json => { :message => ['Session deleted.'] },  :success => true, :status => :ok
+  end
+
 end
