@@ -56,6 +56,8 @@ Rails.application.routes.draw do
   post 'api/logs/create', to:'logs#create'
   post 'api/consequences', to: 'consequences#reveal'
   get 'rainbow', to: 'rainbow_table#index'
+  get 'pulsar', to: 'pulsar#index'
+  get 'pulsar/sign-up', to: 'pulsar#sign_up'
   root 'home#index'
 
 end
