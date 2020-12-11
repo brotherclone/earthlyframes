@@ -5,37 +5,6 @@
     flex-wrap: wrap;
     align-items: stretch;
     justify-content: space-between;
-    .rainbow-icon{
-      font-size: 1rem;
-      &.black {
-        color: $rainbow-table-black !important;
-      }
-      &.red {
-        color: $rainbow-table-red !important;
-      }
-      &.orange {
-        color: $rainbow-table-orange !important;
-      }
-      &.yellow {
-        color: $rainbow-table-yellow !important;
-      }
-      &.green {
-        color: $rainbow-table-green !important;
-      }
-      &.blue {
-        color: $rainbow-table-blue !important;
-      }
-      &.indigo {
-        color: $rainbow-table-indigo !important;
-      }
-      &.violet {
-        color: $rainbow-table-violet !important;
-      }
-      &.white {
-        color: $rainbow-table-white !important;
-        border: 1px solid $rainbow-table-black;
-      }
-    }
     .format{
       text-transform: uppercase;
     }
