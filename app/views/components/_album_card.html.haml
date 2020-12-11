@@ -1,28 +1,25 @@
-- @album_title = album_title
-- @cover_image = cover_image
-- @album_description = album_description
-- @album_link = album_link
-- @album_format = album_format
-- @album_streaming_links = album_streaming_links
-- @album_release_date  = album_release_date
+- @album = album
 
 .album-card{:itemscope => true,:itemtype => 'http://schema.org/MusicAlbum'}
   .additional-info
+    - if @album.rainbow_table && @album.rainbow_table != 0
+      %a{:href => rainbow_path}
+        %i{:class=> "fas fa-circle rainbow-icon " +@album.rainbow_table, :alt=> 'Part of the Rainbow Table'}
     .format
-      = @album_format
-    - if @album_streaming_links
+      = @album.format
+    - if @album.streaming_links
       .streaming-links
-        - @album_streaming_links.each do |album_streaming_link|
+        - @album.streaming_links.each do |album_streaming_link|
           %span{:class => "album-streaming-link"}
           %a{:href => album_streaming_link.link, :class=> "streaming-link icon-only" }
             %i{:class=> ("fab fa-" + album_streaming_link.streaming_service.icon_url)}
-  %a{:href=> @album_link, :tab=>{:index=>0}}
-    %img{:src=> @cover_image, :alt=> @album_title, :itemprop=>'image'}
+  %a{:href=> album_url(@album.id), :tab=>{:index=>0}}
+    %img{:src=> @album.cover, :alt=> @album.title, :itemprop=>'image'}
   .album-description
-    %a{:href=> @album_link, :tab=>{:index=>0}}
+    %a{:href=> album_url(@album.id), :tab=>{:index=>0}}
       %h3.album-title
-        = @album_title
+        = @album.title
     %p{:itemprop => 'about'}
-      = @album_description
+      = @album.brief_description
       | Released:
-      = @album_release_date.strftime("%B, %Y")
+      = @album.released.strftime("%B, %Y")

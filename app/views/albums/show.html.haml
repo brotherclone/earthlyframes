@@ -5,9 +5,15 @@
     =@album.title
   -if @album.released
     %h4{:itemprop => 'datePublished'}
+      -if @album.rainbow_table && @album.rainbow_table != 0
+        %a{:href => rainbow_path}
+          %i{:class=> "fas fa-circle rainbow-icon " +@album.rainbow_table, :alt=> 'Part of the Rainbow Table'}
       =@album.format+' | '+@album.released.strftime('%b %y')
   -else
     %h4
+      -if @album.rainbow_table && @album.rainbow_table != 0
+        %a{:href => rainbow_path}
+          %i{:class=> "fas fa-circle rainbow-icon " +@album.rainbow_table, :alt=> 'Part of the Rainbow Table'}
       =@album.format
 .album
   .cover-and-links
