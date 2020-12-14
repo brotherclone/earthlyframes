@@ -1,0 +1,9 @@
+-@chromatic = chromatic
+.rainbow-card{:class => chromatic[:color]}
+  %span{:class=>'screen-reader-only'}
+    an unfinished album for the color
+    = chromatic[:color]
+  .inner
+    .center
+      %h1
+        ?

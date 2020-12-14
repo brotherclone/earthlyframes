@@ -8,12 +8,6 @@
     .albums
       - row.each do |a|
         .album-listing
-          = render :partial=> "components/album_card", :locals=> {:album_title=> a.title,
-                                                             :cover_image=> a.cover,
-                                                             :album_description => a.brief_description,
-                                                             :album_link=> albums_path+'/'+a.id.to_s,
-                                                             :album_format => a.format,
-                                                             :album_streaming_links => a.streaming_links,
-                                                             :album_release_date => a.released}
+          = render :partial=> "components/album_card", :locals=> {:album => a}
 - else
   %p There are no published albums at this time.

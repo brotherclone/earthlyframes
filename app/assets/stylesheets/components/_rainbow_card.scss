@@ -11,6 +11,10 @@
       @include breakpoint(large) {
         @include xy-cell-offset(2);
       }
+      .center{
+        width: 100%;
+        text-align: center;
+      }
       .cover{
         @include breakpoint(large){
           @include xy-cell(3);
