@@ -2,7 +2,7 @@
 
 .album-card{:itemscope => true,:itemtype => 'http://schema.org/MusicAlbum'}
   .additional-info
-    - if @album.rainbow_table && @album.rainbow_table != 0
+    - if @album.rainbow_table && !@album.rainbow_table["not_associated"]
       %a{:href => rainbow_path}
         %i{:class=> "fas fa-circle rainbow-icon " +@album.rainbow_table, :alt=> 'Part of the Rainbow Table'}
     .format
