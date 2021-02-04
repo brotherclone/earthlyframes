@@ -5,7 +5,7 @@
     =@album.title
   -if @album.released
     %h4{:itemprop => 'datePublished'}
-      -if @album.rainbow_table && @album.rainbow_table != 0
+      -if @album.rainbow_table && !@album.rainbow_table["not_associated"]
         %a{:href => rainbow_path}
           %i{:class=> "fas fa-circle rainbow-icon " +@album.rainbow_table, :alt=> 'Part of the Rainbow Table'}
       =@album.format+' | '+@album.released.strftime('%b %y')
