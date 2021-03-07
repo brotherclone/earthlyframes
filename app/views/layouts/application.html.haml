@@ -9,6 +9,8 @@
 
     = stylesheet_link_tag "application"
     = javascript_include_tag "application", "data-turbolinks-track" => true
+    %script{ :id=> 'mcjs' }
+      !function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/63eaf7f176f8aeb9035c10347/3775dec9f0ae96e926be8f31e.js");
     = Gon::Base.render_data
     = csrf_meta_tag
   %body
