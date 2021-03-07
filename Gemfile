@@ -1,6 +1,7 @@
 ruby '2.6.3'
 source 'http://rubygems.org'
 
+gem 'activerecord', '>= 5.2.4.5'
 gem 'rails', '~> 5.2'
 gem 'pg', '~> 0.18.4'
 gem 'sass-rails'
