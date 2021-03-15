@@ -1,6 +1,6 @@
 ActiveAdmin.register Album do
 
-  permit_params :title, :cover, :description, :price, :released, :buylink, :format, :brief_description, :is_live, :rainbow_table,
+  permit_params :title, :cover, :description, :price, :released, :buylink, :format, :brief_description, :is_live, :rainbow_table, :rainbow_portrait,
                 streaming_links_attributes: [:id, :link, :streaming_service_id]
 
   form(:html => {:multipart => true}) do |f|
@@ -16,6 +16,8 @@ ActiveAdmin.register Album do
       f.input :cover, :as => :file
       f.input :cover_cache, :as => :hidden
       f.input :rainbow_table
+      f.input :rainbow_portrait, :as => :file
+      f.input :rainbow_portrait_cache, :as => :hidden
       f.inputs do
         f.has_many :streaming_links, heading: "Streaming Links", allow_destroy: true, new_record: true do |s|
           s.input :link, :label => 'Link'

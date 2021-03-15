@@ -9,7 +9,7 @@
     .inner{
       @include xy-grid;
       @include breakpoint(large) {
-        @include xy-cell-offset(2);
+        @include xy-cell-offset(1);
       }
       .center{
         width: 100%;
@@ -35,7 +35,23 @@
         @include breakpoint(large) {
           text-align: right;
         }
-        @include xy-cell(5);
+        @include xy-cell(4);
+      }
+      .portrait{
+        @include xy-cell(3);
+        @include breakpoint(large) {
+          img.rainbow-portrait{
+            height: 300px;
+            width: auto;
+            object-fit: scale-down;
+          }
+        }
+        img.rainbow-portrait{
+          max-width: 300px;
+          height: auto;
+          width: auto;
+          object-fit: fill;
+        }
       }
     }
     padding: 2.5rem 0 2.5rem 0;

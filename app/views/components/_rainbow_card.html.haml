@@ -12,3 +12,6 @@
       - if @album.released
         %h3{:itemprop => 'datePublished'}
           =@album.released.strftime('%Y')
+    .portrait
+      -if @album.rainbow_portrait
+        %img.rainbow-portrait{:src => @album.rainbow_portrait,:alt => 'Gabe the ' + @album.rainbow_table, :itemprop =>'image'}

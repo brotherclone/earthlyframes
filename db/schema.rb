@@ -10,29 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_27_153128) do
+ActiveRecord::Schema.define(version: 2021_03_15_161030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "active_admin_comments", force: :cascade do |t|
-    t.string "namespace"
+  create_table "active_admin_comments", id: :serial, force: :cascade do |t|
+    t.string "namespace", limit: 255
     t.text "body"
-    t.string "resource_id", null: false
-    t.string "resource_type", null: false
-    t.string "author_type"
-    t.bigint "author_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "resource_id", limit: 255, null: false
+    t.string "resource_type", limit: 255, null: false
+    t.integer "author_id"
+    t.string "author_type", limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
     t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
   end
 
-  create_table "admin_users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
+  create_table "admin_users", id: :serial, force: :cascade do |t|
+    t.string "email", limit: 255, default: "", null: false
+    t.string "encrypted_password", limit: 255, default: "", null: false
+    t.string "reset_password_token", limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer "sign_in_count", default: 0, null: false
@@ -46,17 +46,18 @@ ActiveRecord::Schema.define(version: 2020_10_27_153128) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "albums", force: :cascade do |t|
-    t.string "title"
+  create_table "albums", id: :serial, force: :cascade do |t|
+    t.string "title", limit: 255
     t.text "description"
-    t.string "cover"
+    t.string "cover", limit: 255
     t.float "price"
     t.date "released"
-    t.string "buylink"
-    t.string "format"
-    t.string "brief_description"
+    t.string "buylink", limit: 255
+    t.string "format", limit: 255
+    t.string "brief_description", limit: 255
     t.boolean "is_live", default: false, null: false
     t.integer "rainbow_table"
+    t.string "rainbow_portrait"
   end
 
   create_table "character_backgrounds", force: :cascade do |t|
@@ -122,12 +123,12 @@ ActiveRecord::Schema.define(version: 2020_10_27_153128) do
     t.string "title"
   end
 
-  create_table "posts", force: :cascade do |t|
-    t.string "title"
+  create_table "posts", id: :serial, force: :cascade do |t|
+    t.string "title", limit: 255
     t.text "body"
-    t.string "main_image"
-    t.string "inline_image"
-    t.string "description"
+    t.string "main_image", limit: 255
+    t.string "inline_image", limit: 255
+    t.string "description", limit: 255
     t.boolean "overlay_bright"
     t.boolean "is_live", default: false, null: false
     t.datetime "post_date"
@@ -145,24 +146,24 @@ ActiveRecord::Schema.define(version: 2020_10_27_153128) do
     t.index ["song_id"], name: "index_prompts_on_song_id"
   end
 
-  create_table "shows", force: :cascade do |t|
-    t.string "title"
+  create_table "shows", id: :serial, force: :cascade do |t|
+    t.string "title", limit: 255
     t.datetime "showdate"
     t.text "description"
-    t.string "location"
-    t.string "link"
-    t.string "flyer"
-    t.string "brief_description"
+    t.string "location", limit: 255
+    t.string "link", limit: 255
+    t.string "flyer", limit: 255
+    t.string "brief_description", limit: 255
     t.boolean "is_live", default: false, null: false
   end
 
-  create_table "songs", force: :cascade do |t|
-    t.string "title"
-    t.string "trt"
+  create_table "songs", id: :serial, force: :cascade do |t|
+    t.string "title", limit: 255
+    t.string "trt", limit: 255
     t.text "notes"
     t.text "lyrics"
     t.integer "song_order"
-    t.bigint "album_id"
+    t.integer "album_id"
     t.index ["album_id"], name: "index_songs_on_album_id"
   end
 
@@ -183,6 +184,17 @@ ActiveRecord::Schema.define(version: 2020_10_27_153128) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.string "icon_url"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "uuid"
+    t.boolean "is_claimed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "log_id"
+    t.index ["log_id"], name: "index_tags_on_log_id"
+    t.index ["user_id"], name: "index_tags_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -207,14 +219,14 @@ ActiveRecord::Schema.define(version: 2020_10_27_153128) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "videos", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "videos", id: :serial, force: :cascade do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string "title"
     t.string "description"
     t.string "video_type"
     t.string "video_service_id"
-    t.bigint "song_id"
+    t.integer "song_id"
     t.index ["song_id"], name: "index_videos_on_song_id"
   end
 
