@@ -1,5 +1,6 @@
 class Album < ActiveRecord::Base
   mount_uploader :cover, PhotosUploader
+  mount_uploader :rainbow_portrait, PhotosUploader
   validates :title, presence: true
   has_many :songs, -> { order(song_order: :asc) }
   has_many :streaming_links
@@ -15,6 +16,7 @@ class Album < ActiveRecord::Base
                     :buylink,
                     :format,
                     :rainbow_table,
+                    :rainbow_portrait,
                     :brief_description],
                       :include => {:songs => {:only =>[:title,
                                                        :trt,
