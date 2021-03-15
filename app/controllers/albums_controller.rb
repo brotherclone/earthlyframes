@@ -68,6 +68,6 @@ class AlbumsController < ApplicationController
     end
 
     def album_params
-      params.require(:album).permit(:title, :cover, :rainbow_table, :description, :price, :released, :buylink, :format, :brief_description, :is_live, :streaming_links_attributes[:link, :streaming_service_id])
+      params.require(:album).permit(:title, :cover, :rainbow_table, :rainbow_portrait, :description, :price, :released, :buylink, :format, :brief_description, :is_live, :streaming_links_attributes[:link, :streaming_service_id])
     end
 end
