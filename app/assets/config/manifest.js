@@ -1,4 +1,4 @@
-//= link top2.jpg
+//= link top3.jpg
 //= link portrait3.jpg
 //= link application.css
 //= link application.js
