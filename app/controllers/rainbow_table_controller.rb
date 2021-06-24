@@ -4,7 +4,7 @@ class RainbowTableController < ApplicationController
     add_breadcrumb "Home", :root_path
     add_breadcrumb "Albums", :albums_path
     add_breadcrumb "The Rainbow Table", :rainbow_path
-    @rainbow_table_albums  = Album.where.not(:rainbow_table => 'not_associated').order(:rainbow_table)
+    @rainbow_table_albums  = Album.where.not(:rainbow_table => 'not_associated', :is_live => false).order(:rainbow_table)
     @unfinished_albums = []
 
     Album.rainbow_tables.each do |c|

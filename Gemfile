@@ -13,6 +13,7 @@ gem 'haml-rails'
 gem 'carrierwave'
 gem 'activeadmin'
 gem 'devise', '>= 4.7.1'
+gem 'dotenv-rails'
 gem 'cloudinary'
 gem 'inline_svg'
 gem 'font-awesome-sass', '~> 5.12.0'
@@ -24,7 +25,7 @@ gem 'autoprefixer-rails'
 gem 'tinymce-rails'
 gem 'seed_dump'
 gem 'gon'
-gem 'figaro'
+
 
 
 group :development, :test do
