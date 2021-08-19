@@ -26,8 +26,6 @@ gem 'tinymce-rails'
 gem 'seed_dump'
 gem 'gon'
 
-
-
 group :development, :test do
   gem 'rspec-rails'
   gem 'thor'
@@ -41,7 +39,6 @@ group :development, :test do
   gem 'webdrivers'
   gem 'puma', '>= 4.3.5'
   gem 'rails-controller-testing'
-  gem 'travis'
 end
 
 group :doc do
