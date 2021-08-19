@@ -1,8 +1,7 @@
 ruby '2.6.3'
 source 'http://rubygems.org'
 
-gem 'rails', '~> 5.2.2'
-gem 'pg', '~> 0.18.4'
+gem 'rails', '~> 6.0'
 gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails'
@@ -25,6 +24,7 @@ gem 'autoprefixer-rails'
 gem 'tinymce-rails'
 gem 'seed_dump'
 gem 'gon'
+gem 'pg'
 
 group :development, :test do
   gem 'rspec-rails'
