@@ -7,7 +7,7 @@ class VideosController < ApplicationController
 
 
   def index
-    @videos = Video.all
+    @videos = Video.joins(song: :album).where(albums: {is_live: true})
     respond_to do |format|
       format.html { render :index}
       format.json { render :json => @videos}
