@@ -1,7 +1,7 @@
 ruby '2.6.3'
 source 'http://rubygems.org'
 
-gem 'rails', '~> 5.2'
+gem 'rails', '~> 5.2.2'
 gem 'pg', '~> 0.18.4'
 gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
@@ -39,6 +39,7 @@ group :development, :test do
   gem 'webdrivers'
   gem 'puma', '>= 4.3.5'
   gem 'rails-controller-testing'
+  gem 'bootsnap', require: false
 end
 
 group :doc do
