@@ -1,8 +1,7 @@
-ruby '2.6.3'
+ruby '3.0.2'
 source 'http://rubygems.org'
 
-gem 'rails', '~> 5.2'
-gem 'pg', '~> 0.18.4'
+gem 'rails', '~> 6.1'
 gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails'
@@ -25,6 +24,9 @@ gem 'autoprefixer-rails'
 gem 'tinymce-rails'
 gem 'seed_dump'
 gem 'gon'
+gem 'pg'
+gem 'rexml', '~> 3.2', '>= 3.2.4'
+gem 'webpacker'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -39,6 +41,8 @@ group :development, :test do
   gem 'webdrivers'
   gem 'puma', '>= 4.3.5'
   gem 'rails-controller-testing'
+  gem 'bootsnap', require: false
+  gem 'listen'
 end
 
 group :doc do

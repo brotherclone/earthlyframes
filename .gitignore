@@ -80,3 +80,9 @@ latest.dump
 cheatcodes.txt
 config/_cloudinary.yml
 .env
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
