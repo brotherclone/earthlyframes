@@ -213,6 +213,9 @@ GEM
       activerecord
       kaminari-core (= 1.2.1)
     kaminari-core (1.2.1)
+    listen (3.7.0)
+      rb-fsevent (~> 0.10, >= 0.10.3)
+      rb-inotify (~> 0.9, >= 0.9.10)
     loofah (2.12.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -241,6 +244,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
+    rack-proxy (0.7.0)
+      rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (6.1.4.1)
@@ -293,6 +298,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    rexml (3.2.5)
     rspec-core (3.10.1)
       rspec-support (~> 3.10.0)
     rspec-expectations (3.10.1)
@@ -339,6 +345,7 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    semantic_range (3.0.0)
     sexp_processor (4.15.3)
     spring (2.1.1)
     sprockets (4.0.2)
@@ -371,10 +378,15 @@ GEM
     unf_ext (0.0.7.7)
     warden (1.2.9)
       rack (>= 2.0.9)
-    webdrivers (4.6.0)
+    webdrivers (4.6.1)
       nokogiri (~> 1.6)
       rubyzip (>= 1.3.0)
       selenium-webdriver (>= 3.0, < 4.0)
+    webpacker (5.4.2)
+      activesupport (>= 5.2)
+      rack-proxy (>= 0.6.1)
+      railties (>= 5.2)
+      semantic_range (>= 2.3.0)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -407,12 +419,14 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   kaminari (>= 1.2.1)
+  listen
   pg
   puma (>= 4.3.5)
   rack (>= 1.6.12)
-  rails (~> 6.0)
+  rails (~> 6.1)
   rails-controller-testing
   rake
+  rexml (~> 3.2, >= 3.2.4)
   rspec-rails
   sass-rails
   sdoc
@@ -425,9 +439,10 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   webdrivers
+  webpacker
 
 RUBY VERSION
-   ruby 2.6.3p62
+   ruby 3.0.2p107
 
 BUNDLED WITH
-   2.1.4
+   2.2.22
