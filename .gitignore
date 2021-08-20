@@ -78,6 +78,7 @@ fabric.properties
 
 latest.dump
 cheatcodes.txt
+
 config/_cloudinary.yml
 .env
 /public/packs
