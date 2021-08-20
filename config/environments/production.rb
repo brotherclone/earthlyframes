@@ -96,6 +96,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+<<<<<<< HEAD
 
   # Inserts middleware to perform automatic connection switching.
   # The `database_selector` hash is used to pass options to the DatabaseSelector
@@ -118,3 +119,8 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 end
+=======
+  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  config.require_master_key = true
+end
+>>>>>>> hotfix/assetConfig
