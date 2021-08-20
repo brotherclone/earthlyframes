@@ -76,5 +76,7 @@ fabric.properties
 # Ignore application configuration
 /config/application.yml
 
+/node_modules
+
 latest.dump
 cheatcodes.txt
