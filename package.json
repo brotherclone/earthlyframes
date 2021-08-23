@@ -1,4 +1,9 @@
 {
+  "name": "earthlyframes",
+  "version": "2.0.0",
+  "description": "the one man band from Maryland",
+  "license": "MIT",
+  "author": "brotherclone@gmail.com",
   "dependencies": {
     "@rails/webpacker": "5.4.2",
     "webpack": "^4.46.0",
