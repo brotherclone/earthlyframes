@@ -13,5 +13,4 @@ describe 'Header and Footer Includes appear correctly', :type => :feature do
     expect(page).not_to have_css('header.ef-nav')
     expect(page).not_to have_css('footer.ef-footer')
   end
-
 end
