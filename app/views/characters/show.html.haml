@@ -1,0 +1,34 @@
+%h1
+  = @character.name
+%h2
+  = @character.current_health
+  = "/"
+  = @character.max_health
+%ul
+  %li
+    = @character.character_descriptor.descriptor
+  %li
+    = @character.character_setting.time
+  %li
+    = @character.character_setting.place
+  %li
+    = @character.character_background.background
+  %li
+    = @character.character_role.character_role
+
+
+- @character.entries.each do |e|
+  %p
+    = e.entry_text
+
+- if @character.current_health > 0
+  = link_to "create a new entry with this character", pulsar_entry_path(character_id: @character.id)
+  - if @character.log_id
+    = link_to "home", pulsar_path(log_id: @character.log_id)
+  - else
+    = link_to "home", pulsar_path
+- else
+  - if @character.archived
+    = link_to "back", pulsar_path(log_id: @character.log_id)
+  - else
+    = link_to "you need to archive", pulsar_so_long_path(character_id: @character.id)
