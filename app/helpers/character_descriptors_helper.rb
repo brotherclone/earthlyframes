@@ -1,0 +1,2 @@
+module CharacterDescriptorsHelper
+end

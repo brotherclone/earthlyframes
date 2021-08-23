@@ -1,0 +1,13 @@
+
+= render :partial=> "components/breadcrumb"
+.albums-header
+  %h1 Albums
+-if @albums.length
+  - album_matrix = @albums.each_slice(3).to_a
+  - album_matrix.each do |row|
+    .albums
+      - row.each do |a|
+        .album-listing
+          = render :partial=> "components/album_card", :locals=> {:album => a}
+- else
+  %p There are no published albums at this time.

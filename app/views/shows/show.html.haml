@@ -1,0 +1,31 @@
+= render :partial=> "components/breadcrumb"
+-if @show
+  .show-detail
+    %img{:src=>@show.flyer}
+    %h1
+      = @show.title
+    %dl
+      %dt
+        Date
+      %dd
+        - today = Date.today
+        - if @show.showdate >= today
+          =@show.showdate.strftime('%F')+' '+@show.showdate.strftime('%H:%M')
+        - else
+          %strong
+            This show occured in the past:
+          =@show.showdate.strftime('%D')
+      %dt
+        Location
+      %dd
+        = @show.location
+      %dt
+        Description
+      %dd
+        = @show.description.html_safe
+        %a{:href=>@show.link}
+          More Information
+-else
+  %p This show is not available.
+  %a{:href=>shows_path} Return to Shows listing.
+

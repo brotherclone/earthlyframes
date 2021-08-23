@@ -1,0 +1,22 @@
+%h1 Welcome
+- if !user_signed_in?
+  = link_to 'Register', new_user_registration_path, class:"welcome"
+- else
+  - if @user_characters
+    - living_check = 0
+    - @user_characters.each do |character|
+      - if !character.archived
+        = link_to character.name, character_path(character)
+        -if character.current_health > 0
+          - living_check += 1
+          = link_to "write", pulsar_entry_path(character_id: character.id)
+    - if living_check <= 0
+      -if @log
+        = link_to "create another character to continue the story", pulsar_character_creation_path(log_id: @log.id)
+      - else
+        = link_to "create another character", pulsar_character_creation_path
+  - else
+    -if @log
+      = link_to "create a character to continue the story", pulsar_character_creation_path(log_id: @log.id)
+    - else
+      = link_to "create your first character", pulsar_character_creation_path
