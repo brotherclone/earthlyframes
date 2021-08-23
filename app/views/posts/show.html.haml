@@ -1,9 +1,0 @@
-= render :partial=> "components/breadcrumb"
-.post
-  %h1
-    = @post.title
-    %h4
-      = @post.post_date.strftime('%F')
-    %img{:src=> @post.main_image}
-    %p
-      = @post.body.html_safe
