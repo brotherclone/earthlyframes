@@ -1,0 +1,22 @@
+%header{:class=>"sticky-shrinknav-header ef-nav", :style=> "background-image:url("+ asset_path('top3.jpg') +");"}
+  %h1{:class=>"sticky-shrinknav-header-title", :role=>"navigation"}
+    The Earthly Frames
+  %ul{:class=>"menu align-center sticky-shrinknav-menu"}
+    %li
+      %a{:href=> root_path}
+        Home
+    %li
+      %a{:href=>about_path}
+        About
+    %li
+      %a{:href=> albums_path}
+        Albums
+    %li
+      %a{:href=> posts_path}
+        Posts
+    %li
+      %a{:href=> videos_path}
+        Videos
+    -#%li
+    -#  %a{:href=> shows_path}
+    -#    Shows

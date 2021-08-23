@@ -1,0 +1,25 @@
+%footer{:class=> "ef-footer"}
+  .social-footer
+    .social-footer-left
+      %a{:href => "#"}
+        = inline_svg_tag 'logo.svg', class: 'ef-logo'
+    .social-footer-icons
+      %ul.menu.simple
+        %li
+          %a{:href => 'https://earthlyframes.bandcamp.com/', :tab=> {:index => 0}}
+            %i.fab.fa-bandcamp{ :alt=> "Bandcamp"}
+        %li
+          %a{:href => 'https://soundcloud.com/earthly-frames/', :tab=> {:index => 0}}
+            %i.fab.fa-soundcloud{ :alt=> "SoundCloud"}
+        %li
+          %a{:href => 'https://www.twitch.tv/earthlyframes/', :tab=> {:index => 0}}
+            %i.fab.fa-twitch{ :alt=> "Twitch"}
+        %li
+          %a{:href => 'https://twitter.com/earthly_the/', :tab=> {:index => 0}}
+            %i.fab.fa-twitter{ :alt=> "Twitter"}
+        %li
+          %a{:href => 'https://www.instagram.com/earthlyframes/', :tab=> {:index => 0}}
+            %i.fab.fa-instagram{ :alt=> "Instagram"}
+  .eula
+    %a{:href=> eula_path}
+      privacy, etc.

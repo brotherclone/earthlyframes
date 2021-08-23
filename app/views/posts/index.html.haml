@@ -1,0 +1,15 @@
+= render :partial=> "components/breadcrumb"
+.posts
+  %h1 Postings
+  -if @posts.length
+    -@posts.each do |p|
+      .posting
+        %h2
+          = p.title
+        %h4
+          = p.post_date.strftime('%F')
+        %img{:src=> p.main_image}
+        %p
+          = p.body.html_safe
+  -else
+    %p There are no published posts at this time.

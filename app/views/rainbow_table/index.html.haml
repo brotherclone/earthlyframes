@@ -1,0 +1,12 @@
+= render :partial=> "components/breadcrumb"
+%h1.rainbow-title
+  The Rainbow Table
+%p.rainbow-intro
+  %em The Rainbow Table
+  is The Earthly Frames mega-project of creating an album for each chromatic value in the rainbow along
+  with their friends black and white.
+.rainbow-cards
+  - @rainbow_table_albums.each do |album|
+    = render :partial => "components/rainbow_card", :locals=> {:album => album }
+  -@unfinished_albums.each do |u|
+    = render :partial => "components/unfinished_rainbow_card", :locals=> {:chromatic => u }

@@ -1,0 +1,5 @@
+%ul
+  -@nav_posts.each do |p|
+    %li
+      %a{:href=> posts_path+'/'+p.id.to_s}
+        =p.title

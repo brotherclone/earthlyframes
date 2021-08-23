@@ -1,0 +1,33 @@
+= render :partial=> "components/breadcrumb"
+.shows-header
+  %h1 Shows
+.shows
+  -if @shows.length
+    -@shows.each do |s|
+      - today = Date.today
+      - if s.showdate >= today
+        .show
+          .poster
+            %img{:src=>s.flyer}
+            .info
+              %h4
+                %a{:href=> shows_path+'/'+s.id.to_s}
+                  =s.title
+              %h5
+                =s.showdate.strftime('%D')+', '+s.showdate.strftime('%H:%M')
+              =s.brief_description
+              %a{:href => s.link}
+                Details
+        %hr
+      - else
+        .show
+          .poster
+            %img{:src=>s.flyer}
+            .info
+              %h4
+                %a{:href=> shows_path+'/'+s.id.to_s}
+                  =s.title
+              %strong Past Event:
+              =s.brief_description
+  -else
+    %p There are no published shows at this time.

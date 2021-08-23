@@ -1,0 +1,54 @@
+.card-article-hover {
+  box-shadow: $card-shadow;
+  height: 100%;
+  .card-section {
+    width: 90%;
+    background: white;
+    margin: 0 auto;
+    padding-top: 1.25rem;
+    margin-top: -3rem;
+    .article-subtext {
+      text-transform: uppercase;
+      letter-spacing: 0.06rem;
+      font-size: 0.85rem;
+    }
+    .article-title {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: $color-storm;
+      a{
+        text-decoration: none;
+      }
+    }
+    .article-desc {
+      font-size: 1rem;
+    }
+  }
+  .card-divider {
+    background: $color-bare;
+    .category {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-left: 0.5rem;
+      text-decoration: none;
+      color: $color-taupe;
+    }
+  }
+  .hover-border {
+    height: 10px;
+    background: $color-peach;
+    width: 0;
+    transition: width 1s ease;
+  }
+
+  &:hover .hover-border {
+    height: 10px;
+    width: 450px;
+    transition: width 1s ease;
+  }
+
+  .meta-data {
+    text-transform: uppercase;
+  }
+}
+
