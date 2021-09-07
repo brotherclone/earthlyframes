@@ -111,17 +111,6 @@ ActiveRecord::Schema.define(version: 2021_08_19_191049) do
     t.string "icon_url"
   end
 
-  create_table "tags", force: :cascade do |t|
-    t.string "uuid"
-    t.boolean "is_claimed"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.bigint "log_id"
-    t.index ["log_id"], name: "index_tags_on_log_id"
-    t.index ["user_id"], name: "index_tags_on_user_id"
-  end
-
   create_table "videos", id: :serial, force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
