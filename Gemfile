@@ -37,7 +37,7 @@ group :development, :test do
   gem 'table_print'
   gem 'rake'
   gem 'webdrivers'
-  gem 'puma', '>= 4.3.5'
+  gem 'puma', '>= 5.5.1'
   gem 'rails-controller-testing'
 end
 
