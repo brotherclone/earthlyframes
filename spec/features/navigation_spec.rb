@@ -8,7 +8,6 @@ describe 'Navigation is available', :type => :feature do
     expect(page).to have_selector(:css, 'a[href="/albums"]')
     expect(page).to have_selector(:css, 'a[href="/posts"]')
     expect(page).to have_selector(:css, 'a[href="/videos"]')
-    # expect(page).to have_selector(:css, 'a[href="/shows"]')
   end
 
   it 'checks for footer navigation', :js => true  do
