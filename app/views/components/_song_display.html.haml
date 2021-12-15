@@ -19,7 +19,7 @@
                 = streaming_link.streaming_service.name
       - if @song.video
         .song-video
-          %a{:href=> video_path(@song.video.id), :class => 'song-video-link'}
+          %a{:href=> video_path(@song.video.id), :class => 'song-video-link', :data=> {:close => true}}
             %i.fas.fa-play-circle
             Watch the video
     - if @song.notes.length > 0
