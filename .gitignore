@@ -82,3 +82,4 @@ config/_cloudinary.yml
 .env
 www_earthlyframes_com.key
 www_earthlyframes_com.pem
+www_earthlyframes_com.cer
