@@ -1,0 +1,20 @@
+.album
+  .album-container
+    %img.cover{:src=> album.cover.to_s, :alt=> album.title}
+    %h3.year
+      = just_the_year(album)
+    %h4.title
+      = album.title
+    - if album.album_streaming_links.length > 0
+      .album-streaming-links
+        - album.album_streaming_links.each do |link|
+          = turbo_frame_tag "album_streaming_link", src: [album, link]
+    -if album.rainbow_table != "not_associated"
+      %h5
+        =album.rainbow_table + " in the"
+        %em
+          = link_to(" Rainbow Table", root_path)
+    %p.description
+      = album.description.html_safe
+    -if album.songs.length
+      =turbo_frame_tag "songs", src: album_songs_path(album)

@@ -1,7 +1,0 @@
-.rainbow-title, .rainbow-intro {
-  @include breakpoint(large){
-    @include xy-cell-offset(2);
-    @include xy-cell-size(8);
-  }
-  @include xy-cell;
-}

@@ -1,0 +1,18 @@
+- require 'json'
+.constellation-container{:data=>{:controller=>"constellation"}}
+  %h3
+    =constellation.name
+  %p
+    =constellation.description.html_safe
+  .canvas-wrapper{:data=>{:canvaswidth=> 800,:canvasheight=> 400,:linecolor=> color,:bgcolor=> bg,:constellation=>{:target=>"wrapper"}}}
+    %div{:data=>{:constellation=>{:target=>"replace"}}}
+      %ol.constellation-songs
+        - song_data = []
+        -constellation.song_constellations.each do |song_constellation|
+          %li.constellation-song
+            = song_constellation.song.title
+            - song_data << {  :song_title=> song_constellation.song.title,
+                              :album_title=> song_constellation.song.album.title,
+                              :song_id=> song_constellation.song.id,
+                              :album_id=> song_constellation.song.album.id }
+      %div{:data=>{:songs=> song_data.to_json, :constellation=>{:target=>"songdata"}}}

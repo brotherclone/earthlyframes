@@ -1,0 +1,78 @@
+@mixin blur($radius:8){
+  -webkit-filter: blur($radius+px);
+  filter: blur($radius+px);
+}
+@mixin sticky(){
+  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+@mixin box-shadower($x-axis: 6px, $y-axis: 5px, $blur:9px, $color: transparentize(black, 0.75)) {
+  box-shadow: $x-axis $y-axis $blur $color;
+}
+
+@mixin text-shadower($h-shadow: 1px, $v-shadow: 5px, $blur-radius: 8px, $color:transparentize(black, 0.75)){
+  text-shadow: $h-shadow $v-shadow $blur-radius $color;
+}
+
+@mixin background-texture($image){
+  background-image: asset_data_url($image);
+  background-repeat: repeat;
+}
+
+$breakpoint-max-xs: 47.938rem;
+$breakpoint-min-sm: $breakpoint-max-xs + 0.063rem;
+$breakpoint-min-md: 62rem;
+$breakpoint-max-sm: $breakpoint-min-md - 0.063rem;
+$breakpoint-min-lg: 75rem;
+$breakpoint-max-md: $breakpoint-min-lg - 0.063rem;
+$breakpoint-min-xl: 120rem;
+$breakpoint-max-lg: $breakpoint-min-xl - 0.063rem;
+
+@mixin breakpoint($min:0,$max:0){
+  $type: type_of($min);
+  @if $type == "string"{
+    @if $min == xs{
+      @media (max-width: $breakpoint-max-xs) { @content };
+    }@else if $min == sm{
+      @media (min-width: $breakpoint-min-sm) { @content };
+    }@else if $min == md{
+      @media (min-width: $breakpoint-min-md) { @content };
+    }@else if $min == lg{
+      @media (min-width: $breakpoint-min-lg) { @content };
+    }@else if $min == xl{
+      @media (min-width: $breakpoint-min-xl) { @content };
+    }
+  }@else if $type == number {
+    $query: "all" !default;
+    @if $min != 0 and $max != 0 {
+      $query: "(min-width: #{$min}) and (max-width: #{$max})";
+    } @else if $min != 0 and $max == 0 {
+      $query: "(min-width: #{$min})";
+    } @else if $min == 0 and $max != 0 {
+      $query: "(max-width: #{$max})";
+    }
+    @media #{$query} {
+      @content;
+    }
+  }
+}
+
+@mixin max-widths-for-breakpoints{
+  @include breakpoint("xs"){
+    max-width: $breakpoint-max-xs;
+  }
+  @include breakpoint("sm"){
+    max-width: $breakpoint-max-sm;
+  }
+  @include breakpoint("md"){
+    max-width: $breakpoint-max-md;
+  }
+  @include breakpoint("lg"){
+    max-width: $breakpoint-max-lg;
+  }
+  @include breakpoint("xl"){
+    max-width: unset;
+  }
+}

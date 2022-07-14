@@ -1,14 +1,47 @@
-.about{
-  @include breakpoint(large){
-    font-size: 130%;
-    @include xy-cell-offset(2);
-    @include xy-cell-size(4);
+@import "../utility/typography";
+@import "../utility/palette";
+@import "../utility/usual_mixins";
+
+article.about{
+  padding: 2rem;
+  .about-portrait{
+    width: 100%;
+    margin: 2rem 0 2rem 0;
+    @include max-widths-for-breakpoints();
+    @include box-shadower();
   }
-  @include xy-cell;
-}
-.about-photo{
-  @include breakpoint(large){
-    @include xy-cell-size(4);
+  h4.rhetorical-question{
+    @include body-font();
+    font-weight: 800;
+    font-size:1.5rem;
+    margin: 1rem 0 1rem 0;
+    line-height: 2rem;
   }
-  @include xy-cell;
+  p.rhetorical-answer{
+    padding: 0.5rem;
+  }
+  .about-images{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .about-image{
+      margin: 1rem;
+      img{
+        width: 100%;
+        @include box-shadower();
+      }
+    }
+    @include breakpoint("md"){
+      flex-direction: row;
+    }
+  }
+  a{
+    color: $orange;
+    transition: color 500ms ease-in-out;
+    text-decoration: none;
+    &:hover{
+      color: $indigo;
+    }
+  }
 }

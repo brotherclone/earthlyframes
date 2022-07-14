@@ -1,10 +1,10 @@
-.videos{
-  @include breakpoint(large){
-    @include xy-cell-offset(2);
-    @include xy-cell-size(10);
+.videos, #videos, turbo-frame#videos{
+  h4.video-title{
+    margin: 1rem 0 1rem 0;
   }
-  @include xy-cell;
 }
-.video{
-  @include xy-cell;
+.video, #video, turbo-frame#video{
+  .video-wrapper{
+    margin: 1rem;
+  }
 }

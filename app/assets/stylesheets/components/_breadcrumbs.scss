@@ -1,16 +1,20 @@
-.you {
-  @include xy-grid();
-  .are{
-    @include breakpoint(large){
-      margin-top: 2rem;
-      @include xy-cell-offset(2);
-    }
-      @include xy-cell;
-    .here{
-      @include breakpoint(medium){
-        margin-left: 0;
+@import "../utility/usual_mixins";
+@import "../utility/palette";
+
+.breadcrumbs{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  li{
+    margin: 0 0.5rem 0 0.5rem;
+    a{
+      color: $indigo;
+      text-decoration: none;
+      transition: color 500ms ease-in-out;
+      &:hover{
+        color: $orange;
       }
-      margin-left: 0.5rem;
     }
   }
 }

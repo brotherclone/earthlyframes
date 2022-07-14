@@ -1,18 +1,17 @@
 FactoryBot.define do
-
   factory :album do
     title { Faker::Name.unique.name }
-    brief_description {Faker::Lorem.sentence }
+    brief_description { Faker::Lorem.sentence }
     description { Faker::Lorem.paragraph }
     price { Faker::Commerce.price }
     released { Faker::Date.backward(days: 500) }
-    buylink { Faker::Internet.url }
-    format { Faker::Commerce.product_name }
+    buy_link { Faker::Internet.url }
     cover { Faker::Internet.url }
-    rainbow_table { 1 }
-    is_live {true}
+    rainbow_table { :red }
+    rainbow_portrait { Faker::Internet.url }
+    is_live { true }
     trait :wip do
-      is_live {false}
+      is_live { false }
     end
     factory :album_with_song do
       after(:create) do |album|
@@ -21,7 +20,12 @@ FactoryBot.define do
     end
     factory :album_with_streaming_links do
       after(:create) do |album|
-        create(:streaming_link, album:album)
+        create(:streaming_link, album: album)
+      end
+    end
+    factory :album_with_release_format do
+      after(:create) do |album|
+        create(:release_format, album: album)
       end
     end
   end

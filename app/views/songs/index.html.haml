@@ -1,0 +1,7 @@
+.song-list
+  = turbo_frame_tag "songs" do
+    -@songs.each do |song|
+      .song
+        %i{:class=>"fa-solid fa-quote-left"}
+        =link_to song.title, [@album, song]
+        %i{:class=>"fa-solid fa-quote-right"}

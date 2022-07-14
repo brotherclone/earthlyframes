@@ -1,0 +1,46 @@
+= turbo_frame_tag "songs" do
+  .close-song-info
+    %a{:href=>album_songs_path, :tab=>{:index=>0}}
+      %i.fa-sold.fa-x{:title=> "close"}
+  .song
+    %i{:class=>"fa-solid fa-quote-left"}
+    =@song.title
+    %i{:class=>"fa-solid fa-quote-right"}
+    - if @song.streaming_links.length > 0
+      .song-streaming-links
+        - @song.streaming_links.each do |link|
+          = turbo_frame_tag "streaming_link", src: [@album, @song, link]
+  - if @song.embeds
+    .song-embed-wrapper
+      - @song.embeds.each do |embed|
+        - if embed.streaming_service.name == "SoundCloud"
+          - s_id = embed.streaming_service.id
+          - streaming_link = get_streaming_link_for_embed(s_id, @song.streaming_links)
+          = render partial: "components/soundcloud_player", :locals => {:soundcloud_id=> embed.player_identifier,
+                                                                        :player_color=> embed.color,
+                                                                        :text_color=> embed.text_color,
+                                                                        :soundcloud_artist_link=> embed.artist_link,
+                                                                        :artist_name=> "The Earthly Frames",
+                                                                        :soundcloud_song_link=>  streaming_link,
+                                                                        :song_title=> @song.title }
+  -# -if @song.constellations
+  -#   - @song.constellations.each do |constellation|
+  -#     - colors = get_rainbow_colors(@song.album)
+  -#     = inline_svg_tag("star.svg", aria: "An image of a six-pointed star that opens the song constellation")
+  -#     = render :partial => "components/constellation", :locals => {:constellation=> constellation, :bg=> colors[0], :color=> colors[1] }
+  -if @song.notes.length > 1
+    %h4.notes-title.lazy-sub-headings
+      Notes
+    .notes
+      = @song.notes.html_safe
+  -if @song.lyrics.length > 1
+    %h4.lyrics-title.lazy-sub-headings
+      Lyrics
+    .lyrics
+      = @song.lyrics.html_safe
+  - if @song.videos.length > 1
+    .videos
+      %h4.video-title.lazy-sub-headings
+        Videos
+      - @song.videos.each do |video|
+        = turbo_frame_tag "video", src: [@album, @song, video]

@@ -1,5 +1,3 @@
-//= link top3.jpg
-//= link portrait3.jpg
+//= link_tree ../images
 //= link application.css
 //= link application.js
-//= link logo.svg

@@ -1,53 +1,45 @@
-ruby '2.6.3'
-source 'http://rubygems.org'
+source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem 'rails', '~> 5.2'
-gem 'pg'
-gem 'sass-rails'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails'
-gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
-gem 'haml-rails'
-gem 'carrierwave'
+ruby '3.1.1'
+
 gem 'activeadmin'
-gem 'devise', '>= 4.7.1'
-gem 'dotenv-rails'
-gem 'cloudinary'
-gem 'inline_svg'
-gem 'font-awesome-sass', '~> 5.12.0'
-gem 'rack', '>= 1.6.12'
-gem 'kaminari', '>= 1.2.1'
+gem 'bootsnap', require: false
 gem 'breadcrumbs_on_rails'
-gem 'foundation-rails'
-gem 'autoprefixer-rails'
+gem 'carrierwave'
+gem 'cloudinary'
+gem 'cssbundling-rails'
+gem 'devise'
+gem 'dotenv-rails'
+gem 'haml-rails'
+gem 'inline_svg'
+gem 'jbuilder'
+gem 'jsbundling-rails'
+gem 'pg', '~> 1.1'
+gem 'puma', '~> 5.0'
+gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
+gem 'sassc-rails'
+gem 'sprockets-rails'
+gem 'stimulus-rails'
 gem 'tinymce-rails'
-gem 'seed_dump'
-gem 'gon'
+gem 'turbo-rails'
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
-  gem 'rspec-rails'
-  gem 'thor'
+  gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'database_cleaner'
-  gem 'capybara'
-  gem 'selenium-webdriver'
-  gem 'table_print'
-  gem 'rake'
-  gem 'webdrivers'
-  gem 'puma', '>= 5.5.1'
   gem 'rails-controller-testing'
-end
-
-group :doc do
-  gem 'sdoc'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
 
 group :development do
-  gem 'spring'
-  gem 'guard'
-  gem 'guard-livereload'
+  gem 'web-console'
 end
 
+group :test do
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
+end

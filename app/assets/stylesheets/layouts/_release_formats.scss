@@ -1,0 +1,17 @@
+@import "../utility/palette";
+
+h3.format-title{
+  color: $black;
+  font-weight: 200;
+  font-size: 1.25rem;
+}
+
+.format-to-album-link{
+  text-decoration: none;
+  display: block;
+  margin: 1rem 0 1rem 1rem;
+  color: $black;
+  &:hover{
+    color: $green;
+  }
+}

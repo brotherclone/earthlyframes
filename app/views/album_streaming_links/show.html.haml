@@ -1,0 +1,8 @@
+= turbo_frame_tag "album_streaming_link" do
+  .streaming-link
+    .streaming-link-icon-container
+      %a{:href=> @album_streaming_link.link}
+        %i{:class=>get_service_icon(@album_streaming_link.streaming_service.name)}
+    .streaming-link-container
+      %a{:href=> @album_streaming_link.link}
+        = @album_streaming_link.streaming_service.name

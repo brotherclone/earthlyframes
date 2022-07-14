@@ -1,53 +1,47 @@
 class PostsController < ApplicationController
-
   add_breadcrumb "Home", :root_path
-  add_breadcrumb "Posts", :posts_path
-
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: %i[ show edit update destroy ]
 
   def index
-    @posts = Post.all.order(post_date: :desc).where(is_live: true).last(6)
-    @all_posts = Post.all.order(post_date: :desc).where(is_live: true)
-    @nav_posts = Post.all.order(post_date: :desc).where(is_live: true).last(8)
-
+    add_breadcrumb "Posts", :posts_path
+    @posts = Post.where(:is_live => true)
     respond_to do |format|
       format.html { render :index}
-      format.json {render :json => @all_posts}
+      format.json { render :json => @posts}
     end
-
   end
 
   def show
-
-    add_breadcrumb @post.title.to_s, :post_path
-
-    @nav_posts = Post.all.order(post_date: :desc).where(is_live: true).last(8)
-
-    respond_to do |format|
-      format.html { render :show}
-      format.json {render :json => @post}
+    if @post.is_live
+      add_breadcrumb "Posts", :posts_path
+      add_breadcrumb @post.title, :post_path
+      respond_to do |format|
+        format.html { render :show}
+        format.json { render :json => @post}
+      end
+    else
+      respond_to do |format|
+        format.html { render :index, status: :unprocessable_entity }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
     end
   end
-
 
   def new
     @post = Post.new
   end
 
-
   def edit
   end
 
-
   def create
     @post = Post.new(post_params)
-
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to post_url(@post) }
         format.json { render :show, status: :created, location: @post }
       else
-        format.html { render :new }
+        format.html { render :index, status: :unprocessable_entity }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
@@ -56,20 +50,19 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to post_url(@post) }
         format.json { render :show, status: :ok, location: @post }
       else
-        format.html { render :edit }
+        format.html { render :index, status: :unprocessable_entity }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
   end
 
-
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+      format.html { redirect_to posts_url }
       format.json { head :no_content }
     end
   end
@@ -81,6 +74,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:body, :title, :main_image, :inline_image, :description, :overlay_bright, :post_date, :is_live)
+    params.require(:post).permit(:title, :body, :description, :main_image, :is_live)
   end
+
 end
