@@ -72,6 +72,14 @@ ol.bulleted.level-two {
 .breadcrumbs li {
   margin: 0 0.5rem 0 0.5rem;
 }
+.breadcrumbs li a {
+  color: #26294a;
+  text-decoration: none;
+  transition: color 500ms ease-in-out;
+}
+.breadcrumbs li a:hover {
+  color: #EF7143;
+}
 
 footer {
   flex-shrink: 0;
