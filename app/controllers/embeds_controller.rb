@@ -1,29 +1,36 @@
 class EmbedsController < ApplicationController
 
-  before_action :set_embed, only: %i[ show edit update destroy ]
+  before_action :set_embed, only: %i[show edit update destroy ]
 
   def index
     @embeds = Embed.all
+    respond_to do |format|
+      format.html { render :index}
+      format.json { render :json => @embeds}
+    end
   end
 
   def show
+    respond_to do |format|
+      format.html { render :show}
+      format.json { render :json => @embed}
+    end
   end
 
   def new
     @embed = Embed.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @embed = Embed.new(embed_params)
     respond_to do |format|
       if @embed.save
-        format.html { redirect_to embed_url(@embed) }
+        format.html { redirect_to embed_path(@embed) }
         format.json { render :show, status: :created, location: @embed }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :index, status: :unprocessable_entity }
         format.json { render json: @embed.errors, status: :unprocessable_entity }
       end
     end
@@ -32,10 +39,10 @@ class EmbedsController < ApplicationController
   def update
     respond_to do |format|
       if @embed.update(embed_params)
-        format.html { redirect_to embed_url(@embed) }
+        format.html { redirect_to embeds_url(@embed) }
         format.json { render :show, status: :ok, location: @embed }
       else
-        format.html { render :edit, status: :unprocessable_entity }
+        format.html { render :index, status: :unprocessable_entity }
         format.json { render json: @embed.errors, status: :unprocessable_entity }
       end
     end
@@ -58,4 +65,5 @@ class EmbedsController < ApplicationController
   def embed_params
     params.require(:embed).permit(:player_identifier, :artist_link, :color, :text_color, :streaming_service_id, :song_id, :embed_code)
   end
+
 end
