@@ -1,47 +1,41 @@
+@import "../utility/palette";
+@import "../utility/usual_mixins";
+
 footer{
-  height: ($sticky-shrinknav-hero-height*2);
-  background: $color-storm;
-  margin-top: 5rem;
-  .social-footer {
-    margin-top: 0;
-    .social-footer-left{
-      .ef-logo{
-        fill: $color-white;
-        height: 3rem;
-        color: $color-white;
-      }
-    }
-    padding: 1rem;
-    background: $color-storm;
+  flex-shrink: 0;
+  background-color: $black;
+  width: 100vw;
+  .footer-wrapper{
     display: flex;
+    flex-direction: column-reverse;
     align-items: center;
-    justify-content: space-between;
-    .social-footer-icons {
-      li{
-        font-size: 1rem;
+    margin: 1.5rem;
+    @include breakpoint("md"){
+      margin: 1rem;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+    .footer-items{
+      .footer-item{
         a{
-          color: $color-white;
-          &:hover {
-            color: $color-peach;
-          }
+          text-decoration: none;
+          color: white;
         }
       }
-      li:last-of-type {
-        margin-right: 0;
-      }
     }
-  }
-  .eula{
-    margin: 0;
-    padding:0;
-    a{
-      padding: 1rem;
-      color: $color-white;
-      &:hover{
-        color: $color-peach;
+    .footer-logo{
+      margin-top: 2rem;
+      img{
+        height: 3rem;
+        width: auto;
+      }
+      @include breakpoint("md"){
+        margin-top: unset;
+        img{
+          height: 6rem;
+          width: auto;
+        }
       }
     }
   }
 }
-
-

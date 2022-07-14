@@ -1,14 +1,19 @@
-class StreamingLink <  ActiveRecord::Base
-  belongs_to :album
-  accepts_nested_attributes_for :album
-  belongs_to :song
-  accepts_nested_attributes_for :song
+class StreamingLink < ApplicationRecord
   belongs_to :streaming_service
-  accepts_nested_attributes_for :streaming_service
+  belongs_to :song
+  validates :link, presence: true
 
-
-  def streaming_service_name
-    streaming_service.name.to_s
+  def as_json(options = {})
+    super(:only => [:link],
+          :include => {
+            :streaming_service => {
+              :only => [:name]
+            },
+            :song =>{
+              :only => [:title, :album_id],
+            }
+          }
+        )
   end
 
 end

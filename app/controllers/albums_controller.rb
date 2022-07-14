@@ -1,12 +1,10 @@
 class AlbumsController < ApplicationController
-
   add_breadcrumb "Home", :root_path
-  add_breadcrumb "Albums", :albums_path
-
-  before_action :set_album, only: [:show, :edit, :update, :destroy]
+  before_action :set_album, only: %i[show edit update destroy]
 
   def index
-    @albums = Album.all.order(released: :desc).where(is_live: true)
+    add_breadcrumb "Albums", :albums_path
+    @albums = Album.all.order(released: :desc)
     respond_to do |format|
       format.html { render :index}
       format.json { render :json => @albums}
@@ -14,8 +12,8 @@ class AlbumsController < ApplicationController
   end
 
   def show
-    gon.album_songs = @album.songs
-    add_breadcrumb @album.title.to_s, album_path
+    add_breadcrumb "Albums", :albums_path
+    add_breadcrumb @album.title, :album_path
     respond_to do |format|
       format.html { render :show}
       format.json { render :json => @album}
@@ -26,17 +24,16 @@ class AlbumsController < ApplicationController
     @album = Album.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @album = Album.new(album_params)
     respond_to do |format|
       if @album.save
-        format.html { redirect_to @album, notice: 'Album was successfully created.' }
+        format.html { redirect_to album_url(@album)}
         format.json { render :show, status: :created, location: @album }
       else
-        format.html { render :new }
+        format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @album.errors, status: :unprocessable_entity }
       end
     end
@@ -45,10 +42,10 @@ class AlbumsController < ApplicationController
   def update
     respond_to do |format|
       if @album.update(album_params)
-        format.html { redirect_to @album, notice: 'Album was successfully updated.' }
+        format.html { redirect_to album_url(@album) }
         format.json { render :show, status: :ok, location: @album }
       else
-        format.html { render :edit }
+        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @album.errors, status: :unprocessable_entity }
       end
     end
@@ -63,11 +60,23 @@ class AlbumsController < ApplicationController
   end
 
   private
-    def set_album
-      @album = Album.find(params[:id])
-    end
 
-    def album_params
-      params.require(:album).permit(:title, :cover, :rainbow_table, :rainbow_portrait, :description, :price, :released, :buylink, :format, :brief_description, :is_live, :streaming_links_attributes[:link, :streaming_service_id])
-    end
+  def set_album
+    @album = Album.find(params[:id])
+  end
+
+  def album_params
+    params.require(:album).permit(:title,
+                                    :cover,
+                                    :description,
+                                    :price,
+                                    :released,
+                                    :buy_link,
+                                    :brief_description,
+                                    :is_live,
+                                    :rainbow_table,
+                                    :rainbow_portrait,
+                                    { album_streaming_links_attributes: [:id, :link, :streaming_service_id, :_destroy] },
+                                    { release_formats_attributes: [:id, :name, :_destroy, :music_format_id] })
+  end
 end

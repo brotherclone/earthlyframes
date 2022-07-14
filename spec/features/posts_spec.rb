@@ -1,16 +1,22 @@
 require 'rails_helper'
 
-describe 'Posts display correctly', :type => :feature do
+describe 'Posts displays correctly', :type => :feature do
 
-  it 'checks the posts index page', :js => true  do
+  before(:each) do
     visit posts_path
-    expect(page).to have_css('h1')
-    expect(page).to have_content('Posts')
   end
 
-  it 'checks for a breadcrumb', :js => true do
-    visit posts_path
+  it 'checks for breadcrumbs', :js => true do
     expect(page).to have_css('ul.breadcrumbs')
+  end
+
+  it 'checks for titles', :js => true do
+    expect(page).to have_css('h1.and-yet-not-the-largest')
+    expect(page).to have_css('h2.and-yet-so-very-large')
+  end
+
+  it 'ensures the about is the main content', :js=> true do
+    expect(page).to have_text('Posts')
   end
 
 end

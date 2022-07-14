@@ -1,13 +1,5 @@
-= render :partial=> "components/breadcrumb"
-.videos
-  %h1
+= turbo_frame_tag "videos" do
+  %h4.video-title.lazy-sub-headings
     Videos
-  .video
-    -if @videos.length >=1
-      -@videos.each do |v|
-        %h2
-          =v.song.title
-        .player-container
-          %iframe{:src => v.video_embed_url, :data =>{:selector => 'video-embed'}, :width=> '640', :height=> '360', :frameborder =>'0', :webkitallowfullscreen=> true, :mozallowfullscreen=> true, :allowfullscreen=> true}
-    -else
-      %p{:class=>'error'} There are no published albums at this time.
+  -@videos.each do |video|
+    = turbo_frame_tag "video", src: [video.song.album, video.song, video]

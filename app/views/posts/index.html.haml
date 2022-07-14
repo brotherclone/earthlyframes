@@ -1,15 +1,12 @@
-= render :partial=> "components/breadcrumb"
-.posts
-  %h1 Postings
-  -if @posts.length
-    -@posts.each do |p|
-      .posting
-        %h2
-          = p.title
-        %h4
-          = p.post_date.strftime('%F')
-        %img{:src=> p.main_image}
-        %p
-          = p.body.html_safe
-  -else
-    %p There are no published posts at this time.
+%h1.and-yet-not-the-largest
+  A Random
+%span
+  collection of
+%h2.and-yet-so-very-large
+  Posts
+= render :partial => "components/breadcrumbs"
+%main
+  .well
+    = turbo_frame_tag "posts" do
+      - @posts.each do |post|
+        = turbo_frame_tag "post", :src=> post_path(post)

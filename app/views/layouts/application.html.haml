@@ -1,22 +1,29 @@
-!!! 5
-%html{ :lang => "en" }
+!!!
+%html
   %head
-    %meta{ :charset => "utf-8" }
-
-    %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }
-
-    %title= content_for?(:title) ? yield(:title) : "The Earthly Frames"
-
-    = stylesheet_link_tag "application"
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title The Earthly Frames
+    %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
+    %link{:href => "/apple-touch-icon.png?v=2", :rel => "apple-touch-icon", :sizes => "180x180"}/
+    %link{:href => "/favicon-32x32.png?v=2", :rel => "icon", :sizes => "32x32", :type => "image/png"}/
+    %link{:href => "/favicon-16x16.png?v=2", :rel => "icon", :sizes => "16x16", :type => "image/png"}/
+    %link{:href => "/site.webmanifest?v=2", :rel => "manifest"}/
+    %link{:href => "/favicon.ico?v=2", :rel => "shortcut icon"}/
+    %meta{:content => "The Earthly Frames", :name => "apple-mobile-web-app-title"}/
+    %meta{:content => "The Earthly Frames", :name => "application-name"}/
+    %meta{:content => "#da532c", :name => "msapplication-TileColor"}/
+    %meta{:content => "#f6f6f6", :name => "theme-color"}/
+    %link{:rel=>'stylesheet', :href=>'https://use.typekit.net/nig1rii.css'}
+    %script{:src=>'https://kit.fontawesome.com/a542142766.js', :crossorigin=>'anonymous'}
     %script{ :id=> 'mcjs' }
       !function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/63eaf7f176f8aeb9035c10347/3775dec9f0ae96e926be8f31e.js");
-    = Gon::Base.render_data
-    = csrf_meta_tag
   %body
-    - if !@no_ef_header
-      = render :partial => 'components/nav'
-    = render :partial => 'components/toast'
-    = yield
-    - if !@no_ef_footer
-      = render :partial => 'components/footer'
+    .earthly-frame
+      = render :partial => "components/navigation"
+      %main{:id=>"mainContent"}
+        = yield
+    = render :partial => "components/footer"

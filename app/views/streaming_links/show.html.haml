@@ -1,0 +1,7 @@
+= turbo_frame_tag "streaming_link" do
+  .streaming-link
+    %a.streaming-link-display{:href=> @streaming_link.link, :target=> "_new", :tab=>{:index=>0}}
+      %i{:class=> get_service_icon(@streaming_link.streaming_service.name), :alt=>@streaming_link.streaming_service.name}
+    .streaming-link-container
+      %a{:href=> @streaming_link.link}
+        = @streaming_link.streaming_service.name

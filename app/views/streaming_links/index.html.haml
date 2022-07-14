@@ -1,0 +1,12 @@
+%main
+  .well
+    %h1.and-yet-not-the-largest
+      = title_track(@song)
+    %span
+      is available on these
+    %h2.and-yet-so-very-large
+      Streaming Services
+    .streaming-services
+      = turbo_frame_tag "streaming_links" do
+        = @streaming_links.each do |link|
+          = turbo_frame_tag "streaming_link", :src=> album_song_streaming_link_url(@album, @song, link)

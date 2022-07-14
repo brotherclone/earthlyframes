@@ -1,15 +1,18 @@
 require 'rails_helper'
 
-describe 'About display correctly', :type => :feature do
+describe 'About displays correctly', :type => :feature do
 
-  it 'checks for a breadcrumb', :js => true do
+  before(:each) do
     visit about_path
+  end
+
+  it 'checks for breadcrumbs', :js => true do
     expect(page).to have_css('ul.breadcrumbs')
   end
 
-  it 'checks the about index page', :js => true  do
-    visit about_path
-    expect(page).to have_content('About')
+  it 'checks for titles', :js => true do
+    expect(page).to have_css('h1.and-yet-not-the-largest')
+    expect(page).to have_css('h2.and-yet-so-very-large')
   end
 
 end

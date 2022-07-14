@@ -1,65 +1,80 @@
 class StreamingLinksController < ApplicationController
-  before_action :set_streaming_link, only: [:show, :edit, :update, :destroy]
+
+  add_breadcrumb "Home", :root_path
+  before_action :get_album
+  before_action :get_song
+  before_action :set_streaming_link, only: %i[ show edit update destroy ]
 
   def index
-    @streaming_links = StreamingLink.all
+    @streaming_links = @song.streaming_links
+    respond_to do |format|
+      format.html { render :index}
+      format.json { render :json => @streaming_links}
+    end
   end
 
   def show
+    respond_to do |format|
+      format.html { render :index}
+      format.json { render :json => @streaming_link}
+    end
   end
 
   def new
-    @streaming_link = StreamingLink.new
+    @streaming_link = @song.streaming_links.build
   end
 
   def edit
   end
 
   def create
-    @streaming_link = StreamingLink.new(streaming_link_params)
-
+    @streaming_link = @song.streaming_links.build(streaming_link_params)
     respond_to do |format|
       if @streaming_link.save
-        format.html { redirect_to @streaming_link, notice: 'StreamingLink was successfully created.' }
+        format.html { redirect_to album_song_streaming_link_url(@streaming_link) }
         format.json { render :show, status: :created, location: @streaming_link }
       else
-        format.html { render :new }
+        format.html { render :index, status: :unprocessable_entity }
         format.json { render json: @streaming_link.errors, status: :unprocessable_entity }
       end
     end
   end
-
 
   def update
     respond_to do |format|
-      if @streaming_link.update(streaming_link_params)
-        format.html { redirect_to @streaming_link, notice: 'StreamingLink was successfully updated.' }
+      if @song.streaming_links.update(streaming_link_params)
+        format.html { redirect_to @streaming_link }
         format.json { render :show, status: :ok, location: @streaming_link }
       else
-        format.html { render :edit }
+        format.html { render :index, status: :unprocessable_entity }
         format.json { render json: @streaming_link.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /streaming_links/1
-  # DELETE /streaming_links/1.json
   def destroy
     @streaming_link.destroy
     respond_to do |format|
-      format.html { redirect_to streaming_links_url, notice: 'StreamingLink was successfully destroyed.' }
+      format.html { redirect_to album_song_streaming_links_url}
       format.json { head :no_content }
     end
   end
 
   private
-  # Use callbacks to share common setup or constraints between actions.
-  def set_streaming_link
-    @streaming_link = StreamingLink.find(params[:id])
+
+  def get_album
+    @album = Album.find(params[:album_id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+  def get_song
+    @song = @album.songs.find(params[:song_id])
+  end
+
+  def set_streaming_link
+    @streaming_link = @song.streaming_links.find(params[:id])
+  end
+
   def streaming_link_params
-    params.require(:streaming_link).permit(:link, :album_id, :streaming_service_id, :song_id)
+    params.require(:streaming_link).permit(:album_id, :song_id, :streaming_service_id, :link)
   end
 end

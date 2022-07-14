@@ -1,25 +1,22 @@
 Rails.application.routes.draw do
-
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :songs
-  resources :prompts
-  resources :logs
+  resources :constellations do
+    resources :song_constellations
+  end
   resources :streaming_services
-  resources :streaming_links
-  resources :videos
-  resources :shows
   resources :posts
-  resources :albums
-  get 'player-characters', to:'player_characters#index'
-  get 'soon', to:'soon#index'
-  get 'home', to:'home#index'
-  get 'about', to:'about#index'
-  get 'eula', to:'eula#index'
-  get 'ytr', to:'your_team_ring_archive#index'
-  get 'yourteamring', to:'your_team_ring_archive#index'
-  get 'your-team-ring', to:'your_team_ring_archive#index'
-  get 'rainbow', to: 'rainbow_table#index'
+  resources :music_formats
+  resources :albums do
+    resources :release_formats
+    resources :album_streaming_links
+    resources :songs do
+      resources :streaming_links
+      resources :videos
+    end
+  end
+  get 'about', to: 'about#index'
+  get 'eula', to: 'eula#index'
+  get 'your-team-ring', to: 'your_team_ring#index'
   root 'home#index'
-
 end

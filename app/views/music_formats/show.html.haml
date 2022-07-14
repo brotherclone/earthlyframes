@@ -1,0 +1,5 @@
+= turbo_frame_tag "music_format" do
+  %h3.format-title
+    = @music_format.name
+  - @music_format.release_formats.each do |r|
+    = link_to r.album.title, album_path(r.album.id), :target=> "_top", :class=> "format-to-album-link"

@@ -1,0 +1,12 @@
+%h1.and-yet-not-the-largest
+  The Earthly Frames
+  %span
+    have released music in the following
+  %h2.and-yet-so-very-large
+    Formats
+= render :partial => "components/breadcrumbs"
+%main
+  .well
+    = turbo_frame_tag "music_formats" do
+      - @music_formats.each do |music_format|
+        = turbo_frame_tag "music_format", :src=> music_format_url(music_format)

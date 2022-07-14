@@ -1,0 +1,65 @@
+@import "../utility/usual_mixins";
+
+.your-team-ring{
+  margin-bottom: 3rem;
+  padding: 1rem;
+  @include breakpoint("md"){
+    padding: 0;
+  }
+  p{
+    margin: 1rem 0 1rem 0;
+    width: 100%;
+    line-height: 2rem;
+  }
+  .ytr-memories{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .ytr-memory{
+      margin: 1rem;
+      img{
+        width: 100%;
+        @include box-shadower();
+      }
+    }
+    @include breakpoint("md"){
+      flex-direction: row;
+    }
+  }
+  dl.contributors {
+    margin-bottom: 2rem;
+    dt{
+      font-weight: 600;
+      font-style: italic;
+    }
+    dd{
+      font-weight: 200;
+      margin-left: 2rem;
+      break-before: avoid;
+    }
+    @include breakpoint("sm"){
+      columns: 2;
+    }
+    @include breakpoint("md"){
+      columns: 3;
+    }
+  }
+  .your-team-ring-albums{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    .your-team-ring-album {
+      margin: 1rem 0 1rem 0;
+    }
+    @include breakpoint("md"){
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .your-team-ring-album {
+        margin: 1rem;
+        width: calc(50% - 2rem);
+      }
+    }
+  }
+}
