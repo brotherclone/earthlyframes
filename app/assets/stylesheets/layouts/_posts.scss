@@ -1,0 +1,33 @@
+@import "../utility/usual_mixins";
+@import "../utility/palette";
+@import "../utility/typography";
+
+.post{
+  margin: 1rem 0 2rem 0;
+  h3.post-title{
+    @include header-font();
+    font-size: 2.5rem;
+    color: $dark-grey;
+  }
+  h4.post-description{
+    @include body-font();
+    color: $dark-grey;
+  }
+  .post-image{
+    height: auto;
+    min-height: 20rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    @include box-shadower();
+    @include max-widths-for-breakpoints();
+    @include breakpoint("md"){
+      margin: 1rem;
+    }
+  }
+  article.post-body{
+    @include breakpoint("md"){
+      padding: 1rem;
+    }
+  }
+}

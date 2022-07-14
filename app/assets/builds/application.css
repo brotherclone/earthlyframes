@@ -1010,6 +1010,120 @@ article {
   margin: 1rem 0 1rem 0;
 }
 
+h1.and-yet-not-the-largest {
+  font-family: semplicitapro, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  color: #383838;
+  font-size: 1.25rem;
+  line-height: 2.5rem;
+  margin: 0.25rem;
+}
+@media (min-width: 62rem) {
+  h1.and-yet-not-the-largest {
+    font-size: 2.25rem;
+  }
+}
+
+h2.and-yet-so-very-large {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin: 1rem;
+}
+@media (min-width: 62rem) {
+  h2.and-yet-so-very-large {
+    font-size: 4rem;
+  }
+}
+
+.lazy-sub-headings {
+  margin: 1rem 0 1rem 0;
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+.description {
+  font-family: semplicitapro, sans-serif;
+  color: #4b4b4b;
+  padding: 1rem;
+}
+
+ol.bulleted {
+  list-style: circle;
+}
+ol.bulleted.level-one {
+  margin-left: 1.5rem;
+}
+ol.bulleted.level-two {
+  margin-left: 3rem;
+}
+
+.post {
+  margin: 1rem 0 2rem 0;
+}
+.post h3.post-title {
+  font-family: anisette-std, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #000000;
+  font-size: 3rem;
+  line-height: 2.5rem;
+  font-size: 2.5rem;
+  color: #383838;
+}
+.post h4.post-description {
+  font-family: semplicitapro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #000000;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #383838;
+}
+.post .post-image {
+  height: auto;
+  min-height: 20rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  box-shadow: 6px 5px 9px rgba(0, 0, 0, 0.25);
+}
+@media (max-width: 47.938rem) {
+  .post .post-image {
+    max-width: 47.938rem;
+  }
+}
+@media (min-width: 48.001rem) {
+  .post .post-image {
+    max-width: 61.937rem;
+  }
+}
+@media (min-width: 62rem) {
+  .post .post-image {
+    max-width: 74.937rem;
+  }
+}
+@media (min-width: 75rem) {
+  .post .post-image {
+    max-width: 119.937rem;
+  }
+}
+@media (min-width: 120rem) {
+  .post .post-image {
+    max-width: unset;
+  }
+}
+@media (min-width: 62rem) {
+  .post .post-image {
+    margin: 1rem;
+  }
+}
+@media (min-width: 62rem) {
+  .post article.post-body {
+    padding: 1rem;
+  }
+}
+
 h3.format-title {
   color: #000000;
   font-weight: 200;

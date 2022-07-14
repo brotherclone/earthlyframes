@@ -19,7 +19,7 @@ ef_volume_one =                   Album.create(is_live: true,
                                    description: '<p>This album was first released in 2010 on a limited set of USB drives. Each drive contained a unique file that when assembled told a larger story. The album has been remixed and remastered. Music &amp; Lyrics by Gabriel Walsh.&nbsp;Mastered by Alan Douches at West West Side Music</p>',
                                    cover: cloudinary('volume-one_sv5ccr', 'jpg', '1657809111'),
                                    price: 1,
-                                   released: '2020-05-12',
+                                   released: '2016-10-11',
                                    buy_link: 'https://earthlyframes.bandcamp.com/album/the-earthly-frames-volume-one',
                                    brief_description: 'Debut EP',
                                    rainbow_table: 0,
@@ -29,7 +29,7 @@ feel_better_soon =                Album.create(is_live: true,
                                     description: '<p>Written and recorded during the pandemic.</p>',
                                     cover: cloudinary('j56fbcdgjs1i7ysviem6', 'jpg', '1589364326'),
                                     price: 1,
-                                    released: '2016-10-12',
+                                    released: '2020-05-12',
                                     buy_link: 'https://earthlyframes.bandcamp.com/track/feel-better-soon',
                                     brief_description: 'Topical Pain Relief',
                                     rainbow_table: 0,
@@ -107,7 +107,7 @@ empty =                         Album.create(title: 'The Empty Fields',
                                  rainbow_portrait: cloudinary('jkuxwn680tvnguqsxltw', 'png', '1624284651'))
 light =                         Album.create(title: 'Light Reading',
                                  description: "<p>On Light Reading, The Earthly Frames second full-length, Walsh&rsquo;s powers of sonic and narrative fuckery are in their prime. The album follows the format of an imagined reading list. There's a corresponding song for each obtuse-sounding book. Titles such as &ldquo;A Doorbell for Finite Beings&rdquo; or &ldquo;Dismantling Ubiquitous Monitoring Systems&rdquo; offer glimpses into a parallel universe with exotic, yet obsolete, technology.&nbsp; With each track, we hover briefly into the lonely worlds of ghost singers, failed philosophers, and dead ideas. It's a pile of books no one will ever read - a minority report filed away and forgotten. And yet, with Light Reading, The Earthly Frames remind us that knowledge, the reality we don't throw away, is indeed the power.&nbsp;</p>",
-                                 cover: cloudinary('tnloqalmtjaialv8cob', 'jpg', '1537440030'),
+                                 cover: cloudinary('kfomrtrgwsgc16am8d6d', 'jpg', '1645535915'),
                                  price: 5.0,
                                  released: '2019-01-11',
                                  buy_link: 'https://earthlyframes.bandcamp.com/album/light-reading',
@@ -454,11 +454,15 @@ StreamingLink.create(link: "https://soundcloud.com/earthly-frames/the-empty-fiel
 
 #Posts
 Post.create(title:"Just Warming Up",
+            description: "Source Code for Procedural Music",
+            is_live: true,
             body:"<p>\"Just Warming Up\", from <a tabindex=\"0\" href=\"../../../albums/10\"><em>The Empty Fields</em></a> uses surface temperature data to render what climate change sounds like. The GISS (Godard Institute for Space Studies - not too far from Code Owl Studios, The Earthly Frames' HQ) Surface Temperature data set contains monthly mean measurements dating back to 1880. To transform this data to sound, first, a Python script mapped the temperatures to a range of MIDI notes, while also creating drones for years and decades averages.</p>\r\n<p><code>def step_average(sequence, step):</code></p>\r\n<p><code>&nbsp; &nbsp; \"\"\"</code></p>\r\n<p><code>&nbsp; &nbsp; Creates a shorter, average list of numbers based on the desired steps</code></p>\r\n<p><code>&nbsp; &nbsp; Parameters</code></p>\r\n<p><code>&nbsp; &nbsp; ----------</code></p>\r\n<p><code>&nbsp; &nbsp; &nbsp; &nbsp; sequence: list</code></p>\r\n<p><code>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; List of integers or floats</code></p>\r\n<p><code>&nbsp; &nbsp; &nbsp; &nbsp; step: int</code></p>\r\n<p><code>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The number of steps you wish to average. E.g. [1,2,3,4,5,6,7,8] with a step of 4 would return [10,24]</code></p>\r\n<p><code>&nbsp; &nbsp; Returns</code></p>\r\n<p><code>&nbsp; &nbsp; -------</code></p>\r\n<p><code>&nbsp; &nbsp; &nbsp; &nbsp; list</code></p>\r\n<p><code>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The stepped list result</code></p>\r\n<p><code>&nbsp; &nbsp; \"\"\"</code></p>\r\n<p><code>&nbsp; &nbsp; stepped_sequence = []</code></p>\r\n<p><code>&nbsp; &nbsp; step_sequence = []</code></p>\r\n<p><code>&nbsp; &nbsp; for sequence_number, sequence_item in enumerate(sequence, start=0):</code></p>\r\n<p><code>&nbsp; &nbsp; &nbsp; &nbsp; if sequence_number % step == 0 and sequence_number != 0:</code></p>\r\n<p><code>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; average = get_list_average(step_sequence)</code></p>\r\n<p><code>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; stepped_sequence.append(average)</code></p>\r\n<p><code>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; step_sequence = []</code></p>\r\n<p><code>&nbsp; &nbsp; &nbsp; &nbsp; step_sequence.append(sequence_item)</code></p>\r\n<p><code>&nbsp; &nbsp; return stepped_sequence</code></p>\r\n<p>&nbsp;</p>\r\n<p>This MIDI was fed through analog and virtual instruments to create the track. You can find the source code <a tabindex=\"0\" href=\"https://github.com/brotherclone/just-getting-warmed-up/blob/main/temperature_to_midi.py\">here</a>.</p>",
             main_image: cloudinary('oehgk1j44jdujymrdfa8', 'png', '1633460024')
 
 )
 Post.create(title:"Open Jukebox",
+            description: "Machine Learning Weirdness",
+            is_live: true,
             body:"<p>Open AI's Open Jukebox, primed with the first ten seconds of \"Feel Better Soon\" generates some pure weirdness. The third attempt, with spoken word, is particularly out there. <br /><iframe src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1180243240&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true\" width=\"100%\" height=\"300\" frameborder=\"no\" scrolling=\"no\"></iframe></p>\r\n<div style=\"font-size: 10px; color: #cccccc; line-break: anywhere; word-break: normal; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif; font-weight: 100;\"><a style=\"color: #cccccc; text-decoration: none;\" title=\"The Earthly Frames\" href=\"https://soundcloud.com/earthly-frames\" target=\"_blank\" rel=\"noopener\">The Earthly Frames</a> &middot; <a style=\"color: #cccccc; text-decoration: none;\" title=\"Open Jukebox rethinks Feel Better Soon\" href=\"https://soundcloud.com/earthly-frames/sets/open-jukebox-rethinks-feel-better-soon\" target=\"_blank\" rel=\"noopener\">Open Jukebox rethinks Feel Better Soon</a></div>",
             main_image: cloudinary('iyozmhg8iynvikca8aes', 'png', '1608572519')
 )
