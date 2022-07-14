@@ -1,0 +1,20 @@
+@import "palette";
+
+.skip-navigation{
+  transform: scale(0);
+  height: 1px;
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  &:focus-within{
+    height: unset;
+    transform: scale(1);
+  }
+}
+html,body{
+  a{
+    &:focus-visible{
+      outline: 2px dashed $orange;
+    }
+  }
+}

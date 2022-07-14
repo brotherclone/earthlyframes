@@ -1,0 +1,5 @@
+= turbo_frame_tag "post" do
+  %h3.format-title
+    = @post.title
+  = @post.body.html_safe
+  %img{:src=> @post.main_image.to_s, :alt=> @post.title}

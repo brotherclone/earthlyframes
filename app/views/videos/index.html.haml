@@ -1,0 +1,5 @@
+= turbo_frame_tag "videos" do
+  %h4.video-title.lazy-sub-headings
+    Videos
+  -@videos.each do |video|
+    = turbo_frame_tag "video", src: [video.song.album, video.song, video]

@@ -1,0 +1,12 @@
+%h1.and-yet-not-the-largest
+  The Earthly Frames
+  %span
+    are available on these
+  %h2.and-yet-so-very-large
+    Streaming Services
+= render :partial => "components/breadcrumbs"
+%main
+  .well
+    = turbo_frame_tag "streaming_services" do
+      - @streaming_services.each do |service|
+        = turbo_frame_tag "streaming_service", :src=> streaming_services_path(service)

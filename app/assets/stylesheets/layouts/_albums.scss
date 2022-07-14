@@ -1,0 +1,149 @@
+@import "../utility/usual_mixins";
+@import "../utility/palette";
+@import "../utility/typography";
+
+// Shared
+.cover {
+  width: 100vw;
+  height: auto;
+  margin: 0;
+  @include breakpoint("md"){
+    width: 40rem;
+    margin: 2rem 0 2rem 0;
+  }
+  @include box-shadower();
+}
+
+.album{
+  width: 100vw;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  &:nth-child(odd){
+    background-color: $black;
+    background-image: url("rose.png");
+    background-repeat: repeat;
+    color: $black_opposite;
+    h3, h4, h5, a{
+      color: $black_opposite;
+    }
+    svg{
+      fill: $black_opposite
+    }
+    .album-streaming-links {
+      .streaming-link {
+        .streaming-link-icon-container {
+          i {
+            color: $black_opposite;
+          }
+        }
+      }
+    }
+  }
+  &:nth-child(even){
+    background-color: $white;
+    background-image: url("deLillo.png");
+    background-repeat: repeat;
+    color: $white_opposite;
+    h3, h4, h5, a{
+      color: $white_opposite;
+    }
+    svg{
+      fill: $white_opposite;
+    }
+    .album-streaming-links {
+      .streaming-link {
+        .streaming-link-icon-container {
+          i {
+            color: $white_opposite;
+          }
+        }
+      }
+    }
+  }
+  .album-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    h5{
+      font-family: $base-body-font-family;
+      margin: 1rem 0 0 0;
+      font-weight: 200;
+      font-size: 1rem;
+      text-transform: capitalize;
+      font-style: italic;
+    }
+    h3{
+      width: 100%;
+      font-size: 3rem;
+      margin: 0 0 1rem 0;
+      &.unknown{
+        margin: 5rem;
+        padding: 5rem;
+        font-size: 5rem;
+      }
+      &.year{
+        font-size: 2rem;
+        margin: 1rem 0 1rem 0;
+        @include breakpoint("md"){
+          font-size: 2.5rem;
+        }
+      }
+    }
+    h4{
+      &.title{
+        width: 100%;
+        font-size: 3.5rem;
+        font-style: italic;
+        margin: 0.5rem 0 0 0;
+      }
+    }
+    min-width: 100vw;
+    .album-streaming-links{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 1rem;
+      .streaming-link {
+        margin: 0 1rem 0 1rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        .streaming-link-icon-container{
+          margin: 0.25rem 0 0.25rem 0;
+          padding: 0.25rem;
+          i{
+            font-size: 1rem;
+          }
+        }
+        .streaming-link-container{
+          display: none;
+        }
+      }
+    }
+    p{
+      &.description{
+        padding: 0.5rem;
+        width: 100%;
+      }
+    }
+    @include breakpoint("md"){
+      min-width: unset;
+      max-width: 40rem;
+    }
+    .song-list{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+    }
+    padding-bottom: 2rem;
+    svg{
+      height: 5rem;
+    }
+  }
+}

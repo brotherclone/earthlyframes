@@ -1,0 +1,11 @@
+@import "../utility/usual_mixins";
+
+.breadcrumbs{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  li{
+    margin: 0 0.5rem 0 0.5rem;
+  }
+}

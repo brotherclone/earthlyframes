@@ -1,0 +1,12 @@
+%h1.and-yet-not-the-largest
+  TK
+  %span
+    TK
+  %h2.and-yet-so-very-large
+    TK
+= render :partial => "components/breadcrumbs"
+%main
+  .well
+    = turbo_frame_tag "posts" do
+      - @posts.each do |post|
+        = turbo_frame_tag "post", :src=> post_path(post)

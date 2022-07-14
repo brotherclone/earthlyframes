@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: earthlyframes_development
+
+test:
+  <<: *default
+  database: earthlyframes_test
+
+production:
+  <<: *default
+  database: earthlyframes_production
+  username: earthlyframes
+  password: <%= ENV["EARTHLYFRAMES_DATABASE_PASSWORD"] %>
