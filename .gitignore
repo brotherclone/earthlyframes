@@ -44,7 +44,7 @@ modules.xml
 .env
 cheetsheet.txt
 latestdump
-
+.DS_Store
 .yarn/*
 !.yarn/releases
 !.yarn/patches
@@ -53,3 +53,4 @@ latestdump
 !.yarn/versions
 node_modules/
 jspm_packages/
+/.idea/
