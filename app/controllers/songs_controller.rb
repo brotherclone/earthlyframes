@@ -6,7 +6,7 @@ class SongsController < ApplicationController
   def index
     @songs = @album.songs
     respond_to do |format|
-      format.html { render :show}
+      format.html { render :index}
       format.json { render :json => @songs}
     end
   end
