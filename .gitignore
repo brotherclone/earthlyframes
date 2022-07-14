@@ -54,3 +54,4 @@ latestdump
 node_modules/
 jspm_packages/
 /.idea/
+/cheatcodes.txt
