@@ -54,6 +54,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_29_180951) do
     t.string "title"
     t.text "description"
     t.string "cover"
+    t.float "price"
     t.date "released"
     t.string "buy_link"
     t.text "brief_description"
@@ -62,7 +63,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_29_180951) do
     t.string "rainbow_portrait"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "price"
   end
 
   create_table "constellations", force: :cascade do |t|

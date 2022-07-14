@@ -233,7 +233,7 @@
           if (!allowReconnect) {
             this.monitor.stop();
           }
-          if (this.isActive()) {
+          if (this.isOpen()) {
             return this.webSocket.close();
           }
         }
@@ -32918,6 +32918,23 @@
     return subscriptions.create(channel, mixin);
   }
 
+  // node_modules/@hotwired/turbo-rails/app/javascript/turbo/snakeize.js
+  function walk(obj) {
+    if (!obj || typeof obj !== "object")
+      return obj;
+    if (obj instanceof Date || obj instanceof RegExp)
+      return obj;
+    if (Array.isArray(obj))
+      return obj.map(walk);
+    return Object.keys(obj).reduce(function(acc, key) {
+      var camel = key[0].toLowerCase() + key.slice(1).replace(/([A-Z]+)/g, function(m, x) {
+        return "_" + x.toLowerCase();
+      });
+      acc[camel] = walk(obj[key]);
+      return acc;
+    }, {});
+  }
+
   // node_modules/@hotwired/turbo-rails/app/javascript/turbo/cable_stream_source_element.js
   var TurboCableStreamSourceElement = class extends HTMLElement {
     async connectedCallback() {
@@ -32936,10 +32953,20 @@
     get channel() {
       const channel = this.getAttribute("channel");
       const signed_stream_name = this.getAttribute("signed-stream-name");
-      return { channel, signed_stream_name };
+      return { channel, signed_stream_name, ...walk({ ...this.dataset }) };
     }
   };
   customElements.define("turbo-cable-stream-source", TurboCableStreamSourceElement);
+
+  // node_modules/@hotwired/turbo-rails/app/javascript/turbo/form_submissions.js
+  function overrideMethodWithFormmethod({ detail: { formSubmission: { fetchRequest, submitter } } }) {
+    if (submitter && submitter.formMethod && fetchRequest.body.has("_method")) {
+      fetchRequest.body.set("_method", submitter.formMethod);
+    }
+  }
+
+  // node_modules/@hotwired/turbo-rails/app/javascript/turbo/index.js
+  addEventListener("turbo:submit-start", overrideMethodWithFormmethod);
 
   // node_modules/@hotwired/stimulus/dist/stimulus.js
   var EventListener = class {
