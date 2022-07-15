@@ -114,3 +114,20 @@ article{
   padding: 1rem;
   margin: 1rem 0 1rem 0;
 }
+
+.direct-container{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+  a{
+    color: $black;
+    transition: color 500ms ease-in-out;
+    &:hover{
+      color: $orange;
+    }
+  }
+}
