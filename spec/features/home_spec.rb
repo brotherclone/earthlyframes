@@ -10,9 +10,8 @@ describe 'Home displays correctly', :type => :feature do
     expect(page).not_to have_css('ul.breadcrumbs')
   end
 
-  it 'checks for titles', :js => true do
-    expect(page).to have_css('h1.and-yet-not-the-largest')
-    expect(page).to have_css('h2.and-yet-so-very-large')
+  it 'checks for page heading', :js => true do
+    expect(page).to have_css('div.page-heading')
   end
 
   it 'ensures the rainbow table is the main content', :js=> true do

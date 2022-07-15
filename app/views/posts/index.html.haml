@@ -1,12 +1,9 @@
-%h1.and-yet-not-the-largest
-  A Random
-%span
-  collection of
-%h2.and-yet-so-very-large
-  Posts
-= render :partial => "components/breadcrumbs"
 %main
   .well
-    = turbo_frame_tag "posts" do
-      - @posts.each do |post|
-        = turbo_frame_tag "post", :src=> post_path(post)
+  = render :partial => "components/page-heading", :locals => {  :declaration=>  "A Random",
+                                                                :qualifier=> "  collection of",
+                                                                :title=> "Posts"}
+  = render :partial => "components/breadcrumbs"
+  = turbo_frame_tag "posts" do
+    - @posts.each do |post|
+      = turbo_frame_tag "post", :src=> post_path(post)

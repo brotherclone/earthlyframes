@@ -55,3 +55,8 @@ node_modules/
 jspm_packages/
 /.idea/
 /cheatcodes.txt
+
+/app/assets/builds/*
+!/app/assets/builds/.keep
+yarn-error.log
+/node_modules

@@ -24,28 +24,6 @@ $base-header-font-family: anisette-std, sans-serif;
   line-height: 2.5rem;
 }
 
-h1.and-yet-not-the-largest{
-  font-family: $base-body-font-family;
-  font-weight: 200;
-  font-style: normal;
-  color: $dark-grey;
-  font-size: 1.25rem;
-  line-height: 2.5rem;
-  margin: 0.25rem;
-  @include breakpoint("md"){
-    font-size: 2.25rem;
-  }
-}
-
-h2.and-yet-so-very-large{
-  font-size: 2.25rem;
-  font-weight: 700;
-  margin: 1rem;
-  @include breakpoint("md"){
-    font-size: 4rem;
-  }
-}
-
 .lazy-sub-headings{
   margin: 1rem 0 1rem 0;
   font-size: 1.5rem;

@@ -1,2 +1,7 @@
-= render :partial => "components/breadcrumbs"
-= render :partial => "components/album", :locals => {:album=> @album}
+%main
+  .well
+  = render :partial => "components/page-heading", :locals => {  :declaration=>  @album.title,
+                                                                :qualifier=> "by",
+                                                                :title=> "The Earthly Frames"}
+  = render :partial => "components/breadcrumbs"
+  = render :partial => "components/album", :locals => {:album=> @album}

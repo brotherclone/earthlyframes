@@ -15,7 +15,7 @@ class StreamingLinksController < ApplicationController
 
   def show
     respond_to do |format|
-      format.html { render :index}
+      format.html { render :show}
       format.json { render :json => @streaming_link}
     end
   end

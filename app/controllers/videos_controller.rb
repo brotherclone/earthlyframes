@@ -7,10 +7,17 @@ class VideosController < ApplicationController
 
   def index
     @videos = @song.videos
+    respond_to do |format|
+      format.html { render :index}
+      format.json { render :json => @video}
+    end
   end
 
   def show
-
+    respond_to do |format|
+      format.html { render :show}
+      format.json { render :json => @video}
+    end
   end
 
   def new
@@ -59,7 +66,7 @@ class VideosController < ApplicationController
   end
 
   def get_song
-    @song = @album.songs.find(params[:song_id])
+    @song = Song.find(params[:song_id])
   end
 
   def set_video

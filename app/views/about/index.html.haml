@@ -1,9 +1,9 @@
-%h1.and-yet-not-the-largest
-  About
-%h2.and-yet-so-very-large
-  The Earthly Frames
-= render :partial => "components/breadcrumbs"
-.well
+%main
+  .well
+  = render :partial => "components/page-heading", :locals => {  :declaration=>  "About",
+                                                                :qualifier=> nil,
+                                                                 :title=> "The Earthly Frames"}
+  = render :partial => "components/breadcrumbs"
   %article.about
     =image_tag "portrait3.jpg", :class => "about-portrait", :alt=> "Gabriel Walsh sits in the game room."
     %h3.lazy-sub-headings
