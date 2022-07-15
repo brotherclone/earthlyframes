@@ -23,11 +23,6 @@
                                                                         :artist_name=> "The Earthly Frames",
                                                                         :soundcloud_song_link=>  streaming_link,
                                                                         :song_title=> @song.title }
-  -# -if @song.constellations
-  -#   - @song.constellations.each do |constellation|
-  -#     - colors = get_rainbow_colors(@song.album)
-  -#     = inline_svg_tag("star.svg", aria: "An image of a six-pointed star that opens the song constellation")
-  -#     = render :partial => "components/constellation", :locals => {:constellation=> constellation, :bg=> colors[0], :color=> colors[1] }
   -if @song.notes.length > 1
     %h4.notes-title.lazy-sub-headings
       Notes
@@ -38,7 +33,7 @@
       Lyrics
     .lyrics
       = @song.lyrics.html_safe
-  - if @song.videos.length > 1
+  - if @song.videos.length >= 1
     .videos
       %h4.video-title.lazy-sub-headings
         Videos
