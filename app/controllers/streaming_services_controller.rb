@@ -3,6 +3,7 @@ class StreamingServicesController < ApplicationController
   before_action :set_streaming_service, only: %i[ show edit update destroy ]
 
   def index
+    add_breadcrumb "Streaming Services", :streaming_services_path
     @streaming_services = StreamingService.all
     respond_to do |format|
       format.html { render :index}
@@ -12,7 +13,7 @@ class StreamingServicesController < ApplicationController
 
   def show
     respond_to do |format|
-      format.html { render :index}
+      format.html { render :show}
       format.json { render :json => @streaming_service}
     end
   end

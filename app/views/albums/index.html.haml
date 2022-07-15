@@ -1,9 +1,8 @@
-%h1.and-yet-not-the-largest
-  Albums
-%span
-  by
-%h2.and-yet-so-very-large
-  The Earthly Frames
-= render :partial => "components/breadcrumbs"
--@albums.each do |album|
-  = render :partial => "components/album", :locals => {:album=> album }
+%main
+  .well
+  = render :partial => "components/page-heading", :locals => {  :declaration=>  "Albums",
+                                                                :qualifier=> "by",
+                                                                 :title=> "The Earthly Frames"}
+  = render :partial => "components/breadcrumbs"
+  -@albums.each do |album|
+    = render :partial => "components/album", :locals => {:album=> album }

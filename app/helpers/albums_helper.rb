@@ -41,4 +41,17 @@ module AlbumsHelper
     end
     colors
   end
+
+  def pluralize_for_album(album, sub_item)
+    case sub_item
+    when "streaming_service"
+      if album.streaming_links > 1
+        "streaming services"
+      else
+        "streaming service"
+      end
+    else
+      "unknown song association"
+    end
+  end
 end

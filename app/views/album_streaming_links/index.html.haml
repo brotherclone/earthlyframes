@@ -1,11 +1,8 @@
 %main
   .well
-    %h1.and-yet-not-the-largest
-      = @album.title
-    %span
-      is available on these
-    %h2.and-yet-so-very-large
-      Streaming Services
+    = render :partial => "components/page-heading", :locals => {  :declaration=>  @album.title,
+                                                                  :qualifier=> "is available on these",
+                                                                  :title=> pluralize_for_album(@album, "streaming_services") }
     .streaming-services
       = turbo_frame_tag "album_streaming_links" do
         - @album_streaming_links.each do |link|

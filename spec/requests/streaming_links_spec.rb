@@ -5,7 +5,7 @@ RSpec.describe "/streaming_links", type: :request do
   before(:each) do
     @album = FactoryBot.create(:album)
     @streaming_service = FactoryBot.create(:streaming_service)
-    @song = FactoryBot.create(:song)
+    @song = FactoryBot.create(:song, album_id: @album.id)
   end
 
   let(:valid_attributes) {
