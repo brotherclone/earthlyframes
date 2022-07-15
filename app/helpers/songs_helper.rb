@@ -18,5 +18,23 @@ module SongsHelper
     end
   end
 
+  def pluralize_for_song(song, sub_item)
+    case sub_item
+      when "streaming_service"
+        if song.streaming_links > 1
+          "streaming services"
+        else
+          "streaming service"
+        end
+      when "video"
+        if song.videos > 1
+          "videos"
+        else
+          "video"
+        end
+    else
+      "unknown song association"
+    end
+  end
 end
 

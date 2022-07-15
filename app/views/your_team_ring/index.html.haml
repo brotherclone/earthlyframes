@@ -1,13 +1,10 @@
-%h1.and-yet-not-the-largest
-  The Earthly Frames
-  %span
-    were formerly known as
-  %h2.and-yet-so-very-large
-    Your Team Ring
-= render :partial => "components/breadcrumbs"
 %main
   .well
-    .your-team-ring
+    = render :partial => "components/page-heading", :locals => {  :declaration=>  "Formerly Known",
+                                                                  :qualifier=> "as",
+                                                                  :title=> "Your Team Ring"}
+    = render :partial => "components/breadcrumbs"
+    %article.your-team-ring
       %p
         I got my first four-track in 1991 and began making experimental rock music. I quickly learned how to ping-pong the four-tracks to seven. These, now unthinkable, destructive edits, produced a lot of over modulation on already low quality recordings. But, I kinda liked it.
         = succeed "." do
