@@ -3,15 +3,31 @@
 @import "../utility/typography";
 
 .post{
-  margin: 1rem 0 2rem 0;
+  margin: 1rem 0 0 0;
+  padding: 1rem;
+  @include breakpoint("md"){
+    padding: 0;
+  }
   h3.post-title{
     @include header-font();
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     color: $dark-grey;
+    text-align: center;
+    @include breakpoint("md"){
+      font-size: 2.5rem;
+      text-align: unset;
+    }
   }
   h4.post-description{
     @include body-font();
     color: $dark-grey;
+    font-size: 1rem;
+    text-align: center;
+    @include breakpoint("md"){
+      font-size: 1.5rem;
+      text-align: unset;
+    }
+    margin-bottom: 1rem;
   }
   .post-image{
     height: auto;
@@ -26,8 +42,6 @@
     }
   }
   article.post-body{
-    @include breakpoint("md"){
-      padding: 1rem;
-    }
+    padding: 1rem;
   }
 }
