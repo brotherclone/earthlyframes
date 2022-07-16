@@ -3,5 +3,8 @@
     -@songs.each do |song|
       .song
         %i{:class=>"fa-solid fa-quote-left"}
-        =link_to song.title, [@album, song]
+        - if check_for_details(song)
+          =link_to song.title, [@album, song]
+        - else
+          = song.title
         %i{:class=>"fa-solid fa-quote-right"}
