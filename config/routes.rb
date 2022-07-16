@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :embeds
   resources :constellations do
     resources :song_constellations
   end
@@ -14,6 +13,7 @@ Rails.application.routes.draw do
     resources :songs do
       resources :streaming_links
       resources :videos
+      resources :embeds
     end
   end
   get 'about', to: 'about#index'

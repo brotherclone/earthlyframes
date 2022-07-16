@@ -36,5 +36,17 @@ module SongsHelper
       "unknown song association"
     end
   end
+
+  def check_for_details(song)
+    detail = false
+    if song.lyrics.length > 1 || song.notes.length > 1
+      detail = true
+    end
+    if song.videos.length >=1 || song.embeds.length >= 1 || song.streaming_links.length > 0
+      detail = true
+    end
+    detail
+  end
+
 end
 

@@ -77,4 +77,5 @@ class StreamingLinksController < ApplicationController
   def streaming_link_params
     params.require(:streaming_link).permit(:album_id, :song_id, :streaming_service_id, :link)
   end
+
 end

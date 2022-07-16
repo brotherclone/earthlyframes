@@ -11,7 +11,7 @@ ActiveAdmin.register Song do
 
   before_save do |song|
     if song.embeds
-      colors = get_rainbow_colors(song.album)
+      colors = %w[#f6f6f6 #000000]
       song.embeds.map do |e|
         if e.embed_code
           s = StreamingService.where(name: 'SoundCloud')

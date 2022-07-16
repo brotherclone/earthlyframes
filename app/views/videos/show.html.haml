@@ -1,10 +1,11 @@
 = turbo_frame_tag "video" do
-  .video-wrapper
+  .video-wrapper{ :data=> { :controller=> "ratio" } }
     %iframe{:src => "https://player.vimeo.com/video/" + @video.video_service_id,
-              :data =>{:selector => 'video-embed'},
+              :data =>{:selector => 'video-embed', :ratio=>{:target=>"embed"}},
               :width=> '640',
               :height=> '360',
               :frameborder =>'0',
               :webkitallowfullscreen=> true,
               :mozallowfullscreen=> true,
               :allowfullscreen=> true }
+
