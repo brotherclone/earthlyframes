@@ -16,9 +16,14 @@ class Song < ApplicationRecord
               :only => [:link],
               :include => {
                 :streaming_service => {
-                  :only => [:name]
+                  :only => [:name],
+                  :include=> {
+                    :embeds =>{
+                      :only => [:embed_code]
+                    }
+                  }
                 }
-              }
+              },
             },
             :videos=>{
               :only => [:title, :description, :video_service_id, :video_type]

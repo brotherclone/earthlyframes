@@ -6,8 +6,8 @@ import { application } from "./application"
 
 import MobileNavigationController from "./mobile_navigation_controller.js"
 import ConstellationController from "./constellation_controller"
-import EmbedController from "./embed_controller"
+import RatioController from "./ratio_controller"
 
 application.register("mobilenavigation", MobileNavigationController)
 application.register("constellation", ConstellationController)
-application.register("embed", EmbedController)
+application.register("ratio", RatioController)

@@ -1,9 +1,12 @@
 class EmbedsController < ApplicationController
 
+  add_breadcrumb "Home", :root_path
+  before_action :get_album
+  before_action :get_song
   before_action :set_embed, only: %i[show edit update destroy ]
 
   def index
-    @embeds = Embed.all
+    @embeds = @song.embeds
     respond_to do |format|
       format.html { render :index}
       format.json { render :json => @embeds}
@@ -18,16 +21,16 @@ class EmbedsController < ApplicationController
   end
 
   def new
-    @embed = Embed.new
+    @embed = @song.embeds.build
   end
 
   def edit; end
 
   def create
-    @embed = Embed.new(embed_params)
+    @embed = @song.embeds.build(embed_params)
     respond_to do |format|
       if @embed.save
-        format.html { redirect_to embed_path(@embed) }
+        format.html { redirect_to album_song_embed_path(@embed) }
         format.json { render :show, status: :created, location: @embed }
       else
         format.html { render :index, status: :unprocessable_entity }
@@ -38,8 +41,8 @@ class EmbedsController < ApplicationController
 
   def update
     respond_to do |format|
-      if @embed.update(embed_params)
-        format.html { redirect_to embeds_url(@embed) }
+      if @song.embeds.update(embed_params)
+        format.html { redirect_to @embed }
         format.json { render :show, status: :ok, location: @embed }
       else
         format.html { render :index, status: :unprocessable_entity }
@@ -51,19 +54,27 @@ class EmbedsController < ApplicationController
   def destroy
     @embed.destroy
     respond_to do |format|
-      format.html { redirect_to embeds_url}
+      format.html { redirect_to album_song_embeds_path}
       format.json { head :no_content }
     end
   end
 
   private
 
+  def get_album
+    @album = Album.find(params[:album_id])
+  end
+
+  def get_song
+    @song = Song.find(params[:song_id])
+  end
+
   def set_embed
-    @embed = Embed.find(params[:id])
+    @embed = @song.embeds.find(params[:id])
   end
 
   def embed_params
-    params.require(:embed).permit(:player_identifier, :artist_link, :color, :text_color, :streaming_service_id, :song_id, :embed_code)
+    params.require(:embed).permit(:player_identifier, :artist_link, :color, :text_color, :streaming_service_id, :song_id, :album_id, :embed_code)
   end
 
 end
