@@ -6,4 +6,4 @@
     = render :partial => "components/breadcrumbs"
     = turbo_frame_tag "streaming_services" do
       - @streaming_services.each do |service|
-        = turbo_frame_tag "streaming_service", :src=> streaming_services_path(service)
+        = turbo_frame_tag "streaming_service", :src=> streaming_service_url(service)

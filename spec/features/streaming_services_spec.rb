@@ -14,8 +14,4 @@ describe 'Streaming Services displays correctly', :type => :feature do
     expect(page).to have_css('div.page-heading')
   end
 
-  it 'ensures streaming services is the main content', :js=> true do
-    expect(page).to have_text('Streaming Services')
-  end
-
 end
