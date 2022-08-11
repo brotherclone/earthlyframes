@@ -27,12 +27,14 @@
     %h4.notes-title.lazy-sub-headings
       Notes
     .notes
-      = @song.notes.html_safe
+      .album-content-container
+        = @song.notes.html_safe
   -if @song.lyrics.length > 1
     %h4.lyrics-title.lazy-sub-headings
       Lyrics
     .lyrics
-      = @song.lyrics.html_safe
+      .album-content-container
+        = @song.lyrics.html_safe
   - if @song.videos.length >= 1
     .videos
       %h4.video-title.lazy-sub-headings
