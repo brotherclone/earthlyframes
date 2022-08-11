@@ -53,7 +53,17 @@
     margin: 1rem 0 1rem 0;
   }
   .notes, .lyrics{
-    p{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    .album-content-container{
+      max-width: unset;
+      width: 100%;
+      @include breakpoint("md"){
+        max-width: 40rem;
+      }
+    }
+    .album-content-container > p, p{
       line-height: 1.85rem;
       font-size: 1rem;
       justify-content: left;
