@@ -4,7 +4,10 @@
 $(document).ready(function() {
     tinymce.init({
         selector: 'textarea',
-        height: 600
+        height: 600,
+        plugins: 'link',
+        menubar: 'insert',
+        toolbar: ['undo redo | styleselect | bold italic | link | alignleft aligncenter alignright']
     })
 });
 
