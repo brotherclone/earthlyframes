@@ -4,7 +4,7 @@ class AlbumsController < ApplicationController
 
   def index
     add_breadcrumb "Albums", :albums_path
-    @albums = Album.all.order(released: :desc)
+    @albums = Album.all.where(:is_live => true).order(released: :desc)
     respond_to do |format|
       format.html { render :index}
       format.json { render :json => @albums}
