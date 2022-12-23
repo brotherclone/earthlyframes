@@ -1,7 +1,7 @@
 class HomeController < InheritedResources::Base
 
   def index
-    @rainbow_table_albums= Album.where('rainbow_table != 0 AND is_live == true').order(rainbow_table: :desc)
+    @rainbow_table_albums= Album.where('rainbow_table != 0 AND is_live').order(rainbow_table: :desc)
     rainbow_done_colors = []
     @rainbow_unfinished_colors = []
     @rainbow_table_albums.each do |r|
