@@ -1,4 +1,4 @@
-.rainbow-album{:class=> rainbow_css(album)}
+.rainbow-album{:class=> rainbow_css(album), :id=> album.rainbow_table.to_s+'_link'}
   .rainbow-album-container
     %img.cover{:src=> album.cover.to_s, :alt=> album.title}
     %h3.year

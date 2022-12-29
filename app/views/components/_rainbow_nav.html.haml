@@ -1,0 +1,12 @@
+.rainbow-nav
+  .rainbow-nav-item
+    - if @rainbow_latest
+      %a{:href=> root_path(:params=>{:order=>'chromatic'}), :tab=>{:index=>0}}
+        %i.fa-solid.fa-rainbow
+    - else
+      %a{:href=> root_path }
+        %i.fa-solid.fa-calendar-days
+  - @rainbow_table_albums.each do |album|
+    .rainbow-nav-item
+      %a{:href=> '#'+album.rainbow_table.to_s+"_link", :tab=>{:index=>0}}
+        = get_nav_letter(album)
