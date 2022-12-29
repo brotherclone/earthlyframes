@@ -1,10 +1,12 @@
 .rainbow-nav
-  - if @rainbow_latest
-    %a{:class=> 'toggle-link', :href=> root_path(:params=>{:order=>'chromatic'})}
-      %i.fa-solid.fa-rainbow
-  - else
-    %a{:class=> 'toggle-link', :href=> root_path }
-      %i.fa-solid.fa-calendar-days
+  .rainbow-nav-item
+    - if @rainbow_latest
+      %a{:href=> root_path(:params=>{:order=>'chromatic'}), :tab=>{:index=>0}}
+        %i.fa-solid.fa-rainbow
+    - else
+      %a{:href=> root_path }
+        %i.fa-solid.fa-calendar-days
   - @rainbow_table_albums.each do |album|
-    %a{:href=> '#'+album.rainbow_table.to_s+"_link", :class=> album.rainbow_table.to_s+"-link"}
-      = get_nav_letter(album)
+    .rainbow-nav-item
+      %a{:href=> '#'+album.rainbow_table.to_s+"_link", :tab=>{:index=>0}}
+        = get_nav_letter(album)
