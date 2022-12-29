@@ -1,19 +1,11 @@
-%main
+%main{:id=>"mainContent"}
   = render :partial => "components/page-heading", :locals => {  :declaration=>  "The Earthly Frames",
                                                                 :qualifier=> "present",
                                                                  :title=> "The Rainbow Table"}
-%p.description
-  Nine full-length albums for each chromatic value, plus black and white.
-.rainbow-navigation-container
-  - if @rainbow_latest
-    %a{:href=> root_path(:params=>{:order=>'chromatic'})}
-      Nav
-  - else
-    %a{:href=> root_path }
-      Nav
+  %p.description
+    Nine full-length albums for each chromatic value, plus black and white.
+  = render :partial => "components/rainbow_nav"
   - @rainbow_table_albums.each do |album|
-    = album.rainbow_table.to_s
-- @rainbow_table_albums.each do |album|
-  = render :partial => "components/rainbow_album", :locals => {:album=> album }
-- @rainbow_unfinished_colors.each do |u|
-  = render :partial => "components/rainbow_unfinished", :locals => {:color=> u }
+    = render :partial => "components/rainbow_album", :locals => {:album=> album }
+  - @rainbow_unfinished_colors.each do |u|
+    = render :partial => "components/rainbow_unfinished", :locals => {:color=> u }

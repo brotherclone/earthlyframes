@@ -55,3 +55,26 @@ module AlbumsHelper
     end
   end
 end
+
+def get_nav_letter(album)
+  case album.rainbow_table
+  when "black"
+    "0"
+  when "red"
+    "R"
+  when "orange"
+    "O"
+  when "yellow"
+    "Y"
+  when "green"
+    "G"
+  when "blue"
+    "B"
+  when "indigo"
+    "I"
+  when "violet"
+    "V"
+  else
+    "1"
+  end
+end

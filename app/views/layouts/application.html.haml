@@ -24,6 +24,5 @@
   %body
     .earthly-frame
       = render :partial => "components/navigation"
-      %main{:id=>"mainContent"}
-        = yield
+      = yield
     = render :partial => "components/footer"
