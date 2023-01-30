@@ -1,6 +1,6 @@
 class SongsController < ApplicationController
 
-  before_action :set_album
+  before_action :set_album, except: %i[just_titles]
   before_action :set_song, only: %i[show edit update destroy ]
 
   def index
@@ -8,6 +8,25 @@ class SongsController < ApplicationController
     respond_to do |format|
       format.html { render :index}
       format.json { render :json => @songs}
+    end
+  end
+
+  def just_titles
+    songs = Song.all
+    @song_titles = []
+    rainbow_only = params[:rainbow_only]
+    songs.each do |song|
+      if rainbow_only
+        if song.album.rainbow_table != 'not_associated'
+          @song_titles << song.title
+        end
+      else
+        @song_titles << song.title
+      end
+    end
+    respond_to do |format|
+      format.html { render :just_titles}
+      format.json { render :json => @song_titles}
     end
   end
 
