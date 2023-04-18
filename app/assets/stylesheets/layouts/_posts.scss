@@ -44,6 +44,35 @@
     }
   }
   article.post-body{
+    text-align: left !important;
     padding: 1rem;
+    p{
+      margin: 1rem 0.5rem;
+      code{
+        line-height: normal !important;
+        margin-bottom: 3rem;
+        font-size: 1rem;
+        background: $code-bg;
+        word-wrap: break-word;
+        box-decoration-break: clone;
+        padding: .1rem .3rem .2rem;
+        border-radius: .2rem;
+      }
+    }
+    h2, h3{
+      @include body-font();
+      font-size: 1rem;
+      font-weight: 400;
+    }
+    h2{
+      text-transform: uppercase;
+    }
+    h3{
+      font-style: italic;
+    }
+  }
+  article > ul, article > ol{
+    margin: 1rem 0 1rem 0;
+    list-style: disc;
   }
 }
