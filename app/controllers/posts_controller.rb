@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   def index
     add_breadcrumb "Posts", :posts_path
-    @posts = Post.where(:is_live => true)
+    @posts = Post.where(:is_live => true).order(created_at: :desc)
     respond_to do |format|
       format.html { render :index}
       format.json { render :json => @posts}
