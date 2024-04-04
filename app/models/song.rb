@@ -9,6 +9,31 @@ class Song < ApplicationRecord
   accepts_nested_attributes_for :streaming_links, :allow_destroy => true
   accepts_nested_attributes_for :embeds, :allow_destroy => true
 
+  def self.ransackable_associations(auth_objects = nil)
+    %w[
+    constellations
+    embeds
+    song_constellations
+    streaming_links
+    ]
+  end
+
+  def self.ransackable_attributes(auth_object = nil)
+    %w[
+      album_id
+      created_at
+      id
+      lyrics
+      notes
+      song_order
+      title
+      trt
+      updated_at
+      videos_id
+    ]
+  end
+
+
   def as_json(options = {})
     super(:only => [:album_id, :id, :title, :song_order, :trt, :notes, :lyrics],
           :include => {
