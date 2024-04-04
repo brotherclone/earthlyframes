@@ -10,6 +10,34 @@ class Album < ApplicationRecord
   accepts_nested_attributes_for :release_formats, :allow_destroy => true
   accepts_nested_attributes_for :album_streaming_links, :allow_destroy => true
 
+  def self.ransackable_associations(auth_objects = nil)
+    %w[
+    album_streaming_links
+    music_formats
+    release_formats
+    songs
+    ]
+  end
+
+  def self.ransackable_attributes(auth_object = nil)
+    %w[
+      brief_description
+      buy_link
+      cover
+      created_at
+      description
+      id
+      is_live
+      price
+      rainbow_portrait
+      rainbow_table
+      released
+      title
+      updated_at
+    ]
+  end
+
+
   def as_json(options = {})
     super(:only => [:id, :title, :brief_description, :description, :cover, :rainbow_table],
           :include => {
