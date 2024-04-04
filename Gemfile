@@ -21,7 +21,7 @@ gem 'rails', '~> 7.0.4.1'
 gem 'sassc-rails'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
-gem 'tinymce-rails'
+gem 'tinymce-rails', '~> 7.0.0'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
