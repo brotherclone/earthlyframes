@@ -5,6 +5,7 @@
         = @post.title
       %h4.post-description
         = @post.description
-      .post-image{:style=> "background-image: url(#{@post.main_image.to_s});"}
+      - if @post.main_image.to_s.length > 0
+        .post-image{:style=> "background-image: url(#{@post.main_image.to_s});"}
       %article.post-body
         = @post.body.html_safe
