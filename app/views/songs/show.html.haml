@@ -14,15 +14,16 @@
     .song-embed-wrapper
       - @song.embeds.each do |embed|
         - if embed.streaming_service.name == "SoundCloud"
-          - s_id = embed.streaming_service.id
-          - streaming_link = get_streaming_link_for_embed(s_id, @song.streaming_links)
-          = render partial: "components/soundcloud_player", :locals => {:soundcloud_id=> embed.player_identifier,
-                                                                        :player_color=> embed.color,
-                                                                        :text_color=> embed.text_color,
-                                                                        :soundcloud_artist_link=> embed.artist_link,
-                                                                        :artist_name=> "The Earthly Frames",
-                                                                        :soundcloud_song_link=>  streaming_link,
-                                                                        :song_title=> @song.title }
+          .song-embed
+            - s_id = embed.streaming_service.id
+            - streaming_link = get_streaming_link_for_embed(s_id, @song.streaming_links)
+            = render partial: "components/soundcloud_player", :locals => {:soundcloud_id=> embed.player_identifier,
+                                                                          :player_color=> embed.color,
+                                                                          :text_color=> embed.text_color,
+                                                                          :soundcloud_artist_link=> embed.artist_link,
+                                                                          :artist_name=> "The Earthly Frames",
+                                                                          :soundcloud_song_link=>  streaming_link,
+                                                                          :song_title=> @song.title }
   -if @song.notes.length > 1
     %h4.notes-title.lazy-sub-headings
       Notes
