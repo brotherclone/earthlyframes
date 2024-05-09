@@ -1,88 +1,88 @@
 %main{:id=>"mainContent"}
   .well
-  = render :partial => "components/page-heading", :locals => {  :declaration=>  "About",
-                                                                :qualifier=> nil,
-                                                                 :title=> "The Earthly Frames"}
-  = render :partial => "components/breadcrumbs"
-  %article.about
-    =image_tag "portrait3.jpg", :class => "about-portrait", :alt=> "Gabriel Walsh sits in the game room."
-    %h3.lazy-sub-headings
-      F.A.Q.
-    %h4.rhetorical-question
-      Who are The Earthly Frames?
-    %p.rhetorical-answer
-      The Earthly Frames is the current name of Gabriel Walsh's musical output.
-    %h4.rhetorical-question
-      What does the name mean?
-    %p.rhetorical-answer
-      It's from
-      = succeed '.' do
-        %a{:href=> "https://youtube.com/clip/Ugkx-hR34KVchqpVcrkSfa1-hUU49Y1AIrNM", :target=> "_new", :tab=>{:index=>"0"}}  here
-      Well, how 'bout that?
-    %h4.rhetorical-question
-      What kind of music is this?
-    %p.rhetorical-answer
-      The genre varies by album. Pulsar Palace is electronic, while The Empty Fields is classical. Mainly, the music could be classified as deeply weird rock.
-    %h4.rhetorical-question
-      A lot is going on here, and I feel like there's something I'm missing. Any help?
-    %p.rhetorical-answer
-      Yes, it's true. There are an awful lot of allusions and context in the material. There are puzzles, hidden threads, and mysteries for sure. If you find that stuff boring or pretentious, you may also wish to try listening to it while spacing out or, as I'm told, under the influence of psychedelics.
-    %h4.rhetorical-question
-      So you play all of these instruments?
-    %p.rhetorical-answer
-      I farm out string and horn sections. Occasionally, I'll bring in a drummer, but all other instruments are just me.
-    %h4.rhetorical-question
-      Why are you doing this Rainbow Table thing?
-    %p.rhetorical-answer
-      On The Conjurer's Thread, there's a song about a hacker that takes its title from the tactic of keeping an extensive list or excel sheet with decrypted keys to bypass password hashing. Around the same time, I became interested in machine learning and music. While playing around with MEL spectrograms, I thought it wouldn't be weird to think of music as light transformations filtered through the musician and software - A machine using bits of light to access a human.
-    .about-images
-      .about-image
-        =image_tag "pulsar.jpg", :alt=> "Pulsar Palace"
-      .about-image
-        =image_tag "wack.jpg", :alt=> "She Waits for Yesterday"
-      .about-image
-        =image_tag "portrait1.jpg", :alt=> "Gabriel Walsh"
-      .about-image
-        =image_tag "ivowannabe.jpg", :alt=> "A Doorbell For Finite Beings"
-    %h3.lazy-sub-headings
-      Related
-    %h4.rhetorical-question
-      Other bands
-    %ul
-      %li
-        %a{:href=> your_team_ring_path, :tab=>{:index=>0}}
-          Your Team Ring
-        %p
-          From 1991-2004, I recorded under the moniker of Your Team Ring. Eventually adding another permanent member.
-      %li
-        %a{:href=> "https://www.solilians.com/", :tab=>{:index=>0}}
-          Solilians
-        %p
-          Ben Malkin's Space Rock project, which I play in and sometimes produce.
-    %p
-      See this
-      = succeed '' do
-        %a{:href=> "https://www.discogs.com/artist/633661-Gabriel-Walsh-2", :tab=>{:index=>0}} page
-      for a more complete discography.
-    %h4.rhetorical-question
-      Some Music Technology Projects
-    %ul
-      %li
-        %a{:href=>"https://github.com/brotherclone/next-mind-synth", :tab=>{:index=>0}}
-          Mind Synth
-        %p
-          An app that lets you play MIDI with your mind.
-      %li
-        %a{:href=>"https://github.com/brotherclone/DoubleSpeak", :tab=>{:index=>0}}
-          Double Speak
-        %p
-          A phoneme drone instrument.
-          = succeed '.' do
-            %a{:href=>"https://vimeo.com/manage/videos/74258089", :tab=>{:index=>0} } Video
-      %li
-        %a{:href=>"https://github.com/brotherclone/GhostRadio", :tab=>{:index=>0}}
-          Ghost Radio
-        %p
-          A method for turning old bakelite radios into an archival broadcast browser.
-          = succeed '.' do
-            %a{:href=>"https://vimeo.com/manage/videos/74257419", :tab=>{:index=>0} } Video
+    = render :partial => "components/page-heading", :locals => {  :declaration=>  "About",
+                                                                  :qualifier=> nil,
+                                                                   :title=> "The Earthly Frames"}
+    = render :partial => "components/breadcrumbs"
+    %article.about
+      =image_tag "portrait3.jpg", :class => "about-portrait", :alt=> "Gabriel Walsh sits in the game room."
+      %h3.lazy-sub-headings
+        F.A.Q.
+      %h4.rhetorical-question
+        Who are The Earthly Frames?
+      %p.rhetorical-answer
+        The Earthly Frames is the current name of Gabriel Walsh's musical output.
+      %h4.rhetorical-question
+        What does the name mean?
+      %p.rhetorical-answer
+        It's from
+        = succeed '.' do
+          %a{:href=> "https://youtube.com/clip/Ugkx-hR34KVchqpVcrkSfa1-hUU49Y1AIrNM", :target=> "_new", :tab=>{:index=>"0"}}  here
+        Well, how 'bout that?
+      %h4.rhetorical-question
+        What kind of music is this?
+      %p.rhetorical-answer
+        The genre varies by album. Pulsar Palace is electronic, while The Empty Fields is classical. Mainly, the music could be classified as deeply weird rock.
+      %h4.rhetorical-question
+        A lot is going on here, and I feel like there's something I'm missing. Any help?
+      %p.rhetorical-answer
+        Yes, it's true. There are an awful lot of allusions and context in the material. There are puzzles, hidden threads, and mysteries for sure. If you find that stuff boring or pretentious, you may also wish to try listening to it while spacing out or, as I'm told, under the influence of psychedelics.
+      %h4.rhetorical-question
+        So you play all of these instruments?
+      %p.rhetorical-answer
+        I farm out string and horn sections. Occasionally, I'll bring in a drummer, but all other instruments are just me.
+      %h4.rhetorical-question
+        Why are you doing this Rainbow Table thing?
+      %p.rhetorical-answer
+        On The Conjurer's Thread, there's a song about a hacker that takes its title from the tactic of keeping an extensive list or excel sheet with decrypted keys to bypass password hashing. Around the same time, I became interested in machine learning and music. While playing around with MEL spectrograms, I thought it wouldn't be weird to think of music as light transformations filtered through the musician and software - A machine using bits of light to access a human.
+      .about-images
+        .about-image
+          =image_tag "pulsar.jpg", :alt=> "Pulsar Palace"
+        .about-image
+          =image_tag "wack.jpg", :alt=> "She Waits for Yesterday"
+        .about-image
+          =image_tag "portrait1.jpg", :alt=> "Gabriel Walsh"
+        .about-image
+          =image_tag "ivowannabe.jpg", :alt=> "A Doorbell For Finite Beings"
+      %h3.lazy-sub-headings
+        Related
+      %h4.rhetorical-question
+        Other bands
+      %ul
+        %li
+          %a{:href=> your_team_ring_path, :tab=>{:index=>0}}
+            Your Team Ring
+          %p
+            From 1991-2004, I recorded under the moniker of Your Team Ring. Eventually adding another permanent member.
+        %li
+          %a{:href=> "https://www.solilians.com/", :tab=>{:index=>0}}
+            Solilians
+          %p
+            Ben Malkin's Space Rock project, which I play in and sometimes produce.
+      %p
+        See this
+        = succeed '' do
+          %a{:href=> "https://www.discogs.com/artist/633661-Gabriel-Walsh-2", :tab=>{:index=>0}} page
+        for a more complete discography.
+      %h4.rhetorical-question
+        Some Music Technology Projects
+      %ul
+        %li
+          %a{:href=>"https://github.com/brotherclone/next-mind-synth", :tab=>{:index=>0}}
+            Mind Synth
+          %p
+            An app that lets you play MIDI with your mind.
+        %li
+          %a{:href=>"https://github.com/brotherclone/DoubleSpeak", :tab=>{:index=>0}}
+            Double Speak
+          %p
+            A phoneme drone instrument.
+            = succeed '.' do
+              %a{:href=>"https://vimeo.com/manage/videos/74258089", :tab=>{:index=>0} } Video
+        %li
+          %a{:href=>"https://github.com/brotherclone/GhostRadio", :tab=>{:index=>0}}
+            Ghost Radio
+          %p
+            A method for turning old bakelite radios into an archival broadcast browser.
+            = succeed '.' do
+              %a{:href=>"https://vimeo.com/manage/videos/74257419", :tab=>{:index=>0} } Video

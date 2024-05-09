@@ -1,9 +1,9 @@
 %main{:id=>"mainContent"}
   .well
-  = render :partial => "components/page-heading", :locals => {  :declaration=>  "A Random",
-                                                                :qualifier=> "  collection of",
-                                                                :title=> "Posts"}
-  = render :partial => "components/breadcrumbs"
-  = turbo_frame_tag "posts" do
-    - @posts.each do |post|
-      = turbo_frame_tag "post", :src=> post_path(post)
+    = render :partial => "components/page-heading", :locals => {  :declaration=>  "A Random",
+                                                                  :qualifier=> "  collection of",
+                                                                  :title=> "Posts"}
+    = render :partial => "components/breadcrumbs"
+    = turbo_frame_tag "posts" do
+      - @posts.each do |post|
+        = turbo_frame_tag "post", :src=> post_path(post)
