@@ -1,8 +1,8 @@
 %main{:id=>"mainContent"}
   .well
-  = render :partial => "components/page-heading", :locals => {  :declaration=>  "Albums",
-                                                                :qualifier=> "by",
-                                                                 :title=> "The Earthly Frames"}
-  = render :partial => "components/breadcrumbs"
-  -@albums.each do |album|
-    = render :partial => "components/album", :locals => {:album=> album }
+    = render :partial => "components/page-heading", :locals => {  :declaration=>  "Albums",
+                                                                  :qualifier=> "by",
+                                                                   :title=> "The Earthly Frames"}
+    = render :partial => "components/breadcrumbs"
+    -@albums.each do |album|
+      = render :partial => "components/album", :locals => {:album=> album }
