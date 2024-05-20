@@ -15,7 +15,10 @@ RSpec.describe Album, type: :model do
     expect(build(:album, title: nil)).to_not be_valid
   end
   it 'is valid if not part of the Rainbow Table' do
-    expect(build(:album, rainbow_table: 0)).to be_valid
+    expect(build(:album, rainbow_table: 'not_associated')).to be_valid
+  end
+  it 'is invalid if missing Rainbow Table' do
+    expect(build(:album, rainbow_table: nil )).to_not be_valid
   end
   it 'is valid if part of the Rainbow Table' do
     expect(build(:album, rainbow_table: 1)).to be_valid

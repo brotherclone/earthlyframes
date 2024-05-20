@@ -2,6 +2,7 @@ class Album < ApplicationRecord
   mount_uploader :cover, PhotosUploader
   mount_uploader :rainbow_portrait, PhotosUploader
   validates :title, presence: true
+  validates :rainbow_table, presence: true
   has_many :songs, -> { order(song_order: :asc) }
   has_many :album_streaming_links, dependent: :destroy
   enum rainbow_table: %i[not_associated black red orange yellow green blue indigo violet white]
