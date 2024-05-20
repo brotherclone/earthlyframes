@@ -29,7 +29,7 @@ ActiveAdmin.register Album do
       f.input :is_live, :label => 'Publish?', :as => :radio
       f.input :cover, :as => :file
       f.input :cover_cache, :as => :hidden
-      f.input :rainbow_table
+      f.input :rainbow_table, :label => 'Rainbow Table', :as => :select, :collection => Album.rainbow_tables.keys, :selected=>'not_associated'
       f.input :rainbow_portrait, :as => :file
       f.input :rainbow_portrait_cache, :as => :hidden
       f.inputs do

@@ -25,7 +25,7 @@
     background-image: url("rose.png");
     background-repeat: repeat;
     color: $black_opposite;
-    h3, h4, h5, a{
+    h3, h4, h5, a, p, p.description{
       color: $black_opposite;
     }
     svg{
