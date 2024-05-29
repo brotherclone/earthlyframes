@@ -10,7 +10,7 @@
     max-width: 19rem;
   }
   @include breakpoint("sm"){
-    max-width: $breakpoint-max-sm/2;
+    max-width: calc($breakpoint-max-sm / 2);
   }
   @include breakpoint("md"){
     max-width: $breakpoint-max-md;
