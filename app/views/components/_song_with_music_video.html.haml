@@ -1,0 +1,11 @@
+.song-with-music-video
+  .song-with-music-video-container
+    %span.title
+      %i{:class=>"fa-solid fa-quote-left"}
+      = song_with_music_video.title
+      %i{:class=>"fa-solid fa-quote-right"}
+      from
+      %a{:href=>album_path(song_with_music_video.album)}
+        = song_with_music_video.album.title
+    - song_with_music_video.videos.each do |video|
+      = turbo_frame_tag "video", src: [song_with_music_video.album, song_with_music_video, video]

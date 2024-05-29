@@ -1,0 +1,8 @@
+%main{:id=>"mainContent"}
+  .well
+    = render :partial => "components/page-heading", :locals => {  :declaration=>  "Music Videos",
+                                                                  :qualifier=> "by",
+                                                                   :title=> "The Earthly Frames"}
+    = render :partial => "components/breadcrumbs"
+    -@songs_with_videos.each do |song_with_music_video|
+      = render :partial => "components/song_with_music_video", :locals => {:song_with_music_video=> song_with_music_video }

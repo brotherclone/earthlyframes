@@ -20,5 +20,7 @@ Rails.application.routes.draw do
   get 'eula', to: 'eula#index'
   get 'your-team-ring', to: 'your_team_ring#index'
   get 'songs/just-titles', to:'songs#just_titles'
+  get 'music-videos', to: 'music_videos#index'
+
   root 'home#index'
 end
