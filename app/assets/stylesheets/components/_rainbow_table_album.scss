@@ -115,6 +115,9 @@
   svg{
     fill: $foreground_color;
   }
+  .description{
+    color: $foreground_color !important;
+  }
   .rainbow-table-streaming-links {
     .streaming-link {
       .streaming-link-icon-container {
