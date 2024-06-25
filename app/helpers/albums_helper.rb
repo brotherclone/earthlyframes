@@ -77,4 +77,9 @@ def get_nav_letter(album)
   else
     "1"
   end
+
+  def ordered_links(album)
+    album.songs.includes(:streaming_links => :streaming_service).flat_map(&:streaming_links).sort_by { |link| link.streaming_service.name }
+  end
+
 end
