@@ -1,7 +1,7 @@
 module AlbumsHelper
 
   def rainbow_css(album)
-    "rainbow-table-"+album.rainbow_table.to_s
+    "rainbow-table-" + album.rainbow_table.to_s
   end
 
   def just_the_year(album)
@@ -21,7 +21,7 @@ module AlbumsHelper
       colors[0] = "#EF7143"
       colors[1] = "#f6f6f6"
     when "yellow"
-      colors[0]= "#FFFF00"
+      colors[0] = "#FFFF00"
       colors[1] = "#383838"
     when "green"
       colors[0] = "#abd96d"
@@ -37,7 +37,7 @@ module AlbumsHelper
       colors[1] = "#000000"
     else
       colors[0] = "#f6f6f6"
-      colors[1]= "#000000"
+      colors[1] = "#000000"
     end
     colors
   end
@@ -54,27 +54,32 @@ module AlbumsHelper
       "unknown song association"
     end
   end
-end
 
-def get_nav_letter(album)
-  case album.rainbow_table
-  when "black"
-    "0"
-  when "red"
-    "R"
-  when "orange"
-    "O"
-  when "yellow"
-    "Y"
-  when "green"
-    "G"
-  when "blue"
-    "B"
-  when "indigo"
-    "I"
-  when "violet"
-    "V"
-  else
-    "1"
+  def get_nav_letter(album)
+    case album.rainbow_table
+    when "black"
+      "0"
+    when "red"
+      "R"
+    when "orange"
+      "O"
+    when "yellow"
+      "Y"
+    when "green"
+      "G"
+    when "blue"
+      "B"
+    when "indigo"
+      "I"
+    when "violet"
+      "V"
+    else
+      "1"
+    end
   end
+
+  def order_streaming_links_by_service_name(album)
+    album.album_streaming_links.joins(:streaming_service).order('streaming_services.name')
+  end
+
 end

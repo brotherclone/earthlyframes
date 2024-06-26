@@ -7,7 +7,7 @@
       = album.title
     - if album.album_streaming_links.length > 0
       .rainbow-table-streaming-links
-        - album.album_streaming_links.each do |link|
+        - order_streaming_links_by_service_name(album).each do |link|
           = turbo_frame_tag "album_streaming_link", src: [album, link]
     %p.description
       = album.description.html_safe

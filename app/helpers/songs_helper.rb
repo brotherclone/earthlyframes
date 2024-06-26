@@ -48,5 +48,9 @@ module SongsHelper
     detail
   end
 
+  def order_streaming_links_for_song(song)
+    song.streaming_links.joins(:streaming_service).order('streaming_services.name')
+  end
+
 end
 
