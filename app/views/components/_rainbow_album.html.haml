@@ -5,7 +5,7 @@
       = just_the_year(album)
     %h4.title
       = album.title
-    - if album.album_streaming_links.length > 0
+    - if ordered_links(album).length > 0
       .rainbow-table-streaming-links
         - order_streaming_links_by_service_name(album).each do |link|
           = turbo_frame_tag "album_streaming_link", src: [album, link]
