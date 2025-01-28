@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.1'
 
 gem 'activeadmin'
-gem 'bootsnap', require: false
+gem 'bootsnap', '>= 1.4.4'
 gem 'breadcrumbs_on_rails'
 gem 'carrierwave'
 gem 'cloudinary'
