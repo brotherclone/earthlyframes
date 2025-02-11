@@ -5,7 +5,7 @@
     "@hotwired/stimulus": "^3.0.1",
     "@hotwired/turbo-rails": "^7.1.1",
     "@popperjs/core": "^2.11.5",
-    "esbuild": "^0.14.49",
+    "esbuild": "^0.25.0",
     "esbuild-rails": "^1.0.3",
     "sass": "^1.53.0",
     "stimulus-use": "^0.50.0",
