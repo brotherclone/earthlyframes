@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.1'
+ruby '3.3.0'
 
 gem 'activeadmin'
 gem 'bootsnap', '>= 1.4.4'
@@ -16,7 +16,7 @@ gem 'inline_svg'
 gem 'jbuilder'
 gem 'jsbundling-rails'
 gem 'pg', '~> 1.1'
-gem 'puma', '~> 5.6'
+gem 'puma', '~> 6.4'
 gem 'rails', '~> 7.0.4.1'
 gem 'sassc-rails'
 gem 'sprockets-rails'

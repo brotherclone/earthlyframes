@@ -235,7 +235,7 @@ GEM
     psych (5.1.2)
       stringio
     public_suffix (5.0.4)
-    puma (5.6.8)
+    puma (6.6.0)
       nio4r (~> 2.0)
     racc (1.8.0)
     rack (2.2.9)
@@ -368,6 +368,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-21
+  x86_64-darwin-24
   x86_64-linux
 
 DEPENDENCIES
@@ -388,7 +389,7 @@ DEPENDENCIES
   jbuilder
   jsbundling-rails
   pg (~> 1.1)
-  puma (~> 5.6)
+  puma (~> 6.4)
   rails (~> 7.0.4.1)
   rails-controller-testing
   rspec-rails
@@ -402,7 +403,7 @@ DEPENDENCIES
   web-console
 
 RUBY VERSION
-   ruby 3.1.1p18
+   ruby 3.3.0p0
 
 BUNDLED WITH
    2.3.10
