@@ -5,7 +5,18 @@ class Album < ApplicationRecord
   validates :rainbow_table, presence: true
   has_many :songs, -> { order(song_order: :asc) }
   has_many :album_streaming_links, dependent: :destroy
-  enum rainbow_table: %i[not_associated black red orange yellow green blue indigo violet white]
+  enum :rainbow_table, {
+    not_associated: 0,
+    black: 1,
+    red: 2,
+    orange: 3,
+    yellow: 4,
+    green: 5,
+    blue: 6,
+    indigo: 7,
+    violet: 8,
+    white: 9
+  }
   has_many :release_formats, dependent: :destroy
   has_many :music_formats, :through => :release_formats
   accepts_nested_attributes_for :release_formats, :allow_destroy => true
