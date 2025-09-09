@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "sass:meta";
+
 @mixin blur($radius:8){
   -webkit-filter: blur($radius+px);
   filter: blur($radius+px);
@@ -8,11 +11,11 @@
   position: sticky;
   top: 0;
 }
-@mixin box-shadower($x-axis: 6px, $y-axis: 5px, $blur:9px, $color: transparentize(black, 0.75)) {
+@mixin box-shadower($x-axis: 6px, $y-axis: 5px, $blur:9px, $color: color.adjust(black, $alpha: -0.75)) {
   box-shadow: $x-axis $y-axis $blur $color;
 }
 
-@mixin text-shadower($h-shadow: 1px, $v-shadow: 5px, $blur-radius: 8px, $color:transparentize(black, 0.75)){
+@mixin text-shadower($h-shadow: 1px, $v-shadow: 5px, $blur-radius: 8px, $color: color.adjust(black, $alpha: -0.75)){
   text-shadow: $h-shadow $v-shadow $blur-radius $color;
 }
 
@@ -31,7 +34,7 @@ $breakpoint-min-xl: 120rem;
 $breakpoint-max-lg: $breakpoint-min-xl - 0.063rem;
 
 @mixin breakpoint($min:0,$max:0){
-  $type: type_of($min);
+  $type: meta.type-of($min);
   @if $type == "string"{
     @if $min == xs{
       @media (max-width: $breakpoint-max-xs) { @content };
