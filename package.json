@@ -2,7 +2,7 @@
   "name": "earthly-frames",
   "private": "true",
   "engines": {
-    "node": "20.x",
+    "node": "20.xrm bun.lockb",
     "npm": "10.x"
   },
   "dependencies": {
