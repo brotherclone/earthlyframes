@@ -1,63 +1,25 @@
 {
-  "name": "earthlyframes",
+  "name": "earthly-frames",
   "version": "1.0.0",
-  "description": "Gabriel Walsh's current musical moniker. # Development Info - Rails 7.0.2 - Ruby 3.1.1 To run: $ `bin/dev` - Uses esbuild, not importmap-rails - PostgreSQL # API - Use albums.json to retrieve discography - Use streaming_services.json for details on music availability",
-  "main": "esbuild.config.js",
+  "private": "true",
   "engines": {
     "node": "20.x",
-    "npm": "10.x"
-  },
-  "directories": {
-    "lib": "lib"
+    "npm": "10.x",
+    "yarn": "1.x"
   },
   "dependencies": {
-    "braces": "^3.0.3",
-    "bun-types": "^1.2.21",
-    "detect-libc": "^1.0.3",
-    "esbuild": "^0.25.9",
-    "chokidar": "^4.0.3",
-    "esbuild-rails": "^1.0.7",
-    "fast-glob": "^3.3.3",
-    "fastq": "^1.19.1",
-    "immutable": "^5.1.3",
-    "hotkeys-js": "^3.13.15",
-    "is-glob": "^4.0.3",
-    "merge2": "^1.4.1",
-    "micromatch": "^4.0.8",
-    "node-addon-api": "^7.1.1",
-    "queue-microtask": "^1.2.3",
-    "fill-range": "^7.1.1",
-    "reusify": "^1.1.0",
-    "readdirp": "^4.1.2",
-    "run-parallel": "^1.2.0",
-    "sass": "^1.92.1",
-    "is-extglob": "^2.1.1",
+    "@hotwired/stimulus": "^3.0.1",
+    "@hotwired/turbo-rails": "^7.1.1",
+    "@popperjs/core": "^2.11.5",
+    "esbuild": "^0.25.0",
+    "esbuild-rails": "^1.0.3",
+    "sass": "^1.53.0",
     "stimulus-use": "^0.50.0",
-    "picomatch": "^2.3.1",
-    "three-css2drender": "^1.0.0",
-    "undici-types": "^7.10.0",
     "three": "^0.140.2",
-    "glob-parent": "^5.1.2",
-    "is-number": "^7.0.0",
-    "to-regex-range": "^5.0.1",
-    "source-map-js": "^1.2.1"
+    "three-css2drender": "^1.0.0"
   },
-  "devDependencies": {},
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",
-    "build:css": "sass ./app/assets/stylesheets/index.scss ./app/assets/builds/application.css --no-source-map --load-path=node_modules",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/brotherclone/earthlyframes.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/brotherclone/earthlyframes/issues"
-  },
-  "homepage": "https://github.com/brotherclone/earthlyframes#readme"
+    "build:css": "sass ./app/assets/stylesheets/index.scss ./app/assets/builds/application.css --no-source-map --load-path=node_modules"
+  }
 }
-
