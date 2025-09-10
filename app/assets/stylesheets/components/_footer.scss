@@ -1,16 +1,16 @@
-@import "../utility/palette";
-@import "../utility/usual_mixins";
+@use "../utility/palette" as palette;
+@use "../utility/usual_mixins" as usual_mixins;
 
 footer{
   flex-shrink: 0;
-  background-color: $black;
+  background-color: palette.$black;
   width: 100vw;
   .footer-wrapper{
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
     margin: 1.5rem;
-    @include breakpoint("md"){
+    @include usual_mixins.breakpoint("md") {
       margin: 1rem;
       flex-direction: row;
       justify-content: flex-end;
@@ -19,7 +19,7 @@ footer{
       .footer-item{
         a{
           text-decoration: none;
-          color: white;
+          color: palette.$white;
         }
       }
     }
@@ -29,7 +29,7 @@ footer{
         height: 3rem;
         width: auto;
       }
-      @include breakpoint("md"){
+      @include usual_mixins.breakpoint("md") {
         margin-top: unset;
         img{
           height: 6rem;

@@ -1,4 +1,4 @@
-@import "../utility/usual_mixins";
+@use "../utility/usual_mixins";
 
 .songs, #songs, turbo-frame#songs {
   margin-top: 1rem;
@@ -18,10 +18,10 @@
   .song {
     font-size: 1rem;
     margin-bottom: 1.2rem;
-    @include breakpoint("sm") {
+    @include usual_mixins.breakpoint("sm") {
       font-size: 1.5rem;
     }
-    @include breakpoint("md") {
+    @include usual_mixins.breakpoint("md") {
       font-size: 1.8rem;
     }
 
@@ -73,7 +73,7 @@
     .album-content-container {
       max-width: unset;
       width: 100%;
-      @include breakpoint("md") {
+      @include usual_mixins.breakpoint("md") {
         max-width: 40rem;
       }
     }

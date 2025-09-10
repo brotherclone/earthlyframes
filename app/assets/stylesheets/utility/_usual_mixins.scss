@@ -6,8 +6,6 @@
   filter: blur($radius+px);
 }
 @mixin sticky(){
-  position: relative;
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
 }

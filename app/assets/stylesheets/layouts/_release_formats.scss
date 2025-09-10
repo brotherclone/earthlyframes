@@ -1,7 +1,7 @@
-@import "../utility/palette";
+@use "../utility/palette";
 
 h3.format-title{
-  color: $black;
+  color: palette.$black;
   font-weight: 200;
   font-size: 1.25rem;
 }
@@ -10,8 +10,8 @@ h3.format-title{
   text-decoration: none;
   display: block;
   margin: 1rem 0 1rem 1rem;
-  color: $black;
+  color: palette.$black;
   &:hover{
-    color: $green;
+    color: palette.$green;
   }
 }
