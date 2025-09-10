@@ -1,6 +1,6 @@
-@import "../utility/palette";
-@import "../utility/typography";
-@import "../utility/usual_mixins";
+@use "../utility/palette";
+@use "../utility/typography";
+@use "../utility/usual_mixins";
 
 html{
   font-size: 16px;
@@ -32,7 +32,7 @@ header, hgroup, menu, nav, section {
   display: block;
 }
 body {
-  @include body-font();
+  @include typography.body-font();
 }
 ol, ul {
   list-style: none;
@@ -50,7 +50,7 @@ table {
 }
 
 h1, h2, h3, h4, h5, h6{
-  @include header-font();
+  @include typography.header-font();
 }
 
 .earthly-frame{
@@ -83,20 +83,20 @@ body {
   align-items: center;
   width: 100%;
   max-width: 100vw;
-  @include breakpoint("sm"){
+  @include usual_mixins.breakpoint("sm"){
     margin: 0 .25rem 0 .25rem;
   }
-  @include breakpoint("md"){
+  @include usual_mixins.breakpoint("md"){
     margin: 0 1rem 0 1rem;
     padding: 0 0.25rem 0 0.25rem;
     max-width: 80vw;
   }
-  @include breakpoint("lg"){
+  @include usual_mixins.breakpoint("lg"){
     margin: 0 1rem 0 1rem;
     padding: 0 0.5rem 0 0.5rem;
     max-width: 70vw;
   }
-  @include breakpoint("xl"){
+  @include usual_mixins.breakpoint("xl"){
     margin: 0 1.25rem 0 1.25rem;
     padding: 0 1rem 0 1rem;
     max-width: 60vw;
@@ -124,10 +124,10 @@ article{
   text-align: center;
   margin-top: 2rem;
   a{
-    color: $black;
+    color: palette.$black;
     transition: color 500ms ease-in-out;
     &:hover{
-      color: $orange;
+      color: palette.$orange;
     }
   }
 }

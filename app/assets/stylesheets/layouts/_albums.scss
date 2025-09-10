@@ -1,17 +1,17 @@
-@import "../utility/usual_mixins";
-@import "../utility/palette";
-@import "../utility/typography";
+@use "../utility/usual_mixins";
+@use "../utility/palette";
+@use "../utility/typography";
 
 // Shared
 .cover {
   width: 100vw;
   height: auto;
   margin:0;
-  @include breakpoint("md"){
+  @include usual_mixins.breakpoint("md"){
     width: 40rem;
     margin: 2rem 0 2rem 0;
   }
-  @include box-shadower();
+  @include usual_mixins.box-shadower();
 }
 
 .album{
@@ -21,42 +21,42 @@
   flex-direction: row;
   justify-content: center;
   &:nth-child(odd){
-    background-color: $black;
+    background-color: palette.$black;
     background-image: url("rose.png");
     background-repeat: repeat;
-    color: $black_opposite;
+    color: palette.$black_opposite;
     h3, h4, h5, a, p, p.description{
-      color: $black_opposite;
+      color: palette.$black_opposite;
     }
     svg{
-      fill: $black_opposite
+      fill: palette.$black_opposite
     }
     .album-streaming-links {
       .streaming-link {
         .streaming-link-icon-container {
           i {
-            color: $black_opposite;
+            color: palette.$black_opposite;
           }
         }
       }
     }
   }
   &:nth-child(even){
-    background-color: $white;
+    background-color: palette.$white;
     background-image: url("deLillo.png");
     background-repeat: repeat;
-    color: $white_opposite;
+    color: palette.$white_opposite;
     h3, h4, h5, a{
-      color: $white_opposite;
+      color: palette.$white_opposite;
     }
     svg{
-      fill: $white_opposite;
+      fill: palette.$white_opposite;
     }
     .album-streaming-links {
       .streaming-link {
         .streaming-link-icon-container {
           i {
-            color: $white_opposite;
+            color: palette.$white_opposite;
           }
         }
       }
@@ -68,7 +68,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    @include breakpoint("md"){
+    @include usual_mixins.breakpoint("md"){
       h5{
         margin: 1rem 0 0 0;
       }
@@ -97,7 +97,7 @@
       }
     }
     h5{
-      font-family: $base-body-font-family;
+      font-family: typography.$base-body-font-family;
       margin: 0;
       font-weight: 200;
       font-size: 1rem;
@@ -157,7 +157,7 @@
         width: 100%;
       }
     }
-    @include breakpoint("md"){
+    @include usual_mixins.breakpoint("md"){
       min-width: unset;
       max-width: 40rem;
     }

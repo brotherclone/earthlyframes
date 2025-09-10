@@ -1,6 +1,6 @@
-@import "../utility/palette";
-@import "../utility/usual_mixins";
-@import "../utility/typography";
+@use "../utility/palette" as palette;
+@use "../utility/usual_mixins" as usual_mixins;
+@use "../utility/typography" as typography;
 
 @mixin rainbow-link(){
   text-decoration: none;
@@ -15,11 +15,11 @@
   margin-bottom: 1rem;
   .rainbow-nav-item {
     a{
-      color: $black;
+      color: palette.$black;
       text-decoration: none;
       font-size: .75rem;
       &:hover{
-        color:$orange;
+        color:palette.$orange;
       }
     }
   }

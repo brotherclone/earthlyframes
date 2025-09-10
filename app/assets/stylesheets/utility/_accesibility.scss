@@ -1,4 +1,4 @@
-@import "palette";
+@use "palette";
 
 .skip-navigation{
   transform: scale(0);
@@ -14,7 +14,7 @@
 html,body{
   a{
     &:focus-visible{
-      outline: 2px dashed $orange;
+      outline: 2px dashed palette.$orange;
     }
   }
 }

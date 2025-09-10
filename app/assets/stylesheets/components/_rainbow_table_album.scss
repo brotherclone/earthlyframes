@@ -1,6 +1,6 @@
-@import "../utility/palette";
-@import "../utility/usual_mixins";
-@import "../utility/typography";
+@use "../utility/palette" as palette;
+@use "../utility/usual_mixins" as *;
+@use "../utility/typography" as typography;
 
 .rainbow-album, .rainbow-album-unfinished{
   width: 100vw;
@@ -132,37 +132,37 @@
 }
 
 .rainbow-table-black{
-  @include rainbow_table_helper($black, $black_opposite);
+  @include rainbow_table_helper(palette.$black, palette.$black_opposite);
 }
 
 .rainbow-table-red{
-  @include rainbow_table_helper($red, $red_opposite);
+  @include rainbow_table_helper(palette.$red, palette.$red_opposite);
 }
 
 .rainbow-table-orange{
-  @include rainbow_table_helper($orange, $orange_opposite);
+  @include rainbow_table_helper(palette.$orange, palette.$orange_opposite);
 }
 
 .rainbow-table-yellow{
-  @include rainbow_table_helper($yellow, $yellow_opposite);
+  @include rainbow_table_helper(palette.$yellow, palette.$yellow_opposite);
 }
 
 .rainbow-table-green{
-  @include rainbow_table_helper($green, $green_opposite);
+  @include rainbow_table_helper(palette.$green, palette.$green_opposite);
 }
 
 .rainbow-table-blue{
-  @include rainbow_table_helper($blue, $black_opposite);
+  @include rainbow_table_helper(palette.$blue, palette.$black_opposite);
 }
 
 .rainbow-table-indigo{
-  @include rainbow_table_helper($indigo, $indigo_opposite);
+  @include rainbow_table_helper(palette.$indigo, palette.$indigo_opposite);
 }
 
 .rainbow-table-violet{
-  @include rainbow_table_helper($violet, $violet_opposite);
+  @include rainbow_table_helper(palette.$violet, palette.$violet_opposite);
 }
 
 .rainbow-table-white{
-  @include rainbow_table_helper($white, $white_opposite);
+  @include rainbow_table_helper(palette.$white, palette.$white_opposite);
 }

@@ -1,5 +1,5 @@
-@import "../utility/palette";
-@import "../utility/usual_mixins";
+@use "../utility/palette";
+@use "../utility/usual_mixins";
 
 .streaming-services{
   min-width: 20rem;
@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  @include breakpoint("md"){
+  @include usual_mixins.breakpoint("md"){
     .streaming-link-icon-container{
       margin-bottom: 0.5rem;
       i{
@@ -26,7 +26,7 @@
     margin-bottom: 0;
     i{
       font-size: 2.5rem;
-      color: $orange_opposite
+      color: palette.$orange_opposite
     }
   }
   .streaming-link-container{
@@ -34,7 +34,7 @@
     width: 100%;
     text-align: center;
     a{
-      color: $orange;
+      color:  palette.$orange;
       text-decoration: none;
     }
   }

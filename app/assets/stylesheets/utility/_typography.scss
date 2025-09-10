@@ -1,5 +1,6 @@
-@import "palette";
-@import "usual_mixins";
+
+@use "palette";
+@use "usual_mixins";
 
 
 $base-body-font-family: semplicitapro, sans-serif;
@@ -10,7 +11,7 @@ $base-header-font-family: anisette-std, sans-serif;
   font-family: $base-body-font-family;
   font-weight: 400;
   font-style: normal;
-  color: $black;
+  color: palette.$black;
   font-size: 1rem;
   line-height: 1.5rem;
 }
@@ -19,7 +20,7 @@ $base-header-font-family: anisette-std, sans-serif;
   font-family: $base-header-font-family;
   font-weight: 700;
   font-style: normal;
-  color: $black;
+  color: palette.$black;
   font-size: 3rem;
   line-height: 2.5rem;
 }
@@ -32,7 +33,7 @@ $base-header-font-family: anisette-std, sans-serif;
 
 .description{
   font-family: $base-body-font-family;
-  color: $grey;
+  color: palette.$grey;
   padding: 1rem;
 }
 

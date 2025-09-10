@@ -1,9 +1,9 @@
-@import "../utility/usual_mixins";
+@use "../utility/usual_mixins";
 
 .your-team-ring{
   margin-bottom: 3rem;
   padding: 1rem;
-  @include breakpoint("md"){
+  @include usual_mixins.breakpoint("md"){
     padding: 0;
   }
   p{
@@ -19,10 +19,10 @@
       margin: 1rem;
       img{
         width: 100%;
-        @include box-shadower();
+        @include usual_mixins.box-shadower();
       }
     }
-    @include breakpoint("md"){
+    @include usual_mixins.breakpoint("md"){
       flex-direction: row;
     }
   }
@@ -37,10 +37,10 @@
       margin-left: 2rem;
       break-before: avoid;
     }
-    @include breakpoint("sm"){
+    @include usual_mixins.breakpoint("sm"){
       columns: 2;
     }
-    @include breakpoint("md"){
+    @include usual_mixins.breakpoint("md"){
       columns: 3;
     }
   }
@@ -52,7 +52,7 @@
     .your-team-ring-album {
       margin: 1rem 0 1rem 0;
     }
-    @include breakpoint("md"){
+    @include usual_mixins.breakpoint("md"){
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-between;

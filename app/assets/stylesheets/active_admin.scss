@@ -1,2 +1,3 @@
-@import "active_admin/mixins";
-@import "active_admin/base";
+@use "active_admin/mixins" as *;
+@use "active_admin/base" as *;
+
