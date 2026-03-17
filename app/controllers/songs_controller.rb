@@ -4,7 +4,7 @@ class SongsController < ApplicationController
   before_action :set_song, only: %i[show edit update destroy ]
 
   def index
-    @songs = @album.songs
+    @songs = @album.songs.includes(streaming_links: :streaming_service, videos: [])
     respond_to do |format|
       format.html { render :index}
       format.json { render :json => @songs}
@@ -12,17 +12,10 @@ class SongsController < ApplicationController
   end
 
   def just_titles
-    songs = Song.all
-    @song_titles = []
-    rainbow_only = params[:rainbow_only]
-    songs.each do |song|
-      if rainbow_only
-        if song.album.rainbow_table != 'not_associated'
-          @song_titles << song.title
-        end
-      else
-        @song_titles << song.title
-      end
+    @song_titles = if params[:rainbow_only]
+      Song.joins(:album).where.not(albums: { rainbow_table: 0 }).pluck(:title)
+    else
+      Song.pluck(:title)
     end
     respond_to do |format|
       format.html { render :just_titles}
@@ -31,6 +24,7 @@ class SongsController < ApplicationController
   end
 
   def show
+    fresh_when @song, public: true
     respond_to do |format|
       format.html { render :show}
       format.json { render :json => @song}

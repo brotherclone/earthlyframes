@@ -1,46 +1,46 @@
-@import "../utility/usual_mixins";
-@import "../utility/palette";
-@import "../utility/typography";
+@use "../utility/usual_mixins";
+@use "../utility/palette";
+@use "../utility/typography";
 
 .post{
   margin: 1rem 0 0 0;
   padding: 1rem;
   width: 100%;
-  @include breakpoint("xs"){
+  @include usual_mixins.breakpoint("xs"){
     max-width: 19rem;
   }
-  @include breakpoint("sm"){
-    max-width: calc($breakpoint-max-sm / 2);
+  @include usual_mixins.breakpoint("sm"){
+   max-width: calc(#{usual_mixins.$breakpoint-max-sm} / 2);
   }
-  @include breakpoint("md"){
-    max-width: $breakpoint-max-md;
+  @include usual_mixins.breakpoint("md"){
+    max-width: usual_mixins.$breakpoint-max-md;
     padding: 0;
   }
-  @include breakpoint("lg"){
-    max-width: $breakpoint-max-lg;
+  @include usual_mixins.breakpoint("lg"){
+    max-width: usual_mixins.$breakpoint-max-lg;
   }
-  @include breakpoint("xl"){
+  @include usual_mixins.breakpoint("xl"){
     max-width: unset;
   }
   h3.post-title{
-    @include header-font();
+    @include typography.header-font();
     font-size: 1.3rem;
-    color: $dark-grey;
+    color: palette.$dark-grey;
     text-align: center;
     padding-left: 0;
-    @include breakpoint("md"){
+    @include usual_mixins.breakpoint("md"){
       font-size: 2.5rem;
       text-align: unset;
       padding-left: 1rem;
     }
   }
   h4.post-description{
-    @include body-font();
-    color: $dark-grey;
+    @include typography.body-font();
+    color: palette.$dark-grey;
     font-size: 1rem;
     text-align: center;
     padding-left: 0;
-    @include breakpoint("md"){
+    @include usual_mixins.breakpoint("md"){
       font-size: 1.5rem;
       text-align: unset;
       padding-left: 1rem;
@@ -53,9 +53,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    @include box-shadower();
-    @include max-widths-for-breakpoints();
-    @include breakpoint("md"){
+    @include usual_mixins.box-shadower();
+    @include usual_mixins.max-widths-for-breakpoints();
+    @include usual_mixins.breakpoint("md"){
       margin: 1rem;
     }
   }
@@ -67,7 +67,7 @@
         line-height: normal !important;
         margin-bottom: 3rem;
         font-size: 1rem;
-        background: $code-bg;
+        background: palette.$code-bg;
         word-wrap: break-word;
         box-decoration-break: clone;
         padding: .1rem .3rem .2rem;
@@ -75,19 +75,19 @@
       }
     }
     h1{
-      @include header-font();
+      @include typography.header-font();
       font-size: 1.3rem;
-      color: $dark-grey;
+      color: palette.$dark-grey;
       text-align: center;
       padding-left: 0;
-      @include breakpoint("md"){
+      @include usual_mixins.breakpoint("md"){
         font-size: 2.5rem;
         text-align: unset;
         padding-left: 1rem;
       }
     }
     h2, h3{
-      @include body-font();
+      @include typography.body-font();
       font-size: 1rem;
       font-weight: 400;
     }

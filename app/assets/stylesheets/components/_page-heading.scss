@@ -1,6 +1,6 @@
-@import "../utility/usual_mixins";
-@import "../utility/palette";
-@import "../utility/typography";
+@use "../utility/usual_mixins" as usual_mixins;
+@use "../utility/palette" as palette;
+@use "../utility/typography" as typography;
 
 .page-heading {
   margin: 1.25rem 0 1rem 0;
@@ -9,28 +9,28 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  @include max-widths-for-breakpoints();
+  @include usual_mixins.max-widths-for-breakpoints();
   h1{
-    font-family: $base-body-font-family;
+    font-family: typography.$base-body-font-family;
     font-weight: 200;
     font-style: normal;
-    color: $dark-grey;
+    color: palette.$dark-grey;
     font-size: 1rem;
     line-height: 1.25rem;
     margin: 0;
-    @include breakpoint("md"){
+    @include usual_mixins.breakpoint("md"){
       font-size: 2.25rem;
       line-height: 2.5rem;
       margin: 0.25rem;
     }
   }
   span{
-    font-family: $base-body-font-family;
+    font-family: typography.$base-body-font-family;
     font-weight: 200;
     font-style: italic;
-    color: $dark-grey;
+    color: palette.$dark-grey;
     margin: 0;
-    @include breakpoint("md"){
+    @include usual_mixins.breakpoint("md"){
       font-size: 0.75rem;
       line-height: 1rem;
       margin: 0.25rem;
@@ -40,8 +40,8 @@
     font-size: 2.25rem;
     font-weight: 200;
     margin: 0;
-    color: $black;
-    @include breakpoint("md"){
+    color: palette.$black;
+    @include usual_mixins.breakpoint("md"){
       font-size: 4rem;
       line-height: 4.1rem;
     }

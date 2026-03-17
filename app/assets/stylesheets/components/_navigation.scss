@@ -1,18 +1,18 @@
-@import "../utility/usual_mixins";
-@import "../utility/palette";
-@import "../utility/typography";
+@use "../utility/usual_mixins" as usual_mixins;
+@use "../utility/palette" as palette;
+@use "../utility/typography" as typography;
 
 nav, .navigation{
   display: flex;
   flex-direction: row;
   width: 100vw;
   .mobile-navigation-button{
-    color: $black;
+    color: palette.$black;
     background-color: unset;
     margin-top: -0.063rem;
     &.is-open{
-      color: $white;
-      background-color: $black;
+      color: palette.$white;
+      background-color: palette.$black;
     }
     display: flex;
     i{
@@ -25,14 +25,14 @@ nav, .navigation{
         cursor: pointer;
       }
       &.fa-x{
-        color: $white;
-        background-color: $black;
+        color: palette.$white;
+        background-color: palette.$black;
       }
     }
   }
   ul{
     display: flex;
-    background-color: $black;
+    background-color: palette.$black;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
@@ -52,14 +52,14 @@ nav, .navigation{
         font-size: 0.75rem;
         text-transform: lowercase;
         text-decoration: none;
-        color: $white;
+        color: palette.$white;
       }
     }
     &.hide{
       display: none;
     }
   }
-  @include breakpoint("md"){
+  @include usual_mixins.breakpoint("md"){
     justify-content: center;
     .mobile-navigation-button{
       display: none;
@@ -75,13 +75,13 @@ nav, .navigation{
           font-size: 0.75rem;
           text-transform: lowercase;
           text-decoration: none;
-          color: $black;
+          color: palette.$black;
           &:hover{
-            color: $green;
+            color: palette.$green;
           }
           &:before, &:after{
             content: "ººº";
-            color: $violet;
+            color: palette.$violet;
           }
         }
       }

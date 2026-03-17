@@ -1,5 +1,5 @@
-@import "../utility/usual_mixins";
-@import "../utility/palette";
+@use "../utility/usual_mixins";
+@use "../utility/palette";
 
 .breadcrumbs{
   display: flex;
@@ -10,11 +10,11 @@
   li{
     margin: 0 0.5rem 0 0.5rem;
     a{
-      color: $indigo;
+      color: palette.$indigo;
       text-decoration: none;
       transition: color 500ms ease-in-out;
       &:hover{
-        color: $orange;
+        color: palette.$orange;
       }
     }
   }

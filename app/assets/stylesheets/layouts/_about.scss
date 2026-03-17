@@ -1,17 +1,17 @@
-@import "../utility/typography";
-@import "../utility/palette";
-@import "../utility/usual_mixins";
+@use "../utility/typography" as typography;
+@use "../utility/palette" as palette;
+@use "../utility/usual_mixins" as usual_mixins;
 
 article.about{
   padding: 2rem;
   .about-portrait{
     width: 100%;
     margin: 2rem 0 2rem 0;
-    @include max-widths-for-breakpoints();
-    @include box-shadower();
+    @include usual_mixins.max-widths-for-breakpoints();
+    @include usual_mixins.box-shadower();
   }
   h4.rhetorical-question{
-    @include body-font();
+    @include typography.body-font();
     font-weight: 800;
     font-size:1.5rem;
     margin: 1rem 0 1rem 0;
@@ -29,19 +29,19 @@ article.about{
       margin: 1rem;
       img{
         width: 100%;
-        @include box-shadower();
+        @include usual_mixins.box-shadower();
       }
     }
-    @include breakpoint("md"){
+    @include usual_mixins.breakpoint("md"){
       flex-direction: row;
     }
   }
   a{
-    color: $orange;
+    color: palette.$orange;
     transition: color 500ms ease-in-out;
     text-decoration: none;
     &:hover{
-      color: $indigo;
+      color: palette.$indigo;
     }
   }
 }

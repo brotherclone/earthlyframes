@@ -4,7 +4,8 @@ class PostsController < ApplicationController
 
   def index
     add_breadcrumb "Posts", :posts_path
-    @posts = Post.where(:is_live => true).order(created_at: :desc)
+    @posts = Post.where(is_live: true).order(created_at: :desc)
+    expires_in 5.minutes, public: true
     respond_to do |format|
       format.html { render :index}
       format.json { render :json => @posts}
@@ -15,6 +16,7 @@ class PostsController < ApplicationController
     if @post.is_live
       add_breadcrumb "Posts", :posts_path
       add_breadcrumb @post.title, :post_path
+      fresh_when @post, public: true
       respond_to do |format|
         format.html { render :show}
         format.json { render :json => @post}
