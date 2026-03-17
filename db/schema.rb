@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_22_130033) do
+ActiveRecord::Schema[8.0].define(version: 2026_03_17_000000) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension "pg_catalog.plpgsql"
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -63,6 +63,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_22_130033) do
     t.string "rainbow_portrait"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["is_live", "rainbow_table"], name: "index_albums_on_is_live_and_rainbow_table"
+    t.index ["is_live"], name: "index_albums_on_is_live"
+    t.index ["rainbow_table"], name: "index_albums_on_rainbow_table"
   end
 
   create_table "constellations", force: :cascade do |t|
@@ -86,6 +89,36 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_22_130033) do
     t.index ["streaming_service_id"], name: "index_embeds_on_streaming_service_id"
   end
 
+  create_table "mix_embeds", force: :cascade do |t|
+    t.string "version"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "mix_id"
+    t.bigint "embed_id"
+    t.index ["embed_id"], name: "index_mix_embeds_on_embed_id"
+    t.index ["mix_id"], name: "index_mix_embeds_on_mix_id"
+  end
+
+  create_table "mix_reviews", force: :cascade do |t|
+    t.boolean "favored"
+    t.string "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "mix_id"
+    t.bigint "reviewer_id"
+    t.index ["mix_id"], name: "index_mix_reviews_on_mix_id"
+    t.index ["reviewer_id"], name: "index_mix_reviews_on_reviewer_id"
+  end
+
+  create_table "mixes", force: :cascade do |t|
+    t.string "title"
+    t.integer "rainbow_table"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "song_id"
+    t.index ["song_id"], name: "index_mixes_on_song_id"
+  end
+
   create_table "music_formats", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -100,6 +133,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_22_130033) do
     t.boolean "is_live"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["is_live"], name: "index_posts_on_is_live"
   end
 
   create_table "release_formats", force: :cascade do |t|
@@ -109,6 +143,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_22_130033) do
     t.datetime "updated_at", null: false
     t.index ["album_id"], name: "index_release_formats_on_album_id"
     t.index ["music_format_id"], name: "index_release_formats_on_music_format_id"
+  end
+
+  create_table "reviewers", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_reviewers_on_email", unique: true
+    t.index ["token"], name: "index_reviewers_on_token", unique: true
   end
 
   create_table "song_constellations", force: :cascade do |t|
@@ -158,5 +202,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_22_130033) do
     t.bigint "song_id"
     t.index ["song_id"], name: "index_videos_on_song_id"
   end
-
 end
