@@ -5,8 +5,6 @@ module StreamingLinksHelper
       "fab fa-apple"
     when "Apple"
       "fab fa-apple"
-    when "Bandcamp"
-      "fab fa-bandcamp"
     when "Spotify"
       "fab fa-spotify"
     when "Amazon Music"
