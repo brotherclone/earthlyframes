@@ -20,7 +20,7 @@ ef_volume_one =                   Album.create(is_live: true,
                                    cover: cloudinary('volume-one_sv5ccr', 'jpg', '1657809111'),
                                    price: 1,
                                    released: '2016-10-11',
-                                   buy_link: 'https://earthlyframes.bandcamp.com/album/the-earthly-frames-volume-one',
+                                   buy_link: nil,
                                    brief_description: 'Debut EP',
                                    rainbow_table: 0,
                                    rainbow_portrait: nil)
@@ -30,7 +30,7 @@ feel_better_soon =                Album.create(is_live: true,
                                     cover: cloudinary('j56fbcdgjs1i7ysviem6', 'jpg', '1589364326'),
                                     price: 1,
                                     released: '2020-05-12',
-                                    buy_link: 'https://earthlyframes.bandcamp.com/track/feel-better-soon',
+                                    buy_link: nil,
                                     brief_description: 'Topical Pain Relief',
                                     rainbow_table: 0,
                                     rainbow_portrait: nil)
@@ -41,7 +41,7 @@ ruine =                           Album.create(
                                     cover: cloudinary('d74sm0lev5nc6amggbhv', 'jpg', '1591453400'),
                                     price: 5.0,
                                     released: '2020-06-23',
-                                    buy_link: 'https://earthlyframes.bandcamp.com/album/ruine',
+                                    buy_link: nil,
                                     brief_description: 'An album of songs about memory misused.',
                                     rainbow_table: 3,
                                     rainbow_portrait: cloudinary('o9e6f2khifejwhvpqkow', 'png', '1615832002'))
@@ -50,7 +50,7 @@ conjurer =                        Album.create(title: "The Conjurer's Thread",
                                    cover: cloudinary('agffxxdn3xqxqztjejv5', 'jpg', '1492199069'),
                                    price: 5.0,
                                    released: '2017-07-17',
-                                   buy_link: 'https://earthlyframes.bandcamp.com/album/the-conjurers-thread',
+                                   buy_link: nil,
                                    brief_description: 'The Earthly Frames first full-length album.',
                                    is_live: true,
                                    rainbow_table: 1,
@@ -60,7 +60,7 @@ purgatory =                       Album.create(title: 'Purgatory Mixtape',
                                    cover: cloudinary('lkc47mr9vadluasx5utm', 'jpg', '1475002751'),
                                    price: 1.0,
                                    released: '2016-10-12',
-                                   buy_link: 'https://earthlyframes.bandcamp.com/album/purgatory-mixtape',
+                                   buy_link: nil,
                                    brief_description: 'Four covers',
                                    is_live: true,
                                    rainbow_table: 0,
@@ -70,7 +70,7 @@ hoarding_seventeen =              Album.create(title: 'Hoarding Seventeen',
                                     cover: cloudinary('wzqtqgo5jio793i6u5lj', 'jpg', '1491914951'),
                                     price: 2.0,
                                     released: '2017-04-18',
-                                    buy_link: 'https://earthlyframes.bandcamp.com/album/hoarding-seventeen',
+                                    buy_link: nil,
                                     brief_description: 'Recorded in 2011 as part of the "Hoarding Eleven" multi-media project, these four songs have been tweak, remixed and remastered.',
                                     is_live: true,
                                     rainbow_table: 0,
@@ -90,7 +90,7 @@ pulsar =                          Album.create(title: 'Pulsar Palace',
                                    cover: cloudinary('hivsicqpoxmxnai7hm16', 'png', '1603388399'),
                                    price: 5.0,
                                    released: '2020-12-08',
-                                   buy_link: 'https://earthlyframes.bandcamp.com/album/pulsar-palace',
+                                   buy_link: nil,
                                    brief_description: 'A dizzying walking-tour.',
                                    is_live: true,
                                    rainbow_table: 4,
@@ -100,7 +100,7 @@ empty =                         Album.create(title: 'The Empty Fields',
                                  cover: cloudinary('ajhifu0caxa8yqn0v29t', 'jpg', '1624284652'),
                                  price: 7.0,
                                  released: '2021-09-07',
-                                 buy_link: 'https://earthlyframes.bandcamp.com/album/the-empty-fields',
+                                 buy_link: nil,
                                  brief_description: 'String and synth compositions lamenting the impending environmental collapse.',
                                  is_live: true,
                                  rainbow_table: 5,
@@ -110,7 +110,7 @@ light =                         Album.create(title: 'Light Reading',
                                  cover: cloudinary('kfomrtrgwsgc16am8d6d', 'jpg', '1645535915'),
                                  price: 5.0,
                                  released: '2019-01-11',
-                                 buy_link: 'https://earthlyframes.bandcamp.com/album/light-reading',
+                                 buy_link: nil,
                                  brief_description: 'An Imagined Reading List in Song ',
                                  is_live: true,
                                  rainbow_table: 2,
@@ -202,7 +202,6 @@ room_card = MusicFormat.create(name: 'NFC Room Card')
 
 # Streaming Services
 apple = StreamingService.create(name: 'Apple Music', icon: 'apple')
-band_camp = StreamingService.create(name: "Bandcamp", icon: "bandcamp")
 spotify = StreamingService.create(name: "Spotify", icon: "spotify")
 amazon = StreamingService.create(name: "Amazon Music", icon: "amazon")
 sound_cloud = StreamingService.create(name: "SoundCloud", icon: "soundcloud")
@@ -231,74 +230,30 @@ ReleaseFormat.create(album_id: empty.id, music_format_id: digital.id)
 ReleaseFormat.create(album_id: feel_better_soon.id, music_format_id: digital.id)
 
 # Album Streams
-AlbumStreamingLink.create(link: "https://earthlyframes.bandcamp.com/album/purgatory-mixtape", streaming_service_id: band_camp.id, album_id: purgatory.id)
-AlbumStreamingLink.create(link: "https://earthlyframes.bandcamp.com/album/the-earthly-frames-volume-one", streaming_service_id: band_camp.id, album_id: ef_volume_one.id )
 AlbumStreamingLink.create(link: "https://www.amazon.com/gp/product/B0743LNVMN/ref=dm_ws_sp_ps_dp", streaming_service_id: amazon.id,  album_id: conjurer.id)
 AlbumStreamingLink.create(link: "https://www.amazon.com/gp/product/B07J1H63TJ/ref=dm_ws_sp_ps_dp", streaming_service_id: amazon.id,  album_id: light.id )
-AlbumStreamingLink.create(link: "https://earthlyframes.bandcamp.com/album/light-reading", streaming_service_id: band_camp.id,  album_id: light.id )
-AlbumStreamingLink.create(link: "https://earthlyframes.bandcamp.com/album/the-conjurers-thread", streaming_service_id: band_camp.id,  album_id: conjurer.id)
-AlbumStreamingLink.create(link: "https://earthlyframes.bandcamp.com/album/hoarding-seventeen", streaming_service_id: band_camp.id, album_id: hoarding_seventeen.id )
 AlbumStreamingLink.create(link: "http://music.apple.com/album/id/1258666378", streaming_service_id: apple.id,  album_id: conjurer.id)
 AlbumStreamingLink.create(link: "https://open.spotify.com/album/4x3yltXQeR5aghSKGEBIn3", streaming_service_id: spotify.id,  album_id: conjurer.id)
 AlbumStreamingLink.create(link: "http://music.apple.com/album/id/1438009870", streaming_service_id: apple.id,  album_id: light.id )
 AlbumStreamingLink.create(link: "https://open.spotify.com/album/4fkfYwr2s27Oqf3GuL5OeU", streaming_service_id: spotify.id,  album_id: light.id )
 AlbumStreamingLink.create(link: "http://music.apple.com/album/id/1517190824", streaming_service_id: apple.id, album_id: ruine.id)
 AlbumStreamingLink.create(link: "https://open.spotify.com/album/1OySz60uwhdUwSEhaUDb3y", streaming_service_id: spotify.id, album_id: ruine.id)
-AlbumStreamingLink.create(link: "https://earthlyframes.bandcamp.com/album/ruine", streaming_service_id: band_camp.id, album_id: ruine.id)
 AlbumStreamingLink.create(link: "https://soundcloud.com/earthly-frames/sets/ruine", streaming_service_id: sound_cloud.id, album_id: ruine.id)
 AlbumStreamingLink.create(link: "https://soundcloud.com/earthly-frames/sets/volume-1", streaming_service_id: sound_cloud.id,album_id: ef_volume_one.id )
 AlbumStreamingLink.create(link: "https://music.apple.com/us/album/pulsar-palace/1531556355", streaming_service_id: apple.id, album_id: pulsar.id )
-AlbumStreamingLink.create(link: "https://earthlyframes.bandcamp.com/album/pulsar-palace", streaming_service_id: band_camp.id, album_id: pulsar.id )
 AlbumStreamingLink.create(link: "https://open.spotify.com/album/3wmbiIpipmlFszmsnzeiIk?si=e1_fJneuS3uN1HmkC9-0og", streaming_service_id: spotify.id, album_id: pulsar.id )
 AlbumStreamingLink.create(link: "http://music.apple.com/album/id/1573431550", streaming_service_id: apple.id, album_id: empty.id )
 AlbumStreamingLink.create(link: "https://www.amazon.com/Pulsar-Palace-Earthly-Frames/dp/B08HYKG5TY", streaming_service_id: amazon.id, album_id: pulsar.id )
 AlbumStreamingLink.create(link: "https://soundcloud.com/earthly-frames/sets/pulsar-palace", streaming_service_id: sound_cloud.id, album_id: pulsar.id )
-AlbumStreamingLink.create(link: "https://earthlyframes.bandcamp.com/album/the-empty-fields", streaming_service_id: band_camp.id, album_id: empty.id )
 AlbumStreamingLink.create(link: "https://open.spotify.com/album/2b6Otfs17TYYrM8YcIYrM4", streaming_service_id: spotify.id, album_id: empty.id )
 AlbumStreamingLink.create(link: "https://soundcloud.com/earthly-frames/sets/the-empty-fields", streaming_service_id: sound_cloud.id,album_id: empty.id )
 AlbumStreamingLink.create(link: "https://www.amazon.com/gp/product/B097PTSW8D/ref=dm_ws_sp_ps_dp", streaming_service_id: amazon.id, album_id: empty.id )
 AlbumStreamingLink.create(link: "https://music.apple.com/us/album/feel-better-soon-single/1513800823", streaming_service_id: apple.id, album_id: feel_better_soon.id)
-AlbumStreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/feel-better-soon", streaming_service_id: band_camp.id, album_id: feel_better_soon.id)
 AlbumStreamingLink.create(link: "https://open.spotify.com/album/704yrP2L8MP8mXjiTq4VOE", streaming_service_id: spotify.id, album_id: feel_better_soon.id)
 AlbumStreamingLink.create(link: "https://www.amazon.com/gp/product/B088QL5QFZ/ref=dm_ws_sp_ps_dp", streaming_service_id: amazon.id, album_id: feel_better_soon.id)
 
 
 # Song Streams
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/dead-edit", streaming_service_id: band_camp.id, song_id: dead_edit.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/pike", streaming_service_id: band_camp.id, song_id: pike.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/good-as-gold", streaming_service_id: band_camp.id, song_id: good_as_gold.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/reach", streaming_service_id: band_camp.id, song_id: reach.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/look-out", streaming_service_id: band_camp.id, song_id: look_out.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/pagans", streaming_service_id: band_camp.id, song_id: pagans.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/the-old-revolution", streaming_service_id: band_camp.id, song_id: old.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/program", streaming_service_id: band_camp.id, song_id: program.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/everybody-wants-to-rule-the-world", streaming_service_id: band_camp.id, song_id: everybody.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/a-doorbell-for-finite-beings", streaming_service_id: band_camp.id, song_id: doorbell.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/underrepresented-harmonics", streaming_service_id: band_camp.id, song_id: harmonics.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/she-waits-for-yesterday", streaming_service_id: band_camp.id, song_id: waits.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/the-imagined-lives-of-shirley-kudirka", streaming_service_id: band_camp.id, song_id: imagined.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/dismantling-ubiquitous-monitoring-systems", streaming_service_id: band_camp.id, song_id: dismantling.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/the-architectural-mnemonics-of-m-nodisks", streaming_service_id: band_camp.id, song_id: mnemonic.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/end-timed-family", streaming_service_id: band_camp.id, song_id: end_timed.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/a-teleological-wind", streaming_service_id: band_camp.id, song_id: wind.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/dark-years-history", streaming_service_id: band_camp.id, song_id: dark.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/getting-started-in-tempography", streaming_service_id: band_camp.id, song_id: getting_started.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/eye-on-ghost-singers", streaming_service_id: band_camp.id, song_id: eye.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/time-moving-in-light", streaming_service_id: band_camp.id, song_id: time.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/the-conjurers-thread", streaming_service_id: band_camp.id, song_id: thread.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/everyday-sigils", streaming_service_id: band_camp.id, song_id: sigils.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/an-unfortunate-conflict-of-evidence", streaming_service_id: band_camp.id, song_id: conflict.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/all-basty", streaming_service_id: band_camp.id, song_id: basty.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/strings-of-bad-luck", streaming_service_id: band_camp.id, song_id: bad_luck.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/star-filter", streaming_service_id: band_camp.id, song_id: star.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/rsi-labeling-act", streaming_service_id: band_camp.id, song_id: rsi.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/abandoner", streaming_service_id: band_camp.id, song_id: abandoner.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/a-seat-at-the-rainbow-table", streaming_service_id: band_camp.id, song_id: seat.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/the-outer-loop", streaming_service_id: band_camp.id, song_id: outer.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/the-mark", streaming_service_id: band_camp.id, song_id: the_mark17.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/vacant-lands", streaming_service_id: band_camp.id, song_id: vacant17.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/obduration", streaming_service_id: band_camp.id, song_id: obduration17.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/evening-ladies", streaming_service_id: band_camp.id, song_id: evening17.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/the-conjurers-thread/1258666378?i=1258667506", streaming_service_id: apple.id, song_id: thread.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/everyday-sigiils/1258666378?i=1258667517", streaming_service_id: apple.id, song_id: sigils.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/an-unfortunate-conflict-of-evidence/1258666378?i=1258667523", streaming_service_id: apple.id, song_id: conflict.id)
@@ -321,133 +276,105 @@ StreamingLink.create(link: "https://music.apple.com/us/album/dark-years-history/
 StreamingLink.create(link: "https://music.apple.com/us/album/getting-started-in-tempography/1438009870?i=1438010199", streaming_service_id: apple.id, song_id: getting_started.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/eye-on-ghost-singers/1438009870?i=1438010328", streaming_service_id: apple.id, song_id: eye.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/time-moving-in-light/1438009870?i=1438010331", streaming_service_id: apple.id, song_id: time.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/sleeve", streaming_service_id: band_camp.id, song_id: sleeve.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/sleeve/1517190824?i=1517190836", streaming_service_id: apple.id, song_id: sleeve.id)
 StreamingLink.create(link: "https://open.spotify.com/track/32Kqa2LHe3EFxJvCU3poFU?si=u_yrNeFRQCW-SN97kzK-9Q", streaming_service_id: spotify.id, song_id: sleeve.id)
 StreamingLink.create(link: "https://www.amazon.com/Sleeve/dp/B089RPWRF6/ref=sr_1_1?dchild=1&keywords=the+earthly+frames&qid=1592996584&s=dmusic&sr=1-1", streaming_service_id: amazon.id, song_id: sleeve.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/search-flares", streaming_service_id: band_camp.id, song_id: search.id)
 StreamingLink.create(link: "https://open.spotify.com/track/4Cmgs4ZxU6cJcbFWBMXaNO?si=_dTeRiXiSOehPX9mFS_Blw", streaming_service_id: spotify.id, song_id: search.id)
 StreamingLink.create(link: "https://www.amazon.com/dp/B089RPDTBB/ref=dm_ws_tlw_trk9", streaming_service_id: amazon.id, song_id: search.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/search-flares/1517190824?i=1517190835", streaming_service_id: apple.id, song_id: search.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/here-comes-the-mechanical-bride", streaming_service_id: band_camp.id, song_id: here.id)
 StreamingLink.create(link: "https://open.spotify.com/track/4u7m9fODgXQBipmqTSa6Mj?si=5_jqzchUTV-oBorWk7VRQA", streaming_service_id: spotify.id, song_id: here.id)
 StreamingLink.create(link: "https://www.amazon.com/dp/B089RPHDW2/ref=dm_ws_tlw_trk8", streaming_service_id: amazon.id, song_id: here.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/here-comes-the-mechanical-bride/1517190824?i=1517190834", streaming_service_id: apple.id, song_id: here.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/tell", streaming_service_id: band_camp.id, song_id: tell.id)
 StreamingLink.create(link: "https://open.spotify.com/track/1qdoSxMvlaSX1Tjv9FRyZT?si=Bcdai21gSP6ywm-b1spk6g", streaming_service_id: spotify.id, song_id: tell.id)
 StreamingLink.create(link: "https://www.amazon.com/dp/B089RPQKNM/ref=dm_ws_tlw_trk7", streaming_service_id: amazon.id, song_id: tell.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/tell/1517190824?i=1517190832", streaming_service_id: apple.id, song_id: tell.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/newest-of-the-natural-senses", streaming_service_id: band_camp.id, song_id: newest.id)
 StreamingLink.create(link: "https://open.spotify.com/track/0vVA4MNF5488DCZ2XCrJb9?si=IPpimD7wQLuKfTugNAyb2w", streaming_service_id: spotify.id, song_id: newest.id)
 StreamingLink.create(link: "https://www.amazon.com/dp/B089RPDHHF/ref=dm_ws_tlw_trk6", streaming_service_id: amazon.id, song_id: newest.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/newest-of-the-natural-senses/1517190824?i=1517190830", streaming_service_id: apple.id, song_id: newest.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/newton", streaming_service_id: band_camp.id, song_id: newton.id)
 StreamingLink.create(link: "https://open.spotify.com/track/3xoKQ3bQ8hMyqydAEz2hdl?si=TFUhKMdCTHqsTbiCVZDLyQ", streaming_service_id: spotify.id, song_id: newton.id)
 StreamingLink.create(link: "https://www.amazon.com/dp/B089RPNRJB/ref=dm_ws_tlw_trk5", streaming_service_id: amazon.id, song_id: newton.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/newton/1517190824?i=1517190829", streaming_service_id: apple.id, song_id: newton.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/it-user-to-be-space-now-its-here", streaming_service_id: band_camp.id, song_id: space.id)
 StreamingLink.create(link: "https://open.spotify.com/track/1Of7lkRfTUhejFsOhI8Btn?si=n4GNiVP1ReyzPVn54zG4Vw", streaming_service_id: spotify.id, song_id: space.id)
 StreamingLink.create(link: "https://www.amazon.com/dp/B089RPWF4G/ref=dm_ws_tlw_trk4", streaming_service_id: amazon.id, song_id: space.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/it-used-to-be-space-now-its-here/1517190824?i=1517190828", streaming_service_id: apple.id, song_id: space.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/tangier", streaming_service_id: band_camp.id, song_id: tangier.id)
 StreamingLink.create(link: "https://open.spotify.com/track/0kuWdgaDWQPflRuYbY0Nmk?si=eLBf63n1RRqcReONPmMDCQ", streaming_service_id: spotify.id, song_id: tangier.id)
 StreamingLink.create(link: "https://www.amazon.com/dp/B089RPWR76/ref=dm_ws_tlw_trk3", streaming_service_id: amazon.id, song_id: tangier.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/tangier/1517190824?i=1517190827", streaming_service_id: apple.id, song_id: tangier.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/broken-front-tooth", streaming_service_id: band_camp.id, song_id: broken.id)
 StreamingLink.create(link: "https://open.spotify.com/track/7sfewpwh0xEB4EOFD7Hcoz?si=Sd87jYDfTDGlrXSO-Mw_UA", streaming_service_id: spotify.id, song_id: broken.id)
 StreamingLink.create(link: "https://www.amazon.com/dp/B089RPHDVY/ref=dm_ws_tlw_trk2", streaming_service_id: amazon.id, song_id: broken.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/broken-front-tooth/1517190824?i=1517190826", streaming_service_id: apple.id, song_id: broken.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/moonrakers", streaming_service_id: band_camp.id, song_id: moon.id)
 StreamingLink.create(link: "https://open.spotify.com/track/6GGUcuhBkQM4aVykL2y1Mk?si=PZWGzN14TV63zjmRF-bdFw", streaming_service_id: spotify.id, song_id: moon.id)
 StreamingLink.create(link: "https://www.amazon.com/dp/B089RPTWJW/ref=dm_ws_tlw_trk1", streaming_service_id: amazon.id, song_id: moon.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/moonrakers/1517190824?i=1517190825", streaming_service_id: apple.id, song_id: moon.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/entrance/1531556355?i=1531556356", streaming_service_id: apple.id, song_id: entrance.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/entrance", streaming_service_id: band_camp.id, song_id: entrance.id)
 StreamingLink.create(link: "https://open.spotify.com/track/1vS9UPHZz9caBxUcjOCwXu", streaming_service_id: spotify.id, song_id: entrance.id)
 StreamingLink.create(link: "https://www.amazon.com/dp/B08HYK5ZD8/ref=dm_ws_tlw_trk1", streaming_service_id: amazon.id, song_id: entrance.id)
 StreamingLink.create(link: "https://soundcloud.com/earthly-frames/entrance", streaming_service_id: sound_cloud.id, song_id: entrance.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/vestibule/1531556355?i=1531556357", streaming_service_id: apple.id, song_id: vestibule.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/vestibule", streaming_service_id: band_camp.id, song_id: vestibule.id)
 StreamingLink.create(link: "https://open.spotify.com/track/6HGfUibbLvIlbBUEjwwt6k", streaming_service_id: spotify.id, song_id: vestibule.id)
 StreamingLink.create(link: "https://www.amazon.com/dp/B08HYJ8S7W/ref=dm_ws_tlw_trk2", streaming_service_id: amazon.id, song_id: vestibule.id)
 StreamingLink.create(link: "https://soundcloud.com/earthly-frames/vestibule", streaming_service_id: sound_cloud.id, song_id: vestibule.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/foyer/1531556355?i=1531556361", streaming_service_id: apple.id, song_id: foyer.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/foyer", streaming_service_id: band_camp.id, song_id: foyer.id)
 StreamingLink.create(link: "https://open.spotify.com/track/0nuKRfbdv0GqhIPYLwIe9t", streaming_service_id: spotify.id, song_id: foyer.id)
 StreamingLink.create(link: "https://www.amazon.com/dp/B08HYJMTF7/ref=dm_ws_tlw_trk3", streaming_service_id: amazon.id, song_id: foyer.id)
 StreamingLink.create(link: "https://soundcloud.com/earthly-frames/foyer", streaming_service_id: sound_cloud.id, song_id: foyer.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/drawing-room/1531556355?i=1531556363", streaming_service_id: amazon.id,song_id: drawing.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/drawing-room", streaming_service_id: band_camp.id,song_id: drawing.id)
 StreamingLink.create(link: "https://open.spotify.com/track/708voBYqWNNlSGyNaGzcP0", streaming_service_id: spotify.id,song_id: drawing.id)
 StreamingLink.create(link: "https://www.amazon.com/dp/B08HYKDCFP/ref=dm_ws_tlw_trk4", streaming_service_id: amazon.id,song_id: drawing.id)
 StreamingLink.create(link: "https://soundcloud.com/earthly-frames/drawing-room", streaming_service_id: sound_cloud.id,song_id: drawing.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/guest-quarters/1531556355?i=1531556365", streaming_service_id: apple.id, song_id: guest.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/guest-quarters", streaming_service_id: band_camp.id, song_id: guest.id)
 StreamingLink.create(link: "https://open.spotify.com/track/1lPRo1LBzeqHyGn6CRVFRg", streaming_service_id: spotify.id, song_id: guest.id)
 StreamingLink.create(link: "https://www.amazon.com/dp/B08HYKX4DV/ref=dm_ws_tlw_trk5", streaming_service_id: amazon.id, song_id: guest.id)
 StreamingLink.create(link: "https://soundcloud.com/earthly-frames/guest-quarters", streaming_service_id: sound_cloud.id, song_id: guest.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/great-chamber/1531556355?i=1531556366", streaming_service_id: apple.id, song_id: great.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/great-chamber", streaming_service_id: band_camp.id, song_id: great.id)
 StreamingLink.create(link: "https://open.spotify.com/track/0vH2cF4fBcvBnBjcvkEdX9", streaming_service_id: spotify.id, song_id: great.id)
 StreamingLink.create(link: "https://www.amazon.com/dp/B08HYJYCXS/ref=dm_ws_tlw_trk6", streaming_service_id: amazon.id, song_id: great.id)
 StreamingLink.create(link: "https://soundcloud.com/earthly-frames/great-chamber", streaming_service_id: sound_cloud.id, song_id: great.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/study/1531556355?i=1531556367", streaming_service_id: apple.id, song_id: study.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/study", streaming_service_id: band_camp.id, song_id: study.id)
 StreamingLink.create(link: "https://open.spotify.com/track/1TlE7Ldev8icpPRQfauqrM", streaming_service_id: spotify.id, song_id: study.id)
 StreamingLink.create(link: "https://www.amazon.com/dp/B08HYJTM42/ref=dm_ws_tlw_trk7", streaming_service_id: amazon.id, song_id: study.id)
 StreamingLink.create(link: "https://soundcloud.com/earthly-frames/study", streaming_service_id: sound_cloud.id, song_id: study.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/nursery/1531556355?i=1531556368", streaming_service_id: apple.id, song_id: nursery.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/nursery", streaming_service_id: band_camp.id, song_id: nursery.id)
 StreamingLink.create(link: "https://open.spotify.com/track/4QmbOcaYYBwU5WMvudJegs", streaming_service_id: spotify.id, song_id: nursery.id)
 StreamingLink.create(link: "https://www.amazon.com/dp/B08HYK11JH/ref=dm_ws_tlw_trk8", streaming_service_id: amazon.id, song_id: nursery.id)
 StreamingLink.create(link: "https://soundcloud.com/earthly-frames/nursery", streaming_service_id: sound_cloud.id, song_id: nursery.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/cloak-room/1531556355?i=1531556369", streaming_service_id: apple.id, song_id: cloak.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/cloak-room", streaming_service_id: band_camp.id, song_id: cloak.id)
 StreamingLink.create(link: "https://open.spotify.com/track/0BzomFoSJkzAk97PXH0H9a", streaming_service_id: spotify.id, song_id: cloak.id)
 StreamingLink.create(link: "https://www.amazon.com/dp/B08HYKDNHZ/ref=dm_ws_tlw_trk9", streaming_service_id: amazon.id, song_id: cloak.id)
 StreamingLink.create(link: "https://soundcloud.com/earthly-frames/cloak-room", streaming_service_id: sound_cloud.id, song_id: cloak.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/back-gardens/1531556355?i=1531556370", streaming_service_id: apple.id, song_id: gardens.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/back-gardens", streaming_service_id: band_camp.id, song_id: gardens.id)
 StreamingLink.create(link: "https://open.spotify.com/track/2EwogilMHd3PLFShoUIujg", streaming_service_id: spotify.id, song_id: gardens.id)
 StreamingLink.create(link: "https://www.amazon.com/dp/B08HYKP785/ref=dm_ws_tlw_trk10", streaming_service_id: amazon.id, song_id: gardens.id)
 StreamingLink.create(link: "https://soundcloud.com/earthly-frames/back-gardens", streaming_service_id: sound_cloud.id, song_id: gardens.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/m-e-e/1573431550?i=1573431566", streaming_service_id: apple.id, song_id: mee.id)
 StreamingLink.create(link: "https://open.spotify.com/track/5TfSl4LdoZxI9Pwg5qBGvC?si=03571d00ed8f479e", streaming_service_id: spotify.id, song_id: mee.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/m-e-e", streaming_service_id: band_camp.id, song_id: mee.id)
 StreamingLink.create(link: "https://soundcloud.com/earthly-frames/m-e-e/s-Jl2xS4q5doJ?in=earthly-frames/sets/the-empty-fields", streaming_service_id: sound_cloud.id, song_id: mee.id)
 StreamingLink.create(link: "https://www.amazon.com/dp/B097PTGVTF/ref=dm_ws_tlw_trk1", streaming_service_id: amazon.id, song_id: mee.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/where-there-are-rocks/1573431550?i=1573431571", streaming_service_id: apple.id, song_id: rocks.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/where-there-are-rocks", streaming_service_id: band_camp.id, song_id: rocks.id)
 StreamingLink.create(link: "https://open.spotify.com/track/4hUgAaXTYyYPc4nNM6fwBL?si=c30f3c2e2a734582", streaming_service_id: spotify.id, song_id: rocks.id)
 StreamingLink.create(link: "https://www.amazon.com/dp/B097PRK877/ref=dm_ws_tlw_trk2", streaming_service_id: amazon.id, song_id: rocks.id)
 StreamingLink.create(link: "https://soundcloud.com/earthly-frames/where-there-are-rocks/s-AhOZTHy9i1I?in=earthly-frames/sets/the-empty-fields", streaming_service_id: sound_cloud.id, song_id: rocks.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/huayranchina/1573431550?i=1573431574", streaming_service_id: apple.id, song_id: huay.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/huayranchina", streaming_service_id: band_camp.id, song_id: huay.id)
 StreamingLink.create(link: "https://open.spotify.com/track/6QMxMikRjQG5nQtnfLP50G?si=73f212247cf34401", streaming_service_id: spotify.id, song_id: huay.id)
 StreamingLink.create(link: "https://www.amazon.com/dp/B097PS6VJV/ref=dm_ws_tlw_trk3", streaming_service_id: amazon.id, song_id: huay.id)
 StreamingLink.create(link: "https://soundcloud.com/earthly-frames/huayrachina/s-jjbgiwS4dSY?in=earthly-frames/sets/the-empty-fields", streaming_service_id: sound_cloud.id, song_id: huay.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/just-warming-up/1573431550?i=1573431908", streaming_service_id: apple.id, song_id: warming.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/just-warming-up", streaming_service_id: band_camp.id, song_id: warming.id)
 StreamingLink.create(link: "https://open.spotify.com/track/0ya0ybvMIrBuA9JkRGziQ4?si=68e7094a8ce740da", streaming_service_id: spotify.id, song_id: warming.id)
 StreamingLink.create(link: "https://www.amazon.com/dp/B097PSQF3J/ref=dm_ws_tlw_trk4", streaming_service_id: amazon.id, song_id: warming.id)
 StreamingLink.create(link: "https://soundcloud.com/earthly-frames/just-warming-up/s-5DyV2jDIJrC?in=earthly-frames/sets/the-empty-fields", streaming_service_id: sound_cloud.id, song_id: warming.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/met-with-great-malthusianism/1573431550?i=1573431912", streaming_service_id: apple.id, song_id: met.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/met-with-great-malthusianism", streaming_service_id: band_camp.id, song_id: met.id)
 StreamingLink.create(link: "https://open.spotify.com/track/3GvmJc85OKbxghpwyD2n8B?si=ecaa460d1cc042ea", streaming_service_id: spotify.id, song_id: met.id)
 StreamingLink.create(link: "https://www.amazon.com/dp/B097PRP2Z7/ref=dm_ws_tlw_trk5", streaming_service_id: amazon.id, song_id: met.id)
 StreamingLink.create(link: "https://soundcloud.com/earthly-frames/met-with-great-malthusanism?in=earthly-frames/sets/the-empty-fields", streaming_service_id: sound_cloud.id, song_id: met.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/reading-frame-shift/1573431550?i=1573431921", streaming_service_id: apple.id, song_id: reading.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/reading-frame-shift", streaming_service_id: band_camp.id, song_id: reading.id)
 StreamingLink.create(link: "https://open.spotify.com/track/7DBqw6r3nPfJDJxRKUoAab?si=10b4c4954362443f", streaming_service_id: spotify.id, song_id: reading.id)
 StreamingLink.create(link: "https://www.amazon.com/dp/B097PSV391/ref=dm_ws_tlw_trk6", streaming_service_id: amazon.id, song_id: reading.id)
 StreamingLink.create(link: "https://soundcloud.com/earthly-frames/reading-frame-shift?in=earthly-frames/sets/the-empty-fields", streaming_service_id: sound_cloud.id, song_id: reading.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/fish-nor-fowl/1573431550?i=1573431927", streaming_service_id: apple.id, song_id: fish.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/fish-nor-fowl", streaming_service_id: band_camp.id, song_id: fish.id)
 StreamingLink.create(link: "https://open.spotify.com/track/5TO3GnhfXYaXgOy4n1QqEB?si=63c4528f994742ed", streaming_service_id: spotify.id, song_id: fish.id)
 StreamingLink.create(link: "https://www.amazon.com/dp/B097PT7PPT/ref=dm_ws_tlw_trk7", streaming_service_id: amazon.id, song_id: fish.id)
 StreamingLink.create(link: "https://soundcloud.com/earthly-frames/fish-nor-fowl?in=earthly-frames/sets/the-empty-fields", streaming_service_id: sound_cloud.id, song_id: fish.id)
 StreamingLink.create(link: "https://music.apple.com/us/album/the-empty-fields/1573431550?i=1573432241", streaming_service_id: apple.id, song_id: empty_fields.id)
-StreamingLink.create(link: "https://earthlyframes.bandcamp.com/track/the-empty-fields", streaming_service_id: band_camp.id, song_id: empty_fields.id)
 StreamingLink.create(link: "https://open.spotify.com/track/1uxHzOnHqz8z1mA1KphIyP?si=e1210479c98047fe", streaming_service_id: spotify.id, song_id: empty_fields.id)
 StreamingLink.create(link: "https://www.amazon.com/dp/B097PS457L/ref=dm_ws_tlw_trk8", streaming_service_id: amazon.id, song_id: empty_fields.id)
 StreamingLink.create(link: "https://soundcloud.com/earthly-frames/the-empty-fields?in=earthly-frames/sets/the-empty-fields", streaming_service_id: sound_cloud.id, song_id: empty_fields.id)
