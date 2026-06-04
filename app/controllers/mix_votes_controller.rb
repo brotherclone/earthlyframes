@@ -7,8 +7,8 @@ class MixVotesController < ApplicationController
         id: "song#{i}",
         title: "Song #{i}",
         mixes: [
-          { id: "song#{i}_mix1", name: "Mix 1", soundcloud_url: "https://soundcloud.com/example/song#{i}_mix1" },
-          { id: "song#{i}_mix2", name: "Mix 2", soundcloud_url: "https://soundcloud.com/example/song#{i}_mix2" }
+          { id: "song#{i}_mix1", name: "Mix 1" },
+          { id: "song#{i}_mix2", name: "Mix 2" }
         ]
       }
     end
@@ -31,8 +31,8 @@ class MixVotesController < ApplicationController
           id: "song#{i}",
           title: "Song #{i}",
           mixes: [
-            { id: "song#{i}_mix1", name: "Mix 1", soundcloud_url: "https://soundcloud.com/example/song#{i}_mix1" },
-            { id: "song#{i}_mix2", name: "Mix 2", soundcloud_url: "https://soundcloud.com/example/song#{i}_mix2" }
+            { id: "song#{i}_mix1", name: "Mix 1" },
+            { id: "song#{i}_mix2", name: "Mix 2" }
           ]
         }
       end

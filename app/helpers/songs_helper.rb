@@ -1,15 +1,5 @@
 module SongsHelper
 
-  def get_streaming_link_for_embed(streaming_service_id, streaming_links)
-    sound_cloud_link = ""
-    streaming_links.each do |link|
-      if link.streaming_service.id == streaming_service_id
-        sound_cloud_link = link.link
-      end
-    end
-    sound_cloud_link
-  end
-
   def title_track(song)
     if song.title === song.album.title
       song.album.title
@@ -26,12 +16,6 @@ module SongsHelper
         else
           "streaming service"
         end
-      when "video"
-        if song.videos > 1
-          "videos"
-        else
-          "video"
-        end
     else
       "unknown song association"
     end
@@ -42,7 +26,7 @@ module SongsHelper
     if song.lyrics.length > 1 || song.notes.length > 1
       detail = true
     end
-    if song.videos.length >=1 || song.embeds.length >= 1 || song.streaming_links.length > 0
+    if song.embeds.length >= 1 || song.streaming_links.length > 0
       detail = true
     end
     detail

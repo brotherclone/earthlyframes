@@ -9,23 +9,6 @@ ActiveAdmin.register Song do
                 streaming_links_attributes: [:id, :link, :streaming_service_id, :_destroy],
                 embeds_attributes: [:id, :player_identifier, :artist_link, :color, :text_color, :song_id, :streaming_service_id, :embed_code, :_destroy ]
 
-  before_save do |song|
-    if song.embeds
-      colors = %w[#f6f6f6 #000000]
-      song.embeds.map do |e|
-        if e.embed_code
-          s = StreamingService.where(name: 'SoundCloud')
-          t = e.embed_code.match /(?=tracks.*?;).*?(\d+)/
-          e.player_identifier = t[1]
-          e.streaming_service_id = s[0].id
-          e.color = colors[0]
-          e.text_color = colors[1]
-          e.artist_link = "https://soundcloud.com/earthly-frames"
-        end
-      end
-    end
-  end
-
   form(:html => {:multipart => true}) do |f|
     f.inputs do
       f.input :title
