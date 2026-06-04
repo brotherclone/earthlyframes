@@ -4,7 +4,7 @@ class SongsController < ApplicationController
   before_action :set_song, only: %i[show edit update destroy ]
 
   def index
-    @songs = @album.songs.includes(streaming_links: :streaming_service, videos: [])
+    @songs = @album.songs.includes(streaming_links: :streaming_service)
     respond_to do |format|
       format.html { render :index}
       format.json { render :json => @songs}
