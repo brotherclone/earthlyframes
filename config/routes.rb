@@ -12,14 +12,12 @@ Rails.application.routes.draw do
     resources :album_streaming_links
     resources :songs do
       resources :streaming_links
-      resources :videos
       resources :embeds
     end
   end
   get 'about', to: 'about#index'
   get 'eula', to: 'eula#index'
   get 'songs/just-titles', to:'songs#just_titles'
-  get 'music-videos', to: 'music_videos#index'
 
   root 'home#index'
 end
