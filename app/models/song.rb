@@ -1,7 +1,6 @@
 class Song < ApplicationRecord
   validates :title, presence: true
   belongs_to :album
-  has_many :videos, dependent: :destroy
   has_many :streaming_links, dependent: :destroy
   has_many :song_constellations, dependent: :destroy
   has_many :constellations, :through => :song_constellations
@@ -29,7 +28,6 @@ class Song < ApplicationRecord
       title
       trt
       updated_at
-      videos_id
     ]
   end
 
@@ -49,9 +47,6 @@ class Song < ApplicationRecord
                   }
                 }
               },
-            },
-            :videos=>{
-              :only => [:title, :description, :video_service_id, :video_type]
             }
           }
         )
