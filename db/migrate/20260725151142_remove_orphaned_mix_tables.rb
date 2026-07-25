@@ -1,9 +1,9 @@
 class RemoveOrphanedMixTables < ActiveRecord::Migration[8.1]
   def up
-    drop_table :mix_embeds
-    drop_table :mix_reviews
-    drop_table :mixes
-    drop_table :reviewers
+    drop_table :mix_embeds, if_exists: true
+    drop_table :mix_reviews, if_exists: true
+    drop_table :mixes, if_exists: true
+    drop_table :reviewers, if_exists: true
   end
 
   def down
