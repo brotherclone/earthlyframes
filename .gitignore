@@ -63,3 +63,6 @@ yarn-error.log
 
 # Bun lockfile
 bun.lockb
+
+# Local (per-developer) Claude Code settings; shared config lives in .claude/settings.json
+/.claude/settings.local.json
