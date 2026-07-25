@@ -5,7 +5,5 @@
 import { application } from "./application"
 
 import MobileNavigationController from "./mobile_navigation_controller.js"
-import RatioController from "./ratio_controller"
 
 application.register("mobilenavigation", MobileNavigationController)
-application.register("ratio", RatioController)

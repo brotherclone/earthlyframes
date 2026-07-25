@@ -11,6 +11,15 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
+  # Use evented (not polling) file watching so code-reload latency doesn't
+  # scale with the number of files being stat-polled.
+  config.file_watcher = ActiveSupport::EventedFileUpdateChecker if defined?(Listen)
+
+  # Auto-refresh the browser on view/JS/CSS changes instead of requiring a
+  # manual reload after every esbuild/sass rebuild. Guard (see Guardfile)
+  # pushes the reload signal; this middleware injects the client-side snippet.
+  config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
+
   # Show full error reports.
   config.consider_all_requests_local = true
 

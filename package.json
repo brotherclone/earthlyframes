@@ -3,19 +3,15 @@
   "version": "1.0.0",
   "private": "true",
   "engines": {
-    "node": "20.x",
+    "node": "22.x",
     "yarn": "1.x"
   },
   "dependencies": {
     "@hotwired/stimulus": "^3.0.1",
     "@hotwired/turbo-rails": "^7.1.1",
-    "@popperjs/core": "^2.11.5",
     "esbuild": "^0.25.0",
     "esbuild-rails": "^1.0.3",
-    "sass": "^1.53.0",
-    "stimulus-use": "^0.50.0",
-    "three": "^0.140.2",
-    "three-css2drender": "^1.0.0"
+    "sass": "^1.53.0"
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",

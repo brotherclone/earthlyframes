@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.3.0'
+ruby '3.4.9'
 
 gem 'activeadmin'
 gem 'bootsnap', '>= 1.4.4'
@@ -9,14 +9,14 @@ gem 'breadcrumbs_on_rails'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'cssbundling-rails'
-gem 'devise', '~> 4.9'
+gem 'devise'
 gem 'dotenv-rails'
 gem 'haml-rails'
 gem 'inline_svg'
 gem 'jbuilder'
 gem 'jsbundling-rails'
 gem 'pg', '~> 1.1'
-gem 'puma', '~> 6.4'
+gem 'puma'
 gem 'rails', '>= 7.1.0'
 gem 'sassc-rails'
 gem 'sprockets-rails'
@@ -34,6 +34,9 @@ group :development, :test do
 end
 
 group :development do
+  gem 'guard-livereload', require: false
+  gem 'listen'
+  gem 'rack-livereload'
   gem 'web-console'
 end
 
