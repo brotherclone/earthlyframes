@@ -14,4 +14,8 @@ RSpec.describe AlbumStreamingLink, type: :model do
   it 'is invalid without a link' do
     expect(build(:streaming_link, link: nil)).to_not be_valid
   end
+  it 'touches its album so album page ETags change' do
+    album = create(:album)
+    expect { create(:album_streaming_link, album: album) }.to(change { album.reload.updated_at })
+  end
 end
