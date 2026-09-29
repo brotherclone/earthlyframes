@@ -15,10 +15,12 @@ Rails.application.configure do
   # scale with the number of files being stat-polled.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker if defined?(Listen)
 
-  # Auto-refresh the browser on view/JS/CSS changes instead of requiring a
-  # manual reload after every esbuild/sass rebuild. Guard (see Guardfile)
-  # pushes the reload signal; this middleware injects the client-side snippet.
-  config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
+  # Live reload via Hotwire Spark: no extra process, it mounts its own
+  # Action Cable endpoint. CSS changes (app/assets/builds/*.css) swap the
+  # stylesheet in place; view/helper/controller changes and esbuild output
+  # trigger a Turbo reload (Spark auto-detects jsbundling and watches
+  # app/assets/builds/*.js). Haml isn't in Spark's default extensions.
+  config.hotwire.spark.html_extensions += %w[haml]
 
   # Show full error reports.
   config.consider_all_requests_local = true
