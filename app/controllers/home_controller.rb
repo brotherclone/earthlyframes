@@ -1,4 +1,4 @@
-class HomeController < InheritedResources::Base
+class HomeController < ApplicationController
   def index
     rainbow_order = params[:order]
     @rainbow_latest = rainbow_order != 'chromatic'
