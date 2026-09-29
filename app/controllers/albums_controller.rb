@@ -5,7 +5,7 @@ class AlbumsController < ApplicationController
   def index
     add_breadcrumb "Albums", :albums_path
     @albums = Album.where(is_live: true)
-                   .includes(:songs, album_streaming_links: :streaming_service)
+                   .with_page_associations
                    .order(released: :desc)
     expires_in 5.minutes, public: true
     respond_to do |format|
@@ -27,6 +27,6 @@ class AlbumsController < ApplicationController
   private
 
   def set_album
-    @album = Album.find(params[:id])
+    @album = Album.with_page_associations.find(params[:id])
   end
 end

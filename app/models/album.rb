@@ -18,6 +18,14 @@ class Album < ApplicationRecord
     white: 9
   }
   has_many :release_formats, dependent: :destroy
+
+  # Everything components/_album and components/_rainbow_album render:
+  # streaming links (with service names) and songs (with what
+  # SongsHelper#check_for_details inspects).
+  scope :with_page_associations, -> {
+    includes(album_streaming_links: :streaming_service,
+             songs: [:embeds, { streaming_links: :streaming_service }])
+  }
   has_many :music_formats, :through => :release_formats
   accepts_nested_attributes_for :release_formats, :allow_destroy => true
   accepts_nested_attributes_for :album_streaming_links, :allow_destroy => true

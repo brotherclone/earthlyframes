@@ -3,9 +3,9 @@ class HomeController < ApplicationController
     rainbow_order = params[:order]
     @rainbow_latest = rainbow_order != 'chromatic'
     if @rainbow_latest
-      @rainbow_table_albums= Album.where('rainbow_table != 0 AND is_live').order(rainbow_table: :desc)
+      @rainbow_table_albums= Album.with_page_associations.where('rainbow_table != 0 AND is_live').order(rainbow_table: :desc)
     else
-      @rainbow_table_albums= Album.where('rainbow_table != 0 AND is_live').order(rainbow_table: :asc)
+      @rainbow_table_albums= Album.with_page_associations.where('rainbow_table != 0 AND is_live').order(rainbow_table: :asc)
     end
     rainbow_done_colors = []
     @rainbow_unfinished_colors = []

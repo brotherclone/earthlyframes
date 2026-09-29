@@ -6,7 +6,7 @@ class StreamingLinksController < ApplicationController
   before_action :set_streaming_link, only: %i[show]
 
   def index
-    @streaming_links = @song.streaming_links
+    @streaming_links = @song.streaming_links.includes(:streaming_service)
     respond_to do |format|
       format.html { render :index}
       format.json { render :json => @streaming_links}

@@ -20,4 +20,8 @@ RSpec.describe Song, type: :model do
     should have_many(:song_constellations)
     should have_many(:constellations).through(:song_constellations)
   end
+  it 'touches its album so album page ETags change' do
+    album = create(:album)
+    expect { create(:song, album: album) }.to(change { album.reload.updated_at })
+  end
 end

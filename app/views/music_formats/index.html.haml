@@ -6,4 +6,5 @@
   = render :partial => "components/breadcrumbs"
   = turbo_frame_tag "music_formats" do
     - @music_formats.each do |music_format|
-      = turbo_frame_tag "music_format", :src=> music_format_url(music_format)
+      .music-format-item
+        = render music_format

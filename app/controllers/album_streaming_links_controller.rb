@@ -5,7 +5,7 @@ class AlbumStreamingLinksController < ApplicationController
 
   def index
     add_breadcrumb "Streaming Links", :album_streaming_links
-    @album_streaming_links = @album.album_streaming_links
+    @album_streaming_links = @album.album_streaming_links.includes(:streaming_service)
     respond_to do |format|
       format.html { render :index}
       format.json { render :json => @album_streaming_links}

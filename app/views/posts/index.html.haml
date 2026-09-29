@@ -6,4 +6,5 @@
     = render :partial => "components/breadcrumbs"
     = turbo_frame_tag "posts" do
       - @posts.each do |post|
-        = turbo_frame_tag "post", :src=> post_path(post)
+        .post-item
+          = render post

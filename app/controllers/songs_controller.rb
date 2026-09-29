@@ -4,7 +4,7 @@ class SongsController < ApplicationController
   before_action :set_song, only: %i[show]
 
   def index
-    @songs = @album.songs.includes(streaming_links: :streaming_service)
+    @songs = @album.songs.includes(:embeds, streaming_links: :streaming_service)
     respond_to do |format|
       format.html { render :index}
       format.json { render :json => @songs}
@@ -34,7 +34,7 @@ class SongsController < ApplicationController
   private
 
   def set_song
-    @song = @album.songs.find(params[:id])
+    @song = @album.songs.includes(streaming_links: :streaming_service).find(params[:id])
   end
 
   def set_album

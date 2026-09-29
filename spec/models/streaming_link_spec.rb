@@ -13,4 +13,8 @@ RSpec.describe StreamingLink, type: :model do
   it 'is invalid without a link' do
     expect(build(:streaming_link, link: nil)).to_not be_valid
   end
+  it 'touches its song so song page ETags change' do
+    song = create(:song)
+    expect { create(:streaming_link, song: song) }.to(change { song.reload.updated_at })
+  end
 end

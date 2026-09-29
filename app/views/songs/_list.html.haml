@@ -1,0 +1,11 @@
+-# Song titles for an album. Rendered inline in the album partials and by
+-# songs#index, inside the album's songs frame so clicking a title swaps in
+-# songs#show (and its close button swaps this list back).
+- songs.each do |song|
+  .song
+    %i{:class=>"fa-solid fa-quote-left"}
+    - if check_for_details(song)
+      =link_to song.title, [album, song]
+    - else
+      = song.title
+    %i{:class=>"fa-solid fa-quote-right"}
