@@ -13,4 +13,11 @@ RSpec.describe Embed, type: :model do
   it 'is invalid without a link' do
     expect(build(:embed, player_identifier: nil)).to_not be_valid
   end
+  it 'touches its song, and through it the album, so page ETags change' do
+    song = create(:song)
+    album = song.album
+    expect { create(:embed, song: song) }
+      .to(change { song.reload.updated_at }
+      .and(change { album.reload.updated_at }))
+  end
 end

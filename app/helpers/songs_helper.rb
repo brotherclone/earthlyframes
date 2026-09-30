@@ -32,8 +32,9 @@ module SongsHelper
     detail
   end
 
+  # Sorted in Ruby so a preloaded association isn't re-queried per song.
   def order_streaming_links_for_song(song)
-    song.streaming_links.joins(:streaming_service).order('streaming_services.name')
+    song.streaming_links.sort_by { |link| link.streaming_service.name.to_s.downcase }
   end
 
 end

@@ -3,6 +3,7 @@ require 'rails_helper'
 describe 'Song Modal Close Button', :type => :feature do
   let!(:album) { FactoryBot.create(:album) }
   let!(:song) { FactoryBot.create(:song, album: album) }
+  let(:songs_frame) { "turbo-frame##{ActionView::RecordIdentifier.dom_id(album, :songs)}" }
 
   before(:each) do
     visit album_path(album)
@@ -13,10 +14,10 @@ describe 'Song Modal Close Button', :type => :feature do
     click_link song.title
 
     # Wait for the turbo frame to load
-    expect(page).to have_css('turbo-frame#songs')
+    expect(page).to have_css(songs_frame)
 
     # Check that the close button is present with correct classes
-    within 'turbo-frame#songs' do
+    within songs_frame do
       expect(page).to have_css('.close-song-info')
       expect(page).to have_css('a[href*="songs"]')
       expect(page).to have_css('i.fa-solid.fa-x[title="close"]')
@@ -28,14 +29,14 @@ describe 'Song Modal Close Button', :type => :feature do
     click_link song.title
 
     # Wait for the modal to open and verify song content is visible
-    expect(page).to have_css('turbo-frame#songs')
+    expect(page).to have_css(songs_frame)
 
     # Store the song title for verification
     song_title = song.title
     expect(page).to have_content(song_title)
 
     # Click the close button
-    within 'turbo-frame#songs' do
+    within songs_frame do
       find('.close-song-info a').click
     end
 
@@ -52,7 +53,7 @@ describe 'Song Modal Close Button', :type => :feature do
     click_link song.title
 
     # Check accessibility attributes
-    within 'turbo-frame#songs' do
+    within songs_frame do
       close_icon = find('i.fa-solid.fa-x')
       expect(close_icon[:title]).to eq('close')
     end

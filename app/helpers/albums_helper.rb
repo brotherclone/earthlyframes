@@ -78,8 +78,9 @@ module AlbumsHelper
     end
   end
 
+  # Sorted in Ruby so a preloaded association isn't re-queried per album.
   def order_streaming_links_by_service_name(album)
-    album.album_streaming_links.joins(:streaming_service).order('streaming_services.name')
+    album.album_streaming_links.sort_by { |link| link.streaming_service.name.to_s.downcase }
   end
 
 end

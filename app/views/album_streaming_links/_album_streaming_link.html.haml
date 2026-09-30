@@ -1,0 +1,10 @@
+-# The wrapper stands in for the <turbo-frame> each link used to be lazy-loaded
+-# into, so the flex layouts in the album/rainbow-table CSS size items the same.
+.streaming-link-item
+  .streaming-link
+    .streaming-link-icon-container
+      %a{:href=> album_streaming_link.link}
+        %i{:class=>get_service_icon(album_streaming_link.streaming_service.name)}
+    .streaming-link-container
+      %a{:href=> album_streaming_link.link}
+        = album_streaming_link.streaming_service.name

@@ -1,6 +1,6 @@
 class Song < ApplicationRecord
   validates :title, presence: true
-  belongs_to :album
+  belongs_to :album, touch: true
   has_many :streaming_links, dependent: :destroy
   has_many :song_constellations, dependent: :destroy
   has_many :constellations, :through => :song_constellations

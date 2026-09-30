@@ -1,6 +1,6 @@
 class StreamingLink < ApplicationRecord
   belongs_to :streaming_service
-  belongs_to :song
+  belongs_to :song, touch: true
   validates :link, presence: true
 
   def self.ransackable_attributes(auth_object = nil)

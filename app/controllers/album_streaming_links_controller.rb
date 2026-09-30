@@ -1,11 +1,11 @@
 class AlbumStreamingLinksController < ApplicationController
   add_breadcrumb "Home", :root_path
   before_action :set_album
-  before_action :set_album_streaming_link, only: %i[show edit update destroy]
+  before_action :set_album_streaming_link, only: %i[show]
 
   def index
     add_breadcrumb "Streaming Links", :album_streaming_links
-    @album_streaming_links = @album.album_streaming_links
+    @album_streaming_links = @album.album_streaming_links.includes(:streaming_service)
     respond_to do |format|
       format.html { render :index}
       format.json { render :json => @album_streaming_links}
@@ -20,45 +20,6 @@ class AlbumStreamingLinksController < ApplicationController
     end
   end
 
-  def new
-    @album_streaming_link = @album.album_streaming_links.build
-  end
-
-  def edit; end
-
-  def create
-    @album_streaming_link =  @album.album_streaming_links.build(album_streaming_link_params)
-    respond_to do |format|
-      if @album_streaming_link.save
-        format.html { redirect_to album_album_streaming_link_path(@album_streaming_link) }
-        format.json { render :show, status: :created, location: @album_streaming_link }
-      else
-        format.html { render :index, status: :unprocessable_entity }
-        format.json { render json: @album_streaming_link.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  def update
-    respond_to do |format|
-      if @album.album_streaming_links(album_streaming_link_params)
-        format.html { redirect_to album_album_streaming_link_path(@album_streaming_link) }
-        format.json { render :show, status: :ok, location: @album_streaming_link }
-      else
-        format.html { render :index, status: :unprocessable_entity }
-        format.json { render json: @album_streaming_link.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  def destroy
-    @album_streaming_link.destroy
-    respond_to do |format|
-      format.html { redirect_to album_album_streaming_link_path }
-      format.json { head :no_content }
-    end
-  end
-
   private
 
   def set_album
@@ -66,11 +27,7 @@ class AlbumStreamingLinksController < ApplicationController
   end
 
   def set_album_streaming_link
-    @album_streaming_link = AlbumStreamingLink.find(params[:id])
-  end
-
-  def album_streaming_link_params
-    params.require(:album_streaming_link).permit(:album_id, :streaming_service_id, :link)
+    @album_streaming_link = @album.album_streaming_links.find(params[:id])
   end
 
 end

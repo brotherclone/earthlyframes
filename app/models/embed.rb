@@ -1,6 +1,6 @@
 class Embed < ApplicationRecord
   validates :player_identifier, presence: true
-  belongs_to :song
+  belongs_to :song, touch: true
   belongs_to :streaming_service
 
   def self.ransackable_attributes(auth_object = nil)

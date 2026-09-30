@@ -1,4 +1,4 @@
-= turbo_frame_tag "songs" do
+= turbo_frame_tag dom_id(@album, :songs), class: "songs" do
   .close-song-info
     %a{:href=>album_songs_path, :tab=>{:index=>0}}
       %i.fa-solid.fa-x{:title=> "close"}
@@ -8,8 +8,7 @@
     %i{:class=>"fa-solid fa-quote-right"}
     - if @song.streaming_links.length > 0
       .song-streaming-links
-        - order_streaming_links_for_song(@song).each do |link|
-          = turbo_frame_tag "streaming_link", src: [@album, @song, link]
+        = render partial: "streaming_links/streaming_link", collection: order_streaming_links_for_song(@song)
   -if @song.notes.length > 1
     %h4.notes-title.lazy-sub-headings
       Notes

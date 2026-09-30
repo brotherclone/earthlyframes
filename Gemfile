@@ -34,9 +34,8 @@ group :development, :test do
 end
 
 group :development do
-  gem 'guard-livereload', require: false
+  gem 'hotwire-spark'
   gem 'listen'
-  gem 'rack-livereload'
   gem 'web-console'
 end
 

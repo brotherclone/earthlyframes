@@ -1,0 +1,9 @@
+-# The wrapper stands in for the <turbo-frame> each link used to be lazy-loaded
+-# into, so the flex layout in .song-streaming-links sizes items the same.
+.streaming-link-item
+  .streaming-link
+    %a.streaming-link-display{:href=> streaming_link.link, :target=> "_new", :tab=>{:index=>0}}
+      %i{:class=> get_service_icon(streaming_link.streaming_service.name), :alt=>streaming_link.streaming_service.name}
+    .streaming-link-container
+      %a{:href=> streaming_link.link}
+        = streaming_link.streaming_service.name
