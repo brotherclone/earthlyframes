@@ -11,6 +11,11 @@
 
       i {
         font-size: 1.25rem;
+        // Keep the close target visible and clickable even when the
+        // Font Awesome kit hasn't loaded (blocked CDN, offline, tests).
+        display: inline-block;
+        min-width: 1em;
+        min-height: 1em;
       }
     }
   }
